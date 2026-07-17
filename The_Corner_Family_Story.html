@@ -7,7 +7,7 @@
 <style>
   :root{
     --ink:#2b2622; --soft:#5b5147; --line:#d8cbb8; --gold:#8a6d3b;
-    --paper:#f7f1e4; --paper2:#fbf7ee; --accent:#7c4a32;
+    --paper:#f7f1e4; --paper2:#fbf7ee; --accent:#7c4a32; --marlar:#33564f;
   }
   *{box-sizing:border-box;}
   html{-webkit-text-size-adjust:100%;}
@@ -56,6 +56,17 @@
   }
   em.place{font-style:italic; color:var(--accent);}
   .names{color:var(--ink); font-weight:600;}
+  figure{margin:2.3em 0; text-align:center;}
+  figure svg{
+    display:block; width:100%; height:auto; max-width:640px; margin:0 auto;
+    border:1px solid var(--line); border-radius:6px; background:#fcf9f1;
+    box-shadow:inset 0 1px 0 #fff, 0 8px 26px rgba(60,45,25,.08);
+  }
+  figcaption{
+    font-size:.83em; color:var(--soft); font-style:italic;
+    margin-top:.8em; max-width:560px; margin-left:auto; margin-right:auto;
+    line-height:1.55;
+  }
   .closing{
     margin-top:2.4em; padding-top:1.5em; border-top:1px solid var(--line);
     font-style:italic; color:#4a423a; text-align:center; font-size:1.06em;
@@ -86,11 +97,119 @@
 
 <p>We didn't guess at this. We read it, page by page, in the census books — the same handful of names turning up next door to each other, decade after decade, until the whole thing finally clicked into a single picture. This is that picture, told plain.</p>
 
+<figure>
+<svg viewBox="0 0 680 450" role="img" aria-label="Map of the northeast Mississippi corner. Rienzi, home of the Rorie and Searcy families, sits about thirteen miles from Burnsville, home of the Marlar family, with Corinth, Glen, Jacinto, Kossuth, Iuka and Fulton nearby.">
+  <rect x="6" y="6" width="668" height="438" rx="8" fill="#fcf9f1" stroke="#d8cbb8"/>
+  <!-- state line -->
+  <path d="M 22 86 C 150 74, 270 96, 390 80 S 600 72, 660 82" fill="none" stroke="#cbb79a" stroke-width="1.6"/>
+  <text x="36" y="70" font-size="11" letter-spacing="2" fill="#8a7a66">T E N N E S S E E</text>
+  <text x="36" y="104" font-size="11" letter-spacing="2" fill="#8a7a66">M I S S I S S I P P I</text>
+  <!-- compass -->
+  <line x1="636" y1="76" x2="636" y2="52" stroke="#8a6d3b" stroke-width="1.6"/>
+  <path d="M636 47 l-4 10 l4 -3 l4 3 z" fill="#8a6d3b"/>
+  <text x="636" y="40" font-size="11" fill="#8a6d3b" text-anchor="middle">N</text>
+  <!-- faint roads -->
+  <g stroke="#e7dcc7" stroke-width="1.6" fill="none">
+    <line x1="300" y1="134" x2="288" y2="240"/>
+    <line x1="300" y1="134" x2="410" y2="178"/>
+    <line x1="286" y1="252" x2="152" y2="188"/>
+    <line x1="288" y1="252" x2="404" y2="298"/>
+    <line x1="412" y1="178" x2="520" y2="238"/>
+    <line x1="528" y1="240" x2="608" y2="214"/>
+  </g>
+  <!-- thirteen-mile line -->
+  <line x1="294" y1="248" x2="516" y2="240" stroke="#8a6d3b" stroke-width="2.4" stroke-dasharray="6 5" stroke-linecap="round"/>
+  <text x="406" y="228" text-anchor="middle" font-size="13" fill="#7a5a2e" font-style="italic">&#8776; 13 miles apart</text>
+  <text x="406" y="270" text-anchor="middle" font-size="10.5" fill="#8a7a66" font-style="italic">a half-day&#8217;s wagon ride</text>
+  <!-- Fulton connector -->
+  <line x1="356" y1="322" x2="356" y2="398" stroke="#d8cbb8" stroke-width="1.4" stroke-dasharray="3 5"/>
+  <!-- towns -->
+  <circle cx="300" cy="134" r="5" fill="#9a7f5e" stroke="#fbf7ee" stroke-width="1.5"/>
+  <text x="315" y="130" font-size="13" font-weight="600" fill="#3d352c">Corinth</text>
+  <text x="315" y="144" font-size="10.5" fill="#6b5a44">railroad town</text>
+
+  <circle cx="412" cy="178" r="4.5" fill="#9a7f5e" stroke="#fbf7ee" stroke-width="1.5"/>
+  <text x="426" y="174" font-size="12" fill="#3d352c">Glen</text>
+  <text x="426" y="187" font-size="10" fill="#6b5a44">Will Marlar born, 1888</text>
+
+  <circle cx="152" cy="188" r="4.5" fill="#9a7f5e" stroke="#fbf7ee" stroke-width="1.5"/>
+  <text x="140" y="184" text-anchor="end" font-size="12" fill="#3d352c">Kossuth</text>
+
+  <circle cx="404" cy="298" r="4.5" fill="#9a7f5e" stroke="#fbf7ee" stroke-width="1.5"/>
+  <text x="418" y="294" font-size="12" fill="#3d352c">Jacinto</text>
+  <text x="418" y="307" font-size="10" fill="#6b5a44">old county seat</text>
+
+  <circle cx="608" cy="214" r="4.5" fill="#9a7f5e" stroke="#fbf7ee" stroke-width="1.5"/>
+  <text x="608" y="202" text-anchor="middle" font-size="12" fill="#5b5147">Iuka</text>
+
+  <circle cx="356" cy="406" r="4.5" fill="#9a7f5e" stroke="#fbf7ee" stroke-width="1.5"/>
+  <text x="372" y="402" font-size="12" fill="#3d352c">Fulton</text>
+  <text x="372" y="415" font-size="10" fill="#6b5a44">Hampton country &#8212; a day&#8217;s ride south</text>
+
+  <!-- Rienzi : Rorie & Searcy -->
+  <circle cx="286" cy="250" r="14" fill="#7c4a32" opacity="0.13"/>
+  <circle cx="286" cy="250" r="8" fill="#7c4a32" stroke="#fbf7ee" stroke-width="2"/>
+  <text x="270" y="248" text-anchor="end" font-size="14.5" font-weight="600" fill="#7c4a32">Rienzi</text>
+  <text x="270" y="263" text-anchor="end" font-size="11" fill="#6b5a44">Rorie &amp; Searcy country</text>
+
+  <!-- Burnsville : Marlar -->
+  <circle cx="524" cy="240" r="14" fill="#33564f" opacity="0.15"/>
+  <circle cx="524" cy="240" r="8" fill="#33564f" stroke="#fbf7ee" stroke-width="2"/>
+  <text x="540" y="238" font-size="14.5" font-weight="600" fill="#2c4a44">Burnsville</text>
+  <text x="540" y="253" font-size="11" fill="#5b5147">Marlar country</text>
+</svg>
+<figcaption>The corner of northeast Mississippi where everyone gathered. <b>Rienzi</b> — Rorie and Searcy country — and <b>Burnsville</b> — Marlar country — sat only about thirteen miles apart, with Corinth's railroad between them. The Hamptons were a day's ride south at Fulton. Nearly the whole family lived inside a single twenty-mile circle.</figcaption>
+</figure>
+
 <h2><span class="n">where everybody came from</span>Five states, one corner</h2>
 
 <p>They came in from every direction and stopped in the same place. The <span class="names">Searcys</span> came down out of North Carolina by way of Alabama. The <span class="names">Rories</span> came out of North Carolina too, but by way of Tennessee — and they brought their Tennessee neighbors, the Rushings, right along with them. The <span class="names">Marlars</span> came from Kentucky, the <span class="names">Barnes</span> family from Tennessee, the <span class="names">Hamptons</span> from Alabama, the <span class="names">Guthries</span> all the way from Arkansas. Five states funneling into one corner of Mississippi across about forty years. Nobody planned it. But once they got there, hardly anybody left.</p>
 
-<h2><span class="n">1830 – 1850</span>A young man named Aaron, and a name written wrong</h2>
+<figure>
+<svg viewBox="0 0 680 330" role="img" aria-label="Diagram of five states — North Carolina, Kentucky, Tennessee, Alabama and Arkansas — with arrows converging into one corner of northeast Mississippi.">
+  <rect x="6" y="6" width="668" height="318" rx="8" fill="#fcf9f1" stroke="#d8cbb8"/>
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b48a58"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#cbaa7a" stroke-width="2" marker-end="url(#arw)">
+    <path d="M198 64 Q 372 64 502 158"/>
+    <path d="M198 120 Q 372 120 500 166"/>
+    <path d="M198 176 Q 372 176 500 176"/>
+    <path d="M198 232 Q 372 232 500 186"/>
+    <path d="M198 288 Q 372 288 502 196"/>
+  </g>
+  <!-- destination -->
+  <circle cx="558" cy="176" r="54" fill="#7c4a32" opacity="0.10"/>
+  <circle cx="558" cy="176" r="54" fill="none" stroke="#7c4a32" stroke-width="1.6"/>
+  <text x="558" y="171" text-anchor="middle" font-size="15" font-weight="600" fill="#7c4a32">The Corner</text>
+  <text x="558" y="190" text-anchor="middle" font-size="11" fill="#5b5147">NE Mississippi</text>
+  <!-- sources -->
+  <circle cx="198" cy="64" r="5" fill="#8a6d3b"/>
+  <text x="184" y="60" text-anchor="end" font-size="14" font-weight="600" fill="#3d352c">North Carolina</text>
+  <text x="184" y="76" text-anchor="end" font-size="10.5" fill="#6b5a44">Searcys &#183; Rories &#183; Hubbards</text>
+
+  <circle cx="198" cy="120" r="5" fill="#8a6d3b"/>
+  <text x="184" y="116" text-anchor="end" font-size="14" font-weight="600" fill="#3d352c">Kentucky</text>
+  <text x="184" y="132" text-anchor="end" font-size="10.5" fill="#6b5a44">Marlars</text>
+
+  <circle cx="198" cy="176" r="5" fill="#8a6d3b"/>
+  <text x="184" y="172" text-anchor="end" font-size="14" font-weight="600" fill="#3d352c">Tennessee</text>
+  <text x="184" y="188" text-anchor="end" font-size="10.5" fill="#6b5a44">the Barnes family</text>
+
+  <circle cx="198" cy="232" r="5" fill="#8a6d3b"/>
+  <text x="184" y="228" text-anchor="end" font-size="14" font-weight="600" fill="#3d352c">Alabama</text>
+  <text x="184" y="244" text-anchor="end" font-size="10.5" fill="#6b5a44">Hamptons</text>
+
+  <circle cx="198" cy="288" r="5" fill="#8a6d3b"/>
+  <text x="184" y="284" text-anchor="end" font-size="14" font-weight="600" fill="#3d352c">Arkansas</text>
+  <text x="184" y="300" text-anchor="end" font-size="10.5" fill="#6b5a44">Guthries</text>
+</svg>
+<figcaption>Five states funneling into one corner: the Searcys, Rories and Hubbards from North Carolina, the Marlars from Kentucky, the Barnes from Tennessee, the Hamptons from Alabama, and the Guthries from Arkansas — all coming to rest within twenty miles of each other.</figcaption>
+</figure>
+
+<h2><span class="n">1830 &#8211; 1850</span>A young man named Aaron, and a name written wrong</h2>
 
 <p>The oldest of our people we can put a finger on is <span class="names">Aaron Searcy</span>, and he nearly slipped past us. In 1830 he was a young father in Shelby County, Alabama, with a brand-new baby boy in the house — a boy named <span class="names">Freeman</span>. The census taker wrote the family name down as "Sercy," and the index later read his first name as "A. D." So for the longest time he looked like he wasn't there at all. He was there. Our family just had a lifelong habit of getting its name spelled wrong — Searcy, Sercy, Cearcy — and hiding in plain sight because of it.</p>
 
@@ -102,7 +221,7 @@
 
 <p>If you want a single moment that proves the point, it's the 1840 census. On one man's route through Tishomingo, in the space of a few pages, you can find <span class="names">George Marlar</span> (the Kentucky man whose great-granddaughter would marry into the Searcys a hundred years later), and just a couple of pages away <span class="names">Reuben Rorie</span> — and squeezed right between them, a <span class="names">Searcy</span>. Three of the families we descend from, all within a few doors of each other, decades before a single one of those marriages happened. Around them on those same pages sit the Cheeks, the Vanderfords, the Kemps, the Catheys, the Moodys, the Barnes — every one of them a name that keeps coming back. The family wasn't scattered and then gathered by marriage. It was <em>already one neighborhood</em>, waiting for the weddings to catch up.</p>
 
-<h2><span class="n">1860 – 1870</span>Freeman's hard years, and the wedding</h2>
+<h2><span class="n">1860 &#8211; 1870</span>Freeman's hard years, and the wedding</h2>
 
 <p>It wasn't all prosperity. By 1860 Freeman was thirty, married to no one yet, landless, hiring himself out by the day and living in his older brother's house. That was the low point. And here is the tender detail we found: in that very year, just two doors down from where Freeman was laying his head, lived <span class="names">Adeline Rorie</span> — Mary Jane's own sister — and her husband. Freeman was living two doors from his future wife's family seven years before he married her. The neighborhood kept putting them near each other, over and over, as if it already knew.</p>
 
@@ -134,7 +253,7 @@
 
 <p class="closing">Five families walked in from five states and stopped inside twenty miles of each other,<br>and it took four generations for the marriages to catch up to the geography.<br>Every one of us is what that corner finally made.</p>
 
-<div class="foot">Drawn from census, land, and probate records, 1830&nbsp;–&nbsp;1900, of Tishomingo &amp; Alcorn Counties, Mississippi.</div>
+<div class="foot">Drawn from census, land, and probate records, 1830&nbsp;&#8211;&nbsp;1900, of Tishomingo &amp; Alcorn Counties, Mississippi. Distances are approximate, straight-line.</div>
 </div>
 </div>
 </body>
