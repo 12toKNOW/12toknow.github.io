@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Russian Language — a reader's primer · 12toKNOW</title>
+<meta name="description" content="The Cyrillic alphabet, pronunciation, names, and just enough grammar to read Russian history. An interactive primer.">
+<!-- Russian History · The Russian Language primer · v1 (Claude). Self-contained. A 12toKNOW guide. Source: Reader's Companion, Part VI. -->
+<style>
+:root{--ink:#241f1d;--parch:#F6F1E7;--card:#FFFDF8;--red:#7a2226;--red-dk:#571519;--gold:#AE8320;--gold-lt:#CBA24A;--muted:#6a6155;--line:#e6dcc7;
+ --c-friendly:#4a6b3f;--bg-friendly:#eaf1e5;--c-false:#7a2226;--bg-false:#f4e1de;--c-new:#8a6717;--bg-new:#f6efdc;--c-sign:#6a6155;--bg-sign:#eae6db;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--parch);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+a{color:var(--red);text-decoration:none}.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+.topbar{background:var(--red-dk);color:#f3e9df}.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;font-size:13.5px}
+.topbar .brand{font-family:Georgia,serif;color:#fff}.topbar a{color:#e7c9c2}.topbar .links a{margin-left:15px}
+@media(max-width:640px){.topbar .links a{margin-left:9px;font-size:12px}}
+.hero{background:linear-gradient(180deg,var(--red),var(--red-dk));color:#f6ece3;text-align:center;padding:46px 0 38px;border-bottom:3px solid var(--gold)}
+.hero .kick{color:var(--gold-lt);letter-spacing:.22em;text-transform:uppercase;font-size:12px;margin:0 0 12px}
+.hero h1{font-family:Georgia,serif;font-size:38px;margin:0 0 10px;line-height:1.12}
+.hero p{color:#ecd9d0;max-width:64ch;margin:0 auto;font-size:16px}
+h2.sec{font-family:Georgia,serif;color:var(--red);font-size:24px;border-bottom:2px solid var(--gold-lt);padding-bottom:8px;margin:40px 0 6px}
+.lead{color:#40382f;font-size:15.5px;margin:6px 0 18px;max-width:76ch}
+.note{background:#f1ece0;border-left:4px solid var(--gold-lt);border-radius:6px;padding:12px 15px;font-size:14px;color:#4a4335;margin:16px 0}
+
+/* alphabet */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;font-size:12.5px}
+.lg{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;font-weight:700;cursor:pointer;border:1px solid transparent}
+.lg .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+.lg.off{opacity:.4}
+.lg.friendly{background:var(--bg-friendly);color:var(--c-friendly)}.lg.false{background:var(--bg-false);color:var(--c-false)}
+.lg.new{background:var(--bg-new);color:var(--c-new)}.lg.sign{background:var(--bg-sign);color:var(--c-sign)}
+.alpha{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;margin:0 0 6px}
+.ltr{position:relative;border:1px solid var(--line);border-radius:10px;padding:10px 6px 8px;text-align:center;cursor:pointer;background:var(--card);transition:transform .08s,box-shadow .08s}
+.ltr:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(122,34,38,.12)}
+.ltr.sel{outline:3px solid var(--red);outline-offset:1px}
+.ltr .big{font-family:Georgia,serif;font-size:23px;line-height:1;color:var(--ink)}
+.ltr .rom{font-size:11.5px;color:var(--muted);margin-top:5px;font-weight:700;letter-spacing:.02em}
+.ltr .star{position:absolute;top:5px;right:7px;font-size:10px;color:var(--gold)}
+.ltr.friendly{background:var(--bg-friendly)}.ltr.false{background:var(--bg-false)}.ltr.new{background:var(--bg-new)}.ltr.sign{background:var(--bg-sign)}
+.ltr.hide{display:none}
+.det{background:var(--card);border:2px solid var(--red);border-radius:12px;padding:18px 20px;margin:12px 0 4px;display:flex;gap:20px;align-items:center}
+.det .glyph{font-family:Georgia,serif;font-size:52px;color:var(--red-dk);line-height:1;min-width:78px;text-align:center}
+.det .body h3{margin:0 0 3px;font-size:17px;font-family:Georgia,serif;color:var(--ink)}
+.det .body .snd{font-size:14.5px;color:#33302c;margin:0 0 6px}
+.det .body .ex{font-size:13.5px;color:var(--muted)}
+.det .body .ex b{color:var(--red);font-weight:700}
+.starnote{font-size:12.5px;color:var(--muted);margin:8px 2px 0}
+
+/* generic content cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:8px 0 4px}
+@media(max-width:720px){.cards{grid-template-columns:1fr}}
+.rule{background:var(--card);border:1px solid var(--line);border-radius:12px;border-left:4px solid var(--gold);padding:16px 18px}
+.rule h3{font-family:Georgia,serif;font-size:16.5px;margin:0 0 6px;color:var(--red-dk)}
+.rule h3 .num{color:var(--gold);font-weight:700}
+.rule p{margin:0;font-size:14px;color:#3a332c}
+.rule p .cy{color:var(--ink);font-weight:600}
+.blk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 14px}
+.blk h3{font-family:Georgia,serif;font-size:17px;margin:0 0 6px;color:var(--red-dk)}
+.blk p{margin:0 0 8px;font-size:14.5px;color:#37312b}.blk p:last-child{margin:0}
+.blk .cy{font-weight:600;color:var(--ink)}
+
+/* terms glossary */
+.termbar{margin:6px 0 12px}
+.termbar input{width:100%;max-width:420px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px}
+.terms{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:720px){.terms{grid-template-columns:1fr}}
+.term{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:11px 14px;font-size:14px}
+.term .cy{font-family:Georgia,serif;font-size:16px;color:var(--red-dk);font-weight:700}
+.term .tr{color:var(--gold);font-weight:700;font-size:12.5px;margin-left:6px}
+.term .df{color:#3a332c;display:block;margin-top:3px;font-size:13.5px}
+.term.hide{display:none}
+.foot-note{color:var(--muted);font-size:13px;margin:26px 0 30px}
+footer{background:var(--red-dk);color:#e7c9c2;font-size:12.5px;padding:22px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}footer a{color:#eccdaf}
+</style></head><body>
+<div class="topbar"><div class="wrap"><span class="brand"><a href="russian_history.html" style="color:#fff">Russian History</a></span>
+<span class="links"><a href="russian_history.html">Guide home</a><a href="russian_history_players.html">The Players</a><a href="russian_atlas.html">The Atlas</a><a href="russian_reading.html">The Reading</a></span></div></div>
+
+<div class="hero"><div class="wrap">
+<p class="kick">A Reader's Primer</p>
+<h1>The Russian Language</h1>
+<p>The Cyrillic alphabet, pronunciation, names, and just enough grammar to stop stumbling over the histories. Not a course — the minimum to read with confidence.</p>
+</div></div>
+
+<div class="wrap">
+  <p class="lead">This is not a language course. It's the minimum needed to know that <span style="font-family:Georgia,serif">Хрущёв</span> is "Khrush-CHÓV," why the same man is Trotsky, Trotskii, and Trockij in three different books, and why every Russian in a novel seems to have three names. Stress is marked here with an acute accent (á) for guidance; real Russian text never marks it.</p>
+
+  <h2 class="sec">The Cyrillic alphabet — 33 letters</h2>
+  <p class="lead">Tap any letter. Six of them — the Latin lookalikes that sound nothing like they look (★) — cause most misreadings; learn those first.</p>
+  <div class="legend" id="legend">
+    <span class="lg friendly" data-c="friendly"><span class="sw" style="background:var(--c-friendly)"></span>Look familiar</span>
+    <span class="lg false" data-c="false"><span class="sw" style="background:var(--c-false)"></span>False friends ★</span>
+    <span class="lg new" data-c="new"><span class="sw" style="background:var(--c-new)"></span>New letters</span>
+    <span class="lg sign" data-c="sign"><span class="sw" style="background:var(--c-sign)"></span>Signs &amp; special</span>
+  </div>
+  <div class="det" id="det"></div>
+  <div class="alpha" id="alpha"></div>
+  <p class="starnote">★ = a false friend worth memorizing first: <b>Р В Н С У Х</b> read as <b>r v n s u kh</b>, not p-b-h-c-y-x.</p>
+
+  <h2 class="sec">Pronunciation — the five rules that matter</h2>
+  <div class="cards">
+    <div class="rule"><h3><span class="num">1.</span> Stress is unmarked — and decisive</h3><p>Russian has no rule for which syllable is stressed, and print gives no clue. Getting it wrong is the most common error: it's Mask-VÁ, Ne-VÁ, Ka-LÝ-ma, Sta-LÍN, Le-NÍN, Pu-TÍN, Do-sto-YÉV-sky, Ras-PÚ-tin.</p></div>
+    <div class="rule"><h3><span class="num">2.</span> Unstressed "о" becomes "ah" (<em>akanye</em>)</h3><p>Written <span class="cy">Москва</span> is said "Mask-VÁ," not "Mosk-va"; <span class="cy">хорошо</span> ("good") is "kha-ra-SHÓ." It's why Russian sounds far less "o"-heavy than it looks.</p></div>
+    <div class="rule"><h3><span class="num">3.</span> Final consonants devoice</h3><p>A final <em>b</em> sounds like <em>p</em>, <em>v</em> like <em>f</em>, <em>d</em> like <em>t</em>, <em>g</em> like <em>k</em>. So <span class="cy">Смирнов</span> is "Smir-NÓFF" — hence the vodka — and <span class="cy">Романов</span> ends in an <em>f</em>.</p></div>
+    <div class="rule"><h3><span class="num">4.</span> Soft consonants add a "y"</h3><p>The soft sign (ь) and the vowels е, ё, и, ю, я palatalize the consonant before them. <span class="cy">Нет</span> ("no") is closer to "nyet" than "net" — exactly how English spells it.</p></div>
+    <div class="rule"><h3><span class="num">5.</span> "Г" can sound like "v"</h3><p>In the genitive/adjective ending <span class="cy">-ого / -его</span>, <em>г</em> is pronounced <em>v</em>: <span class="cy">его</span> ("his") is "ye-VÓ." A quirk, but it explains some transliteration oddities.</p></div>
+    <div class="rule"><h3>Why "ё" hides</h3><p>Printed Russian usually drops the dots on <span class="cy">ё</span> and writes plain <span class="cy">е</span> — which is why <span class="cy">Хрущёв</span> is spelled Khrushchev but said "Khrush-CHÓV," and <span class="cy">Потёмкин</span> is "Pa-TYOM-kin," not "Po-TEM-kin."</p></div>
+  </div>
+
+  <h2 class="sec">Names — the three-part system</h2>
+  <p class="lead">Every Russian has a given name, a patronymic, and a surname: <span style="font-family:Georgia,serif">Иван Иванович Иванов</span> — Ivan Ivanovich Ivanov. Three reasons a single character can look like three people:</p>
+  <div class="cards">
+    <div class="blk"><h3>The patronymic — "son/daughter of"</h3><p>Built from the father's first name: <span class="cy">-ович/-евич</span> for a son, <span class="cy">-овна/-евна</span> for a daughter. Lenin was <b>Vladimir Ilyich</b> — son of Ilya; Stalin's daughter was <b>Svetlana Iosifovna</b> — daughter of Iosif.</p><p>Given name + patronymic together is the respectful form — the equivalent of "Mr." — which is why Tolstoy's characters are forever addressed by two names. Read it as deference, not fussiness.</p></div>
+    <div class="blk"><h3>Surnames take a gender ending</h3><p>A man is <b>Karenin, Romanov, Tolstoy</b>; his wife or daughter is <b>Karenina, Romanova, Tolstaya</b>. Anna Karenina's husband is Alexei <b>Karenin</b> — not a different family. Likewise Akhmatova, Tsvetaeva, Krupskaya.</p></div>
+    <div class="blk"><h3>Diminutives run wild</h3><p>One name yields many: Ivan → Vanya, Vanechka; Alexander → Sasha, Sanya, Shura; Maria → Masha, Manya, Mashenka; Dmitri → Mitya. When a name suddenly changes in a nineteenth-century novel, suspect a diminutive before a new character.</p></div>
+    <div class="blk"><h3>Why one name is spelled five ways</h3><p>Three systems compete and books mix them. <b>Popular</b> (trade histories): Trotsky, Gorky, Yeltsin. <b>Library of Congress</b> (academic): Trotskii, Gor'kii, El'tsin. <b>Scientific</b> (linguistics): Trockij. And Ukrainian vs. Russian forms now carry weight: <b>Kyiv</b> vs. Kiev, <b>Kharkiv</b> vs. Kharkov, <b>Lviv</b> vs. Lvov.</p></div>
+  </div>
+
+  <h2 class="sec">Just enough grammar</h2>
+  <div class="cards">
+    <div class="rule"><h3>No articles</h3><p>Russian has no <em>a</em> or <em>the</em>; context supplies them. It's why translated Russian can feel bare — and why native speakers drop articles in English.</p></div>
+    <div class="rule"><h3>Six cases — so place names shift shape</h3><p>Nouns change endings by role. <span class="cy">Москва</span> becomes <span class="cy">Москвы</span> ("of Moscow"), <span class="cy">в Москве</span> ("in Moscow"); <span class="cy">Россия → России</span>. The variant endings in quoted titles aren't inconsistency.</p></div>
+    <div class="rule"><h3>Three genders</h3><p>Masculine, feminine, neuter — governing adjective and past-tense endings. Hence <span class="cy">Правда</span> ("Truth," feminine) and the gendered surnames above.</p></div>
+    <div class="rule"><h3>Aspect, not tense, is the hard part</h3><p>Verbs come in pairs — imperfective (ongoing/repeated) and perfective (completed). English uses tense; Russian uses two different verbs. Largely invisible in translation, and the biggest hurdle for English speakers.</p></div>
+    <div class="rule"><h3>Word order is free</h3><p>Because the case endings carry the grammar, order is free to carry emphasis instead — one reason Russian poetry resists translation, and why <em>Eugene Onegin</em> fights every English rendering.</p></div>
+  </div>
+
+  <h2 class="sec">Terms you'll meet in the histories</h2>
+  <p class="lead">The words that recur across the reading — many of them acronyms or roots worth recognizing on sight.</p>
+  <div class="termbar"><input id="tq" type="text" placeholder="Search a term — soviet, gulag, mir…" autocomplete="off"></div>
+  <div class="terms" id="terms"></div>
+
+  <p class="foot-note">Adapted from <em>Russia &amp; Siberia — A Reader's Companion</em>, Part VI. Part of the <a href="russian_history.html">Russian History</a> guide.</p>
+</div>
+
+<footer><div class="wrap"><span>The Russian Language · a <a href="https://12toknow.ai">12toKNOW</a> guide</span><span>© 2026 DeWayne Searcy</span></div></footer>
+
+<script>
+// [upper, lower, rom, category, sound, exampleCyr, exampleRom, star]
+const A=[
+["А","а","a","friendly","“ah” as in father.","Москва","Mask-VÁ (Moscow)",0],
+["Б","б","b","new","b as in boy.","большевик","bolshevik",0],
+["В","в","v","false","v — not b.","Волга","VOL-ga",1],
+["Г","г","g","new","hard g as in go; but pronounced “v” in the endings -ого/-его.","Гулаг","GU-lag",0],
+["Д","д","d","new","d.","Дума","Duma (assembly)",0],
+["Е","е","ye","false","“yeh” — not “ee.” Softens the consonant before it.","Ленин","Lenin",0],
+["Ё","ё","yo","new","“yo,” always stressed. Usually printed as plain е.","Хрущёв","Khrush-CHÓV",0],
+["Ж","ж","zh","new","the zh of measure / French je.","Жуков","Zhukov",0],
+["З","з","z","new","z.","земля","zemlya (land)",0],
+["И","и","i","new","“ee.”","мир","mir (peace/world)",0],
+["Й","й","y","new","a short y-glide, as in boy. Ends many names.","Толстой","Tolstoy",0],
+["К","к","k","friendly","k.","Кремль","Kremlin",0],
+["Л","л","l","new","l.","Ленин","Lenin",0],
+["М","м","m","friendly","m.","Москва","Moskva",0],
+["Н","н","n","false","n — not h.","Нева","Ne-VÁ (the Neva)",1],
+["О","о","o","friendly","“oh” when stressed; slides to “ah” when unstressed.","Москва","Mask-VÁ",0],
+["П","п","p","new","p.","Правда","Pravda (truth)",0],
+["Р","р","r","false","a rolled r — not p.","Россия","Ra-SSÍ-ya (Russia)",1],
+["С","с","s","false","s — not k.","СССР","Es-Es-Es-Er (USSR)",1],
+["Т","т","t","friendly","t.","Троцкий","Trotsky",0],
+["У","у","u","false","“oo” — not y.","Урал","oo-RÁL (the Urals)",1],
+["Ф","ф","f","new","f.","Фёдор","Feodor",0],
+["Х","х","kh","false","the rasping kh of Scottish loch / German Bach — not x.","Астрахань","Astrakhan",1],
+["Ц","ц","ts","new","ts, as at the end of cats.","Царь","Tsar",0],
+["Ч","ч","ch","new","ch as in church. Ends the -ovich patronymics.","Чехов","Chekhov",0],
+["Ш","ш","sh","new","sh.","Шостакович","Shostakovich",0],
+["Щ","щ","shch","new","a longer, softer shch — Khrushchev's ending.","щи","shchi (cabbage soup)",0],
+["Ъ","ъ","″","sign","the hard sign: silent separator, keeping the consonant hard. Abolished from most words in the 1918 reform.","подъезд","pod-YEZD",0],
+["Ы","ы","y","sign","a hard, back vowel with no English equivalent — try “ee” with the tongue pulled back.","Крым","Krym (Crimea)",0],
+["Ь","ь","′","sign","the soft sign: silent, but softens (palatalizes) the consonant before it. The apostrophe in Rus', oblast'.","Русь","Rus'",0],
+["Э","э","e","new","“eh” as in end — the plain vowel, without the y-glide of Е.","Эрмитаж","Hermitage",0],
+["Ю","ю","yu","new","“yoo.”","Юрий","Yuri",0],
+["Я","я","ya","new","“yah.”","Россия","Rossí-ya",0],
+];
+const TERMS=[
+["Правда","Pravda","“truth” — the Communist Party newspaper."],
+["Известия","Izvestiya","“news” — the government newspaper."],
+["Совет","soviet","“council” — the workers'/soldiers' councils that named the state."],
+["Дума","duma","“assembly,” from dumat', to think; the elected State Duma was the tsarist parliament."],
+["Царь","tsar","from Caesar. Царица (tsaritsa) the empress; Царевич (tsarevich) the heir."],
+["Государь","gosudar'","“sovereign”; государство (gosudarstvo) is “the state.”"],
+["Мир","mir","both “peace” and “world” — and the peasant commune. Tolstoy's Война и мир plays on it."],
+["Земля","zemlya","“land” — root of zemstvo (local council) and Zemsky Sobor."],
+["Кулак","kulak","literally “fist” — slang for a grasping rich peasant, a class marked for destruction."],
+["Раскол","raskol","“schism”; raskolniki are the Old Believers. Dostoevsky's Raskolnikov = “the split one.”"],
+["Гулаг","GULag","acronym: Glavnoe Upravlenie Lagerei — the Main Camp Administration."],
+["Чека","Cheka","the Extraordinary Commission — the first secret police; a chekist is its officer."],
+["Колхоз","kolkhoz","collective farm; совхоз (sovkhoz) is a state farm."],
+["Оттепель","ottepel'","“the Thaw” — Khrushchev's post-Stalin easing."],
+["Гласность","glasnost'","“openness” — Gorbachev's policy of candor."],
+["Перестройка","perestroika","“restructuring” — Gorbachev's economic and political reform."],
+["Родина","rodina","“motherland,” from the root for birth and kin — the word behind every wartime poster."],
+];
+
+const $=id=>document.getElementById(id);
+const esc=s=>(s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const CATNAME={friendly:"Looks familiar",false:"False friend — a Latin lookalike",new:"A new letter",sign:"Sign / special vowel"};
+const off={friendly:0,false:0,new:0,sign:0};
+let sel=17; // Р selected first (a memorable false friend)
+const alpha=$('alpha');
+function draw(){
+  alpha.innerHTML=A.map((l,i)=>{
+    const hidden=off[l[3]]?' hide':'';
+    return '<div class="ltr '+l[3]+(i===sel?' sel':'')+hidden+'" data-i="'+i+'">'
+      +(l[7]?'<span class="star">★</span>':'')
+      +'<div class="big">'+l[0]+'&#8201;'+l[1]+'</div><div class="rom">'+esc(l[2])+'</div></div>';
+  }).join('');
+}
+function detail(i){
+  const l=A[i];
+  $('det').innerHTML='<div class="glyph">'+l[0]+'&#8201;'+l[1]+'</div><div class="body">'
+    +'<h3>Romanized <b style="color:var(--red)">'+esc(l[2])+'</b> · '+CATNAME[l[3]]+(l[7]?' ★':'')+'</h3>'
+    +'<p class="snd">'+l[4]+'</p>'
+    +'<p class="ex">Example: <span style="font-family:Georgia,serif;font-size:15px">'+l[5]+'</span> — <b>'+esc(l[6])+'</b></p></div>';
+}
+alpha.addEventListener('click',e=>{const t=e.target.closest('.ltr');if(!t)return;sel=+t.dataset.i;draw();detail(sel);});
+$('legend').addEventListener('click',e=>{const g=e.target.closest('.lg');if(!g)return;const c=g.dataset.c;off[c]=!off[c];g.classList.toggle('off',!!off[c]);draw();});
+draw();detail(sel);
+
+// terms
+const terms=$('terms');
+function drawTerms(){
+  const q=$('tq').value.trim().toLowerCase();
+  terms.innerHTML=TERMS.map(t=>{
+    const hit=!q||(t[0]+' '+t[1]+' '+t[2]).toLowerCase().includes(q);
+    return '<div class="term'+(hit?'':' hide')+'"><span class="cy">'+t[0]+'</span><span class="tr">'+esc(t[1])+'</span><span class="df">'+t[2]+'</span></div>';
+  }).join('');
+}
+$('tq').addEventListener('input',drawTerms);drawTerms();
+</script>
+</body></html>
