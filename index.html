@@ -92,7 +92,8 @@
   .band .card .go{color:#ffcea8}
   .feat{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;align-items:stretch}
   @media(max-width:820px){.feat{grid-template-columns:1fr}}
-  .gb{background:#2b2b2b;border-radius:14px;padding:30px;display:flex;flex-direction:column;justify-content:center;border:1px solid #3a3a3a}
+  .gb{background:#2b2b2b;border-radius:14px;padding:30px;display:flex;flex-direction:column;justify-content:center;border:1px solid #3a3a3a;text-decoration:none;transition:transform .12s,box-shadow .12s,border-color .12s}
+  a.gb:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.28);border-color:var(--orange)}
   .gb .mark{font-family:Georgia,serif;font-size:38px;font-weight:400;color:#fff;line-height:1}
   .gb .mark b{color:var(--orange);font-weight:700}
   .gb .rule{height:4px;width:180px;background:var(--orange);border-radius:2px;margin:10px 0 14px}
@@ -229,13 +230,13 @@
 
       <!-- golfBOUND feature -->
       <div class="feat" style="margin-bottom:22px">
-        <div class="gb">
+        <a class="gb" href="https://golfbound.ai">
           <div class="mark">golf<b>BOUND</b></div>
           <div class="rule"></div>
           <p class="tl">Lose the weight · Find your swing</p>
           <p>A midlife health-and-golf transformation, documented honestly from Day Zero — the body, the data, the swing. A docuseries and podcast, in production.</p>
-          <span class="soonpill">Launching at golfbound.ai</span>
-        </div>
+          <span class="soonpill">Visit golfbound.ai →</span>
+        </a>
         <div class="grid" style="grid-template-columns:1fr;gap:18px">
           <a class="card" href="searcy_family_history.html">
             <p class="kicker">Family History · Searcy’s Law</p>
