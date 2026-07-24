@@ -700,6 +700,41 @@
         @media (max-width: 600px) {
             .lecture-photos .pair { grid-template-columns: 1fr; }
         }
+
+        .video-wrap {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .video-wrap h2 {
+            color: #2d3748;
+            font-size: 1.6em;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+        .video-wrap .vsub {
+            text-align: center;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+        .video-frame {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-frame iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -715,6 +750,12 @@
                 <strong>Invited Speaker</strong> &middot; MNGT 5560/6560, taught by Joseph Fetsch<br>
                 Harbert College of Business, Auburn University &middot; April 20, 2026
             </div>
+        </div>
+
+        <div class="video-wrap">
+            <h2>🎬 The Opening</h2>
+            <p class="vsub">An AI-generated intro — cloned voice (ElevenLabs) + cloned avatar (HeyGen). The presentation introducing itself.</p>
+            <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/qCrkLcAPJzI" title="The Non-Linear Path — Opening" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
         </div>
 
         <div class="lecture-photos">
@@ -1455,6 +1496,12 @@
                 <br><br>
                 <span class="war-eagle" style="font-size: 1.5em;">War Eagle.</span>
             </div>
+        </div>
+
+        <div class="video-wrap">
+            <h2>🎬 The Closing</h2>
+            <p class="vsub">The AI-generated send-off — same cloned voice and avatar, start to finish.</p>
+            <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Rdznvz1ycUk" title="The Non-Linear Path — Closing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
         </div>
     </div>
 
