@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contribute — The Searcy Family History</title>
+<!--
+  Searcy Family History — Contribute page · v2 (Google Form embed).
+
+  >>> SETUP (once): <<<
+  1. In Google Forms (signed in as dewayne.searcy@gmail.com), create a form with these fields:
+       • Your name .......................... Short answer   (Required)
+       • Your email ......................... Short answer   (Required)   [or turn on "Collect email addresses"]
+       • Your connection to the family ...... Short answer   (Optional)
+       • What are you sharing? ............... Multiple choice (Required):
+             A name or person / A story or memory / A photo or document / A correction
+       • Who or which family does it relate to?  Short answer (Optional)
+       • Tell me about it ................... Paragraph      (Required)
+       • Attach a photo or document ......... File upload    (Optional)   [submitter must be signed into Google; files land in your Drive]
+     In Settings, set responses to go to a Google Sheet.
+  2. Click "Send" → the < > (embed HTML) tab → copy the src URL (looks like
+       https://docs.google.com/forms/d/e/XXXXXXXX/viewform?embedded=true ).
+  3. Paste that URL into BOTH places marked  PASTE_GOOGLE_FORM_EMBED_URL  below
+     (the iframe src, and the fallback button href — for the button, drop the "?embedded=true").
+-->
+<style>
+  :root{--ink:#2b2620;--parch:#F7F2E6;--card:#FFFDF8;--green:#14532b;--gold:#A87F26;--gold-lt:#C8A44D;--muted:#6d6455;--line:#e7ddc8;}
+  *{box-sizing:border-box}body{margin:0;background:var(--parch);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  a{color:var(--green)}.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  .topbar{background:var(--green);color:#f3ede0}.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;font-size:13.5px}
+  .topbar .brand{font-family:Georgia,serif;color:#fff}.topbar a{color:#cfe0d5}
+  .hero{background:linear-gradient(180deg,var(--green),#0f3f21);color:#f5efe2;text-align:center;padding:44px 0 38px;border-bottom:3px solid var(--gold)}
+  .hero h1{font-family:Georgia,serif;font-size:34px;margin:0 0 8px}.hero p{color:#dce7de;margin:0 auto;max-width:56ch;font-size:16px}
+  .intro{margin:34px 0 10px;font-size:16px}
+  .privacy{background:#f1ece0;border-left:4px solid var(--gold-lt);border-radius:6px;padding:12px 14px;font-size:13.5px;color:#4a4335;margin:16px 0 22px}
+  .formbox{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:0 0 20px}
+  iframe{width:100%;min-height:1250px;border:0;border-radius:8px;background:#fff}
+  .fallback{text-align:center;margin:6px 0 44px}
+  .btn{display:inline-block;background:var(--gold);color:#2a2210;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none}
+  .btn:hover{background:var(--gold-lt)}
+  .fallback p{color:var(--muted);font-size:13px;margin:10px 0 0}
+  footer{background:var(--green);color:#cfe0d5;font-size:12.5px;padding:20px 0}footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}footer a{color:#e8dcbf}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap"><span class="brand">The Searcy Family</span><span><a href="searcy_family_history.html">← Family history home</a></span></div></div>
+
+<div class="hero"><div class="wrap">
+  <h1>Add to the Family Record</h1>
+  <p>Have a name, a story, an old photo, a document — or a correction? Send it in. Every submission is reviewed, and the good ones become part of the tree.</p>
+</div></div>
+
+<div class="wrap">
+  <p class="intro">This is a living record, and the best of it comes from family. Share what you have and I’ll fold verified pieces into the history — with a source note, the way everything here is done.</p>
+  <div class="privacy"><strong>A note on privacy:</strong> nothing is published automatically. Everything is reviewed first, living relatives are always kept private, and sensitive documents are never posted publicly — only the facts and the source note make it onto the site.</div>
+
+  <div class="formbox">
+    <!-- Paste your Google Form embed URL below (the ?embedded=true version). -->
+    <iframe src="PASTE_GOOGLE_FORM_EMBED_URL" loading="lazy">Loading the form…</iframe>
+  </div>
+
+  <div class="fallback">
+    <!-- Fallback link: same Google Form URL, without ?embedded=true -->
+    <a class="btn" href="PASTE_GOOGLE_FORM_EMBED_URL" target="_blank" rel="noopener">Open the form in a new tab ↗</a>
+    <p>The form doesn’t appear? Open it directly — file uploads need you to be signed into a Google account.</p>
+    <p>Rather not sign in, or have a lot to send? Just email it straight to me at <a href="mailto:dewayne.searcy@gmail.com?subject=Family%20history%20submission">dewayne.searcy@gmail.com</a>.</p>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <span>The Searcy Family History · a <a href="https://12toknow.ai">12toKNOW</a> project</span>
+  <span>© 2026 DeWayne Searcy, PhD</span>
+</div></footer>
+
+</body>
+</html>

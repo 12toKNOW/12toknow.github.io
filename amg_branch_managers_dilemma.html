@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMG · Branch Manager's Dilemma — Rental Fleet Contribution Margin</title>
+<!--
+  AMG teaching module · v1 prototype (Claude, 2026-07)
+  Agile Machinery Group — a 12toKNOW teaching property.
+  Self-contained (system fonts, no CDN). Fictional parameters only — NO Cowin data.
+  Scenario 1 of a planned set: "The Discounted Telehandler."
+-->
+<style>
+  :root{
+    --green:#135339;--green-dk:#0D3526;--orange:#E87722;--orange-dk:#C15E12;
+    --cream:#FAF8F2;--card:#fff;--ink:#1c211e;--muted:#5f6b64;--line:#e2e6e1;
+    --good:#1B7F3B;--warn:#B5651D;--bad:#B23A2E;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  header{background:var(--green-dk);color:#fff;padding:8px 0}
+  .hbar{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .amg{font-family:Georgia,serif;font-size:20px;color:#fff}.amg b{color:var(--orange)}
+  .hbar .by{font-size:12px;color:#9fb5a9;letter-spacing:.04em}
+  .hero{background:linear-gradient(160deg,var(--green),var(--green-dk));color:#fff;padding:34px 0 30px}
+  .hero .mod{color:var(--orange);font-weight:700;letter-spacing:.13em;text-transform:uppercase;font-size:12px;margin:0 0 8px}
+  .hero h1{font-family:Georgia,serif;font-size:31px;margin:0 0 10px;line-height:1.15}
+  .hero p{color:#d7e4dc;font-size:16px;margin:0;max-width:74ch}
+
+  .setup{background:#fff;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:10px;padding:20px 22px;margin:26px 0}
+  .setup h2{font-family:Georgia,serif;color:var(--green-dk);margin:0 0 8px;font-size:20px}
+  .setup p{margin:0 0 10px;font-size:15px}
+  .setup .q{font-weight:700;color:var(--green-dk)}
+
+  .lab{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:8px 0 8px}
+  @media(max-width:820px){.lab{grid-template-columns:1fr}}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+  .panel h3{margin:0 0 4px;font-family:Georgia,serif;color:var(--green-dk);font-size:17px}
+  .panel .sub{color:var(--muted);font-size:13px;margin:0 0 16px}
+  .ctl{margin:0 0 15px}
+  .ctl label{display:flex;justify-content:space-between;font-size:13.5px;font-weight:600;margin-bottom:5px}
+  .ctl label .val{color:var(--orange-dk);font-variant-numeric:tabular-nums}
+  input[type=range]{width:100%;accent-color:var(--green)}
+  .toggle{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;margin:12px 0;cursor:pointer}
+  .toggle input{width:18px;height:18px;accent-color:var(--orange)}
+  .toggle small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+
+  .out{display:flex;flex-direction:column;gap:12px}
+  .metric{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed var(--line);padding-bottom:9px}
+  .metric .k{font-size:13.5px;color:var(--muted)}
+  .metric .v{font-family:Georgia,serif;font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+  .verdict{border-radius:10px;padding:16px 18px;margin-top:6px;font-size:14.5px}
+  .verdict.good{background:#eaf5ee;border:1px solid #bfe0cb}
+  .verdict.warn{background:#fbf1e3;border:1px solid #ecd6b4}
+  .verdict.bad{background:#f9e9e7;border:1px solid #e6c3bd}
+  .verdict b{display:block;font-size:16px;margin-bottom:4px}
+  .pos{color:var(--good)}.neg{color:var(--bad)}.neu{color:var(--warn)}
+
+  section.block{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin:22px 0}
+  section.block h3{font-family:Georgia,serif;color:var(--green-dk);margin:0 0 10px;font-size:19px}
+  .cfo{border-left:4px solid var(--green);padding:6px 0 6px 16px;margin:14px 0}
+  .cfo p{margin:0 0 4px;font-style:italic;color:#2c3a33}
+  .cfo .who{font-style:normal;font-weight:700;color:var(--green);font-size:12.5px;letter-spacing:.03em;text-transform:uppercase}
+  ul.cfoq{margin:6px 0 0;padding-left:20px}ul.cfoq li{margin:8px 0;font-size:14.5px}
+  textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:8px;padding:12px;font-family:inherit;font-size:14px;resize:vertical}
+  details{margin-top:12px;border:1px solid var(--line);border-radius:8px;padding:2px 14px;background:#f7faf8}
+  details summary{cursor:pointer;font-weight:700;color:var(--green-dk);padding:12px 0}
+  details p{font-size:14.5px}
+  .pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:#eef3ef;color:var(--green);margin-left:6px}
+  footer{background:var(--green-dk);color:#b9c9c0;font-size:12.5px;padding:20px 0;margin-top:30px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  .note{font-size:12.5px;color:var(--muted);margin-top:10px}
+</style>
+</head>
+<body>
+
+<header><div class="wrap hbar">
+  <div class="amg">Agile Machinery <b>Group</b></div>
+  <div class="by">A 12toKNOW teaching module</div>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <p class="mod">Managerial Accounting · Module 1 · Scenario 1</p>
+  <h1>Branch Manager's Dilemma: The Discounted Telehandler</h1>
+  <p>Relevant vs. sunk cost, contribution margin, and capacity — one decision that quietly teaches a third of a managerial syllabus. Move the sliders, watch the margin, then defend your call.</p>
+</div></div>
+
+<div class="wrap">
+
+  <div class="setup">
+    <h2>The setup</h2>
+    <p>You're the newly-appointed manager of AMG's <strong>Phoenix branch</strong>. You've inherited a rental fleet, and your bonus is tied to <strong>branch contribution margin</strong>. This morning, a decision lands in your inbox:</p>
+    <p>A repeat customer wants a <strong>30-day rental on a telehandler at 20% below book rate</strong>. Utilization in your telehandler category is running at <strong>58%</strong> — you have idle units. Your sales rep wants to say yes. Your gut says "we don't discount."</p>
+    <p class="q">Take the deal, or hold the line? Use the panel to find out what the numbers actually say — then write the memo.</p>
+  </div>
+
+  <div class="lab">
+    <!-- INPUTS -->
+    <div class="panel">
+      <h3>Your assumptions</h3>
+      <p class="sub">The rep's numbers are pre-loaded. Change anything you'd challenge.</p>
+
+      <div class="ctl">
+        <label>Book rate <span class="val" id="v_rate">$3,200 / mo</span></label>
+        <input type="range" id="rate" min="2000" max="4500" step="50" value="3200">
+      </div>
+      <div class="ctl">
+        <label>Discount offered <span class="val" id="v_disc">20%</span></label>
+        <input type="range" id="disc" min="0" max="40" step="1" value="20">
+      </div>
+      <div class="ctl">
+        <label>Variable operating cost while on rent <span class="val" id="v_var">$320 / mo</span></label>
+        <input type="range" id="varc" min="100" max="900" step="10" value="320">
+      </div>
+      <div class="ctl">
+        <label>Ownership cost — depreciation + interest + insurance <span class="val" id="v_fix">$1,500 / mo</span></label>
+        <input type="range" id="fixc" min="800" max="2400" step="50" value="1500">
+      </div>
+      <div class="ctl">
+        <label>Category utilization (before this deal) <span class="val" id="v_util">58%</span></label>
+        <input type="range" id="util" min="30" max="100" step="1" value="58">
+      </div>
+
+      <label class="toggle"><input type="checkbox" id="displace">
+        <span>Taking it displaces a full-rate rental
+          <small>The unit would otherwise have gone out at book rate to someone else.</small></span></label>
+      <label class="toggle"><input type="checkbox" id="erode">
+        <span>The discount becomes this customer's new expected rate
+          <small>They'll want 20% off next time too — model the rate as permanently lower.</small></span></label>
+    </div>
+
+    <!-- OUTPUTS -->
+    <div class="panel">
+      <h3>What it does to the branch</h3>
+      <p class="sub">Contribution margin = rental revenue − variable operating cost. Live.</p>
+      <div class="out">
+        <div class="metric"><span class="k">Deal rate (after discount)</span><span class="v" id="o_deal">$2,560</span></div>
+        <div class="metric"><span class="k">Contribution margin — the deal</span><span class="v" id="o_cm">$2,240</span></div>
+        <div class="metric"><span class="k">CM margin %</span><span class="v" id="o_cmp">88%</span></div>
+        <div class="metric"><span class="k">Utilization after the deal</span><span class="v" id="o_util2">62%</span></div>
+        <div class="metric"><span class="k">Net effect vs. holding the line</span><span class="v" id="o_net">+$2,240</span></div>
+      </div>
+      <div class="verdict good" id="verdict">
+        <b id="v_title">Take it.</b>
+        <span id="v_body">An idle unit earns $0. This deal covers its variable cost more than five times over — every dollar above operating cost drops to branch contribution margin.</span>
+      </div>
+      <p class="note">Ownership cost is shown but <em>excluded</em> from the deal decision on purpose — see “the lesson” below.</p>
+    </div>
+  </div>
+
+  <!-- CFO -->
+  <section class="block">
+    <h3>The CFO pushes back <span class="pill">Defend your call</span></h3>
+    <div class="cfo">
+      <p class="who">AMG · Regional CFO</p>
+      <p>"Numbers are easy to make say yes. Before I sign off, answer these — in your memo, not in your head."</p>
+    </div>
+    <ul class="cfoq">
+      <li>You assumed utilization holds after the discount. What happens to branch CM if word spreads and your <em>average</em> realized rate on this category slips 20%? Toggle "new expected rate" and look.</li>
+      <li>Is the <strong>$1,500 ownership cost</strong> relevant to <em>this</em> decision? Why or why not? (What would change if the unit were <em>not</em> already sitting in your yard?)</li>
+      <li>What would have to be true for "hold the line" to be the right answer? Find the utilization or displacement condition that flips it, and name it.</li>
+      <li>Your bonus is on <em>branch</em> CM. Is there a decision that's right for the branch but wrong for AMG overall? Where could they diverge here?</li>
+    </ul>
+    <p style="font-weight:600;margin:18px 0 6px">Your decision memo</p>
+    <textarea id="memo" placeholder="State your decision, the contribution-margin math behind it, the one assumption you're least sure of, and the condition under which you'd decide differently. 150–250 words."></textarea>
+    <p class="note">In a live course this memo is where the grade lives — the math and the reasoning both count. (This prototype keeps your text on-page only; nothing is sent anywhere.)</p>
+  </section>
+
+  <!-- THE LESSON -->
+  <section class="block">
+    <h3>The lesson underneath</h3>
+    <p style="font-size:15px;margin-top:0">This one scenario is a doorway to a surprising amount of the managerial syllabus:</p>
+    <details><summary>Relevant vs. sunk cost — the core</summary>
+      <p>The unit is already in your yard. Its depreciation, interest, and insurance are committed whether it rents or not — for <em>this</em> decision they're <strong>sunk</strong>. The only costs that change if you say yes are the <strong>variable</strong> ones (fuel, wear, transport). So the right comparison is deal rate vs. variable cost — not vs. "fully-loaded" cost. Judging a discount against fully-loaded cost is the single most common way managers leave contribution on the table.</p></details>
+    <details><summary>Contribution margin &amp; capacity</summary>
+      <p>With utilization at 58%, you have spare capacity. Idle capacity earns nothing. Any rental whose rate clears variable cost <em>adds</em> to contribution margin — the discount is not a loss, it's incremental margin you'd otherwise forfeit. The logic flips the moment you're near 100% utilization, because then a discounted rental displaces a full-rate one.</p></details>
+    <details><summary>Where it stops being simple (the toggles)</summary>
+      <p><strong>Displacement:</strong> if the unit would have rented at book rate anyway, the relevant cost of the deal now includes the <em>opportunity cost</em> — the full-rate margin you gave up. <strong>Rate erosion:</strong> a one-time discount is a contribution win; a discount that resets the customer's expectation is a permanent haircut to your realized rate. Good managerial accounting is knowing which world you're in.</p></details>
+    <details><summary>What this scaffolds into</summary>
+      <p>Vary the scenario and the same fleet teaches equipment-replacement (repair-vs-replace on an aging unit), CVP and breakeven utilization on a fleet-expansion decision, branch-to-branch transfer pricing, and rate/volume/mix variance analysis. Same data model, a dozen decisions — and eventually one branch inside a multi-period AMG firm simulation.</p></details>
+    <p class="note">Parameters here are illustrative and fictional. In the full build they’re calibrated from the anonymized AMG dataset, so the relationships students discover (utilization elasticity, repair-cost curves with age, category margin differences) mirror real dealer behavior — with no proprietary data exposed.</p>
+  </section>
+
+</div>
+
+<footer><div class="wrap">
+  <span>Agile Machinery Group™ · A 12toKNOW teaching module · Prototype v1</span>
+  <span>© 2026 DeWayne Searcy, PhD</span>
+</div></footer>
+
+<script>
+  const $=id=>document.getElementById(id);
+  const money=n=>'$'+Math.round(n).toLocaleString();
+  const R=$('rate'),D=$('disc'),V=$('varc'),F=$('fixc'),U=$('util'),DIS=$('displace'),ER=$('erode');
+  function calc(){
+    const rate=+R.value, disc=+D.value/100, varc=+V.value, fixc=+F.value, util=+U.value;
+    $('v_rate').textContent=money(rate)+' / mo';
+    $('v_disc').textContent=(+D.value)+'%';
+    $('v_var').textContent=money(varc)+' / mo';
+    $('v_fix').textContent=money(fixc)+' / mo';
+    $('v_util').textContent=util+'%';
+
+    const dealRate=rate*(1-disc);
+    const cm=dealRate-varc;                     // contribution margin of the deal
+    const cmp=dealRate>0?(cm/dealRate*100):0;
+    // one incremental unit-month lifts a ~40-unit category by ~4 pts (illustrative)
+    const util2=Math.min(100, util+4);
+
+    // net effect vs holding the line (idle = $0)
+    let net=cm, erosion=0, oppty=0;
+    if(DIS.checked){ oppty=(rate-varc); net=cm-oppty; }        // lost full-rate CM
+    if(ER.checked){ erosion=(rate-dealRate); net=cm-erosion*3; } // ~3 future rentals at the lower rate (illustrative)
+    if(DIS.checked && ER.checked){ net=cm-oppty-erosion*3; }
+
+    $('o_deal').textContent=money(dealRate);
+    $('o_cm').textContent=money(cm);
+    $('o_cmp').textContent=Math.round(cmp)+'%';
+    $('o_util2').textContent=util2+'%';
+    $('o_net').textContent=(net>=0?'+':'−')+money(Math.abs(net));
+    $('o_net').className='v '+(net>0?'pos':net<0?'neg':'neu');
+
+    const box=$('verdict'),t=$('v_title'),b=$('v_body');
+    if(cm<=0){
+      box.className='verdict bad'; t.textContent='Walk away.';
+      b.innerHTML='The deal rate no longer covers even the <em>variable</em> cost of putting the unit to work — every day it rents, the branch loses money. Utilization can’t fix a rate below variable cost.';
+    } else if(ER.checked && net<0){
+      box.className='verdict bad'; t.textContent='Hold the line.';
+      b.innerHTML='As a one-off this deal adds margin — but if it resets this customer’s expected rate, the permanent haircut to your realized rate outweighs the one-time gain. Protect the rate.';
+    } else if(DIS.checked && net<=0){
+      box.className='verdict warn'; t.textContent='Probably hold.';
+      b.innerHTML='At this utilization the unit would have rented at <strong>book rate</strong> anyway. Discounting it forfeits full-rate margin — the deal’s “gain” is really an opportunity-cost loss. Save the discount for genuinely idle iron.';
+    } else if(net<cm*0.5){
+      box.className='verdict warn'; t.textContent='Take it — carefully.';
+      b.innerHTML='Still margin-positive, but the conditions are eating into it. Name the risk in your memo and put a fence around the discount (this unit, this customer, this once).';
+    } else {
+      box.className='verdict good'; t.textContent='Take it.';
+      b.innerHTML='An idle unit earns $0. This deal clears its variable cost with room to spare — every dollar above operating cost drops straight to branch contribution margin.';
+    }
+  }
+  [R,D,V,F,U].forEach(el=>el.addEventListener('input',calc));
+  [DIS,ER].forEach(el=>el.addEventListener('change',calc));
+  calc();
+</script>
+</body>
+</html>
