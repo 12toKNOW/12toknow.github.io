@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Russian History — A 12toKNOW Guide</title>
+<meta name="description" content="A thousand years of Russian history — an interactive guide. The story in eras, a who's-who of the players, and an annotated reading list. By DeWayne Searcy.">
+<!-- Russian History · Guide landing hub · v1 (Claude). Self-contained. A 12toKNOW guide. -->
+<style>
+:root{--ink:#241f1d;--parch:#F6F1E7;--card:#FFFDF8;--red:#7a2226;--red-dk:#571519;--gold:#AE8320;--gold-lt:#CBA24A;--muted:#6a6155;--line:#e6dcc7;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--parch);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+a{color:var(--red);text-decoration:none}.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+.topbar{background:var(--red-dk);color:#f3e9df}.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;font-size:13.5px}
+.topbar .brand{font-family:Georgia,serif;color:#fff}.topbar a{color:#e7c9c2}.topbar .links a{margin-left:16px}
+@media(max-width:600px){.topbar .links a{margin-left:11px;font-size:12.5px}}
+.hero{background:linear-gradient(180deg,var(--red),var(--red-dk));color:#f6ece3;text-align:center;padding:56px 0 46px;border-bottom:3px solid var(--gold)}
+.hero .kick{color:var(--gold-lt);letter-spacing:.24em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+.hero h1{font-family:Georgia,serif;font-size:44px;margin:0 0 12px;line-height:1.08}
+.hero p{color:#ecd9d0;max-width:66ch;margin:0 auto;font-size:16.5px}
+@media(max-width:640px){.hero h1{font-size:33px}}
+h2.sec{font-family:Georgia,serif;color:var(--red);font-size:25px;border-bottom:2px solid var(--gold-lt);padding-bottom:9px;margin:44px 0 6px}
+.hint{color:var(--muted);font-size:14px;margin:0 0 20px}
+
+/* timeline */
+.tl{display:grid;grid-template-columns:270px 1fr;gap:22px;margin:8px 0 10px}
+@media(max-width:820px){.tl{grid-template-columns:1fr}}
+.rail{display:flex;flex-direction:column;gap:0;border-left:3px solid var(--gold-lt);padding-left:0;position:relative}
+.stop{position:relative;padding:12px 12px 12px 26px;cursor:pointer;border-radius:0 8px 8px 0;transition:background .1s}
+.stop:hover{background:#efe7d6}
+.stop.on{background:var(--red);}
+.stop.on .nm,.stop.on .dt{color:#fff}
+.stop::before{content:"";position:absolute;left:-9px;top:17px;width:13px;height:13px;border-radius:50%;background:var(--card);border:3px solid var(--gold);}
+.stop.on::before{background:var(--gold);border-color:#fff}
+.stop .nm{font-family:Georgia,serif;font-weight:700;font-size:15px;color:var(--ink);display:block;line-height:1.2}
+.stop .dt{font-size:12px;color:var(--muted);display:block;margin-top:2px}
+.panel{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:14px;padding:24px 26px;min-height:280px}
+.panel .era-dt{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:0 0 6px}
+.panel h3{font-family:Georgia,serif;font-size:26px;color:var(--red-dk);margin:0 0 12px;line-height:1.15}
+.panel .blurb{font-size:15.5px;color:#33302c;margin:0 0 18px}
+.panel .lbl{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.figs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.fig{background:#f3ead9;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--red);cursor:pointer}
+.fig:hover{background:var(--gold-lt);color:#3a2410;border-color:var(--gold)}
+.panel .books{font-size:14px;color:#40382f;margin:0 0 4px}
+.panel .books a{font-weight:700}
+
+/* companion cards */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:10px 0 30px}
+@media(max-width:720px){.cards{grid-template-columns:1fr}}
+.ccard{display:block;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:22px 22px;transition:transform .1s,box-shadow .1s}
+.ccard:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(122,34,38,.12);border-color:var(--gold-lt)}
+.ccard.soon{background:#f4efe4;border-style:dashed;cursor:default}
+.ccard.soon:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.ccard .k{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.ccard h3{font-family:Georgia,serif;font-size:20px;color:var(--red-dk);margin:0 0 8px}
+.ccard p{font-size:14px;color:#40382f;margin:0 0 14px}
+.ccard .go{font-weight:700;color:var(--red);font-size:14px}
+.ccard .go.soon{color:var(--muted)}
+.foot-note{color:var(--muted);font-size:13px;margin:6px 0 30px}
+footer{background:var(--red-dk);color:#e7c9c2;font-size:12.5px;padding:22px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}footer a{color:#eccdaf}
+</style></head><body>
+
+<div class="topbar"><div class="wrap"><span class="brand">Russian History</span>
+<span class="links"><a href="russian_history_players.html">The Players</a><a href="russian_reading.html">The Reading</a><a href="bookshelf.html">The Bookshelf</a><a href="https://12toknow.ai">12toKNOW</a></span></div></div>
+
+<div class="hero"><div class="wrap">
+<p class="kick">A 12toKNOW Guide</p>
+<h1>Russian History</h1>
+<p>A thousand years — from the Varangians on the river roads to the Kremlin of today. The story told in eras, a who's-who of the whole cast, and the books behind it all. Start with the timeline, then wander.</p>
+</div></div>
+
+<div class="wrap">
+  <h2 class="sec">The story in eras</h2>
+  <p class="hint">Click a period to open it — each one names the key figures (tap a name to meet them) and points you to the reading.</p>
+  <div class="tl">
+    <div class="rail" id="rail"></div>
+    <div class="panel" id="panel"></div>
+  </div>
+
+  <h2 class="sec">Explore the guide</h2>
+  <div class="cards">
+    <a class="ccard" href="russian_history_players.html">
+      <p class="k">The Who's-Who</p>
+      <h3>The Players</h3>
+      <p>163 figures across a thousand years — rulers and rebels, saints and revolutionaries. Browse by group or search any name.</p>
+      <span class="go">Explore the cast →</span>
+    </a>
+    <a class="ccard" href="russian_reading.html">
+      <p class="k">Annotated Bibliography</p>
+      <h3>The Reading</h3>
+      <p>The Russia library, by era — thirty finished titles, each with a synopsis, plus what's still queued on the shelf.</p>
+      <span class="go">Open the reading →</span>
+    </a>
+    <a class="ccard" href="bookshelf.html">
+      <p class="k">The Audiobooks</p>
+      <h3>The Bookshelf</h3>
+      <p>The listening shelf — what I've worked through and what's up next, searchable, with the odd novel among the histories.</p>
+      <span class="go">Browse the shelf →</span>
+    </a>
+    <div class="ccard soon">
+      <p class="k">In progress</p>
+      <h3>The Atlas</h3>
+      <p>The story in maps — the empire's growth, the campaigns, and the shifting borders, era by era. Joining the guide as it fills out.</p>
+      <span class="go soon">Coming soon</span>
+    </div>
+  </div>
+  <p class="foot-note">A living guide — built the same way as everything else at 12toKNOW: in the open, and for the love of it.</p>
+</div>
+
+<footer><div class="wrap"><span>Russian History · a <a href="https://12toknow.ai">12toKNOW</a> guide</span><span>© 2026 DeWayne Searcy</span></div></footer>
+
+<script>
+const ERAS=[
+ {nm:"Kievan Rus & the Founding",dt:"882–1240",
+  blurb:"From the Varangian Rurik and the river-trade towns to the golden age of Kiev — Vladimir the Great's conversion to Orthodox Christianity in 988 and the law-giving of Yaroslav the Wise. This is the shared origin claimed alike by Russia, Ukraine, and Belarus, and it ended under the hooves of the Mongol storm.",
+  figs:[["Rurik","Rurik"],["Oleg of Novgorod","Oleg"],["Vladimir the Great","Vladimir the Great"],["Yaroslav the Wise","Yaroslav"]],
+  books:"Opens <a href='russian_reading.html'>The Story of Russia</a> — the best single spine for the whole sweep."},
+ {nm:"Mongol Yoke & Rise of Muscovy",dt:"1240–1547",
+  blurb:"Two and a half centuries under the Golden Horde, during which an obscure trading post — Moscow — outmaneuvered its rivals, gathered the Russian lands, and finally cast off Tatar overlordship under Ivan III, 'the Great,' who doubled the realm and took the title of sovereign of all Rus.",
+  figs:[["Alexander Nevsky","Nevsky"],["Ivan I Kalita","Kalita"],["Ivan III the Great","Ivan III"]],
+  books:"<a href='russian_reading.html'>The March of Muscovy</a> — the earliest book on the shelf."},
+ {nm:"Tsardom & Ivan the Terrible",dt:"1547–1613",
+  blurb:"Ivan IV was crowned the first 'Tsar of All Russia,' conquered the khanates of Kazan and Astrakhan, and opened the road into Siberia — then turned to the paranoid terror of the oprichnina. His line failed at his death, plunging Russia into the Time of Troubles until the Romanovs were raised to the throne in 1613.",
+  figs:[["Ivan the Terrible","Ivan IV"],["Boris Godunov","Godunov"]],
+  books:"<a href='russian_reading.html'>The March of Muscovy</a> carries the story to 1648."},
+ {nm:"Imperial Russia — the Romanovs",dt:"1613–1917",
+  blurb:"Three centuries of empire. Peter the Great forced Russia westward and built St. Petersburg from marsh; Catherine the Great expanded it and courted the Enlightenment; 1812 broke Napoleon on the Russian winter; the Crimean War exposed the rot; the serfs were freed in 1861; and a long imperial twilight — haunted by Rasputin — closed with the fall of Nicholas II.",
+  figs:[["Peter the Great","Peter I"],["Catherine the Great","Catherine II"],["Alexander I","Alexander I"],["Nicholas II","Nicholas II"],["Grigori Rasputin","Rasputin"]],
+  books:"<a href='russian_reading.html'>The Romanovs</a>, Massie's <a href='russian_reading.html'>Peter</a> & <a href='russian_reading.html'>Catherine</a>, <a href='russian_reading.html'>Moscow 1812</a>, <a href='russian_reading.html'>Crimea</a>, <a href='russian_reading.html'>Rasputin</a> — and <a href='russian_reading.html'>War and Peace</a> beside them."},
+ {nm:"Revolution & Civil War",dt:"1917–1921",
+  blurb:"Two revolutions in a single year toppled the monarchy and carried the Bolsheviks to power. What followed was a merciless civil war between Reds, Whites, and Greens that left millions dead of fighting, famine, and typhus — and Lenin's party in command of a ruined country.",
+  figs:[["Vladimir Lenin","Lenin"],["Leon Trotsky","Trotsky"],["Alexander Kerensky","Kerensky"],["Nicholas II","Nicholas II"]],
+  books:"<a href='russian_reading.html'>A People's Tragedy</a>, Trotsky's own <a href='russian_reading.html'>History</a>, and Beevor's <a href='russian_reading.html'>Russia</a>."},
+ {nm:"The Soviet Century — Lenin to Stalin",dt:"1922–1953",
+  blurb:"The USSR was forged under Lenin and remade by Stalin — through forced collectivization, the terror-famine, the Great Purge, the vast machinery of the Gulag, and the cataclysm of the Second World War. A state built at once on soaring industrial ambition and on mass death.",
+  figs:[["Joseph Stalin","Stalin"],["Leon Trotsky","Trotsky"]],
+  books:"Kotkin's <a href='russian_reading.html'>Stalin I</a> & <a href='russian_reading.html'>II</a>, <a href='russian_reading.html'>The Whisperers</a>, <a href='russian_reading.html'>Just Send Me Word</a> — with <a href='bookshelf.html'>Gulag</a> and the Archipelago up next."},
+ {nm:"Cold War to Collapse",dt:"1953–1991",
+  blurb:"From Khrushchev's thaw and the superpower standoff through Brezhnev's long stagnation to Gorbachev's glasnost and perestroika — reforms meant to save the system that, once loosed, unraveled the Union entirely by the end of 1991.",
+  figs:[["Nikita Khrushchev","Khrushchev"],["Leonid Brezhnev","Brezhnev"],["Mikhail Gorbachev","Gorbachev"]],
+  books:"Solzhenitsyn's <a href='bookshelf.html'>Gulag Archipelago</a> stands astride this era on the shelf."},
+ {nm:"The Russian Federation",dt:"1991–present",
+  blurb:"The turbulent Yeltsin nineties, the rise of Vladimir Putin, and a reassertion of state power and empire that — in Figes's reading — runs straight back to the founding myths this guide began with. The story closes where it started: with the tales Russia tells about itself.",
+  figs:[["Boris Yeltsin","Yeltsin"],["Vladimir Putin","Putin"]],
+  books:"The closing chapters of <a href='russian_reading.html'>The Story of Russia</a>."},
+];
+const $=id=>document.getElementById(id);
+const rail=$('rail'), panel=$('panel');
+rail.innerHTML=ERAS.map((e,i)=>'<div class="stop'+(i===0?' on':'')+'" data-i="'+i+'"><span class="nm">'+e.nm+'</span><span class="dt">'+e.dt+'</span></div>').join('');
+function enc(s){return encodeURIComponent(s);}
+function show(i){
+  const e=ERAS[i];
+  [...rail.children].forEach((c,j)=>c.classList.toggle('on',j===i));
+  panel.innerHTML='<p class="era-dt">'+e.dt+'</p><h3>'+e.nm+'</h3><p class="blurb">'+e.blurb+'</p>'
+    +'<p class="lbl">Key figures — tap to meet them</p><div class="figs">'
+    + e.figs.map(f=>'<a class="fig" href="russian_history_players.html?q='+enc(f[1])+'">'+f[0]+'</a>').join('')
+    +'</div><p class="lbl">From the reading</p><p class="books">'+e.books+'</p>';
+}
+rail.addEventListener('click',ev=>{const s=ev.target.closest('.stop');if(s)show(+s.dataset.i);});
+show(0);
+</script>
+</body></html>

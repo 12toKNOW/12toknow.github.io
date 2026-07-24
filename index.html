@@ -69,6 +69,17 @@
   .card .go.soon{color:var(--muted);font-weight:600}
   .card.soon{background:#f4f6f3;border-style:dashed}
 
+  /* ---- podcast feature ---- */
+  .podfeat{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;background:linear-gradient(160deg,var(--green),var(--green-dk));color:#fff;border-radius:14px;padding:26px 30px;margin-bottom:22px;border:1px solid #25493a}
+  .podfeat .mk{font-family:Georgia,serif;font-weight:700;line-height:1;color:#fff;border-right:3px solid var(--orange);padding-right:26px;text-align:center}
+  .podfeat .mk .big{font-size:46px;display:block}
+  .podfeat .mk .sub{font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2px;color:var(--orange);display:block;margin-top:4px}
+  .podfeat h3{font-family:Georgia,serif;font-size:22px;margin:0 0 8px;color:#fff}
+  .podfeat p{color:#d7e4dc;font-size:14.5px;margin:0 0 14px;max-width:72ch}
+  .podfeat .btn{background:var(--orange);margin-top:0}
+  .podfeat .btn:hover{background:var(--orange-dk)}
+  @media(max-width:640px){.podfeat{grid-template-columns:1fr;gap:14px}.podfeat .mk{border-right:0;border-bottom:3px solid var(--orange);padding:0 0 12px}}
+
   /* ---- personal band ---- */
   .band{background:#0f2b20;color:#fff}
   .band .sec-head{border-color:var(--orange)}
@@ -121,6 +132,7 @@
       <a href="#work">Work</a>
       <a href="#education">Teaching</a>
       <a href="#more">Beyond</a>
+      <a href="https://www.linkedin.com/in/dewayne-searcy-phd-2270902" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:dewayne.searcy@gmail.com">Contact</a>
     </nav>
   </div>
@@ -144,6 +156,17 @@
   <div class="wrap">
     <div class="sec-head"><h2>Data, AI &amp; Audit</h2><span class="tag">Field-tested tools</span></div>
     <p class="sec-intro">Practical, rigor-first material for finance and operating leaders putting AI to work without giving up the discipline that makes the numbers trustworthy.</p>
+
+    <div class="podfeat">
+      <div class="mk"><span class="big">12</span><span class="sub">to&nbsp;KNOW</span></div>
+      <div>
+        <p class="kicker" style="color:#ffcea8">Daily Podcast · AI-generated · on Spotify</p>
+        <h3>12 to KNOW — The Daily</h3>
+        <p>The project the brand is named for. A daily, AI-produced briefing — twelve stories on the news, finance, and professional development the next generation needs to know — published every morning, 100+ editions deep. One of my first serious builds on how to actually put AI to work.</p>
+        <a class="btn" href="https://open.spotify.com/show/2sO44h7mkiZaMlfOPtqgQT" target="_blank" rel="noopener">Listen on Spotify →</a>
+      </div>
+    </div>
+
     <div class="grid">
       <a class="card" href="https://12toknow.github.io/ima26.html">
         <p class="kicker">Workshop · IMA26 · Tampa</p>
@@ -156,12 +179,6 @@
         <h3>Using Claude with Purpose</h3>
         <p>A practitioner’s series on where AI helps, where it doesn’t, and how to keep judgment human — the context ladder, when not to use it, augmentation vs. outsourcing.</p>
         <span class="go">Read the guide →</span>
-      </a>
-      <a class="card" href="https://12toknow.github.io/trillion-scale/">
-        <p class="kicker">Explainer</p>
-        <h3>Trillion-Scale</h3>
-        <p>A plain-language walk through a big, hard-to-picture number — making scale legible for a general audience.</p>
-        <span class="go">Take a look →</span>
       </a>
       <div class="card soon">
         <p class="kicker">Guidebooks · In progress</p>
@@ -237,11 +254,11 @@
 
       <!-- Russian history + reading shelf -->
       <div class="grid two" style="margin-bottom:8px">
-        <a class="card" href="russian_history_players.html">
+        <a class="card" href="russian_history.html">
           <p class="kicker">History · Russia</p>
           <h3>Russian History</h3>
-          <p>A thousand years of tsars and commissars — an interactive who’s-who of the cast, from the <em>Primary Chronicle</em> to the present. Browse a group or search a name.</p>
-          <span class="go">Explore the players →</span>
+          <p>A thousand years, made interactive — the story in eras, a who’s-who of 163 players, and an annotated reading list. From the Varangians to the Kremlin of today.</p>
+          <span class="go">Enter the guide →</span>
         </a>
         <a class="card" href="bookshelf.html">
           <p class="kicker">Reading · The Russia shelf</p>
@@ -251,15 +268,33 @@
         </a>
       </div>
 
+      <!-- family / learning -->
+      <div class="grid two" style="margin-bottom:8px">
+        <a class="card" href="https://12toknow.github.io/cpa-companion">
+          <p class="kicker">For the family · CPA prep</p>
+          <h3>The CPA Companion</h3>
+          <p>A no-nonsense study companion for the CPA exam — two ordered tracks (audit-first and tax-first) with the reasoning behind each path. Built for my daughters; useful to anyone sitting for it.</p>
+          <span class="go">Open the companion →</span>
+        </a>
+        <a class="card" href="https://12toknow.github.io/american_mahjongg_training">
+          <p class="kicker">For the family · Learn the game</p>
+          <h3>Mah Jongg — A Family Guide</h3>
+          <p>An interactive way into American Mah Jongg — tile flashcards, sample hands, a rules quiz, and a payouts reference. The game, taught the way our family learns it.</p>
+          <span class="go">Start learning →</span>
+        </a>
+      </div>
+
       <!-- trivia -->
       <div class="sec-head" style="margin-top:8px"><h2 style="font-size:20px">Just for Fun</h2><span class="tag">Trivia</span></div>
       <div class="grid">
+        <a class="card" href="https://12toknow.github.io/trillion-scale/"><h3>Trillion-Scale</h3><p>A plain-language walk through a big, hard-to-picture number — the fun opener from my IMA26 talk.</p><span class="go">Take a look →</span></a>
         <a class="card" href="https://12toknow.github.io/seinfeld-trivia"><h3>Seinfeld Trivia</h3><p>A 30-question timed quiz for the show about nothing.</p><span class="go">Play now →</span></a>
         <a class="card" href="https://12toknow.github.io/friends-trivia"><h3>Friends Trivia</h3><p>Could you <em>be</em> any better at this? 30 timed questions.</p><span class="go">Play now →</span></a>
         <a class="card" href="https://12toknow.github.io/theoffice-trivia"><h3>The Office Trivia</h3><p>Scranton’s finest, 30 questions deep.</p><span class="go">Play now →</span></a>
         <a class="card" href="https://12toknow.github.io/parksandrec-trivia"><h3>Parks &amp; Rec Trivia</h3><p>Treat yo’ self to 30 questions.</p><span class="go">Play now →</span></a>
         <a class="card" href="https://12toknow.github.io/harry_potter_trivia"><h3>Harry Potter Trivia</h3><p>For the witches and wizards. 30 timed questions.</p><span class="go">Play now →</span></a>
         <a class="card" href="https://12toknow.github.io/must_see_tv_trivia"><h3>Must-See TV Trivia</h3><p>The classic lineup, one quiz.</p><span class="go">Play now →</span></a>
+        <a class="card" href="https://12toknow.github.io/maasverse"><h3>The Maasverse</h3><p>Sarah J. Maas across ACOTAR, Throne of Glass &amp; Crescent City. 30 timed questions.</p><span class="go">Play now →</span></a>
       </div>
     </div>
   </section>
@@ -270,13 +305,14 @@
   <div class="wrap about">
     <div>
       <div class="sec-head"><h2>About</h2></div>
-      <p>DeWayne Searcy, PhD, leads Cowin Equipment Company as COO — a Southeast-based heavy-equipment dealer headquartered in Birmingham, Alabama. Previously an accounting professor and Director at Auburn University’s School of Accountancy, he works at the intersection of data analysis, operational process, financial frameworks, and the behavioral drivers of financial performance.</p>
+      <p>DeWayne Searcy, PhD, leads Cowin Equipment Company as CEO — a Southeast-based heavy-equipment dealer headquartered in Birmingham, Alabama. Previously an accounting professor and Director at Auburn University’s School of Accountancy, he works at the intersection of data analysis, operational process, financial frameworks, and the behavioral drivers of financial performance.</p>
       <p>12toKNOW is where that work — and the projects it spills into — gets published in the open: field-tested, rigor-first, and free to use.</p>
     </div>
     <div class="contact-box" id="contact">
       <h3>Get in touch</h3>
       <p style="color:var(--muted);font-size:14.5px">Questions, collaborations, or speaking — the door’s open.</p>
       <a class="btn" href="mailto:dewayne.searcy@gmail.com">Email DeWayne</a>
+      <a href="https://www.linkedin.com/in/dewayne-searcy-phd-2270902" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;font-weight:700;color:var(--green)">Connect on LinkedIn ↗</a>
     </div>
   </div>
 </section>
@@ -284,7 +320,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 DeWayne Searcy, PhD · Alabama, USA · All rights reserved</span>
-    <span>12toKNOW™</span>
+    <span><a href="https://www.linkedin.com/in/dewayne-searcy-phd-2270902" target="_blank" rel="noopener" style="color:#ffcea8;font-weight:700">LinkedIn ↗</a> &nbsp;·&nbsp; 12toKNOW™</span>
   </div>
 </footer>
 
