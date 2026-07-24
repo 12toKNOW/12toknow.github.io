@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I Am Coming — the Trilogy · The Searcy Family History</title>
+<meta name="description" content="I Am Coming — a Searcy family history in three volumes, from a Tudor priory in Hertfordshire to a Mississippi churchyard. Manuscript under review. Synopses of Volumes I, II, and III.">
+<!-- I Am Coming trilogy synopsis page · v1 (Claude). Self-contained. A 12toKNOW / Searcy Family property.
+     Grounded in the actual manuscripts (Vol I, II, III). Status: manuscript under review. -->
+<style>
+  :root{
+    --ink:#2b2620;--parch:#F7F2E6;--card:#FFFDF8;--green:#14532b;--green-dk:#0f3f21;--green2:#1B7F3B;
+    --gold:#A87F26;--gold-lt:#C8A44D;--muted:#6d6455;--line:#e7ddc8;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--parch);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+  a{color:var(--green);text-decoration:none}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+  .topbar{background:var(--green);color:#f3ede0}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;font-size:13.5px}
+  .topbar .brand{font-family:Georgia,serif;color:#fff}
+  .topbar .links a{color:#cfe0d5;margin-left:16px}
+  .topbar .links a:hover{color:#fff}
+
+  /* hero */
+  .hero{background:
+      radial-gradient(1200px 420px at 50% -10%, #1c6b3a 0%, transparent 60%),
+      linear-gradient(180deg,var(--green) 0%,var(--green-dk) 100%);
+    color:#f5efe2;text-align:center;padding:60px 0 50px;border-bottom:3px solid var(--gold)}
+  .hero .kick{color:var(--gold-lt);letter-spacing:.28em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+  .hero h1{font-family:Georgia,serif;font-weight:700;font-size:58px;letter-spacing:.5px;margin:0 0 6px;line-height:1.02}
+  .hero .series{font-family:Georgia,serif;font-style:italic;color:#e8dcbf;font-size:19px;margin:0 0 20px}
+  .hero .arc{max-width:60ch;margin:0 auto;color:#dce7de;font-size:17px}
+  .status{display:inline-block;margin-top:22px;background:rgba(200,164,77,.16);border:1px solid var(--gold-lt);
+    color:#f0e4c4;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
+  @media(max-width:640px){.hero h1{font-size:40px}}
+
+  /* intro */
+  .intro{padding:44px 0 8px}
+  .intro p{font-size:17px;color:#3a352c;max-width:74ch;margin:0 auto 16px}
+  .intro .lede{font-family:Georgia,serif;font-size:21px;color:var(--green);text-align:center;max-width:60ch;margin:0 auto 22px;line-height:1.4}
+  .intro em{font-style:italic}
+
+  /* volumes */
+  .vols{padding:14px 0 40px}
+  .vol{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0;margin:0 0 26px;overflow:hidden;
+    box-shadow:0 1px 0 #fff inset}
+  .vol .head{display:flex;gap:20px;align-items:flex-start;padding:26px 30px 4px}
+  .vol .num{font-family:Georgia,serif;font-size:44px;line-height:1;color:var(--gold);flex:0 0 auto;margin-top:2px}
+  .vol .htext{flex:1}
+  .vol .vk{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 6px}
+  .vol h2{font-family:Georgia,serif;font-size:28px;color:var(--green-dk);margin:0 0 4px;line-height:1.15}
+  .vol .era{font-family:Georgia,serif;font-style:italic;color:var(--muted);font-size:16px;margin:0 0 4px}
+  .vol .body{padding:8px 30px 26px}
+  .vol .syn{font-size:15.5px;color:#38332a;margin:0 0 18px}
+  .vol .syn:first-child{margin-top:6px}
+  .vol .quote{font-family:Georgia,serif;font-style:italic;color:var(--green);font-size:16px;border-left:3px solid var(--gold-lt);
+    padding:2px 0 2px 16px;margin:0 0 18px}
+  .vol .chapters{border-top:1px solid var(--line);padding-top:14px;font-size:13px;color:var(--muted)}
+  .vol .chapters b{color:var(--green-dk);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:11px;display:block;margin-bottom:5px}
+  .vol .chapters .list{color:#5a5245}
+  .vol .chapters .list span{white-space:nowrap}
+  .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 0}
+  .pill{display:inline-block;background:#f1ece0;border:1px solid var(--line);color:#5a5245;font-weight:600;font-size:11px;
+    letter-spacing:.04em;padding:4px 11px;border-radius:999px}
+  .pill.review{background:rgba(168,127,38,.12);border-color:var(--gold-lt);color:#7a5c14}
+  @media(max-width:600px){.vol .head{flex-direction:column;gap:8px;padding:24px 22px 4px}.vol .body{padding:6px 22px 22px}.vol .num{font-size:36px}}
+
+  .vI{border-top:5px solid var(--green)}
+  .vII{border-top:5px solid var(--gold)}
+  .vIII{border-top:5px solid #7a3b2e}
+
+  .note{background:#efe7d4;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .note .wrap{padding:30px 24px;max-width:74ch}
+  .note h3{font-family:Georgia,serif;color:var(--green);font-size:20px;margin:0 0 10px}
+  .note p{font-size:15px;color:#4a4335;margin:0 0 10px}.note p:last-child{margin:0}
+
+  .backrow{text-align:center;padding:34px 24px}
+  .btn{display:inline-block;background:var(--gold);color:#2a2210;font-weight:700;padding:12px 22px;border-radius:8px;margin:0 6px 8px}
+  .btn:hover{background:var(--gold-lt)}
+  .btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--gold-lt)}
+  .btn.ghost:hover{background:#f1ece0}
+
+  footer{background:var(--green);color:#cfe0d5;font-size:13px;padding:24px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer a{color:#e8dcbf}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="brand">The Searcy Family</span>
+  <span class="links"><a href="searcy_family_history.html">← Family history home</a><a href="https://12toknow.ai">12toKNOW</a></span>
+</div></div>
+
+<div class="hero"><div class="wrap">
+  <p class="kick">A Searcy Family History · The Trilogy</p>
+  <h1>I&nbsp;Am&nbsp;Coming</h1>
+  <p class="series">three volumes · five centuries · one line of daughters</p>
+  <p class="arc">From a dissolved priory in Tudor Hertfordshire to a red-clay ridge in north Mississippi — the documented story of one family, carried down the generations by the people who kept it.</p>
+  <span class="status">Manuscript under review</span>
+</div></div>
+
+<div class="intro"><div class="wrap">
+  <p class="lede">The title is a letter. In the winter of 1713, a woman in Hertfordshire wrote three words across the Atlantic to the man waiting for her in Charleston — <em>I am coming</em> — and got on the ship.</p>
+  <p>What follows her is a hundred and forty ancestors and five hundred years, written not as a family tree but as a story — evidence first, invention never, every scene tied to a record a stranger could check. Three volumes carry the line from the Old World to the Deep South, each anchored on a woman who <em>kept</em> the family when the men moved or marched or died: Barbara, who crossed an ocean; Mary Baker, who held a household through a revolution; and Mary Jane, who held one farm through a war and a widowhood and forty more years besides. The synopses below are of the manuscripts as they now stand, in review.</p>
+</div></div>
+
+<div class="vols"><div class="wrap">
+
+  <!-- VOLUME I -->
+  <article class="vol vI">
+    <div class="head">
+      <div class="num">I</div>
+      <div class="htext">
+        <p class="vk">Volume One</p>
+        <h2>England</h2>
+        <p class="era">1490 to 1714</p>
+        <div class="pillrow"><span class="pill review">Manuscript under review</span><span class="pill">6 chapters</span><span class="pill">audiobook in preparation</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <p class="syn">In the 1490s a Derbyshire younger son named James Nedham walked south to the Tudor court and rose to become Henry VIII's Surveyor of the King's Works — the man who built the king's palaces at Hampton Court, Whitehall, and Windsor, and who was given, in 1538, a dissolved Augustinian priory in north Hertfordshire that his family would hold for nearly two hundred years.</p>
+      <p class="syn">Volume I is the story of that house and the eight generations who lived in it, through a civil war, a regicide, the Great Plague and the Great Fire — and of the long detective work that finally recovered the woman at the end of the line. A 1925 book had given her a father who never existed; the records gave her back her true parents, and gave the family a name it had lost for two hundred years. It closes in February 1714 on a wooden dock in Charleston, with a twenty-eight-year-old woman stepping off a ship she had boarded against the advice of everyone she loved — including the man waiting for her on the dock.</p>
+      <div class="chapters"><b>Chapters</b>
+        <span class="list"><span>The Surveyor's Priory</span> · <span>Signing the Pedigree</span> · <span>Eustace's War</span> · <span>George Senior and the Restoration World</span> · <span>I Am Coming</span> · <span>Two Letters Crossing</span></span>
+      </div>
+    </div>
+  </article>
+
+  <!-- VOLUME II -->
+  <article class="vol vII">
+    <div class="head">
+      <div class="num">II</div>
+      <div class="htext">
+        <p class="vk">Volume Two</p>
+        <h2>Virginia &amp; Carolina</h2>
+        <p class="era">1742 to 1794</p>
+        <div class="pillrow"><span class="pill review">Manuscript under review</span><span class="pill">6 chapters</span><span class="pill">audiobook in preparation</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <p class="syn">The line comes ashore and pushes inland. In 1742, on the Virginia south-side frontier at Lunenburg, a Carolina colonel's daughter named Mary Baker marries into the family and gives it a name that will travel for generations. Two lifetimes on, that name comes to rest in her granddaughter and namesake, Mary Baker DeGraffenreid — a girl raised at the edge of a war that takes her older brother, Vincent, off to the Revolution and the fighting at Brandywine, Stony Point, Guilford, and Yorktown.</p>
+      <p class="syn">Volume II is a book about the ones who stay and keep the household while the men march — and about a fifteen-year-old at a writing-desk on a November night in 1779 who comes to the foot of a letter and sets down two words she then copies into the book that stays in the house: <em>we continue</em>. It becomes the family's quiet creed, and it carries the story out of Virginia and toward the far dirt of the west.</p>
+      <div class="chapters"><b>Chapters</b>
+        <span class="list"><span>Lunenburg, Summer 1742</span> · <span>The Child at Lunenburg</span> · <span>The War in the House</span> · <span>The Wedding Morning</span> · <span>Vincent's War</span> · <span>The Keeping</span></span>
+      </div>
+    </div>
+  </article>
+
+  <!-- VOLUME III -->
+  <article class="vol vIII">
+    <div class="head">
+      <div class="num">III</div>
+      <div class="htext">
+        <p class="vk">Volume Three</p>
+        <h2>She Held the Line</h2>
+        <p class="era">Mississippi · 1832 to 1920</p>
+        <div class="pillrow"><span class="pill review">Manuscript under review</span><span class="pill">9 chapters</span></div>
+      </div>
+    </div>
+    <div class="body">
+      <p class="syn">On the last morning of October 1850, a girl of not-quite-eighteen named Mary Jane Rorie stood at a loom in her father's house on a cleared ridge in north Mississippi while the census-taker came up the road to write her down. Volume III is her whole life — from that loom to a farm in the red-clay corner where Tishomingo County becomes Alcorn, through a war that took her brothers (one of them killed with the 32nd Mississippi at Atlanta), a widowhood in which she took up the farm herself and held it, and the long outliving of nearly everyone she began with.</p>
+      <p class="syn">She stayed on one piece of ground while the world rearranged itself around her — county lines redrawn, sons scattering, a household built and kept — until 1920. It is the story of the one who <em>doesn't</em> move, the keeper; and it does not look away from the people the record names alongside the enslaved people it could not.</p>
+      <p class="quote">"The State of Mississippi made one paper of her, and the family had carried the truth of her the whole way without it."</p>
+      <div class="chapters"><b>Chapters</b>
+        <span class="list"><span>The Man With the Book</span> · <span>The Town That Came Out of the Woods</span> · <span>Twenty-Five</span> · <span>The Brothers' War</span> · <span>The Widow Takes the Farm</span> · <span>Miss M. J. Rorie</span> · <span>Three Sons</span> · <span>Taken In</span> · <span>Closing Image</span></span>
+      </div>
+    </div>
+  </article>
+
+</div></div>
+
+<div class="note"><div class="wrap">
+  <h3>About these books</h3>
+  <p>The trilogy is written under the same discipline as everything in this project — <strong>Searcy's Law</strong>: the machine can reach further and faster, but a fact isn't a fact until a human has tied it to a source a stranger could check. Where the record is silent, the books say so and invent nothing to fill it. Each volume carries its own chapter-by-chapter sources memos behind the narrative.</p>
+  <p>All three volumes are complete in draft and currently in review; Volumes I and II are also being prepared as narrated audiobooks. When they are ready to share, they will be posted here first.</p>
+</div></div>
+
+<div class="backrow">
+  <a class="btn" href="searcy_family_history.html">← Back to the family history</a>
+  <a class="btn ghost" href="searcy_contribute.html">Add to the record →</a>
+</div>
+
+<footer><div class="wrap">
+  <span>I Am Coming · The Searcy Family History · a <a href="https://12toknow.ai">12toKNOW</a> project</span>
+  <span>© 2026 DeWayne Searcy, PhD</span>
+</div></footer>
+
+</body>
+</html>
