@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Same Years — The Searcy Family against the Russian Clock · 12toKNOW</title>
+<meta name="description" content="A crossover between two 12toKNOW projects: the Searcy family line laid side by side with the timeline of Russian history — while Ivan the Terrible, Catherine, Napoleon's Moscow, and the last Tsar filled the headlines, the family was somewhere doing its own quiet thing.">
+<!-- The Same Years · Family × Russia parallel timeline · v1 (Claude). Self-contained. Family entries documented; contested items hedged inline. -->
+<style>
+:root{
+  --ink:#2b2620;--parch:#F7F2E6;--card:#FFFDF8;--muted:#6d6455;--line:#e7ddc8;
+  --green:#14532b;--green-dk:#0f3f21;--green2:#1B7F3B;--gold:#A87F26;--gold-lt:#C8A44D;
+  --rus:#c8641e;--rus-dk:#9e4d13;--soviet:#a12a1e;
+  --e1:#1f6a3a;--e2:#A87F26;--e3:#a12a1e;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--parch);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+a{color:var(--green);text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.topbar{background:var(--green);color:#f3ede0}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;font-size:13.5px}
+.topbar .brand{font-family:Georgia,serif;color:#fff}.topbar .links a{color:#cfe0d5;margin-left:16px}.topbar .links a:hover{color:#fff}
+.hero{background:linear-gradient(180deg,var(--green),var(--green-dk));color:#f5efe2;text-align:center;padding:52px 0 30px;border-bottom:3px solid var(--gold)}
+.hero .rule{height:2px;background:var(--gold);max-width:620px;margin:0 auto 26px}
+.hero .kick{color:var(--gold-lt);letter-spacing:.22em;text-transform:uppercase;font-size:12px;margin:0 0 14px}
+.hero h1{font-family:Georgia,serif;font-size:46px;margin:0 0 12px;line-height:1.05}
+.hero .dek{font-family:Georgia,serif;font-style:italic;color:#e8dcbf;font-size:18px;max-width:66ch;margin:0 auto}
+.hero .rule.b{margin:26px auto 0}
+section{padding:34px 0}
+.intro{font-family:Georgia,serif;font-size:19px;color:#3a352c;max-width:74ch;margin:0 auto 8px;text-align:center;line-height:1.5}
+.intro b{color:var(--green)}
+/* legend */
+.legend{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:22px 0 0}
+.lg{display:inline-flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:12.5px;color:#4a4335}
+.dot{width:11px;height:11px;border-radius:3px;flex:0 0 auto}
+.d1{background:var(--e1)}.d2{background:var(--e2)}.d3{background:var(--e3)}
+.star{color:var(--gold);font-weight:800}
+/* column headers */
+.heads{display:grid;grid-template-columns:1fr 78px 1fr;gap:0;max-width:1000px;margin:6px auto 0;align-items:end}
+.heads .h{font-family:Georgia,serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.08em;padding:6px 8px}
+.heads .rusH{color:var(--rus-dk);text-align:right}
+.heads .famH{color:var(--green);text-align:left}
+.heads .mid{}
+/* era band */
+.era{max-width:1000px;margin:26px auto 10px;border-radius:10px;padding:11px 18px;color:#fff;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.era h2{font-family:Georgia,serif;font-size:19px;margin:0;font-weight:700}
+.era .span{font-size:13px;opacity:.85;letter-spacing:.04em}
+.era.e1{background:var(--e1)}.era.e2{background:var(--e2)}.era.e3{background:var(--e3)}
+/* rows */
+.row{display:grid;grid-template-columns:1fr 78px 1fr;gap:0;max-width:1000px;margin:0 auto;align-items:stretch;position:relative}
+.rail{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:16px;position:relative}
+.rail::before{content:"";position:absolute;top:0;bottom:-4px;width:2px;background:var(--line)}
+.yr{position:relative;z-index:2;background:var(--green);color:#fff;font-family:Georgia,serif;font-weight:700;font-size:13.5px;border-radius:999px;padding:4px 0;width:64px;text-align:center;box-shadow:0 0 0 4px var(--parch)}
+.row.star .yr{background:var(--gold);color:#2a2210}
+.cell{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 16px;margin:8px 0}
+.cell .tag{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin:0 0 5px}
+.cell h3{font-family:Georgia,serif;font-size:16.5px;margin:0 0 4px;line-height:1.22}
+.cell p{font-size:14px;color:#4a4335;margin:0;line-height:1.5}
+.rus{margin-right:14px;border-left:4px solid var(--rus)}
+.rus .tag{color:var(--rus-dk)}.rus h3{color:var(--rus-dk)}
+.fam{margin-left:14px;border-left:4px solid var(--green2)}
+.fam .tag{color:var(--green)}.fam h3{color:var(--green-dk)}
+.row.star .cell{box-shadow:0 6px 18px rgba(168,127,38,.14)}
+.row.star .fam,.row.star .rus{border-color:var(--gold-lt)}
+.pin{display:inline-block;font-size:11px;font-weight:800;color:var(--gold);background:rgba(168,127,38,.12);border-radius:6px;padding:1px 7px;margin-left:6px;vertical-align:1px}
+.tier{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:#f1ece0;border-radius:5px;padding:1px 6px;margin-left:4px}
+.tier.leg{background:rgba(91,107,140,.16);color:#5b6b8c}
+.eranote{max-width:1000px;margin:2px auto 2px;font-family:Georgia,serif;font-style:italic;color:#4a4335;font-size:14.5px;padding:0 6px;line-height:1.5}
+@media(max-width:720px){
+  .heads{display:none}
+  .row{grid-template-columns:56px 1fr;gap:0}
+  .rail{grid-row:1/3;padding-top:10px}
+  .rus,.fam{margin:6px 0 0 6px}
+  .cell{margin:6px 0}
+  .hero h1{font-size:34px}
+}
+.closing{max-width:74ch;margin:30px auto 0;font-family:Georgia,serif;font-size:18px;color:#3a352c;line-height:1.55;text-align:center}
+.method{max-width:80ch;margin:22px auto 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;font-size:13.5px;color:#4a4335;line-height:1.55}
+.method b{color:var(--green)}
+footer{background:var(--green);color:#cfe0d5;font-size:12.5px;padding:22px 0;margin-top:30px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}footer a{color:#e8dcbf}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="brand">12toKNOW</span>
+  <span class="links"><a href="searcy_family_history.html">The Searcy Family</a><a href="russian_history.html">Russia &amp; Siberia</a><a href="https://12toknow.ai">12toKNOW</a></span>
+</div></div>
+
+<div class="hero"><div class="wrap">
+  <div class="rule"></div>
+  <p class="kick">A 12toKNOW crossover · Family History × Russia &amp; Siberia</p>
+  <h1>The Same Years</h1>
+  <p class="dek">A lifelong Russia reader's experiment: the Searcy family line laid against the Russian clock — because while the Tsars and the commissars filled the century's headlines, the family, somewhere, was quietly doing its own thing.</p>
+  <div class="rule b"></div>
+</div></div>
+
+<section><div class="wrap">
+  <p class="intro">Two histories run down this page on one clock. On the <b style="color:var(--rus-dk)">left</b>, the milestones of Russia — the same spine that runs through the <a href="russian_history.html">Russia &amp; Siberia</a> atlas. On the <b>right</b>, what the family was doing in the very same years, from the deepest documented root to the present. The uncanny part is how often the two lines rhyme: two founders building new cities in one decade, two nations convulsed by revolt at once, the year Napoleon marched on Moscow, and — within four years of each other — two emancipations half a world apart.</p>
+
+  <div class="legend">
+    <span class="lg"><span class="dot d1"></span>Rus, the Horde &amp; Muscovy · 862–1613</span>
+    <span class="lg"><span class="dot d2"></span>Imperial Russia · 1613–1917</span>
+    <span class="lg"><span class="dot d3"></span>Soviet Union &amp; Federation · 1917–2026</span>
+    <span class="lg"><span class="star">★</span> the lines rhyme</span>
+  </div>
+
+  <div class="heads">
+    <div class="h rusH">Russia</div>
+    <div class="h mid"></div>
+    <div class="h famH">The Family</div>
+  </div>
+
+  <!-- ERA 1 -->
+  <div class="era e1"><h2>Rus, the Horde &amp; the Rise of Muscovy</h2><span class="span">862 – 1613</span></div>
+  <p class="eranote">Both stories begin in legend. Russia's founder Rurik is a figure of chronicle; the family's oldest roots, in Bern, rest on tradition until the record catches up in the 1300s — the two lines harden into fact at almost the same depth.</p>
+
+  <div class="row">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Rurik, and the founding of Rus</h3><p>The Varangian Rurik is called to rule (862) — the chronicle's "legendary founder"; Oleg makes Kyiv the capital (882); Vladimir accepts Byzantine Christianity (988); Yaroslav the Wise gives Rus its first law-code.</p></div>
+    <div class="rail"><span class="yr">862<br>–1054</span></div>
+    <div class="cell fam"><p class="tag">The Family <span class="tier leg">Below the record</span></p><h3>Three centuries of silence</h3><p>The family's paper trail reaches nothing this deep. Its beginnings lie far downstream — and at their very bottom they dissolve into exactly the kind of founding-legend Russia tells about Rurik.</p></div>
+  </div>
+
+  <div class="row">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Moscow appears; Kyiv fades</h3><p>Moscow is first named in the chronicle in 1147, as the old Kievan realm splinters into rival principalities in the generations before the Mongols.</p></div>
+    <div class="rail"><span class="yr">1147<br>–91</span></div>
+    <div class="cell fam"><p class="tag">The Family · Bern <span class="tier leg">Legend</span></p><h3>The city on the Aare is founded</h3><p>In 1191 Berthold V, Duke of Zähringen, founds Bern. Family tradition claims descent from Zähringen followers present at that founding — legend, kept as legend, yet the birth of the very city the family will one day be documented governing.</p></div>
+  </div>
+
+  <div class="row">
+    <div class="cell rus"><p class="tag">Russia</p><h3>The Mongol yoke</h3><p>The invasion of 1237–40 storms and sacks Kyiv and subjects the Rus principalities to the Golden Horde — a "yoke" that will last some 240 years.</p></div>
+    <div class="rail"><span class="yr">1237<br>–1300</span></div>
+    <div class="cell fam"><p class="tag">The Family · Bern <span class="tier">Surname attested</span></p><h3>A place-name becomes a family</h3><p>A Bernese charter of 1272 names men "von Grafenried" — <em>of</em> the village of Grafenried; the surname enters the written record, though not yet as a proven ancestor. By about 1300 the family holds Bernese citizenship.</p></div>
+  </div>
+
+  <div class="row star">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Kulikovo · Dmitry Donskoy</h3><p>In 1380 the Prince of Moscow defeats the Golden Horde on the field of Kulikovo — the first real crack in two centuries of the Mongol "yoke."</p></div>
+    <div class="rail"><span class="yr">1387</span></div>
+    <div class="cell fam"><p class="tag">The Family · Bern <span class="tier">Documented root</span></p><h3>The record catches up: Peter, treasurer of Bern</h3><p>As Moscow lands its first blow on the Horde, the family's line hardens from legend into fact. A probable progenitor, Burkhard, appears at Bern about 1356; and by 1387 Peter von Graffenried is the city's documented <em>Seckelmeister</em> — treasurer — the deepest proven root of the whole tree.</p></div>
+  </div>
+
+  <div class="row">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Ivan III ends the yoke</h3><p>Ivan III "the Great" gathers the Russian lands and, at the Stand on the Ugra in 1480, ends Mongol overlordship for good.</p></div>
+    <div class="rail"><span class="yr">c.1490</span></div>
+    <div class="cell fam"><p class="tag">The Family · Derbyshire</p><h3>John Needham of Needham Grange</h3><p>The earliest English ancestor the record reaches: a minor, arms-bearing gentleman of the Derbyshire Peak — the acorn the whole Wymondley line grows from.</p></div>
+  </div>
+
+  <div class="row star">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Ivan IV "the Terrible"</h3><p>Crowned Russia's first <em>Tsar</em> in 1547; seizes Kazan (1552) and Astrakhan (1556); in 1582 Yermak's Cossacks cross the Urals and open Siberia. A principality becomes an empire.</p></div>
+    <div class="rail"><span class="yr">1532<br>–84</span></div>
+    <div class="cell fam"><p class="tag">The Family · England &amp; Bern</p><h3>The King's Surveyor &amp; the Monk</h3><p>James Nedeham becomes <a href="story_kings_surveyor.html">Surveyor of the King's Works</a> to Henry VIII (1532) and is granted Wymondley Priory (1538). In Bern, Niklaus "the Monk" de Graffenried opens the salt springs that make the family's fortune.</p></div>
+  </div>
+
+  <div class="row">
+    <div class="cell rus"><p class="tag">Russia</p><h3>The Time of Troubles</h3><p>The Rurikid line dies out; famine, false pretenders, and Polish occupation nearly end Russia — until Michael Romanov is elected Tsar in 1613, founding a dynasty that will rule for three centuries.</p></div>
+    <div class="rail"><span class="yr">1572<br>–1634</span></div>
+    <div class="cell fam"><p class="tag">The Family · Hertfordshire</p><h3>The heralds come to Wymondley</h3><p>The Nedhams are recorded, arms and pedigree, in the royal Heralds' Visitations of 1572 and 1634. Abroad, Abraham de Graffenried is killed in the fighting at Tirano in 1620.</p></div>
+  </div>
+
+  <!-- ERA 2 -->
+  <div class="era e2"><h2>Imperial Russia</h2><span class="span">1613 – 1917</span></div>
+
+  <div class="row star">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Peter the Great builds a city</h3><p>Peter I drags Russia west, wins the Baltic coast from Sweden, and in 1703 founds St Petersburg on empty marsh — a brand-new capital. The Empire is proclaimed in 1721.</p></div>
+    <div class="rail"><span class="yr">1685<br>–1714</span></div>
+    <div class="cell fam"><p class="tag">The Family · Bern → Carolina <span class="pin">★ two new cities</span></p><h3>New Bern, and Barbara's crossing</h3><p>Barbara Tempest Needham is born at Wymondley (1685). In 1710 Christopher de Graffenried founds <em>New Bern</em>, North Carolina; in 1714 Barbara crosses the Atlantic alone and marries him at Charleston. Two founders, two new towns, one decade.</p></div>
+  </div>
+
+  <div class="row star">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Catherine the Great</h3><p>Catherine II annexes Crimea (1783) and the Black-Sea south, partitions Poland — and in 1774 crushes the vast Pugachev peasant revolt. An empire shaken by rebellion even as it expands.</p></div>
+    <div class="rail"><span class="yr">1762<br>–96</span></div>
+    <div class="cell fam"><p class="tag">The Family · Virginia &amp; the Carolinas <span class="pin">★ revolt in both</span></p><h3>The American Revolution</h3><p>The family's own upheaval runs at the very same time: <a href="story_brothers_war.html">Vincent DeGraffenreid</a> fights from Brandywine to Yorktown (1777–81), and Mary Baker marries at fifteen in the fourth year of the war (1779).</p></div>
+  </div>
+
+  <div class="row star">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Napoleon marches on Moscow</h3><p>1812: the Grande Armée invades, Borodino is fought outside Moscow, and the city burns — the campaign that breaks Napoleon and enters Russian memory forever.</p></div>
+    <div class="rail"><span class="yr">1812</span></div>
+    <div class="cell fam"><p class="tag">The Family · North Carolina <span class="tier">Tradition</span></p><h3>Aaron Searcy's war</h3><p>In the very same year, on the far side of the Atlantic, Aaron Searcy is — by family tradition — a soldier of the American <a href="story_the_later_wars.html">War of 1812</a>. The same Napoleon-haunted world, two fronts of one age.</p></div>
+  </div>
+
+  <div class="row star">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Alexander II frees the serfs</h3><p>In 1861 the Tsar-Liberator emancipates some 23 million serfs by decree — Russia's answer, the same year, to the question tearing America apart.</p></div>
+    <div class="rail"><span class="yr">1861<br>–65</span></div>
+    <div class="cell fam"><p class="tag">The Family · Mississippi <span class="pin">★ two emancipations</span></p><h3>The Civil War, and freedom</h3><p>America goes to war over slavery. Reuben Rorie dies (1862) and his son Ezekiah is killed at Atlanta (1864); the three people held enslaved on the Rorie farm are freed in 1865 — two emancipations, half a world apart, within four years.</p></div>
+  </div>
+
+  <div class="row">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Nicholas II, the last Tsar</h3><p>The Empire reaches its greatest extent and then breaks: revolution in 1917, and in 1918 the Romanovs are shot at Yekaterinburg. Three hundred years of dynasty end in a cellar.</p></div>
+    <div class="rail"><span class="yr">1894<br>–1918</span></div>
+    <div class="cell fam"><p class="tag">The Family · Mississippi</p><h3>The last of a generation</h3><p>Freeman Searcy dies in 1908; his widow <em>Mary Jane</em> Rorie Searcy holds the family ground into old age. As the Romanov world ends, so does hers — she dies in 1920, the last of her generation on the old Tishomingo dirt.</p></div>
+  </div>
+
+  <!-- ERA 3 -->
+  <div class="era e3"><h2>The Soviet Union &amp; the Russian Federation</h2><span class="span">1917 – 2026</span></div>
+
+  <div class="row">
+    <div class="cell rus"><p class="tag">Russia</p><h3>Stalin's Soviet century</h3><p>The USSR is founded (1922); collectivization and famine (1930s), the Great Terror (1937), and the Great Patriotic War — Stalingrad (1943), Berlin (1945). Stalin dies in 1953.</p></div>
+    <div class="rail"><span class="yr">1922<br>–53</span></div>
+    <div class="cell fam"><p class="tag">The Family · Alabama &amp; Mississippi</p><h3>The quiet century</h3><p>The Searcy line comes down through the Depression and two world wars — no headlines, just the ordinary, documented work of a Southern family making its way toward Birmingham.</p></div>
+  </div>
+
+  <div class="row star">
+    <div class="cell rus"><p class="tag">Russia</p><h3>The Prague Spring</h3><p>1968: Soviet tanks roll into Czechoslovakia to crush the "socialism with a human face," the high Brezhnev era's defining act.</p></div>
+    <div class="rail"><span class="yr">1968</span></div>
+    <div class="cell fam"><p class="tag">The Family · Birmingham</p><h3>DeWayne is born</h3><p>The point where all of it comes together: DeWayne Lee Searcy is born in Birmingham, Alabama — twenty-two generations and four centuries downstream of Peter of Bern and John of Needham Grange.</p></div>
+  </div>
+
+  <div class="row">
+    <div class="cell rus"><p class="tag">Russia</p><h3>After the Wall — and today</h3><p>The USSR dissolves in 1991; fifteen republics go their own way. Russia returns to its post-Soviet borders — and, from 2014 and 2022, pushes back out into Ukraine.</p></div>
+    <div class="rail"><span class="yr">1991<br>–2026</span></div>
+    <div class="cell fam"><p class="tag">The Family · the present</p><h3>The reader closes the loop</h3><p>A lifelong reader of Russian history sits down and lays the two timelines side by side — his family and his fascination on one clock. This page is that thought, made visible.</p></div>
+  </div>
+
+  <p class="closing">Every one of these families was, in its own country and its own century, simply doing the plain thing people do — keeping a farm, crossing a sea, burying a father, being born. The Russian headlines are the weather they lived under. The rhyme between the two columns is the whole point: history happens to everyone at once.</p>
+
+  <div class="method">
+    <b>A note on how to read this.</b> The Russian column is the standard record, drawn from the <a href="russian_history.html">Russia &amp; Siberia</a> companion. The family column keeps to this project's tier discipline: every entry is documented in the family research <em>except</em> Aaron Searcy's 1812 service, which is family <em>tradition</em> and marked as such (the record has a matching militia name but not yet the proof — see <a href="story_the_later_wars.html">The Later Wars</a>). The alignments are real calendar coincidences, not causal links — nobody in Bern or Wymondley or Tishomingo was thinking about Russia. That two ordinary family lines kept rhyming with the world's loudest history is exactly the pleasure of laying them side by side.
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>The Same Years · a <a href="https://12toknow.ai">12toKNOW</a> crossover · Family History × Russia &amp; Siberia</span>
+  <span>© 2026 DeWayne Searcy, PhD</span>
+</div></footer>
+
+</body>
+</html>
