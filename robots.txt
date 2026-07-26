@@ -1,0 +1,5 @@
+# robots.txt for 12toknow.ai
+User-agent: *
+Allow: /
+
+Sitemap: https://12toknow.ai/sitemap.xml
