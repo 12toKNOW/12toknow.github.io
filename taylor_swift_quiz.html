@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Which Taylor Swift Persona Are You?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@400;500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+<style>
+  /* ── Reset & Base ── */
+  #ts-quiz-root *, #ts-quiz-root *::before, #ts-quiz-root *::after {
+    box-sizing: border-box; margin: 0; padding: 0;
+  }
+  #ts-quiz-root {
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+  }
+
+  /* ── Animations ── */
+  @keyframes tsfadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+  @keyframes tsScaleIn {
+    from { opacity: 0; transform: scale(0.93); }
+    to   { opacity: 1; transform: scale(1);    }
+  }
+  @keyframes tsPulse {
+    0%,100% { transform: scale(1);    }
+    50%      { transform: scale(1.08); }
+  }
+  @keyframes tsShimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+  }
+
+  .ts-fade-up   { animation: tsfadeUp  0.55s ease forwards; }
+  .ts-scale-in  { animation: tsScaleIn 0.5s  ease forwards; }
+  .ts-pulse-once{ animation: tsPulse   1.2s  ease 0.4s 2;   }
+
+  /* ── Screen container ── */
+  .ts-screen {
+    min-height: 480px;
+    width: 100%;
+    padding: 48px 20px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ts-inner { max-width: 600px; width: 100%; }
+
+  /* ── Progress bar ── */
+  .ts-progress-wrap {
+    height: 3px;
+    background: #EDE8DC;
+    width: 100%;
+    position: relative;
+  }
+  .ts-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #C8A858, #F0D070);
+    transition: width 0.5s ease;
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* ── Buttons ── */
+  .ts-cta {
+    background: #1A1A1A;
+    color: white;
+    border: none;
+    padding: 15px 44px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.2s ease, letter-spacing 0.2s ease;
+    display: inline-block;
+  }
+  .ts-cta:hover { background: #B8903A; letter-spacing: 3px; }
+
+  .ts-ghost {
+    background: transparent;
+    color: #666;
+    border: 1.5px solid #DDD;
+    padding: 12px 28px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+  .ts-ghost:hover { border-color: #999; color: #333; }
+
+  /* ── Option buttons ── */
+  .ts-option {
+    width: 100%;
+    text-align: left;
+    background: white;
+    border: 1.5px solid #E2DDD6;
+    border-radius: 14px;
+    padding: 17px 22px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: #2A2A2A;
+    display: block;
+    margin-bottom: 10px;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  }
+  .ts-option:hover  { border-color: #B8A070; background: #FFFDF7; transform: translateX(5px); }
+  .ts-option.picked { border-color: #B8A070; background: #FFF9ED; }
+
+  /* ── Divider ornament ── */
+  .ts-ornament {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .ts-ornament-line {
+    flex: 1; height: 1px;
+  }
+
+  /* ── Trait chips ── */
+  .ts-chip {
+    display: inline-block;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 3px;
+  }
+
+  /* ── Card grid ── */
+  .ts-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+  .ts-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; }
+  @media (max-width: 480px) {
+    .ts-grid-3 { grid-template-columns: repeat(2,1fr); }
+    .ts-grid-2 { grid-template-columns: 1fr; }
+  }
+
+  /* ── Share card ── */
+  .ts-share-card {
+    width: 100%;
+    border-radius: 18px;
+    padding: 34px 30px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+  }
+  .ts-share-card-noise {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+  }
+
+  /* ── Score bars ── */
+  .ts-bar-wrap { margin-bottom: 13px; }
+  .ts-bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #333;
+  }
+  .ts-bar-label span:last-child {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: #999;
+  }
+  .ts-bar-track {
+    height: 5px;
+    background: #EEE;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .ts-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1.3s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* ── White card ── */
+  .ts-card {
+    background: white;
+    border-radius: 14px;
+    padding: 26px 28px;
+    margin-bottom: 22px;
+  }
+  .ts-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 12px;
+  }
+
+  /* ── Dot indicators ── */
+  .ts-dots { display: flex; gap: 4px; }
+  .ts-dot {
+    height: 3px;
+    border-radius: 2px;
+    transition: background 0.3s;
+  }
+
+  /* ── Intro persona grid item ── */
+  .ts-persona-tile {
+    border-radius: 10px;
+    padding: 14px 8px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div style="background:#1A1A1A;text-align:center;padding:11px 20px;">
+  <a href="index.html" style="color:#C8A858;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;">&larr; 12toKNOW</a>
+</div>
+<div id="ts-quiz-root"></div>
+
+<script>
+(function() {
+"use strict";
+
+// ── DATA ──────────────────────────────────────────────────────────────────────
+var PERSONAS = [
+  {
+    id:"the_golden", name:"The Golden One", subtitle:"Lover · Fearless · Debut", emoji:"✨",
+    color:"#D4A017", gradFrom:"#F9E07A", gradTo:"#E8C84A", bg:"#FFFBEA",
+    cardBg:"linear-gradient(135deg,#FFF3A3 0%,#FFD966 100%)", accent:"#8B6400", textColor:"#5C4200",
+    description:"You are the one who chooses to believe in things. In love letters and firefly nights and the feeling that everything is going to be okay. When Swifties decoded the \"Lover\" bridge as a wedding vow written to herself as much as to anyone else — that resonated with you. You aren't naive. You've seen the wreckage. You choose gold anyway.",
+    fandomMirror:"You're the Swiftie who cried at the Eras Tour during \"Long Live\" — not out of sadness, but because you felt it in your whole chest.",
+    secondaryNote:"There's a quiet thread of The Wanderer in you — you know gold things don't last forever, and that's part of why you love them so hard.",
+    traits:["Radiant","Intentional","Open-hearted","Resilient joy"],
+    lyricEcho:"\"Long story short, I survived.\"",
+    vaultTrack:"\"Death By A Thousand Cuts\" — you felt every one and came back soft anyway.",
+    character:"You're the one who writes the love letter. You're Fearless-era Taylor in the rain."
+  },
+  {
+    id:"the_outlaw", name:"The Outlaw", subtitle:"Red · Speak Now · Midnights", emoji:"🔥",
+    color:"#B22222", gradFrom:"#E05A5A", gradTo:"#8B0000", bg:"#FFF5F5",
+    cardBg:"linear-gradient(135deg,#FF8A80 0%,#C62828 100%)", accent:"#7A0000", textColor:"#5A0000",
+    description:"You feel at 100% when everyone else is at 60%. Love for you isn't a slow burn — it's a collision. When fans spent years decoding All Too Well as a document of real pain, you understood immediately: it wasn't about him. It was about what it does to a person to love that fully and be let go. You've been that person. You'd be that person again.",
+    fandomMirror:"You're the Swiftie who plays the 10-minute version alone at 2am and feels personally seen by every single word.",
+    secondaryNote:"The Phantom lives close to you — you've learned to armor up after the burns, but underneath, you're still Red.",
+    traits:["Intense","Unguarded","Passionate","Magnetic wreckage"],
+    lyricEcho:"\"Losing him was blue like I'd never known. Missing him was dark grey all alone.\"",
+    vaultTrack:"\"Nothing New\" — you've asked yourself whether you'll still matter when the intensity fades.",
+    character:"You're Jake's apartment. You're the scarf. You're the one who remembers everything."
+  },
+  {
+    id:"the_architect", name:"The Architect", subtitle:"Folklore · Evermore · The Tortured Poets", emoji:"🌲",
+    color:"#3A6645", gradFrom:"#7DBF8E", gradTo:"#2D4A36", bg:"#F2F7F3",
+    cardBg:"linear-gradient(135deg,#A8D5B5 0%,#2D4A36 100%)", accent:"#1E3528", textColor:"#1A2E20",
+    description:"You were the Swiftie who read the theory that Betty, James, and Augustine were Taylor writing three characters in a single love triangle — and you immediately understood not because you'd heard it before, but because you'd done that same thing in your head about your own life. You build narrative from chaos. You are the one at the party quietly observing, storing it all away.",
+    fandomMirror:"You're the Swiftie who found Folklore during the pandemic and felt like it was written specifically for you during the most interior year of your life.",
+    secondaryNote:"The Wanderer shares your archive of feeling — the difference is you make something from it. They sit with it.",
+    traits:["Perceptive","Interior","Constructive grief","Mythmaker"],
+    lyricEcho:"\"I had the time of my life fighting dragons with you.\"",
+    vaultTrack:"\"The Lakes\" — you've wanted to disappear into somewhere quiet and just write.",
+    character:"You're Betty. You're also James. You wrote the whole story and cast yourself in every role."
+  },
+  {
+    id:"the_phantom", name:"The Phantom", subtitle:"Reputation · Midnights (3am) · TTPD", emoji:"🐍",
+    color:"#2A2A4A", gradFrom:"#5A5A8A", gradTo:"#0D0D1A", bg:"#F5F5FA",
+    cardBg:"linear-gradient(135deg,#6C6CAA 0%,#0D0D1A 100%)", accent:"#4A4A8A", textColor:"#1A1A3A",
+    description:"When fans decoded Reputation as Taylor's intentional reclamation of the villain narrative — burning down who she was to become something the public couldn't touch — you didn't need the theory explained. You lived that. You have a version of yourself that the world sees and a version that only a few people get access to. The armour was built for a reason. It works.",
+    fandomMirror:"You're the Swiftie who defends the Reputation era loudly in fandom debates — not because it's her best work, but because it's the most honest thing she ever made.",
+    secondaryNote:"The Outlaw is your origin story — before you built the walls, you burned without protection.",
+    traits:["Strategic","Guarded","Fiercely loyal","Power through control"],
+    lyricEcho:"\"I don't trust nobody and nobody trusts me. I'll be the actress starring in your bad dreams.\"",
+    vaultTrack:"\"Getaway Car\" — you've loved someone knowing it would end badly and done it anyway, eyes open.",
+    character:"You're the Snake. You're also the one who set up the whole storyline. Mastermind."
+  },
+  {
+    id:"the_wanderer", name:"The Wanderer", subtitle:"Evermore · Folklore · Red (TV)", emoji:"🍂",
+    color:"#7A5C1E", gradFrom:"#C8983A", gradTo:"#4A3000", bg:"#FAF6ED",
+    cardBg:"linear-gradient(135deg,#E8C878 0%,#4A3000 100%)", accent:"#4A3000", textColor:"#3A2200",
+    description:"You are made of the in-between moments. When Swifties talk about \"Marjorie\" being Taylor's eulogy to her grandmother — and how the whole song is built around the idea that the dead live on in who they shaped — you don't just hear it, you feel it as a document of your own life. You carry people. You carry places. You carry whole chapters that technically ended years ago.",
+    fandomMirror:"You're the Swiftie who has a specific Taylor song attached to a specific person who is no longer in your life, and you will never disclose which one.",
+    secondaryNote:"The Golden One is your hope — some part of you still believes the warmth comes back.",
+    traits:["Nostalgic","Tender","Elegiac","Deep memory"],
+    lyricEcho:"\"I should've asked you questions. I should've asked you how to be.\"",
+    vaultTrack:"\"Right Where You Left Me\" — you've been the one who stayed frozen while everything moved on.",
+    character:"You're Marjorie. You're also the granddaughter who keeps her alive. You hold both."
+  },
+  {
+    id:"the_disruptor", name:"The Disruptor", subtitle:"1989 · Midnights · Eras Tour", emoji:"⚡",
+    color:"#1565C0", gradFrom:"#64B5F6", gradTo:"#0D47A1", bg:"#EEF4FF",
+    cardBg:"linear-gradient(135deg,#90CAF9 0%,#0D47A1 100%)", accent:"#0D47A1", textColor:"#0A2E6E",
+    description:"When fans analyzed the 1989 era as Taylor's deliberate shedding of country identity to take control of her own pop narrative — you understood that as a life strategy, not just a PR move. You are always in the middle of becoming. You've reinvented yourself at least once in a way that surprised everyone who knew you before. You don't explain it. You just arrive differently.",
+    fandomMirror:"You're the Swiftie who came to Taylor late — maybe via Midnights or the Eras Tour — and didn't feel like you missed anything, because the whole catalog was waiting for exactly who you are now.",
+    secondaryNote:"The Architect watches your reinventions with quiet envy — they build inward, you build outward and forward.",
+    traits:["Adaptive","Self-directed","Unafraid of the new","Controlled evolution"],
+    lyricEcho:"\"She lost him but she found herself and somehow that was everything.\"",
+    vaultTrack:"\"Clean\" — you've had a specific moment where you realized you were over something. It hit without warning.",
+    character:"You're New Taylor. You're also the one who wrote the old Taylor's eulogy and meant it kindly."
+  }
+];
+
+var QUESTIONS = [
+  {
+    id:1, prompt:"In the Betty / James / Augustine triangle,",
+    text:"which role would you most likely have played — and be honest.",
+    options:[
+      {text:"Betty — I waited. I was hurt. But I would have taken them back.", weight:{the_golden:3,the_wanderer:2}},
+      {text:"James — I made a terrible choice, knew it while making it, and wrote about it after.", weight:{the_outlaw:3,the_architect:2}},
+      {text:"Augustine — I was the interlude. I never expected to become the villain of someone else's story.", weight:{the_phantom:2,the_disruptor:2}},
+      {text:"Taylor — I watched the whole thing and turned it into art.", weight:{the_architect:3,the_wanderer:1}}
+    ]
+  },
+  {
+    id:2, prompt:"\"All Too Well (10 Minute Version)\" is widely understood as",
+    text:"a document of remembering what someone else wants you to forget. Which line lands hardest for you?",
+    options:[
+      {text:"The scarf left behind — objects as emotional evidence. You hold onto things.", weight:{the_wanderer:3,the_golden:1}},
+      {text:"\"You kept me like a secret but I kept you like an oath\" — asymmetrical love. You've been the oath.", weight:{the_outlaw:3,the_architect:1}},
+      {text:"\"Did the twin flame bruise paint you blue?\" — you've wondered if you were the damage in someone's story.", weight:{the_phantom:2,the_architect:2}},
+      {text:"\"I was never good at telling jokes but the punchline goes\" — you process pain with dark humor and distance.", weight:{the_disruptor:3,the_phantom:1}}
+    ]
+  },
+  {
+    id:3, prompt:"The Reputation era was decoded by fans as Taylor",
+    text:"burning herself down to take control of the narrative. What's your relationship to that kind of reinvention?",
+    options:[
+      {text:"I've done it. I disappeared and came back as someone harder to hurt.", weight:{the_phantom:3,the_disruptor:2}},
+      {text:"I've wanted to but I'm too attached to continuity. I don't shed — I add layers.", weight:{the_architect:3,the_wanderer:2}},
+      {text:"I reinvent constantly, but it's less about protection and more about becoming who I'm supposed to be.", weight:{the_disruptor:3,the_golden:1}},
+      {text:"I haven't had to. I've never let things get bad enough to require a controlled burn.", weight:{the_golden:2,the_outlaw:1}}
+    ]
+  },
+  {
+    id:4, prompt:"\"Marjorie\" is a eulogy built around the idea",
+    text:"that the dead live on in who they shaped. Whose voice lives in you the way Marjorie lives in Taylor?",
+    options:[
+      {text:"Someone who taught me how to love without conditions. I feel them in how I treat people.", weight:{the_golden:3,the_wanderer:2}},
+      {text:"Someone who hurt me. They live in my defenses, not my warmth.", weight:{the_phantom:3,the_outlaw:1}},
+      {text:"Someone I lost before I could ask all the questions. I carry the gap.", weight:{the_wanderer:3,the_architect:2}},
+      {text:"An earlier version of myself. I mourn her and I've moved past her.", weight:{the_disruptor:3,the_architect:1}}
+    ]
+  },
+  {
+    id:5, prompt:"Fans have long debated whether Taylor writes from experience or construction —",
+    text:"whether she's the protagonist or the author. When you listen, what do you hear?",
+    options:[
+      {text:"Pure feeling. She's in every word. That's why it works.", weight:{the_outlaw:3,the_golden:1}},
+      {text:"A brilliant architect. She shapes experience into myth. The emotion is real but it's also craft.", weight:{the_architect:3,the_phantom:1}},
+      {text:"Both, simultaneously. The line between living it and writing it dissolved for her a long time ago.", weight:{the_wanderer:2,the_architect:2}},
+      {text:"It doesn't matter. The song meets me where I am regardless of where it came from.", weight:{the_disruptor:3,the_golden:1}}
+    ]
+  },
+  {
+    id:6, prompt:"Taylor's Versions changed something for fans —",
+    text:"reclaiming the masters reframed how the songs felt. Where do you stand?",
+    options:[
+      {text:"The Taylor's Versions feel warmer, more settled. She sounds like she won. I love that.", weight:{the_golden:3,the_disruptor:1}},
+      {text:"The vault tracks are the real gift. The unreleased ones feel like finding pages she tore out.", weight:{the_architect:3,the_wanderer:2}},
+      {text:"The originals hit different because of what they cost her. I respect the reclamation but I feel the original's wound.", weight:{the_outlaw:2,the_wanderer:2}},
+      {text:"The whole thing is a masterclass in how to fight a war without looking like you're fighting. Pure strategy.", weight:{the_phantom:3,the_disruptor:1}}
+    ]
+  },
+  {
+    id:7, prompt:"\"The Tortured Poets Department\" was received as either",
+    text:"her most raw work or her most constructed. How did it land for you?",
+    options:[
+      {text:"Raw, almost uncomfortably so. Some of it felt like reading something you weren't supposed to see.", weight:{the_outlaw:3,the_architect:1}},
+      {text:"I loved the characters more than the confessions. The mythology she built around the relationship was the art.", weight:{the_architect:3,the_phantom:1}},
+      {text:"It felt like grief processed in real time. Some of it wasn't fully formed yet — and that was the point.", weight:{the_wanderer:3,the_golden:1}},
+      {text:"I appreciated the pivot. Even in pain she was already looking at it from the outside.", weight:{the_disruptor:3,the_phantom:2}}
+    ]
+  },
+  {
+    id:8, prompt:"\"Clean\" describes a specific moment —",
+    text:"realizing you're finally over something. Have you had yours?",
+    options:[
+      {text:"Yes. It came quietly and caught me completely off guard. One day it just didn't hurt.", weight:{the_disruptor:3,the_golden:2}},
+      {text:"Yes — but I had to burn everything first. There was nothing quiet about it.", weight:{the_outlaw:3,the_phantom:1}},
+      {text:"I'm not sure I ever get fully clean. I carry things. That's just who I am.", weight:{the_wanderer:3,the_architect:2}},
+      {text:"I've had it — and then I built something from the wreckage before it could come back.", weight:{the_architect:3,the_disruptor:1}}
+    ]
+  },
+  {
+    id:9, prompt:"\"Mastermind\" reframes the whole love story as something Taylor engineered —",
+    text:"she saw it, she wanted it, she made it happen. Does that resonate as romantic or terrifying?",
+    options:[
+      {text:"Romantic. To be chosen by someone who thought it through — that's the highest compliment.", weight:{the_golden:3,the_wanderer:1}},
+      {text:"Both. I've done this. I don't lead with it, but I arrange things.", weight:{the_phantom:3,the_architect:2}},
+      {text:"Terrifying — I want to be loved for who I am, not a version of me someone designed a scenario for.", weight:{the_outlaw:2,the_golden:2}},
+      {text:"It's just self-awareness. Knowing what you want and moving toward it isn't manipulation — it's clarity.", weight:{the_disruptor:3,the_phantom:1}}
+    ]
+  },
+  {
+    id:10, prompt:"Fans have described the Eras Tour as a journey through grief, reinvention, and survival —",
+    text:"not just a setlist. Which moment would have undone you?",
+    options:[
+      {text:"\"Long Live\" — the collective feeling that it was all worth it.", weight:{the_golden:3,the_wanderer:1}},
+      {text:"The surprise songs. The unrepeatable, unreleased, just-for-tonight ones.", weight:{the_architect:3,the_outlaw:1}},
+      {text:"\"All Too Well\" in full — 10 minutes of a room holding its breath together.", weight:{the_outlaw:3,the_wanderer:2}},
+      {text:"The Reputation segment. Watching 70,000 people reclaim something that was supposed to be shameful.", weight:{the_phantom:3,the_disruptor:2}}
+    ]
+  },
+  {
+    id:11, prompt:"There's a fan theory that Taylor has always been writing the same story —",
+    text:"about a person who loves too much, learns too late, and makes something beautiful from it. Do you believe it?",
+    options:[
+      {text:"Yes. And I love her more for the continuity. It's one long song.", weight:{the_wanderer:3,the_golden:2}},
+      {text:"Yes — and I think she knows it too. The Architect knows what she's building.", weight:{the_architect:3,the_phantom:1}},
+      {text:"Maybe — but each era is also a genuine break. She contains multitudes that don't fully connect.", weight:{the_disruptor:3,the_outlaw:1}},
+      {text:"I don't need the meta-theory. Each album hit me where I was. That's enough.", weight:{the_outlaw:2,the_golden:2}}
+    ]
+  },
+  {
+    id:12, prompt:"\"Right Where You Left Me\" is about someone who stayed frozen",
+    text:"in a moment while the world moved on. Have you ever been her?",
+    options:[
+      {text:"Yes. I've sat in a specific memory long past when it was useful to do so.", weight:{the_wanderer:3,the_outlaw:1}},
+      {text:"Yes — but I turned it into something. The staying was research.", weight:{the_architect:3,the_wanderer:1}},
+      {text:"I've felt it, but I moved. Movement is how I survive.", weight:{the_disruptor:3,the_golden:1}},
+      {text:"I've been the person who left while someone else stayed. That haunts me too.", weight:{the_phantom:2,the_outlaw:2}}
+    ]
+  }
+];
+
+// ── STATE ──────────────────────────────────────────────────────────────────
+var state = {
+  screen: "intro",
+  current: 0,
+  answers: [],
+  scores: {},
+  primary: null,
+  secondary: null,
+  selected: null,
+  visible: true,
+  copied: false
+};
+
+// ── UTILS ──────────────────────────────────────────────────────────────────
+function calcScores(answers) {
+  var t = {};
+  PERSONAS.forEach(function(p){ t[p.id] = 0; });
+  answers.forEach(function(a){
+    if (!a || !a.weight) return;
+    Object.keys(a.weight).forEach(function(k){ t[k] = (t[k]||0) + a.weight[k]; });
+  });
+  return t;
+}
+
+function topTwo(scores) {
+  var sorted = Object.keys(scores).sort(function(a,b){ return scores[b]-scores[a]; });
+  return [sorted[0], sorted[1]];
+}
+
+function getPersona(id) {
+  return PERSONAS.filter(function(p){ return p.id === id; })[0];
+}
+
+// ── RENDER ─────────────────────────────────────────────────────────────────
+function render() {
+  var root = document.getElementById('ts-quiz-root');
+  if (!root) return;
+  var html = '';
+  if      (state.screen === 'intro')  html = renderIntro();
+  else if (state.screen === 'test')   html = renderTest();
+  else if (state.screen === 'result') html = renderResult();
+  root.innerHTML = html;
+  bindEvents();
+  if (state.screen === 'result') {
+    setTimeout(function(){ animateBars(); }, 100);
+  }
+}
+
+// ── INTRO ──────────────────────────────────────────────────────────────────
+function renderIntro() {
+  var tiles = PERSONAS.map(function(p){
+    return '<div class="ts-persona-tile" style="background:'+p.bg+';border:1px solid '+p.color+'44;">'
+      + '<div style="font-size:26px;margin-bottom:5px;">'+p.emoji+'</div>'
+      + '<div style="font-family:\'Playfair Display\',serif;font-size:12px;font-weight:700;color:'+p.accent+';line-height:1.2;">'+p.name+'</div>'
+      + '</div>';
+  }).join('');
+
+  return '<div class="ts-screen ts-fade-up" style="background:linear-gradient(155deg,#FAF8F2 0%,#F0E8D0 60%,#E8DFC0 100%);">'
+    + '<div class="ts-inner" style="text-align:center;">'
+    + '<div style="font-family:\'DM Mono\',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#B8903A;margin-bottom:20px;">A Lyrical &amp; Fan Interpretation Study</div>'
+    + '<h1 style="font-family:\'Playfair Display\',serif;font-size:clamp(38px,8vw,64px);font-weight:900;line-height:1.0;color:#1A1A1A;margin-bottom:4px;">'
+    + 'Which<br><em style="color:#B8903A;font-weight:400;">Taylor Swift</em><br>Persona Are You?</h1>'
+    + '<div class="ts-ornament"><div class="ts-ornament-line" style="background:linear-gradient(90deg,transparent,#C8A858);"></div>'
+    + '<span style="font-size:18px;">✦</span>'
+    + '<div class="ts-ornament-line" style="background:linear-gradient(90deg,#C8A858,transparent);"></div></div>'
+    + '<p style="font-size:16px;line-height:1.75;color:#555;margin-bottom:10px;">This isn\'t about your favorite era or which song describes you.<br><strong>It\'s about which archetype lives inside you.</strong></p>'
+    + '<p style="font-size:14px;line-height:1.7;color:#888;margin-bottom:34px;">Questions go beyond the lyrics — into how fans have decoded the stories, the characters, and found themselves in the gaps Taylor left between the verses.</p>'
+    + '<div class="ts-grid-3" style="margin-bottom:38px;">'+tiles+'</div>'
+    + '<button class="ts-cta" data-action="start">Begin</button>'
+    + '<div style="font-family:\'DM Mono\',monospace;font-size:11px;color:#BBB;margin-top:13px;letter-spacing:1px;">12 questions · ~5 minutes</div>'
+    + '</div></div>';
+}
+
+// ── TEST ───────────────────────────────────────────────────────────────────
+function renderTest() {
+  var q = QUESTIONS[state.current];
+  var pct = (state.current / QUESTIONS.length * 100).toFixed(1);
+  var opacity = state.visible ? '1' : '0';
+  var transform = state.visible ? 'translateY(0)' : 'translateY(12px)';
+
+  var dots = QUESTIONS.map(function(_,i){
+    var bg = i < state.current ? '#C8A858' : i === state.current ? '#F0D070' : '#E0DAD0';
+    var w = i === state.current ? '22px' : '18px';
+    return '<div class="ts-dot" style="width:'+w+';background:'+bg+';"></div>';
+  }).join('');
+
+  var options = q.options.map(function(opt, i){
+    var letter = String.fromCharCode(65+i);
+    var picked = state.selected === i ? ' picked' : '';
+    return '<button class="ts-option'+picked+'" data-action="answer" data-index="'+i+'">'
+      + '<span style="color:#C8A858;font-family:\'DM Mono\',monospace;font-size:11px;margin-right:10px;letter-spacing:1px;">'+letter+'</span>'
+      + opt.text + '</button>';
+  }).join('');
+
+  return '<div style="min-height:480px;width:100%;display:flex;flex-direction:column;">'
+    + '<div class="ts-progress-wrap"><div class="ts-progress-fill" style="width:'+pct+'%;"></div></div>'
+    + '<div style="flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px;background:#FAF8F2;">'
+    + '<div style="max-width:600px;width:100%;opacity:'+opacity+';transform:'+transform+';transition:opacity 0.35s ease,transform 0.35s ease;" id="ts-q-body">'
+    + '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">'
+    + '<span style="font-family:\'DM Mono\',monospace;font-size:10px;letter-spacing:2.5px;color:#C8A858;text-transform:uppercase;">'+(state.current+1)+' / '+QUESTIONS.length+'</span>'
+    + '<div class="ts-dots">'+dots+'</div>'
+    + '</div>'
+    + (q.prompt ? '<div style="font-family:\'DM Mono\',monospace;font-size:10px;letter-spacing:1.5px;color:#AAA;text-transform:uppercase;margin-bottom:5px;">'+q.prompt+'</div>' : '')
+    + '<h2 style="font-family:\'Playfair Display\',serif;font-size:clamp(19px,4.5vw,27px);font-weight:700;color:#1A1A1A;line-height:1.35;margin-bottom:28px;">'+q.text+'</h2>'
+    + '<div>'+options+'</div>'
+    + '</div></div></div>';
+}
+
+// ── RESULT ─────────────────────────────────────────────────────────────────
+function renderResult() {
+  var p = state.primary;
+  var sec = state.secondary;
+  var scores = state.scores;
+  var maxScore = Math.max.apply(null, Object.values(scores));
+  var sorted = PERSONAS.slice().sort(function(a,b){ return (scores[b.id]||0)-(scores[a.id]||0); });
+
+  // Share card
+  var shareCard = '<div class="ts-share-card ts-scale-in" style="background:'+p.cardBg+';">'
+    + '<div class="ts-share-card-noise"></div>'
+    + '<div style="position:relative;z-index:1;">'
+    + '<div style="font-family:\'DM Mono\',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;opacity:0.7;margin-bottom:10px;">My Taylor Swift Archetype</div>'
+    + '<div style="font-size:50px;margin-bottom:6px;" class="ts-pulse-once">'+p.emoji+'</div>'
+    + '<div style="font-family:\'Playfair Display\',serif;font-size:clamp(26px,6vw,40px);font-weight:900;line-height:1.05;margin-bottom:4px;">'+p.name+'</div>'
+    + '<div style="font-family:\'DM Mono\',monospace;font-size:11px;opacity:0.75;letter-spacing:1px;margin-bottom:18px;">'+p.subtitle+'</div>'
+    + '<div style="width:40px;height:1px;background:rgba(255,255,255,0.45);margin-bottom:18px;"></div>'
+    + '<div style="font-size:14px;line-height:1.65;opacity:0.9;font-family:\'Lato\',sans-serif;margin-bottom:16px;">'+p.fandomMirror+'</div>'
+    + '<div style="font-family:\'Playfair Display\',serif;font-style:italic;font-size:13px;opacity:0.8;border-left:2px solid rgba(255,255,255,0.45);padding-left:12px;margin-bottom:16px;">'+p.lyricEcho+'</div>'
+    + (sec ? '<div style="background:rgba(255,255,255,0.15);border-radius:10px;padding:12px 15px;font-size:12px;font-family:\'Lato\',sans-serif;opacity:0.9;">'
+      + '<span style="font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:1px;display:block;margin-bottom:4px;opacity:0.7;">TRACES OF</span>'
+      + sec.emoji+' '+sec.name+' — '+p.secondaryNote+'</div>' : '')
+    + '</div></div>';
+
+  // Traits
+  var traits = p.traits.map(function(t){
+    return '<span class="ts-chip" style="background:'+p.color+'22;color:'+p.accent+';border:1px solid '+p.color+'55;">'+t+'</span>';
+  }).join('');
+
+  // Score bars
+  var bars = sorted.map(function(persona){
+    var val = scores[persona.id]||0;
+    var pct2 = Math.round(val/Math.max(maxScore,1)*100);
+    return '<div class="ts-bar-wrap">'
+      + '<div class="ts-bar-label"><span>'+persona.emoji+' '+persona.name+'</span><span>'+pct2+'%</span></div>'
+      + '<div class="ts-bar-track"><div class="ts-bar-fill" id="bar-'+persona.id+'" data-pct="'+pct2+'" style="width:0%;background:linear-gradient(90deg,'+persona.gradFrom+','+persona.gradTo+');"></div></div>'
+      + '</div>';
+  }).join('');
+
+  // Other personas
+  var others = PERSONAS.filter(function(x){ return x.id !== p.id; }).map(function(x){
+    return '<div style="background:'+x.bg+';border:1px solid '+x.color+'44;border-radius:12px;padding:14px 8px;text-align:center;">'
+      + '<div style="font-size:26px;margin-bottom:5px;">'+x.emoji+'</div>'
+      + '<div style="font-family:\'Playfair Display\',serif;font-size:12px;font-weight:700;color:'+x.accent+';line-height:1.2;">'+x.name+'</div>'
+      + '<div style="font-family:\'DM Mono\',monospace;font-size:9px;color:'+x.accent+';opacity:0.6;margin-top:3px;letter-spacing:0.5px;">'+x.subtitle.split('·')[0].trim()+'</div>'
+      + '</div>';
+  }).join('');
+
+  // Secondary block
+  var secBlock = '';
+  if (sec) {
+    secBlock = '<div style="background:'+sec.bg+';border-radius:14px;padding:24px;border:1.5px dashed '+sec.color+'66;margin-bottom:22px;">'
+      + '<div style="font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:'+sec.accent+';opacity:0.7;margin-bottom:10px;">But You Also Have Traces Of</div>'
+      + '<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">'
+      + '<span style="font-size:28px;">'+sec.emoji+'</span>'
+      + '<div><div style="font-family:\'Playfair Display\',serif;font-weight:700;color:'+sec.accent+';font-size:16px;">'+sec.name+'</div>'
+      + '<div style="font-family:\'DM Mono\',monospace;font-size:10px;color:'+sec.accent+';opacity:0.7;">'+sec.subtitle+'</div></div></div>'
+      + '<p style="font-size:14px;line-height:1.6;color:#444;">'+p.secondaryNote+'</p>'
+      + '</div>';
+  }
+
+  var copyLabel = state.copied ? '✓ Copied!' : 'Copy to Share';
+
+  return '<div style="min-height:100%;background:'+p.bg+';padding:56px 20px 72px;" class="ts-fade-up">'
+    + '<div style="max-width:640px;margin:0 auto;">'
+
+    // Header
+    + '<div style="text-align:center;margin-bottom:38px;">'
+    + '<div style="font-family:\'DM Mono\',monospace;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:'+p.accent+';opacity:0.7;margin-bottom:10px;">Your Archetype</div>'
+    + '<div style="font-size:58px;margin-bottom:8px;" class="ts-pulse-once">'+p.emoji+'</div>'
+    + '<h1 style="font-family:\'Playfair Display\',serif;font-size:clamp(36px,8vw,56px);font-weight:900;color:'+p.accent+';line-height:1.0;margin-bottom:6px;">'+p.name+'</h1>'
+    + '<div style="font-family:\'DM Mono\',monospace;font-size:11px;letter-spacing:2px;color:'+p.accent+';opacity:0.7;text-transform:uppercase;">'+p.subtitle+'</div>'
+    + '</div>'
+
+    // Share card
+    + shareCard
+
+    // Copy CTA
+    + '<div style="text-align:center;margin:24px 0 40px;display:flex;gap:12px;justify-content:center;">'
+    + '<button class="ts-cta" data-action="copy">'+copyLabel+'</button>'
+    + '<button class="ts-ghost" data-action="restart">Retake</button>'
+    + '</div>'
+
+    // Description
+    + '<div class="ts-card" style="border:1px solid '+p.color+'33;margin-bottom:22px;">'
+    + '<div class="ts-card-label" style="color:'+p.accent+';">Your Profile</div>'
+    + '<p style="font-size:16px;line-height:1.75;color:#333;">'+p.description+'</p>'
+    + '</div>'
+
+    // Traits
+    + '<div style="text-align:center;margin-bottom:22px;">'+traits+'</div>'
+
+    // Character + Vault
+    + '<div class="ts-grid-2" style="margin-bottom:22px;">'
+    + '<div class="ts-card" style="border:1px solid '+p.color+'33;margin-bottom:0;">'
+    + '<div class="ts-card-label" style="color:'+p.accent+';">You Are</div>'
+    + '<p style="font-size:13px;line-height:1.6;color:#444;">'+p.character+'</p>'
+    + '</div>'
+    + '<div class="ts-card" style="border:1px solid '+p.color+'33;margin-bottom:0;">'
+    + '<div class="ts-card-label" style="color:'+p.accent+';">Your Vault Track</div>'
+    + '<p style="font-size:13px;line-height:1.6;color:#444;">'+p.vaultTrack+'</p>'
+    + '</div></div>'
+
+    // Lyric echo
+    + '<div style="border-left:4px solid '+p.color+';padding-left:20px;margin-bottom:36px;">'
+    + '<div style="font-family:\'DM Mono\',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:'+p.accent+';opacity:0.6;margin-bottom:8px;">Lyric Echo</div>'
+    + '<div style="font-family:\'Playfair Display\',serif;font-style:italic;font-size:18px;color:'+p.accent+';line-height:1.5;">'+p.lyricEcho+'</div>'
+    + '</div>'
+
+    // Secondary
+    + secBlock
+
+    // Score breakdown
+    + '<div class="ts-card" style="border:1px solid #E8E2D8;margin-bottom:28px;">'
+    + '<div class="ts-card-label">Your Full Archetype Breakdown</div>'
+    + bars
+    + '</div>'
+
+    // Other archetypes
+    + '<div style="margin-bottom:36px;">'
+    + '<div style="font-family:\'DM Mono\',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#BBB;margin-bottom:14px;text-align:center;">The Other Five</div>'
+    + '<div class="ts-grid-3">'+others+'</div>'
+    + '</div>'
+
+    // Bottom CTAs
+    + '<div style="text-align:center;display:flex;gap:12px;justify-content:center;">'
+    + '<button class="ts-cta" data-action="restart">Retake the Test</button>'
+    + '<button class="ts-ghost" data-action="copy">'+copyLabel+'</button>'
+    + '</div>'
+
+    + '</div></div>';
+}
+
+// ── ANIMATE BARS ──────────────────────────────────────────────────────────
+function animateBars() {
+  document.querySelectorAll('.ts-bar-fill').forEach(function(el){
+    var pct = el.getAttribute('data-pct');
+    setTimeout(function(){ el.style.width = pct + '%'; }, 80);
+  });
+}
+
+// ── EVENTS ────────────────────────────────────────────────────────────────
+function bindEvents() {
+  document.querySelectorAll('[data-action]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var action = el.getAttribute('data-action');
+      var idx    = el.getAttribute('data-index');
+      if (action === 'start')   handleStart();
+      if (action === 'answer')  handleAnswer(parseInt(idx, 10));
+      if (action === 'restart') handleRestart();
+      if (action === 'copy')    handleCopy();
+    });
+  });
+}
+
+function handleStart() {
+  state.screen = 'test';
+  state.current = 0;
+  state.answers = [];
+  state.visible = true;
+  render();
+}
+
+function handleAnswer(idx) {
+  if (state.selected !== null) return;
+  state.selected = idx;
+  render();
+
+  var opt = QUESTIONS[state.current].options[idx];
+
+  setTimeout(function(){
+    state.answers.push(opt);
+    state.selected = null;
+    state.visible = false;
+    render();
+
+    setTimeout(function(){
+      if (state.current + 1 < QUESTIONS.length) {
+        state.current++;
+        state.visible = true;
+        render();
+      } else {
+        var s = calcScores(state.answers);
+        var ids = topTwo(s);
+        state.scores = s;
+        state.primary = getPersona(ids[0]);
+        state.secondary = getPersona(ids[1]);
+        state.screen = 'result';
+        state.visible = true;
+        render();
+        window.scrollTo({ top: document.getElementById('ts-quiz-root').offsetTop - 20, behavior: 'smooth' });
+      }
+    }, 320);
+  }, 380);
+}
+
+function handleRestart() {
+  state.screen = 'intro';
+  state.current = 0;
+  state.answers = [];
+  state.scores = {};
+  state.primary = null;
+  state.secondary = null;
+  state.selected = null;
+  state.visible = true;
+  state.copied = false;
+  render();
+}
+
+function handleCopy() {
+  if (!state.primary) return;
+  var p = state.primary;
+  var sec = state.secondary;
+  var text = 'My Taylor Swift archetype: ' + p.emoji + ' ' + p.name + ' (' + p.subtitle + ')\n\n'
+    + p.lyricEcho + '\n\n' + p.fandomMirror
+    + (sec ? '\n\nTraces of: ' + sec.emoji + ' ' + sec.name : '');
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function(){
+      state.copied = true;
+      render();
+      setTimeout(function(){ state.copied = false; render(); }, 2500);
+    });
+  }
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────
+render();
+
+})();
+</script>
+</body>
+</html>
