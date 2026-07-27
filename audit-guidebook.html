@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Analysis Audit Guidebook</title>
+<meta name="description" content="The hands-on method for auditing AI-produced analysis. Six core principles, a three-tier audit model, a phase-by-phase checklist, reusable prompt templates, and a lessons log — the playbook an analyst works from. By DeWayne Searcy, PhD. Open access, no sign-up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d1b2a;
+  --ink-soft: #1b2a3a;
+  --paper: #f4efe6;
+  --paper-warm: #ebe3d3;
+  --rule: #c9bfa8;
+  --ochre: #b8651a;
+  --ochre-deep: #8a4a12;
+  --sage: #4a6b5a;
+  --crimson: #8b2e2e;
+  --muted: #5a5548;
+  --shadow: 0 1px 2px rgba(13,27,42,0.06), 0 2px 8px rgba(13,27,42,0.04);
+  --shadow-lift: 0 4px 12px rgba(13,27,42,0.08), 0 12px 32px rgba(13,27,42,0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Paper texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(184,101,26,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(74,107,90,0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============ SUITE LINK ============ */
+.suite-link {
+  display: inline-block;
+  margin: 28px 0 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ochre-deep);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--rule);
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.suite-link:hover { color: var(--ochre); border-color: var(--ochre); }
+
+/* ============ MASTHEAD ============ */
+.masthead {
+  padding: 24px 0 40px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.masthead::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--ink);
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ochre-deep);
+  margin-bottom: 20px;
+}
+
+.eyebrow::before {
+  content: "§ ";
+  color: var(--muted);
+}
+
+h1.title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+
+h1.title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ochre-deep);
+}
+
+.subtitle {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  max-width: 720px;
+  line-height: 1.45;
+  margin-bottom: 32px;
+}
+
+.masthead-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.masthead-meta strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ============ NAV ============ */
+.toc {
+  background: var(--paper-warm);
+  border-left: 3px solid var(--ochre);
+  padding: 28px 32px;
+  margin-bottom: 60px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.toc-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ochre-deep);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.toc ol {
+  list-style: none;
+  counter-reset: toc-counter;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 40px;
+}
+
+.toc li {
+  counter-increment: toc-counter;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--rule);
+  position: relative;
+  padding-left: 36px;
+}
+
+.toc li::before {
+  content: counter(toc-counter, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ochre);
+  font-weight: 500;
+  top: 8px;
+}
+
+.toc a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.toc a:hover {
+  color: var(--ochre-deep);
+}
+
+/* ============ SECTIONS ============ */
+section {
+  margin-bottom: 80px;
+  scroll-margin-top: 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.section-number {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--ochre-deep);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+
+h2.section-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  margin: 36px 0 16px;
+  color: var(--ink);
+}
+
+h4 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 24px 0 12px;
+  color: var(--ochre-deep);
+}
+
+p {
+  margin-bottom: 18px;
+  max-width: 75ch;
+}
+
+p.lede {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin-bottom: 28px;
+}
+
+p.lede::first-letter {
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.85;
+  padding: 4px 10px 0 0;
+  font-weight: 600;
+  color: var(--ochre-deep);
+}
+
+strong { font-weight: 600; color: var(--ink); }
+em { font-style: italic; }
+
+/* Pull quote */
+.pullquote {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: var(--ink);
+  border-left: 3px solid var(--ochre);
+  padding: 8px 0 8px 28px;
+  margin: 36px 0;
+  max-width: 65ch;
+}
+
+.pullquote cite {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* ============ EXECUTIVE BRIEF CARD ============ */
+.exec-brief {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 48px 56px;
+  margin: 48px 0 64px;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: var(--shadow-lift);
+}
+
+.exec-brief::before {
+  content: "THE METHOD IN BRIEF";
+  position: absolute;
+  top: -10px;
+  left: 32px;
+  background: var(--ochre);
+  color: var(--paper);
+  padding: 4px 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+.exec-brief h3 {
+  color: var(--paper);
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.exec-brief p { color: rgba(244,239,230,0.88); }
+.exec-brief strong { color: var(--paper); }
+
+.brief-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(244,239,230,0.2);
+}
+
+.brief-stat {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.brief-stat .num {
+  font-family: 'Fraunces', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ochre);
+  letter-spacing: -0.03em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.brief-stat .label {
+  font-size: 13px;
+  color: rgba(244,239,230,0.75);
+  line-height: 1.4;
+}
+
+/* ============ TIER CARDS ============ */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.tier-card {
+  background: var(--paper-warm);
+  padding: 24px;
+  border-top: 3px solid var(--ink);
+  position: relative;
+}
+
+.tier-card.tier-1 { border-top-color: var(--sage); }
+.tier-card.tier-2 { border-top-color: var(--ochre); }
+.tier-card.tier-3 { border-top-color: var(--crimson); }
+
+.tier-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.tier-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.tier-card ul {
+  list-style: none;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.tier-card li {
+  padding: 4px 0 4px 16px;
+  position: relative;
+}
+
+.tier-card li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--ochre);
+  font-weight: 600;
+}
+
+.tier-card .tier-effort {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dotted var(--rule);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ochre-deep);
+}
+
+/* ============ TABLES ============ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  font-size: 14px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.data-table thead {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.data-table th {
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(244,239,230,0.15);
+}
+
+.data-table th:last-child { border-right: none; }
+
+.data-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px dotted var(--rule);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.data-table td:last-child { border-right: none; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tbody tr:nth-child(even) { background: rgba(201,191,168,0.15); }
+.data-table tbody tr:hover { background: rgba(184,101,26,0.06); }
+
+.data-table .row-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  color: var(--ochre-deep);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.data-table code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  background: rgba(13,27,42,0.06);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.match { color: var(--sage); font-weight: 600; }
+.mismatch { color: var(--crimson); font-weight: 600; }
+
+/* ============ CHECKLIST ============ */
+.checklist {
+  background: var(--paper-warm);
+  padding: 32px 36px;
+  margin: 28px 0;
+  border-left: 4px solid var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.checklist h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.checklist-items {
+  list-style: none;
+}
+
+.checklist-items li {
+  padding: 10px 0 10px 36px;
+  position: relative;
+  border-bottom: 1px dotted var(--rule);
+  font-size: 14.5px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.checklist-items li:last-child { border-bottom: none; }
+
+.checklist-items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  transition: all 0.15s ease;
+}
+
+.checklist-items li.checked::before {
+  background: var(--ochre);
+  border-color: var(--ochre);
+}
+
+.checklist-items li.checked::after {
+  content: "✓";
+  position: absolute;
+  left: 3px;
+  top: 10px;
+  color: var(--paper);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.checklist-items li.checked {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.checklist-items li strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 14.5px;
+}
+
+.checklist-items li .sub {
+  display: block;
+  font-size: 12.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.phase-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ochre-deep);
+  margin: 28px 0 6px;
+  font-weight: 500;
+}
+.phase-tag:first-child { margin-top: 0; }
+
+/* ============ CALLOUT ============ */
+.callout {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 24px 28px;
+  margin: 28px 0;
+  position: relative;
+}
+
+.callout.warning { border-left: 4px solid var(--crimson); }
+.callout.key { border-left: 4px solid var(--ochre); }
+.callout.aside { border-left: 4px solid var(--sage); background: rgba(74,107,90,0.04); }
+
+.callout-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.callout.warning .callout-label { color: var(--crimson); }
+.callout.key .callout-label { color: var(--ochre-deep); }
+.callout.aside .callout-label { color: var(--sage); }
+
+.callout p:last-child { margin-bottom: 0; }
+
+/* ============ PROMPT TEMPLATES ============ */
+.prompt-card {
+  background: var(--paper-warm);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--sage);
+  margin: 20px 0;
+  padding: 22px 26px;
+  position: relative;
+}
+
+.prompt-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.prompt-when {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.copy-btn {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  padding: 6px 14px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+.copy-btn:hover { border-color: var(--ochre); color: var(--ochre-deep); }
+.copy-btn.copied { border-color: var(--sage); color: var(--sage); }
+
+.prompt-body {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  background: var(--paper);
+  border: 1px dotted var(--rule);
+  padding: 16px 18px;
+  white-space: pre-wrap;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  margin-top: 80px;
+  padding: 40px 0;
+  border-top: 3px solid var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+footer strong { color: var(--ink); font-weight: 500; }
+footer a { color: var(--ochre-deep); }
+
+/* Appendix styling */
+.appendix {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px dotted var(--rule);
+}
+
+.appendix .section-header {
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+}
+
+/* Print */
+@media print {
+  body { background: white; font-size: 11pt; }
+  body::before { display: none; }
+  .container { max-width: 100%; padding: 0 20px; }
+  .exec-brief { break-inside: avoid; }
+  .copy-btn, .suite-link { display: none; }
+  section { break-after: auto; break-before: auto; }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container { padding: 0 24px; }
+  .masthead { padding: 20px 0 30px; margin-bottom: 40px; }
+  .exec-brief { padding: 32px 24px; }
+  .toc ol { grid-template-columns: 1fr; }
+  .brief-grid { gap: 24px; }
+  .data-table { font-size: 12.5px; }
+  .data-table th, .data-table td { padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <a class="suite-link" href="ai-audit-trust.html">&larr; AI Audit &amp; Trust Frameworks</a>
+  <div class="eyebrow">The Practitioner's Method for Auditing AI Analysis</div>
+  <h1 class="title">The AI Analysis<br><em>Audit</em> Guidebook</h1>
+  <p class="subtitle">AI can produce analysis that looks correct, is arithmetically perfect, and is still wrong — because it reports what is in the file, not what is true in the business. This is the discipline that catches the difference. The hands-on companion to the C-Suite AI Output Trust Framework.</p>
+  <div class="masthead-meta">
+    <span><strong>Status</strong> — v1.0 · Open access</span>
+    <span><strong>Companion to</strong> — The C-Suite AI Output Trust Framework</span>
+    <span><strong>Audience</strong> — Financial analysts · Internal audit · Anyone who signs the number</span>
+  </div>
+</header>
+
+<!-- TABLE OF CONTENTS -->
+<nav class="toc">
+  <div class="toc-label">Contents</div>
+  <ol>
+    <li><a href="#brief">The Method in Brief</a></li>
+    <li><a href="#why">Why Audit AI Analysis</a></li>
+    <li><a href="#hygiene">Data Hygiene — The Zeroth Step</a></li>
+    <li><a href="#principles">The Six Core Principles</a></li>
+    <li><a href="#failure-modes">Common AI Failure Modes</a></li>
+    <li><a href="#tiers">The Three-Tier Audit Model</a></li>
+    <li><a href="#checklist">The Audit Checklist</a></li>
+    <li><a href="#tolerances">Match Tolerances</a></li>
+    <li><a href="#prompts">Prompt Templates</a></li>
+    <li><a href="#across-time">Failure Modes That Live Across Time</a></li>
+    <li><a href="#lessons">The Lessons-Learned Log</a></li>
+    <li><a href="#appendix">Appendix — A Worked Example</a></li>
+  </ol>
+</nav>
+
+<!-- ============ 01 THE METHOD IN BRIEF ============ -->
+<section id="brief">
+  <div class="section-header">
+    <div class="section-number">§ 01</div>
+    <h2 class="section-title">The Method in Brief</h2>
+  </div>
+
+  <p class="lede">An AI assistant will hand you a scorecard that is internally consistent, arithmetically flawless, and confidently narrated. None of that tells you whether it is true. The only thing that does is a disciplined audit — and a disciplined audit is a repeatable procedure, not a feeling.</p>
+
+  <div class="exec-brief">
+    <h3>What this guidebook gives you</h3>
+    <p>A single, transferable method for validating AI-produced analysis before anyone acts on it. It was built on a real capital decision — a rental-fleet investment analysis sitting on roughly 400,000 transactions — and codified while the work was still on the screen. The parts fit together: six principles set the mindset, three tiers set the depth, a checklist runs the procedure, prompt templates make the output auditable from the first draft, and a lessons log keeps the team from re-learning the same trap twice.</p>
+    <div class="brief-grid">
+      <div class="brief-stat"><span class="num">6</span><span class="label">Core principles that separate an audited number from a plausible one</span></div>
+      <div class="brief-stat"><span class="num">3</span><span class="label">Audit tiers — aggregate, segment, unit — matched to how costly a wrong call is</span></div>
+      <div class="brief-stat"><span class="num">142</span><span class="label">Days of history missing from the source file that the unit-tier audit surfaced — invisible to every formula</span></div>
+      <div class="brief-stat"><span class="num">0</span><span class="label">Numbers you should ever defend with "the AI said so"</span></div>
+    </div>
+  </div>
+
+  <div class="callout key">
+    <div class="callout-label">The one-line version</div>
+    <p>A good audit is not about distrusting the AI. It is about being able to answer your reviewer's only real question — <em>"How do you know this is right?"</em> — with something better than a shrug. The answer should be: <strong>click here, follow the formula, here is the source cell, here is the tie-out.</strong></p>
+  </div>
+</section>
+
+<!-- ============ 02 WHY AUDIT AI ANALYSIS ============ -->
+<section id="why">
+  <div class="section-header">
+    <div class="section-number">§ 02</div>
+    <h2 class="section-title">Why Audit AI Analysis</h2>
+  </div>
+
+  <p>AI assistants produce analysis that <em>looks</em> correct, is arithmetically accurate, and can still be wrong — because the assistant reports what is in the file, not what is true in the business. It cannot know the source export was pulled on the wrong date, excludes a status, or is missing months of history. It uses whatever is in front of it, and it describes it fluently.</p>
+
+  <p>That fluency is the hazard. Modern models produce structured, sourced-sounding output regardless of whether the underlying numbers hold. Tone is evidence of writing ability — not analytical accuracy. The layer that used to catch this, the junior analyst who quietly reconciled the numbers before they reached anyone senior, is exactly the layer AI is now replacing. The check has to be rebuilt deliberately, as a discipline, because it no longer happens by default.</p>
+
+  <div class="pullquote">
+    Nothing in the output was wrong. That's what made it dangerous.
+    <cite>Field note — the failure this guidebook was built to prevent</cite>
+  </div>
+
+  <p>The defense is not cleverness or suspicion. It is procedure: trace every number to a source cell, reconcile a sample to the system of record, and never let a narrative harden before the numbers underneath it have been signed off. The rest of this document is that procedure.</p>
+</section>
+
+<!-- ============ 03 DATA HYGIENE ============ -->
+<section id="hygiene">
+  <div class="section-header">
+    <div class="section-number">§ 03</div>
+    <h2 class="section-title">Data Hygiene — The Zeroth Step</h2>
+  </div>
+
+  <p>Before you audit an analysis, you must audit the data the analysis ran on. Audit formulas assume clean inputs. If the source has dates stored as text, numbers stored as text, inconsistent categorical encoding — <code>MFA</code> in some rows and <code>Manufacturer A</code> in others — or unresolved duplicates, then <code>COUNTIFS</code>, <code>SUMIFS</code>, and <code>MATCH</code> will silently produce the wrong answer. Worse, the audit will appear to "match" the analysis, because both are drawing from the same broken source.</p>
+
+  <div class="callout warning">
+    <div class="callout-label">The trap that hides for months</div>
+    <p>In the fleet analysis, one categorical column carried both three-letter codes and full manufacturer names in the same field — tens of thousands of cells using the long form. A filter on the code would have silently missed roughly half the population. The numbers would have looked precise, defensible, and <strong>wrong by about 50%</strong> — nearly impossible to catch without explicitly counting unique values in the column.</p>
+  </div>
+
+  <p>On the real project, the source was cleaned in a separate pass <em>before</em> any analysis ran: thousands of text dates converted to real dates, time components stripped off datetime fields, thousands of text numbers coerced to real numbers, tens of thousands of full names collapsed back to codes, and a set of deprecated rows removed against a documented rule. Every one of those, left in place, would have corrupted a downstream aggregation. Hygiene is not housekeeping you do afterward — it is the zeroth step, and it gets its own phase in the checklist below.</p>
+</section>
+
+<!-- ============ 04 SIX CORE PRINCIPLES ============ -->
+<section id="principles">
+  <div class="section-header">
+    <div class="section-number">§ 04</div>
+    <h2 class="section-title">The Six Core Principles</h2>
+  </div>
+
+  <p>These six carry the whole method. If you internalize nothing else, internalize these — everything downstream is machinery for applying them.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th style="width:34px">#</th><th>Principle</th><th>What it means in practice</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">01</td>
+        <td><strong>Every number must trace to a source cell.</strong></td>
+        <td>Static values the AI typed in cannot be audited. Insist on <code>COUNTIFS</code> / <code>SUMIFS</code> / <code>INDEX-MATCH</code> formulas that point at the raw source. If you click a cell and see a number instead of a formula, flag it.</td>
+      </tr>
+      <tr>
+        <td class="row-label">02</td>
+        <td><strong>AI reports what is in the FILE, not what is TRUE.</strong></td>
+        <td>The assistant cannot know the source is incomplete, stale, or filtered upstream. Every analysis carries this risk. The only defense is reconciling a sample to the system of record — the ERP, the GL, the source of truth.</td>
+      </tr>
+      <tr>
+        <td class="row-label">03</td>
+        <td><strong>Deduplication logic is where bugs hide.</strong></td>
+        <td>When the source has multiple rows per entity — one order split across a model line and an attachment line — summing and de-duplicating give different answers. Both can be valid. Make the AI state its dedup rule explicitly, every time.</td>
+      </tr>
+      <tr>
+        <td class="row-label">04</td>
+        <td><strong>Match tolerances must be explicit.</strong></td>
+        <td>"Does it match?" is not yes/no. Floating point, rounding, and timing create small gaps. Define <code>ABS(A−B) &lt; tolerance</code> per metric type: counts, dollars, and percentages each get their own band (see §08).</td>
+      </tr>
+      <tr>
+        <td class="row-label">05</td>
+        <td><strong>Audit at multiple levels.</strong></td>
+        <td>A single-level audit hides compensating errors. Go aggregate → segment → unit. If the total matches but the units don't sum to it, you have a bug. If the units match but the total doesn't, you have a dedup or filter issue.</td>
+      </tr>
+      <tr>
+        <td class="row-label">06</td>
+        <td><strong>Document filters, assumptions, and known gaps.</strong></td>
+        <td>Record every variance, every ERP cross-check, every reason for an exclusion, next to the number it affects. A reviewer six months from now needs to know <em>why</em> a number is what it is, not just what it is.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 05 FAILURE MODES ============ -->
+<section id="failure-modes">
+  <div class="section-header">
+    <div class="section-number">§ 05</div>
+    <h2 class="section-title">Common AI Failure Modes</h2>
+  </div>
+
+  <p>These are the specific ways AI-produced analysis goes wrong, and the specific move that catches each one. Learn the signatures; most audits are pattern-matching against this table.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Failure mode</th><th>How it happens</th><th>How to catch it</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Static values</td>
+        <td>The AI computes in code and pastes the answer as a hard-coded number. It can't be audited, re-run, or adjusted.</td>
+        <td>Click output cells. A bare number in the formula bar means rebuild with formulas that reference the source sheet.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Silent scope drift</td>
+        <td>The AI quietly excludes rows — blank type, zero cost, negatives — without saying so. Totals look reasonable but don't reconcile.</td>
+        <td>Ask for a reconciliation from the grand total: total source rows → rows excluded by each filter → rows used.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Wrong column / wrong sheet</td>
+        <td>The AI reads one column believing it's another, or aggregates a stale sheet instead of the refreshed one.</td>
+        <td>Spot-check two or three individual rows by hand against what the formula assumes they contain.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Dedup ambiguity</td>
+        <td>Multiple rows per entity. Summing and de-duplicating diverge, and the AI picks one silently.</td>
+        <td>Ask directly: "How are you handling rows where the same ID appears more than once?" Then document the choice.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Date boundary errors</td>
+        <td><code>&lt;=</code> vs <code>&lt;</code> at month-end, fiscal vs calendar, timezone shifts on datetime fields. Off-by-one-day errors compound monthly.</td>
+        <td>Manually count one month's source rows. Prefer <code>&gt;=DATE(y,m,1)</code> AND <code>&lt;DATE(y,m+1,1)</code>.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Completeness gaps</td>
+        <td>The export is missing history, has delayed updates, or excludes statuses. The AI has no way to know — it uses the file.</td>
+        <td>Reconcile a sample back to the system of record. One or two entities is enough to surface a systemic gap.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Confidently wrong narrative</td>
+        <td>The AI concludes "this segment is overinvested" on numbers that are understated by a data gap. The story inherits and amplifies the error.</td>
+        <td>Never accept the interpretation until the underlying numbers are audited. The story is only as good as the data beneath it.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 06 THREE-TIER AUDIT MODEL ============ -->
+<section id="tiers">
+  <div class="section-header">
+    <div class="section-number">§ 06</div>
+    <h2 class="section-title">The Three-Tier Audit Model</h2>
+  </div>
+
+  <p>Audit depth should match how expensive it is to be wrong. Three tiers, escalating in effort. The rule of thumb: <strong>always do Tier 1; do Tier 2 before anyone acts on the numbers; do Tier 3 when the decision is costly to reverse.</strong> Don't scrap a fleet on unaudited data.</p>
+
+  <div class="tier-grid">
+    <div class="tier-card tier-1">
+      <div class="tier-label">Tier 01 — Aggregate</div>
+      <div class="tier-name">Confirm the headline decomposes.</div>
+      <ul>
+        <li>One period, all entities</li>
+        <li>Break the top-line number into source-level formulas</li>
+        <li>Every input reconciled with a ✓/✗ match check</li>
+      </ul>
+      <div class="tier-effort">Effort: low · the minimum bar for every analysis</div>
+    </div>
+    <div class="tier-card tier-2">
+      <div class="tier-label">Tier 02 — Segment</div>
+      <div class="tier-name">Validate one representative entity in full.</div>
+      <ul>
+        <li>One model, region, or product across all periods</li>
+        <li>Every scorecard metric traced to source</li>
+        <li>Filter reconciliation + monthly detail</li>
+      </ul>
+      <div class="tier-effort">Effort: medium · before presenting to stakeholders</div>
+    </div>
+    <div class="tier-card tier-3">
+      <div class="tier-label">Tier 03 — Unit / Atomic</div>
+      <div class="tier-name">Drop to the lowest level and tie out to the ERP.</div>
+      <ul>
+        <li>Every unit, transaction, or SKU</li>
+        <li>Cross-check a sample to the system of record</li>
+        <li>Where the real, invisible gaps surface</li>
+      </ul>
+      <div class="tier-effort">Effort: high · high-stakes, hard-to-reverse calls</div>
+    </div>
+  </div>
+
+  <div class="callout aside">
+    <div class="callout-label">Why the unit tier earns its cost</div>
+    <p>On the fleet analysis, the aggregate and segment tiers both matched cleanly — the formulas were correct. It was the unit tier that revealed the source file only captured data for periods when the tracking system was updated, not a continuous history. One unit showed 196 days in the file against 338 in the ERP: a <strong>142-day gap</strong> no formula could have caught, because the arithmetic on the available days was exactly right. Utilization percentages were directionally fine; absolute day counts and fleet-size math were understated. That finding only exists because someone went to the atomic level and tied out to the source of truth.</p>
+  </div>
+</section>
+
+<!-- ============ 07 CHECKLIST ============ -->
+<section id="checklist">
+  <div class="section-header">
+    <div class="section-number">§ 07</div>
+    <h2 class="section-title">The Audit Checklist</h2>
+  </div>
+
+  <p>Work top to bottom for each analysis. This is the condensed, working version — tick items as you go (your checks are local to this page and reset on reload). The phases move from data hygiene, through pre-flight and structural checks, into formula validation, cross-validation, and sign-off.</p>
+
+  <div class="checklist">
+    <div class="phase-tag">Phase 0 — Data hygiene (before any analysis is valid)</div>
+    <ul class="checklist-items">
+      <li><strong>Dates are real dates, not text.</strong><span class="sub">Text dates silently escape DATE()-boundary COUNTIFS. Check alignment or ISNUMBER().</span></li>
+      <li><strong>Date columns carry no time component.</strong><span class="sub">Fractions of a day misbehave at midnight boundaries. Strip them.</span></li>
+      <li><strong>Numbers are real numbers, not text.</strong><span class="sub">SUMIFS skips text-numbers silently, quietly understating totals.</span></li>
+      <li><strong>Categorical columns use one encoding.</strong><span class="sub">Mixed code/full-name in a field means a filter misses half the rows. Count unique values.</span></li>
+      <li><strong>Expected duplicates are resolved.</strong><span class="sub">Decide the dedup rule before analyzing, and document it.</span></li>
+      <li><strong>Every hygiene fix is documented with row counts.</strong><span class="sub">"I cleaned the data" is not an audit trail. "139 rows deleted under rule X" is.</span></li>
+    </ul>
+
+    <div class="phase-tag">Phase 1 — Pre-flight (before you prompt)</div>
+    <ul class="checklist-items">
+      <li><strong>Source is the right version and is complete.</strong><span class="sub">Confirm export date, system, filters. Check row counts and missing periods against the source system.</span></li>
+      <li><strong>Column meanings are understood and stated to the AI.</strong><span class="sub">Flag ambiguous columns; don't let the AI infer them.</span></li>
+      <li><strong>Business rules and an expected answer range are written down.</strong><span class="sub">If you expect 50–80% and the AI returns 12% or 140%, you know instantly.</span></li>
+      <li><strong>The lessons log has been reviewed.</strong><span class="sub">Many "bugs" are known issues already documented (§11).</span></li>
+    </ul>
+
+    <div class="phase-tag">Phase 2 — Structural checks (right after the AI delivers)</div>
+    <ul class="checklist-items">
+      <li><strong>Five random output cells each show a formula, not a number.</strong><span class="sub">If any are static, push back and have them rebuilt against source.</span></li>
+      <li><strong>Filters are documented and the row count reconciles.</strong><span class="sub">Total source rows = rows excluded by each filter + rows used.</span></li>
+      <li><strong>Column references are correct and dates use &lt;, not &lt;=.</strong><span class="sub">Verify one formula's columns actually contain what it assumes.</span></li>
+    </ul>
+
+    <div class="phase-tag">Phase 3 — Formula validation (Tier 1)</div>
+    <ul class="checklist-items">
+      <li><strong>Build your own independent audit formula for each headline metric.</strong><span class="sub">Write it from scratch — don't copy the AI's. Agreement is evidence.</span></li>
+      <li><strong>Match with an explicit tolerance, and investigate every mismatch.</strong><span class="sub">Diagnose the cause; don't just note it. Dedup, filter, boundary, or column.</span></li>
+      <li><strong>Deduplication is checked and its rule recorded.</strong></li>
+    </ul>
+
+    <div class="phase-tag">Phase 4 — Cross-validation (Tiers 2 &amp; 3, high-stakes)</div>
+    <ul class="checklist-items">
+      <li><strong>A representative entity is validated end to end (Tier 2).</strong></li>
+      <li><strong>A sample is reconciled to the ERP at unit level (Tier 3).</strong><span class="sub">Two or three atomic items, compared on days, dollars, dates. Document variances.</span></li>
+      <li><strong>Sum of parts equals the total.</strong><span class="sub">Units roll to segments, segments to the grand total — or you're missing entities.</span></li>
+    </ul>
+
+    <div class="phase-tag">Phase 5 — Sign-off &amp; documentation</div>
+    <ul class="checklist-items">
+      <li><strong>Every variance is documented; known limitations sit at the top of the sheet.</strong></li>
+      <li><strong>The audit sheet is named and saved — not deleted after sign-off.</strong></li>
+      <li><strong>The narrative is re-read against the audited numbers.</strong><span class="sub">If the audit changed the data, the story changes with it.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 08 TOLERANCES ============ -->
+<section id="tolerances">
+  <div class="section-header">
+    <div class="section-number">§ 08</div>
+    <h2 class="section-title">Match Tolerances</h2>
+  </div>
+
+  <p>"Match" needs a definition per metric type, or you will either chase rounding noise or wave through real errors. These are the working bands.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Metric type</th><th>Tolerance</th><th>Formula pattern</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="row-label">Row / day counts</td><td>0.5 (integer match)</td><td><code>=IF(ABS(A-B)&lt;0.5,"✓","✗")</code></td></tr>
+      <tr><td class="row-label">Dollar amounts</td><td>$1 to $10 (rounding)</td><td><code>=IF(ABS(A-B)&lt;10,"✓","✗")</code></td></tr>
+      <tr><td class="row-label">Percentages</td><td>0.001 (0.1 pp)</td><td><code>=IF(ABS(A-B)&lt;0.001,"✓","✗")</code></td></tr>
+      <tr><td class="row-label">Ratios / multiples</td><td>0.01</td><td><code>=IF(ABS(A-B)&lt;0.01,"✓","✗")</code></td></tr>
+      <tr><td class="row-label">Large dollar aggregates</td><td>0.1% of value</td><td><code>=IF(ABS(A-B)/A&lt;0.001,"✓","✗")</code></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout key">
+    <div class="callout-label">A mismatch is a lead, not a failure</div>
+    <p>When a number lands outside tolerance, that's the beginning of the interesting part, not the end. On the fleet analysis a sub-1% gap in sales revenue traced cleanly to how duplicate order rows were aggregated — both methods defensible, the difference documented rather than forced. The variance you investigate and explain is worth more than the ten that matched.</p>
+  </div>
+</section>
+
+<!-- ============ 09 PROMPT TEMPLATES ============ -->
+<section id="prompts">
+  <div class="section-header">
+    <div class="section-number">§ 09</div>
+    <h2 class="section-title">Prompt Templates</h2>
+  </div>
+
+  <p>The cleanest audit is one you designed into the prompt. Ask for formulas, source references, documented filters, and explicit dedup handling <em>up front</em>, and you spend far less time unwinding problems later. Customize the <code>[BRACKETED]</code> parts; the copy button lifts each template to your clipboard.</p>
+
+  <div class="prompt-card">
+    <div class="prompt-head">
+      <div class="prompt-when">Kick off a new analysis — force auditable output</div>
+      <button class="copy-btn" type="button">Copy</button>
+    </div>
+    <div class="prompt-body">Build a [METRIC] analysis from [SOURCE SHEET]. Requirements: (1) Every output cell must be a formula (COUNTIFS/SUMIFS/INDEX-MATCH) referencing the source sheet directly — no hard-coded numbers. (2) List every filter you apply in a documentation block at the top. (3) If any entity appears on multiple rows, state your deduplication rule before computing. (4) Use tolerance-safe date boundaries: &gt;=DATE(y,m,1) AND &lt;DATE(y,m+1,1).</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-head">
+      <div class="prompt-when">Request a Tier-1 aggregate audit</div>
+      <button class="copy-btn" type="button">Copy</button>
+    </div>
+    <div class="prompt-body">Create an audit sheet called Audit_[SCOPE] that decomposes [HEADLINE METRIC] on [SHEET]![CELL] into every input formula. Each input should be (1) computed independently via COUNTIFS/SUMIFS from source, (2) compared to the original with an IF(ABS(a-b)&lt;tolerance,"✓","✗") check, and (3) documented in a Source/Notes column showing where each column reference comes from.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-head">
+      <div class="prompt-when">Request a Tier-2 segment audit</div>
+      <button class="copy-btn" type="button">Copy</button>
+    </div>
+    <div class="prompt-body">Build an audit worksheet for [ENTITY] that traces every scorecard metric back to source. Include (1) filter reconciliation — total source rows, rows excluded by each filter, rows used; (2) a monthly detail table with COUNTIFS formulas per period; (3) a summary comparing every scorecard metric to your independent calc with a ✓/✗ column; (4) an investigation note for any mismatch.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-head">
+      <div class="prompt-when">Surface potential data-completeness gaps</div>
+      <button class="copy-btn" type="button">Copy</button>
+    </div>
+    <div class="prompt-body">Scan [SOURCE SHEET] and flag potential data-completeness issues: (1) entities with fewer rows than expected given their date range, (2) gaps in the time series, (3) columns with a high percentage of blanks, (4) suspicious round numbers or defaults. Do NOT compute anything — just list what a human should verify against the system of record.</div>
+  </div>
+
+  <div class="prompt-card">
+    <div class="prompt-head">
+      <div class="prompt-when">Diagnose a number that doesn't match</div>
+      <button class="copy-btn" type="button">Copy</button>
+    </div>
+    <div class="prompt-body">[SHEET]![CELL] shows [VALUE1] but my audit calc shows [VALUE2]; the gap is [AMOUNT]. Diagnose the cause. Consider dedup logic, filter differences, date-boundary choices, column mapping, and row exclusions. Show me the specific source rows that explain the difference.</div>
+  </div>
+
+  <h3>What not to do</h3>
+  <table class="data-table">
+    <thead>
+      <tr><th>Anti-pattern</th><th>Why it causes audit problems</th><th>Better</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="row-label">"Analyze this and give me insights."</td><td>Too open. The AI makes filter, dedup, and metric choices without telling you.</td><td>Specify metric, source, filters, and the business rule.</td></tr>
+      <tr><td class="row-label">"Just give me the numbers."</td><td>Invites static values. Impossible to audit or re-run.</td><td>"Build with formulas only — no hard-coded numbers."</td></tr>
+      <tr><td class="row-label">"Does this look right?"</td><td>The AI usually says yes; it lacks the business context to know.</td><td>"Audit this against source with a ✓/✗ per input and investigate any mismatch."</td></tr>
+      <tr><td class="row-label">Pasting raw data into the chat.</td><td>The AI processes the paste, not the file — no audit trail back to the sheet.</td><td>Keep data in the workbook; point the AI at specific ranges.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 10 ACROSS TIME ============ -->
+<section id="across-time">
+  <div class="section-header">
+    <div class="section-number">§ 10</div>
+    <h2 class="section-title">Failure Modes That Live Across Time</h2>
+  </div>
+
+  <p>The principles and the three tiers cover a single analysis, run once. But AI-assisted analysis in finance is rarely one-shot — it's a session that drifts, data that refreshes, and a prompt history you eventually can't reconstruct. These three failures don't appear on any single audit sheet, because they happen <em>between</em> audits.</p>
+
+  <div class="callout warning">
+    <div class="callout-label">01 — Multi-turn drift</div>
+    <p>Over a long conversation, the AI's picture of the task shifts. Filter rules relax, definitions get quietly redefined, scope creeps. No single step is wrong — each was a reasonable response to the previous message — but by turn 40 the analysis isn't what you asked for on turn 1. <strong>Catch it:</strong> before accepting a deliverable, ask the AI to restate the business rules in force right now, and compare against the original. Scan one sheet for internal inconsistency — some formulas filtering on a condition others drop is almost always drift.</p>
+  </div>
+
+  <div class="callout warning">
+    <div class="callout-label">02 — Source-data refresh</div>
+    <p>You run the analysis Monday. Friday someone re-exports the source with a fresh cut. The formulas still work — they just now describe a different reality, while the narrative written Monday stays put. <strong>Catch it:</strong> freeze a snapshot of key source values at analysis time — row count, date range, a checksum on a key amount column. Version the source sheets with dates. Cite the snapshot date wherever you share conclusions.</p>
+  </div>
+
+  <div class="callout warning">
+    <div class="callout-label">03 — Prompt archaeology</div>
+    <p>A month later, a stakeholder asks why the analysis excludes off-rent days. You know the AI made that call, but you can't find the turn where you confirmed it — the audit sheet captured the <em>how</em>, never the <em>why</em>. <strong>Catch it:</strong> at the end of each session, ask the AI to summarize the definitional and scope decisions with a reason for each, and paste it into the workbook. Tag each as user-requested, AI-proposed-and-approved, or AI-implicit — that last category is the one to re-examine. Keep the transcript as a permanent artifact.</p>
+  </div>
+</section>
+
+<!-- ============ 11 LESSONS LOG ============ -->
+<section id="lessons">
+  <div class="section-header">
+    <div class="section-number">§ 11</div>
+    <h2 class="section-title">The Lessons-Learned Log</h2>
+  </div>
+
+  <p>The log is how a team gets smarter instead of re-discovering the same trap. Every audit that finds something non-trivial adds a row; every new analysis reads the log first. These entries are drawn from the fleet audit — abbreviated here as illustration of the shape a working log takes.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th style="width:56px">ID</th><th>Category</th><th>Finding &amp; mitigation</th><th style="width:120px">Status</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">L-001</td>
+        <td>Source completeness</td>
+        <td>The daily-status export only covers periods when the tracking system was updated — not a continuous history. Several units show far fewer days than their true availability window (one showed 196 in-file vs 338 in the ERP). Understates absolute day counts and fleet-size math; utilization % stays directionally right. <em>Mitigation:</em> cross-check a sample to the ERP; treat absolute day counts as a lower bound; flag the gap on anything shared with decision-makers.</td>
+        <td><span class="mismatch">Open</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">L-002</td>
+        <td>Deduplication</td>
+        <td>Order rows carry both model and attachment records. Row-level summing and order-level aggregation of sales revenue diverge by under 1% — both defensible. <em>Mitigation:</em> state the dedup rule on every scorecard; keep the order-level figures authoritative; document the small variance rather than forcing a reconciliation.</td>
+        <td>Documented</td>
+      </tr>
+      <tr>
+        <td class="row-label">L-003</td>
+        <td>AI scope / filter</td>
+        <td>A first aggregation pass returned zero rental models because the AI scanned only the head of a sorted file — all attachments — and concluded "no rental data exists." <em>Mitigation:</em> confirm row counts per filter combination before aggregating; if an expected entity returns zero, investigate rather than accept.</td>
+        <td><span class="match">Resolved</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">L-004</td>
+        <td>Formula construction</td>
+        <td>An early audit-formula pass had off-by-one row references (counting the header) and a literal value where a cell reference belonged, producing errors. <em>Mitigation:</em> read audit formulas back immediately; watch for #VALUE!, #REF!, #DIV/0!; spot-check row references against the actual layout.</td>
+        <td><span class="match">Resolved</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">L-005</td>
+        <td>Mixed encoding</td>
+        <td>A categorical column mixed three-letter codes with full names in the same field — a code filter would have missed roughly half the population. <em>Mitigation:</em> count unique values before any COUNTIFS on a categorical column; re-verify after new imports.</td>
+        <td><span class="match">Resolved</span></td>
+      </tr>
+      <tr>
+        <td class="row-label">L-006</td>
+        <td>AI premise acceptance</td>
+        <td>Asked to replace a code that didn't exist, the AI confirmed its absence and did nothing — plausibly the user meant a similar code and mistyped. <em>Mitigation:</em> when instructing an AI to change data on an asserted fact, have it confirm the target exists first; treat "no matching rows, no action taken" as a yellow flag, not a green one.</td>
+        <td>Documented</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 12 APPENDIX ============ -->
+<section id="appendix" class="appendix">
+  <div class="section-header">
+    <div class="section-number">§ 12</div>
+    <h2 class="section-title">Appendix — A Worked Example</h2>
+  </div>
+
+  <p>A short, sanitized trace to show the method in motion. Entity names and figures below are illustrative — the point is the <em>structure</em> of an audit, not the underlying data. The full worked examples live in the source workbook.</p>
+
+  <h3>Tracing a model's scorecard to source (Tiers 1&ndash;2)</h3>
+  <p>The goal of a scorecard audit is to prove a headline number decomposes into inputs that each trace to raw data, with an explicit match check on every one. Here is one model traced across its <strong>full 40-month window, January 2023 through April 2026</strong> — every input rebuilt independently from source and reconciled. Note that each row the financial-utilization line depends on is shown above it, so the last line can be followed end to end:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Input</th><th>Value</th><th>How it's built from source</th><th>Match</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="row-label">Months of data</td><td>40</td><td>distinct months present, Jan 2023 &ndash; Apr 2026</td><td><span class="match">✓</span></td></tr>
+      <tr><td class="row-label">Total unit-days</td><td>5,974</td><td><code>COUNTIFS</code>: this model, Type=Model, Status=Rental</td><td><span class="match">✓</span></td></tr>
+      <tr><td class="row-label">On-rent unit-days</td><td>3,589</td><td>&hellip; AND On-Rent flag = 1</td><td><span class="match">✓</span></td></tr>
+      <tr><td class="row-label">Physical util %</td><td>60.1%</td><td>3,589 &divide; 5,974</td><td><span class="match">✓</span></td></tr>
+      <tr><td class="row-label">Total rental billings</td><td>$736,289</td><td><code>SUMIFS</code> on invoice amount for this model, all 40 months</td><td><span class="match">✓</span></td></tr>
+      <tr><td class="row-label">Annualized billings</td><td>$220,887</td><td>$736,289 &divide; 40 months &times; 12</td><td><span class="match">✓</span></td></tr>
+      <tr><td class="row-label">Avg cap cost / unit</td><td>$92,464</td><td><code>SUMIFS</code>(cap cost) &divide; total unit-days</td><td><span class="match">✓</span></td></tr>
+      <tr><td class="row-label">Avg fleet size</td><td>4.9 units</td><td>5,974 unit-days &divide; 40 months &divide; 30.44</td><td><span class="match">✓</span></td></tr>
+      <tr><td class="row-label">Financial util %</td><td>48.7%</td><td>annualized billings &divide; (avg cap cost &times; avg fleet size)</td><td><span class="match">✓</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout key">
+    <div class="callout-label">How to read the financial-utilization line</div>
+    <p>Financial utilization asks a single question: <em>of the capital tied up in this fleet, how much is earned back in rent each year?</em> Two moves make the two sides comparable. First, <strong>annualize the billings</strong> — total rent over the window &divide; months &times; 12 — so a cash <em>flow</em> becomes a yearly rate ($736,289 over 40 months becomes $220,887 a year). Second, <strong>size the capital base</strong> — average cost per unit &times; the average number of units on the ground ($92,464 &times; 4.9 &asymp; $453,000). Divide the annual rent by the capital base — $220,887 &divide; roughly $453,000 — and you land at about <strong>48.7%</strong>: this fleet earns back a little under half its capital in rent each year. (Plug in the rounded figures shown here and you get 48.8%; the workbook's full-precision inputs give 48.7% — the 0.1-point gap is exactly the rounding tolerance from &sect;08 at work.) It reads cleanly here because the annualization has 40 real months to average — on a single month it would be a twelvefold extrapolation from one data point, which is why a one-month version is so hard to follow.</p>
+  </div>
+
+  <p>Every input reconciles to raw source, so the formula is validated — a clean Tier-1/Tier-2 pass. And it is exactly the kind of tidy result that can lull you into stopping too early.</p>
+
+  <h3>The unit tier — where the numbers passed but the data didn't</h3>
+  <p>The same model passed the scorecard trace above cleanly; every metric tied out. Only at the unit tier — tying a sample of its individual units back to the ERP — did the real finding appear:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>Unit (anonymized)</th><th>Days in file</th><th>Days per ERP</th><th>Gap</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="row-label">Unit A</td><td>196</td><td>338</td><td class="mismatch">142</td></tr>
+      <tr><td class="row-label">Unit B</td><td>275</td><td>485</td><td class="mismatch">210</td></tr>
+      <tr><td class="row-label">Unit C</td><td>432</td><td>713</td><td class="mismatch">281</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning">
+    <div class="callout-label">The lesson the appendix exists to teach</div>
+    <p>The formulas were correct. The arithmetic on the available days was exact. The <em>data</em> was incomplete — the source captured days only when the tracking system was updated, not continuously. No aggregate or segment audit could have found this, because nothing in the file was internally wrong. It took dropping to the atomic level and reconciling to the system of record. That is why Tier 3 exists, and why "the formulas match" is never the same sentence as "the numbers are true."</p>
+  </div>
+
+  <div class="pullquote">
+    How can I put confidence on the results of an analysis if I am unsure the results are actually derived from the raw data?
+    <cite>The question every tier of this method answers</cite>
+  </div>
+</section>
+
+<footer>
+  <p><strong>The AI Analysis Audit Guidebook</strong> — v1.0 · Companion to the C-Suite AI Output Trust Framework</p>
+  <p style="margin-top:8px;">Part of the AI Audit &amp; Trust Frameworks suite at <a href="ai-audit-trust.html">12toKNOW</a> — a ladder from why inputs matter, through whether the method holds in real data, to how to audit it line by line. Built from the field, on a real capital decision, and codified while the work was still on the screen.</p>
+  <p style="margin-top:16px; padding-top:16px; border-top:1px solid var(--rule); font-size:11px; letter-spacing:0.05em; color:var(--muted);">© 2026 DeWayne Searcy, PhD &nbsp;·&nbsp; 12toKNOW &nbsp;·&nbsp; <em style="font-style:italic;">Open access — free to read and share</em></p>
+</footer>
+
+</div>
+
+<script>
+// ======== CHECKLIST TOGGLE ========
+document.querySelectorAll('.checklist-items li').forEach(li => {
+  li.addEventListener('click', () => li.classList.toggle('checked'));
+});
+
+// ======== PROMPT COPY ========
+document.querySelectorAll('.prompt-card').forEach(card => {
+  const btn = card.querySelector('.copy-btn');
+  const body = card.querySelector('.prompt-body');
+  if (!btn || !body) return;
+  btn.addEventListener('click', () => {
+    const text = body.textContent.trim();
+    const done = () => {
+      btn.textContent = 'Copied ✓';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(() => fallback(text, done));
+    } else {
+      fallback(text, done);
+    }
+  });
+});
+function fallback(text, done) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(ta);
+  done();
+}
+</script>
+
+</body>
+</html>
