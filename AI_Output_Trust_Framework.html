@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The C-Suite AI Output Trust Framework</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d1b2a;
+  --ink-soft: #1b2a3a;
+  --paper: #f4efe6;
+  --paper-warm: #ebe3d3;
+  --rule: #c9bfa8;
+  --ochre: #b8651a;
+  --ochre-deep: #8a4a12;
+  --sage: #4a6b5a;
+  --crimson: #8b2e2e;
+  --muted: #5a5548;
+  --shadow: 0 1px 2px rgba(13,27,42,0.06), 0 2px 8px rgba(13,27,42,0.04);
+  --shadow-lift: 0 4px 12px rgba(13,27,42,0.08), 0 12px 32px rgba(13,27,42,0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Paper texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(184,101,26,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(74,107,90,0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ============ MASTHEAD ============ */
+.masthead {
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.masthead::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--ink);
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ochre-deep);
+  margin-bottom: 20px;
+}
+
+.eyebrow::before {
+  content: "§ ";
+  color: var(--muted);
+}
+
+h1.title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+
+h1.title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ochre-deep);
+}
+
+.subtitle {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--muted);
+  max-width: 720px;
+  line-height: 1.45;
+  margin-bottom: 32px;
+}
+
+.masthead-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.masthead-meta strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ============ NAV ============ */
+.toc {
+  background: var(--paper-warm);
+  border-left: 3px solid var(--ochre);
+  padding: 28px 32px;
+  margin-bottom: 60px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.toc-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ochre-deep);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.toc ol {
+  list-style: none;
+  counter-reset: toc-counter;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 40px;
+}
+
+.toc li {
+  counter-increment: toc-counter;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--rule);
+  position: relative;
+  padding-left: 36px;
+}
+
+.toc li::before {
+  content: counter(toc-counter, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ochre);
+  font-weight: 500;
+  top: 8px;
+}
+
+.toc a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.toc a:hover {
+  color: var(--ochre-deep);
+}
+
+/* ============ SECTIONS ============ */
+section {
+  margin-bottom: 80px;
+  scroll-margin-top: 20px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.section-number {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: var(--ochre-deep);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+
+h2.section-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  margin: 36px 0 16px;
+  color: var(--ink);
+}
+
+h4 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 24px 0 12px;
+  color: var(--ochre-deep);
+}
+
+p {
+  margin-bottom: 18px;
+  max-width: 75ch;
+}
+
+p.lede {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin-bottom: 28px;
+}
+
+p.lede::first-letter {
+  font-size: 3.5em;
+  float: left;
+  line-height: 0.85;
+  padding: 4px 10px 0 0;
+  font-weight: 600;
+  color: var(--ochre-deep);
+}
+
+strong { font-weight: 600; color: var(--ink); }
+em { font-style: italic; }
+
+/* Pull quote */
+.pullquote {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: var(--ink);
+  border-left: 3px solid var(--ochre);
+  padding: 8px 0 8px 28px;
+  margin: 36px 0;
+  max-width: 65ch;
+}
+
+.pullquote cite {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* ============ EXECUTIVE BRIEF CARD ============ */
+.exec-brief {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 48px 56px;
+  margin: 48px 0 64px;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: var(--shadow-lift);
+}
+
+.exec-brief::before {
+  content: "EXECUTIVE BRIEF";
+  position: absolute;
+  top: -10px;
+  left: 32px;
+  background: var(--ochre);
+  color: var(--paper);
+  padding: 4px 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+.exec-brief h3 {
+  color: var(--paper);
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+.exec-brief p { color: rgba(244,239,230,0.88); }
+.exec-brief strong { color: var(--paper); }
+
+.brief-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(244,239,230,0.2);
+}
+
+.brief-stat {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.brief-stat .num {
+  font-family: 'Fraunces', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ochre);
+  letter-spacing: -0.03em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.brief-stat .label {
+  font-size: 13px;
+  color: rgba(244,239,230,0.75);
+  line-height: 1.4;
+}
+
+/* ============ TIER CARDS ============ */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.tier-card {
+  background: var(--paper-warm);
+  padding: 24px;
+  border-top: 3px solid var(--ink);
+  position: relative;
+}
+
+.tier-card.tier-1 { border-top-color: var(--sage); }
+.tier-card.tier-2 { border-top-color: var(--ochre); }
+.tier-card.tier-3 { border-top-color: var(--crimson); }
+.tier-card.tier-4 { border-top-color: var(--ink); background: var(--ink); color: var(--paper); }
+
+.tier-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.tier-card.tier-4 .tier-label { color: var(--ochre); }
+
+.tier-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.tier-card ul {
+  list-style: none;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.tier-card li {
+  padding: 4px 0 4px 16px;
+  position: relative;
+}
+
+.tier-card li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--ochre);
+  font-weight: 600;
+}
+
+.tier-card.tier-4 li::before { color: var(--ochre); }
+
+/* ============ TABLES ============ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  font-size: 14px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.data-table thead {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.data-table th {
+  text-align: left;
+  padding: 14px 16px;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(244,239,230,0.15);
+}
+
+.data-table th:last-child { border-right: none; }
+
+.data-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px dotted var(--rule);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.data-table td:last-child { border-right: none; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tbody tr:nth-child(even) { background: rgba(201,191,168,0.15); }
+.data-table tbody tr:hover { background: rgba(184,101,26,0.06); }
+
+.data-table .row-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  color: var(--ochre-deep);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+/* ============ INTERACTIVE ASSESSOR ============ */
+.assessor {
+  background: var(--paper-warm);
+  padding: 40px;
+  margin: 40px 0;
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--ochre);
+  box-shadow: var(--shadow);
+}
+
+.assessor-header {
+  margin-bottom: 28px;
+}
+
+.assessor-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.assessor-sub {
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+  font-family: 'Fraunces', serif;
+}
+
+.assessor-question {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted var(--rule);
+}
+
+.assessor-question:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+.q-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--ochre-deep);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.q-text {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+  line-height: 1.35;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.option {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 12px 16px;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13.5px;
+  text-align: left;
+  transition: all 0.15s ease;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.option:hover {
+  border-color: var(--ochre);
+  background: rgba(184,101,26,0.05);
+}
+
+.option.selected {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.option-letter {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--ochre);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.option.selected .option-letter { color: var(--ochre); }
+
+.result-panel {
+  margin-top: 32px;
+  padding: 28px 32px;
+  background: var(--ink);
+  color: var(--paper);
+  display: none;
+  border-radius: 2px;
+}
+
+.result-panel.visible { display: block; }
+
+.result-tier {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--ochre);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.result-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.result-body {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(244,239,230,0.9);
+  margin-bottom: 18px;
+}
+
+.result-actions {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(244,239,230,0.2);
+}
+
+.result-actions h5 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+  color: var(--ochre);
+  font-weight: 500;
+}
+
+.result-actions ol {
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.result-actions li { margin-bottom: 6px; color: rgba(244,239,230,0.88); }
+
+.reset-btn {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  padding: 10px 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.15s ease;
+}
+
+.reset-btn:hover {
+  border-color: var(--ochre);
+  color: var(--ochre-deep);
+}
+
+/* ============ CHECKLIST ============ */
+.checklist {
+  background: var(--paper-warm);
+  padding: 32px 36px;
+  margin: 28px 0;
+  border-left: 4px solid var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.checklist h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.checklist-items {
+  list-style: none;
+}
+
+.checklist-items li {
+  padding: 10px 0 10px 36px;
+  position: relative;
+  border-bottom: 1px dotted var(--rule);
+  font-size: 14.5px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.checklist-items li:last-child { border-bottom: none; }
+
+.checklist-items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  transition: all 0.15s ease;
+}
+
+.checklist-items li.checked::before {
+  background: var(--ochre);
+  border-color: var(--ochre);
+}
+
+.checklist-items li.checked::after {
+  content: "✓";
+  position: absolute;
+  left: 3px;
+  top: 10px;
+  color: var(--paper);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.checklist-items li.checked {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.checklist-items li strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 14.5px;
+}
+
+.checklist-items li .sub {
+  display: block;
+  font-size: 12.5px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 2px;
+}
+
+/* ============ CALLOUT ============ */
+.callout {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 24px 28px;
+  margin: 28px 0;
+  position: relative;
+}
+
+.callout.warning {
+  border-left: 4px solid var(--crimson);
+}
+
+.callout.key {
+  border-left: 4px solid var(--ochre);
+}
+
+.callout.aside {
+  border-left: 4px solid var(--sage);
+  background: rgba(74,107,90,0.04);
+}
+
+.callout-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.callout.warning .callout-label { color: var(--crimson); }
+.callout.key .callout-label { color: var(--ochre-deep); }
+.callout.aside .callout-label { color: var(--sage); }
+
+.callout p:last-child { margin-bottom: 0; }
+
+/* ============ ROLES GRID ============ */
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2px;
+  margin: 28px 0;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+
+.role {
+  background: var(--paper);
+  padding: 24px;
+}
+
+.role-icon {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ochre);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.role-name {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+
+.role-desc {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.role-question {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--ochre-deep);
+  padding-top: 8px;
+  border-top: 1px dotted var(--rule);
+}
+
+/* ============ GAP DIAGRAM ============ */
+.gap-diagram {
+  margin: 40px 0;
+  padding: 32px;
+  background: var(--paper-warm);
+  border: 1px solid var(--rule);
+}
+
+.gap-diagram svg {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  margin-top: 80px;
+  padding: 40px 0;
+  border-top: 3px solid var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+footer strong { color: var(--ink); font-weight: 500; }
+
+/* Layered sections - appendix styling */
+.appendix {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px dotted var(--rule);
+}
+
+.appendix .section-header {
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+}
+
+/* Print */
+@media print {
+  body { background: white; font-size: 11pt; }
+  body::before { display: none; }
+  .container { max-width: 100%; padding: 0 20px; }
+  .assessor, .exec-brief { break-inside: avoid; }
+  section { break-after: auto; break-before: auto; }
+  .result-panel.visible { display: block !important; }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container { padding: 0 24px; }
+  .masthead { padding: 40px 0 30px; margin-bottom: 40px; }
+  .exec-brief { padding: 32px 24px; }
+  .toc ol { grid-template-columns: 1fr; }
+  .brief-grid { gap: 24px; }
+  .assessor { padding: 28px 24px; }
+  .data-table { font-size: 12.5px; }
+  .data-table th, .data-table td { padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="eyebrow">A Field Manual for Executive Leadership</div>
+  <h1 class="title">The C-Suite <em>AI Output</em><br>Trust Framework</h1>
+  <p class="subtitle">When an AI assistant hands you a number, a narrative, or a recommendation — what should you do with it before you act? A governance-grade companion to the AI Analysis Audit Guidebook.</p>
+  <div class="masthead-meta">
+    <span><strong>Status</strong> — Working draft</span>
+    <span><strong>Companion to</strong> — AI Analysis Audit Guidebook</span>
+    <span><strong>Audience</strong> — C-suite · Senior operators · Practitioners</span>
+  </div>
+</header>
+
+<!-- TABLE OF CONTENTS -->
+<nav class="toc">
+  <div class="toc-label">Contents</div>
+  <ol>
+    <li><a href="#exec-brief">Executive Brief</a></li>
+    <li><a href="#gap">Why This Sub-Discipline Is Missing</a></li>
+    <li><a href="#trust-equation">The Trust Equation</a></li>
+    <li><a href="#assessor">Trust-Tier Assessor</a></li>
+    <li><a href="#four-roles">The Four Executive Roles</a></li>
+    <li><a href="#five-questions">The Five Questions Before You Act</a></li>
+    <li><a href="#confidence-gap">The Confidence–Accuracy Gap</a></li>
+    <li><a href="#second-opinion">The Second-Opinion Protocol</a></li>
+    <li><a href="#escalation">Escalation &amp; Pause Protocols</a></li>
+    <li><a href="#governance">Governance Integration</a></li>
+    <li><a href="#never">Decisions to Never Delegate</a></li>
+    <li><a href="#appendix">Appendix — Building the Skill</a></li>
+  </ol>
+</nav>
+
+<!-- ============ SECTION 1: EXECUTIVE BRIEF ============ -->
+<section id="exec-brief">
+  <div class="section-header">
+    <div class="section-number">§ 01</div>
+    <h2 class="section-title">Executive Brief</h2>
+  </div>
+
+  <p class="lede">Every existing framework for AI in the enterprise — NIST AI RMF, ISO 42001, the Big Four governance playbooks — addresses how to audit AI <em>systems</em>. None of them give a senior leader a tactical protocol for the moment that actually matters: you are thirty minutes from a decision, you have AI-generated analysis in front of you, and you need to know whether to trust it.</p>
+
+  <div class="exec-brief">
+    <h3>The thesis in four sentences.</h3>
+    <p>AI-assisted analysis is not a deliverable. It is the residue of a conversation, against data that refreshes, with assumptions no one has written down. The traditional audit chain assumed a human analyst sat between the data and the decision-maker and owned the reconciliation — that layer has collapsed. The C-suite discipline for AI is not <em>trust the model</em> or <em>distrust the model</em>; it is knowing, for each output, how much weight the evidence actually supports. This document gives you the tools.</p>
+
+    <div class="brief-grid">
+      <div class="brief-stat">
+        <span class="num">44%</span>
+        <span class="label">of C-suite executives say they would override a decision they had already made based on AI insights<sup>1</sup></span>
+      </div>
+      <div class="brief-stat">
+        <span class="num">38%</span>
+        <span class="label">would trust AI to make business decisions on their behalf<sup>1</sup></span>
+      </div>
+      <div class="brief-stat">
+        <span class="num">40%</span>
+        <span class="label">of executives do not believe their own data is ready to produce reliable AI output<sup>2</sup></span>
+      </div>
+      <div class="brief-stat">
+        <span class="num">2 of 3</span>
+        <span class="label">axes existing executive frameworks already use — reversibility and stakes. This adds the third that decides whether you can even check the work: auditability — applied to a single output, before you act.</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="pullquote">AI reports what is in the file, not what is true in the business. Every executive action on an AI output is a bet that the two are the same.<cite>From the AI Analysis Audit Guidebook — Principle Two</cite></p>
+
+  <h3>What this framework gives you</h3>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 28%">Tool</th>
+        <th style="width: 42%">What it answers</th>
+        <th style="width: 30%">Time to use</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Trust Equation</td>
+        <td>How much scrutiny does this specific output require before I act?</td>
+        <td>2 minutes</td>
+      </tr>
+      <tr>
+        <td class="row-label">Trust-Tier Assessor</td>
+        <td>Interactive: what tier is this decision, and what does that mean operationally?</td>
+        <td>3 minutes</td>
+      </tr>
+      <tr>
+        <td class="row-label">Five Questions</td>
+        <td>The pre-action checklist an executive can run before a meeting.</td>
+        <td>5 minutes</td>
+      </tr>
+      <tr>
+        <td class="row-label">Four Roles</td>
+        <td>Which hat am I wearing right now, and what does it require of me?</td>
+        <td>Situational</td>
+      </tr>
+      <tr>
+        <td class="row-label">Confidence Gap Check</td>
+        <td>Is the AI's narrative more confident than the numbers actually support?</td>
+        <td>3 minutes</td>
+      </tr>
+      <tr>
+        <td class="row-label">Second-Opinion Protocol</td>
+        <td>The AI-era equivalent of a concurring partner review.</td>
+        <td>10 minutes</td>
+      </tr>
+      <tr>
+        <td class="row-label">Escalation Matrix</td>
+        <td>Who gets called, when, and what gets paused — per failure mode.</td>
+        <td>Reference</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout key">
+    <div class="callout-label">If you read nothing else</div>
+    <p><strong>Read sections 3, 4, and 6.</strong> The Trust Equation tells you how much to worry. The Assessor turns that into a concrete action path for the output on your desk. The Five Questions is the pre-meeting checklist. Everything else is depth — valuable, but sections 3, 4, and 6 are what you actually run on a Tuesday afternoon before a board call.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: THE GAP ============ -->
+<section id="gap">
+  <div class="section-header">
+    <div class="section-number">§ 02</div>
+    <h2 class="section-title">Why this sub-discipline is missing — and who has to build it</h2>
+  </div>
+
+  <p>A scan of the current landscape — NIST AI RMF, ISO 42001, the AICPA/CAQ guidance, PwC's Responsible AI audits materials, Deloitte's Trustworthy AI framework, the WEF AI C-Suite Toolkit, the IIA's AI Auditing Framework — reveals a consistent pattern. The published work concentrates on <strong>governing AI systems</strong>: how models are built, validated, deployed, monitored, and documented. Excellent guidance. Wrong problem for the question this document addresses.</p>
+
+  <p>The question this document addresses is different: <em>a C-suite leader has received an AI-generated analytical output. What do they do with it between the moment of receipt and the moment of action?</em> That window is where the damage happens, and it is effectively undocumented.</p>
+
+  <h3>Three reasons the gap persists</h3>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%">Reason</th>
+        <th style="width: 40%">How it manifests</th>
+        <th style="width: 35%">Why existing frameworks don't fix it</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">The analyst-in-the-middle evaporated</td>
+        <td>Executives now work with AI directly. The junior analyst who used to reconcile numbers before they reached the CFO is gone, or has been reassigned to higher-order work.</td>
+        <td>Governance frameworks assume a development/deployment lifecycle. They do not address ad hoc use of general-purpose AI by senior leaders.</td>
+      </tr>
+      <tr>
+        <td class="row-label">The artifact is a conversation, not a document</td>
+        <td>An AI output is the end-state of a multi-turn session with drifting assumptions, data that refreshed, and prompts no one kept.</td>
+        <td>Audit frameworks assume static artifacts with clear provenance. AI conversations have neither by default.</td>
+      </tr>
+      <tr>
+        <td class="row-label">No one owns the executive layer</td>
+        <td>Internal audit audits the system. The CDO/CIO governs the platform. The analyst audits the data. The executive audits… nothing, formally.</td>
+        <td>There is no profession-level standard for what a decision-maker owes the decision when AI produced the evidence.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout aside">
+    <div class="callout-label">A note on who builds this</div>
+    <p>Traditional audit standards are built by regulators, standard-setters, and academics, then adopted by practice. For AI-output audit, that sequence is too slow. The discipline has to be built from the user side — by practitioners who feel the gap — and then codified later. This document is an attempt to do the first part well enough to make the second part possible.</p>
+  </div>
+
+  <h3>How this sits against existing work</h3>
+  <p>This framework does not arrive on empty ground, and it is stronger for saying so plainly.</p>
+  <p>The question of <em>how much</em> to trust a machine's output — and when that trust is miscalibrated — is a mature research field. Work on <strong>trust calibration and &ldquo;appropriate reliance&rdquo;</strong> (Lee &amp; See, 2004) and on <strong>automation bias and algorithm aversion</strong> (Parasuraman &amp; Riley, 1997; Dietvorst et al., 2015) established decades ago that people both over- and under-rely on automated advice, and that the failure is rarely the tool. A newer literature extends this to generative AI specifically, naming the way fluent, confident output earns trust it hasn&rsquo;t earned on the merits.</p>
+  <p>At the organizational layer, the ground is well covered — NIST&rsquo;s AI RMF, ISO 42001, and Gartner&rsquo;s AI TRiSM all govern how AI <em>systems</em> are built, validated, and monitored. And at the decision layer, some executive-facing guidance now sorts <em>decision types</em> by impact and reversibility, mapping which categories a human must own.</p>
+  <p>What none of these provide is the thing a leader actually needs at 4:40 on a Tuesday: a protocol for a <strong>single output, before a single action</strong>. The research describes the phenomenon but does not hand the decision-maker a procedure. The governance frameworks operate a layer above the moment of action. The decision-category maps use reversibility and stakes — but stop short of the axis that determines whether the output can be <em>checked at all</em>: auditability, the traceability of every number back to a source a reviewer can follow. That third axis, drawn from the audit tradition rather than the AI-governance one, is this framework&rsquo;s contribution — and the reason it resolves not to a category but to a concrete, per-output next step.</p>
+</section>
+
+<!-- ============ SECTION 3: TRUST EQUATION ============ -->
+<section id="trust-equation">
+  <div class="section-header">
+    <div class="section-number">§ 03</div>
+    <h2 class="section-title">The Trust Equation</h2>
+  </div>
+
+  <p class="lede">Three variables determine how much scrutiny an AI output needs. They combine multiplicatively — a weakness on any axis is not offset by strength on the other two.</p>
+
+  <div class="tier-grid">
+    <div class="tier-card tier-1">
+      <div class="tier-label">Variable One</div>
+      <div class="tier-name">Reversibility</div>
+      <p style="font-size:13.5px;margin-bottom:12px;">If the decision turns out to be wrong, how hard is it to unwind?</p>
+      <ul>
+        <li>HIGH — directional reading of a chart</li>
+        <li>MEDIUM — vendor selection, hiring</li>
+        <li>LOW — capital deployment, public filing, termination</li>
+      </ul>
+    </div>
+    <div class="tier-card tier-2">
+      <div class="tier-label">Variable Two</div>
+      <div class="tier-name">Stakes</div>
+      <p style="font-size:13.5px;margin-bottom:12px;">What is the magnitude of harm if the output is materially wrong?</p>
+      <ul>
+        <li>LOW — internal brainstorm input</li>
+        <li>MEDIUM — operational decision</li>
+        <li>HIGH — reported number, disclosure, strategic commitment</li>
+      </ul>
+    </div>
+    <div class="tier-card tier-3">
+      <div class="tier-label">Variable Three</div>
+      <div class="tier-name">Auditability</div>
+      <p style="font-size:13.5px;margin-bottom:12px;">Can the output be traced back to source data with formulas a reviewer can follow?</p>
+      <ul>
+        <li>HIGH — formulas visible, source sheet cited</li>
+        <li>MEDIUM — methodology described, partial traceability</li>
+        <li>LOW — narrative only, hard-coded numbers, "the AI said"</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>How the three variables combine</h3>
+
+  <p>The intuition is not difficult but is easy to get wrong in the moment. A <strong>low-reversibility, high-stakes, low-auditability</strong> output is the maximum-danger configuration — and it is the configuration most likely to appear when a senior executive pastes a P&amp;L into an AI tool and asks for commentary twenty minutes before a meeting. The fact that the stakes are high does not make the output trustworthy; the fact that the AI sounded confident does not make it auditable; the fact that you are senior does not make the decision reversible.</p>
+
+  <p>The equation collapses to a four-tier classification.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Tier</th>
+        <th>Configuration</th>
+        <th>What it means in practice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">T1 — Directional</td>
+        <td>High reversibility, low-medium stakes, any auditability</td>
+        <td>Use as input. Verify numbers spot-check only. Act.</td>
+      </tr>
+      <tr>
+        <td class="row-label">T2 — Decision-Support</td>
+        <td>Medium reversibility OR medium stakes, medium+ auditability</td>
+        <td>Require aggregate reconciliation. Name a reviewer. Act with note in file.</td>
+      </tr>
+      <tr>
+        <td class="row-label">T3 — Board-Grade</td>
+        <td>Low reversibility, high stakes, medium+ auditability required</td>
+        <td>Tier-1 or Tier-2 audit mandatory (see AI Analysis Audit Guidebook). Named accountable executive. Second opinion. Do not act without sign-off.</td>
+      </tr>
+      <tr>
+        <td class="row-label">T4 — No-Go</td>
+        <td>Low auditability regardless of other variables, OR an irreversible decision class (below)</td>
+        <td>AI output is reference only. Human analysis is the deliverable. Do not let AI narrative drive the call.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning">
+    <div class="callout-label">Common misapplication</div>
+    <p>Executives often treat <strong>confidence in the AI's tone</strong> as a proxy for auditability. It is not. Modern AI produces fluent, structured, sourced-sounding output regardless of whether the underlying numbers are correct. Tone is evidence of writing capability, not of analytical accuracy. Keep the two separated.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 4: ASSESSOR ============ -->
+<section id="assessor">
+  <div class="section-header">
+    <div class="section-number">§ 04</div>
+    <h2 class="section-title">Trust-Tier Assessor</h2>
+  </div>
+
+  <p>Answer the three questions below for the specific AI output on your desk. The assessor classifies it into a tier and prescribes next steps.</p>
+
+  <div class="assessor" id="assessor-widget">
+    <div class="assessor-header">
+      <div class="assessor-title">Assess this output</div>
+      <div class="assessor-sub">Three questions. Answer for the actual decision in front of you, not a general case.</div>
+    </div>
+
+    <div class="assessor-question" data-q="reversibility">
+      <div class="q-label">Q1 — Reversibility</div>
+      <div class="q-text">If you act on this and it turns out to be wrong, how hard is it to unwind?</div>
+      <div class="options">
+        <div class="option" data-value="high"><span class="option-letter">A</span>Easy — I can change my mind next week with minimal cost</div>
+        <div class="option" data-value="med"><span class="option-letter">B</span>Hard — real cost, but recoverable over a quarter or two</div>
+        <div class="option" data-value="low"><span class="option-letter">C</span>Effectively irreversible — capital deployed, people hired or fired, filing made</div>
+      </div>
+    </div>
+
+    <div class="assessor-question" data-q="stakes">
+      <div class="q-label">Q2 — Stakes</div>
+      <div class="q-text">What is the magnitude of harm if the output is materially wrong?</div>
+      <div class="options">
+        <div class="option" data-value="low"><span class="option-letter">A</span>Low — internal thinking, not leaving the room</div>
+        <div class="option" data-value="med"><span class="option-letter">B</span>Medium — affects a team, budget, or customer</div>
+        <div class="option" data-value="high"><span class="option-letter">C</span>High — reported to the board, a regulator, or the market</div>
+      </div>
+    </div>
+
+    <div class="assessor-question" data-q="audit">
+      <div class="q-label">Q3 — Auditability</div>
+      <div class="q-text">Can the numbers be traced back to source data by someone else?</div>
+      <div class="options">
+        <div class="option" data-value="high"><span class="option-letter">A</span>Yes — formulas visible, source cited, a reviewer could follow it</div>
+        <div class="option" data-value="med"><span class="option-letter">B</span>Partially — methodology is described but not all numbers are traceable</div>
+        <div class="option" data-value="low"><span class="option-letter">C</span>No — it is narrative or hard-coded numbers; I would have to rebuild to check</div>
+      </div>
+    </div>
+
+    <div class="result-panel" id="result-panel">
+      <div class="result-tier" id="result-tier">TIER —</div>
+      <div class="result-name" id="result-name"></div>
+      <div class="result-body" id="result-body"></div>
+      <div class="result-actions">
+        <h5>Your next three actions</h5>
+        <ol id="result-actions-list"></ol>
+      </div>
+      <button class="reset-btn" onclick="resetAssessor()">Reset assessment</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 5: FOUR ROLES ============ -->
+<section id="four-roles">
+  <div class="section-header">
+    <div class="section-number">§ 05</div>
+    <h2 class="section-title">The Four Executive Roles</h2>
+  </div>
+
+  <p class="lede">A C-level leader interacts with AI output in four distinct roles. The obligations differ. Confusing them is the source of most over- and under-trust errors.</p>
+
+  <div class="roles-grid">
+    <div class="role">
+      <div class="role-icon">I.</div>
+      <div class="role-name">Consumer</div>
+      <div class="role-desc">You received an AI output produced by someone else. You did not run the prompt. You are reading to decide.</div>
+      <div class="role-question">"What did the person who ran this decide to include — and to leave out?"</div>
+    </div>
+    <div class="role">
+      <div class="role-icon">II.</div>
+      <div class="role-name">Operator</div>
+      <div class="role-desc">You ran the prompt yourself. The AI's output carries your name and your judgment implicitly.</div>
+      <div class="role-question">"Can I reconstruct, right now, every assumption the AI made on my behalf?"</div>
+    </div>
+    <div class="role">
+      <div class="role-icon">III.</div>
+      <div class="role-name">Sponsor</div>
+      <div class="role-desc">Your organization uses AI analysis at scale. You set the policies and allocate the governance budget.</div>
+      <div class="role-question">"Does my org have an audit standard for AI output — or just a permission slip to use AI?"</div>
+    </div>
+    <div class="role">
+      <div class="role-icon">IV.</div>
+      <div class="role-name">Accountable Executive</div>
+      <div class="role-desc">A decision has been made or will be made using AI-assisted evidence. You will answer for it.</div>
+      <div class="role-question">"If I am asked in six months to defend this call, what is my evidence chain?"</div>
+    </div>
+  </div>
+
+  <div class="callout key">
+    <div class="callout-label">The role switch is not automatic</div>
+    <p>Most AI-related executive errors occur at role transitions. A leader runs a quick Operator task, hands the output to a colleague (who is now a Consumer), and neither records the assumptions that were made. When a Sponsor-level question surfaces six weeks later — "why did we exclude off-rent days?" — the answer has been lost. Name the role explicitly at the top of any AI-assisted workstream.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 6: FIVE QUESTIONS ============ -->
+<section id="five-questions">
+  <div class="section-header">
+    <div class="section-number">§ 06</div>
+    <h2 class="section-title">The Five Questions Before You Act</h2>
+  </div>
+
+  <p>Run this list before any Tier-2 or Tier-3 action. It takes five minutes. Check each off.</p>
+
+  <div class="checklist">
+    <h4>Pre-Action Checklist</h4>
+    <ul class="checklist-items" id="five-questions-checklist">
+      <li data-key="q1">
+        <strong>1. Can I name the source data?</strong>
+        <span class="sub">Which file, which sheet, which date range, pulled from which system. If the answer is "the AI analyzed my data" — that is not an answer.</span>
+      </li>
+      <li data-key="q2">
+        <strong>2. Can I name one assumption the AI made that I did not specify?</strong>
+        <span class="sub">Every analysis has implicit choices — filters, dedup logic, date boundaries, scope. If I cannot name one, I have not actually read the output; I have read the summary.</span>
+      </li>
+      <li data-key="q3">
+        <strong>3. Does at least one number on this page tie to a source I could click through to?</strong>
+        <span class="sub">Tier-2+ outputs without a single traceable number are narratives wearing analytical clothing.</span>
+      </li>
+      <li data-key="q4">
+        <strong>4. Has anyone other than me — or another AI — reviewed this?</strong>
+        <span class="sub">For Tier 3, the answer must be yes. A second set of eyes is non-negotiable when the decision is irreversible.</span>
+      </li>
+      <li data-key="q5">
+        <strong>5. If this is wrong, what is the cost, and who bears it?</strong>
+        <span class="sub">If the answer is "me and my reputation," proceed with your own judgment. If the answer includes "the company, shareholders, employees, or the public," proceed only with the full protocol.</span>
+      </li>
+    </ul>
+  </div>
+
+  <p style="font-size:14px;color:var(--muted);font-style:italic;font-family:'Fraunces',serif;">The checkboxes above are interactive — the state does not persist, so if you want to use this as a real-time tool, print the page or capture the state as you go. A fuller Power Automate / SharePoint integration is out of scope for v1 but should be trivial to layer on.</p>
+</section>
+
+<!-- ============ SECTION 7: CONFIDENCE GAP ============ -->
+<section id="confidence-gap">
+  <div class="section-header">
+    <div class="section-number">§ 07</div>
+    <h2 class="section-title">The Confidence–Accuracy Gap</h2>
+  </div>
+
+  <p class="lede">The single most dangerous pattern in AI-assisted executive work: the narrative is more confident than the underlying numbers support. The AI writes with the authority of a consulting memo; the data beneath it has the fragility of a first draft.</p>
+
+  <div class="gap-diagram">
+    <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="conf-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#4a6b5a" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#4a6b5a" stop-opacity="0.9"/>
+        </linearGradient>
+        <linearGradient id="acc-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#b8651a" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#b8651a" stop-opacity="0.3"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Axes labels -->
+      <text x="40" y="30" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5a5548" letter-spacing="1.5">CONFIDENCE OF OUTPUT</text>
+      <text x="40" y="180" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5a5548" letter-spacing="1.5">ACCURACY OF OUTPUT</text>
+
+      <!-- Confidence bar - stays high -->
+      <rect x="40" y="45" width="820" height="32" fill="url(#conf-grad)" rx="2"/>
+      <text x="50" y="66" font-family="Fraunces, serif" font-size="14" fill="#fff" font-weight="600">Reliably high across all prompt types →</text>
+
+      <!-- Accuracy bar - drops -->
+      <path d="M 40 195 L 200 195 L 300 200 L 450 220 L 600 245 L 860 260 L 860 228 L 600 213 L 450 188 L 300 168 L 200 163 L 40 163 Z" fill="url(#acc-grad)"/>
+      <text x="50" y="184" font-family="Fraunces, serif" font-size="14" fill="#fff" font-weight="600">Degrades with scope, drift, stale data →</text>
+
+      <!-- Gap area -->
+      <path d="M 600 77 L 600 245 L 860 260 L 860 77 Z" fill="#8b2e2e" fill-opacity="0.08" stroke="#8b2e2e" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="730" y="160" font-family="Fraunces, serif" font-size="14" fill="#8b2e2e" font-style="italic" text-anchor="middle" font-weight="600">THE GAP</text>
+      <text x="730" y="178" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8b2e2e" text-anchor="middle" letter-spacing="1">where executive decisions fail</text>
+
+      <!-- x-axis -->
+      <line x1="40" y1="270" x2="860" y2="270" stroke="#5a5548" stroke-width="1"/>
+      <text x="40" y="265" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5a5548">SIMPLE</text>
+      <text x="860" y="265" font-family="IBM Plex Mono, monospace" font-size="9" fill="#5a5548" text-anchor="end">COMPLEX &amp; STALE</text>
+    </svg>
+  </div>
+
+  <h3>Four signatures of a confidence gap</h3>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width:28%">Signature</th>
+        <th style="width:40%">How it shows up</th>
+        <th style="width:32%">How to pressure-test it</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Confident direction with fuzzy magnitude</td>
+        <td>"Revenue is trending meaningfully down." Down by what? Since when? Compared to what baseline?</td>
+        <td>Ask for the specific number, period, and comparator. If the AI has to go recompute, the original statement was asserted without data.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Causal claims from correlational data</td>
+        <td>"The new pricing strategy caused the utilization drop." With what control? What else changed?</td>
+        <td>Ask: "What would I need to be true for this claim to be wrong?" If nothing, it is not a claim — it is a narrative.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Hedged numbers with unhedged conclusions</td>
+        <td>Numbers carry "approximately," "may," "estimated." Conclusion says "we should." The caveats did not carry through.</td>
+        <td>Rewrite the conclusion using the same hedging language as the inputs. If it now reads as weak, the original was over-reaching.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Synthesis that exceeds the evidence</td>
+        <td>The AI combines three weak signals into one strong conclusion. Each signal was tentative; the conclusion is definitive.</td>
+        <td>Demand a confidence note per input. If any is "low," the synthesis is at most "medium." Arithmetic on confidence is not optimistic.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="pullquote">Never accept an AI's interpretation until the underlying numbers are audited. The story is only as good as the data it sits on.<cite>AI Analysis Audit Guidebook — Common Failure Modes</cite></p>
+</section>
+
+<!-- ============ SECTION 8: SECOND OPINION ============ -->
+<section id="second-opinion">
+  <div class="section-header">
+    <div class="section-number">§ 08</div>
+    <h2 class="section-title">The Second-Opinion Protocol</h2>
+  </div>
+
+  <p>In financial audit, a concurring partner reviews the engagement partner's work before sign-off. It is the single highest-ROI control in the audit standard. The AI equivalent exists, is cheap, and is almost never used. It takes two forms.</p>
+
+  <h3>Form A — Cross-model verification</h3>
+
+  <p>Give the same prompt and data to a second AI from a different provider. Different training data, different architectures, different biases. If the two agree within tolerance, the shared answer is more credible. If they diverge, the divergence itself is evidence — you now have a specific disagreement to investigate rather than a single confident answer to trust or reject blindly.</p>
+
+  <div class="callout key">
+    <div class="callout-label">What to watch for</div>
+    <p>Do not share the first AI's output with the second AI. That defeats the independence. Give each the raw source and the raw question. Compare the outputs. This is the same reason auditors keep the concurring partner walled off from the engagement team's conclusions.</p>
+  </div>
+
+  <h3>Form B — Fresh-session re-run</h3>
+
+  <p>Same model, new conversation. No history. Same prompt, same data. If the result materially differs, you have evidence of <strong>multi-turn drift</strong> in the original session — the AI's assumptions had shifted over the course of the conversation, and the final output reflected cumulative drift rather than the question you started with.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width:28%">Protocol</th>
+        <th style="width:40%">When to use</th>
+        <th style="width:32%">Time / cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Form A — Cross-model</td>
+        <td>Tier 3 decisions. High-stakes strategic analysis. Anything going to the board.</td>
+        <td>10–15 minutes. Cost of a second AI subscription.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Form B — Fresh-session</td>
+        <td>Tier 2+ work produced in a long conversation (>20 turns, or the session spans days).</td>
+        <td>5–10 minutes. No additional cost.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Combined</td>
+        <td>Irreversible decisions. External disclosures. Capital allocation.</td>
+        <td>30 minutes. Cheap relative to the decision.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout aside">
+    <div class="callout-label">On agreement vs. correctness</div>
+    <p>If two models agree, that raises confidence but does not guarantee correctness — they may share a failure mode (e.g., both were trained on the internet; both have been taught the same wrong fact). Cross-model agreement plus a source-data trace is the combination that should give you actual comfort. Neither alone is sufficient.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 9: ESCALATION ============ -->
+<section id="escalation">
+  <div class="section-header">
+    <div class="section-number">§ 09</div>
+    <h2 class="section-title">Escalation &amp; Pause Protocols</h2>
+  </div>
+
+  <p>The AI Analysis Audit Guidebook identifies failure modes. This section maps each to an escalation path: who gets called, when the decision pauses, and what recovers.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width:22%">Failure mode detected</th>
+        <th style="width:26%">What it implies</th>
+        <th style="width:26%">Who gets notified</th>
+        <th style="width:26%">What pauses</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Static values instead of formulas</td>
+        <td>Output cannot be audited without rebuilding. Decision evidence chain is weak.</td>
+        <td>Analyst who produced it; reviewer named in workstream.</td>
+        <td>Any Tier-2 or Tier-3 action. Rebuild with formulas before proceeding.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Silent filter or scope drift</td>
+        <td>Output describes a different question than was asked. Conclusion may be valid, but for the wrong population.</td>
+        <td>Analyst; prompt author if different.</td>
+        <td>All use of the output. Re-run with explicit scope statement in the prompt.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Source data completeness gap</td>
+        <td>The file is not what the system of record shows. Numbers are arithmetically correct but describe incomplete reality.</td>
+        <td>Data owner; CIO or CDO for repeated patterns; internal audit for material gaps.</td>
+        <td>Decision pauses. Reconcile sample to ERP/GL before release.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Multi-turn drift</td>
+        <td>The analysis in hand is not what was asked for at session start. Late-session conclusions inherit accumulated drift.</td>
+        <td>Analyst; executive consumer if already distributed.</td>
+        <td>All downstream use. Fresh-session re-run per Protocol Form B.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Confidence gap (narrative exceeds data)</td>
+        <td>Conclusion is more definitive than evidence supports. High public- or board-harm risk.</td>
+        <td>Analyst; communications lead for external-facing content; legal for disclosure context.</td>
+        <td>Any external communication. Rewrite with hedging matched to inputs.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Unreconstructable prompt history</td>
+        <td>Decisions are traceable only to "the AI said so." Cannot defend under scrutiny six months later.</td>
+        <td>Analyst; whoever owns the AI governance policy (general counsel, chief risk officer, internal audit).</td>
+        <td>Irreversible decisions. Rebuild with decision log per AI Analysis Audit Guidebook §Prompt Archaeology.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning">
+    <div class="callout-label">The pause protocol is the point</div>
+    <p>Escalation matrices that do not include "what pauses" are aspirational. The whole value of this framework is the willingness — culturally and procedurally — to pause a decision when the evidence is inadequate. A senior leader who pauses for 24 hours to audit a questionable AI output will be right more often than one who ships on the AI's timeline.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 10: GOVERNANCE ============ -->
+<section id="governance" class="appendix">
+  <div class="section-header">
+    <div class="section-number">§ 10</div>
+    <h2 class="section-title">Governance Integration</h2>
+  </div>
+
+  <p>For organizations subject to SOX, operating under COSO, or with a mature internal audit function, the executive-layer audit discipline fits neatly into existing structures. The integration is conceptual, not structural — no new committees are required.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width:22%">Existing framework</th>
+        <th style="width:38%">How AI-output audit maps in</th>
+        <th style="width:40%">What to add to policy language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">COSO Internal Control</td>
+        <td>AI-output audit is a detective control under Control Activities (Principle 10) and sits within Risk Assessment (Principles 6–9) when AI touches financial-reporting decisions.</td>
+        <td>"Any AI-assisted analysis used in decisions with financial-reporting impact must be classified per the Trust-Tier framework and audited to the corresponding tier before use."</td>
+      </tr>
+      <tr>
+        <td class="row-label">SOX §404</td>
+        <td>AI used in the production of SOX-relevant numbers (estimates, journal entries, close-process analytics) is in scope for controls testing.</td>
+        <td>SOX narratives must explicitly flag where AI produces or influences a reported number, and document the audit tier applied.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Internal Audit Charter</td>
+        <td>Internal audit is well-positioned to own the Tier-3 review function — it already has the independence and the audit tradecraft.</td>
+        <td>Expand charter to include "review of AI-assisted executive analytical output for irreversible decisions."</td>
+      </tr>
+      <tr>
+        <td class="row-label">Board Reporting</td>
+        <td>Board materials are the highest-stakes context in which AI output appears. They should carry provenance tags at minimum.</td>
+        <td>"All board materials derived in part from AI analysis must cite the audit tier applied and name the accountable executive."</td>
+      </tr>
+      <tr>
+        <td class="row-label">NIST AI RMF</td>
+        <td>NIST covers the system; this framework covers the output consumption layer. Complementary, not duplicative.</td>
+        <td>Adopt NIST for system governance, adopt this framework for user-side output audit. Same policy, two layers.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout aside">
+    <div class="callout-label">A pragmatic note for smaller organizations</div>
+    <p>If your company does not have a formal internal audit function or SOX program, the Five Questions and the Trust-Tier Assessor are themselves the program. Write them into your leadership handbook, require them above a stakes threshold, and keep a simple decision log. That is enough to materially outperform most peers, who have no user-side AI audit discipline at all.</p>
+  </div>
+</section>
+
+<!-- ============ SECTION 11: NEVER ============ -->
+<section id="never" class="appendix">
+  <div class="section-header">
+    <div class="section-number">§ 11</div>
+    <h2 class="section-title">Decisions to Never Delegate to AI Output</h2>
+  </div>
+<div style="margin:18px 0;padding:16px 20px;border:1px solid #cdd8cf;border-left:4px solid #0f5132;background:#f5f8f5;border-radius:4px"><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#0f5132;font-weight:700;margin-bottom:6px">The ownership principle</div><p style="margin:0">AI is a <strong>production layer, not a review layer</strong> &mdash; &ldquo;the AI reviewed it&rdquo; is not a control. The human who acts on an output owns it, and &ldquo;the AI did it&rdquo; is not a defense but an admission that no one reviewed it. Where an output crosses multiple desks, ownership is <strong>joint and non-transferable</strong>: each reviewer owns what their level is positioned to catch, and &ldquo;I assumed someone upstream checked&rdquo; is itself the review failure. Because fluent, confident output suppresses the doubt that used to trigger scrutiny, every layer must perform an <em>active, documented</em> review. This is Principle 7 of the companion Audit Guidebook &mdash; and the reason the review skill matters more in the AI era, not less.</p></div>
+
+  <p class="lede">Some decisions should not be driven by AI analysis regardless of how good the audit is. They involve either reversibility characteristics or evidentiary standards that AI output cannot satisfy as a class.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width:32%">Decision class</th>
+        <th style="width:40%">Why AI output is insufficient</th>
+        <th style="width:28%">What AI can still contribute</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Termination of an employee</td>
+        <td>Due process, legal exposure, dignity. The record must be built by humans who can testify to what they saw.</td>
+        <td>Summarizing prior documentation; drafting neutral language. Not the decision.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Public disclosure of forward-looking guidance</td>
+        <td>Securities law standards for basis and reasonableness are human-judgment standards. AI cannot be a witness.</td>
+        <td>Scenario modeling; sensitivity analysis to stress-test human judgment.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Going-concern and material-estimate judgments</td>
+        <td>GAAP/IFRS require documented management judgment. AI as the decision-maker violates the standard directly.</td>
+        <td>Data preparation; consistency checks across periods.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Irreversible capital allocation without human reconciliation</td>
+        <td>The cost of being wrong is permanent. Audit discipline requires a named human who agrees, in writing.</td>
+        <td>Alternatives generation; cross-check against base rates.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Safety-critical operational decisions</td>
+        <td>Lives or serious injury at stake. AI models are probabilistic; safety standards are not.</td>
+        <td>Anomaly detection, early warning — with a human in the loop for action.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Board-governance votes</td>
+        <td>Fiduciary duty is personal. Delegation to AI is a breach as a category, not as a matter of quality.</td>
+        <td>Pre-read preparation; comparison of vendor proposals to prior precedent.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Observe that none of these prohibit AI <em>assistance</em> — they prohibit AI <em>authorship of the decision</em>. The line is drawn at who is accountable, not at who did the typing.</p>
+</section>
+
+<!-- ============ APPENDIX: BUILDING THE SKILL ============ -->
+<section id="appendix" class="appendix">
+  <div class="section-header">
+    <div class="section-number">§ 12</div>
+    <h2 class="section-title">Appendix — Building the Skill</h2>
+  </div>
+
+  <p class="lede">For practitioners, analysts, and aspiring senior leaders who want to operationalize this framework as a personal capability rather than read it as a reference.</p>
+
+  <h3>A 30-day personal curriculum</h3>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width:14%">Week</th>
+        <th style="width:30%">Practice</th>
+        <th style="width:56%">Artifact to produce</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="row-label">Week 1 — See</td>
+        <td>Apply the Trust-Tier Assessor to every AI output you produce or receive. Do not try to change behavior yet. Just classify.</td>
+        <td>A running list of tier classifications, with actual decisions made for each. At week's end, review which you acted on without the corresponding audit level.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Week 2 — Audit</td>
+        <td>Pick the highest-stakes AI output from Week 1. Build a real Tier-1 audit of it per the AI Analysis Audit Guidebook methodology.</td>
+        <td>A worked audit sheet. Either the numbers tie, or they do not. If they do, note the confidence that adds. If they do not, note what you almost acted on.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Week 3 — Prompt</td>
+        <td>For each new AI task, write the prompt to include explicit scope, exclusion criteria, and a request for auditable output.</td>
+        <td>A personal library of five prompt templates, one per common task type, in the pattern from the AI Analysis Audit Guidebook §Audit Prompts.</td>
+      </tr>
+      <tr>
+        <td class="row-label">Week 4 — Review</td>
+        <td>Run the Second-Opinion Protocol on the highest-stakes Tier-2 output of the week. Compare. Document the divergence or the agreement.</td>
+        <td>A short memo to yourself: what the divergence was, what it taught you about the original output, and whether the decision stands.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>The signals of mastery</h3>
+
+  <div class="checklist">
+    <h4>You have internalized this framework when</h4>
+    <ul class="checklist-items">
+      <li data-key="m1"><strong>You classify outputs without thinking about it.</strong><span class="sub">The tier assessment becomes reflexive, not procedural.</span></li>
+      <li data-key="m2"><strong>You notice confidence gaps in real time, mid-conversation.</strong><span class="sub">When the AI's tone outpaces its evidence, you feel it before you finish reading.</span></li>
+      <li data-key="m3"><strong>You pause decisions without apology.</strong><span class="sub">"I need 24 hours to audit this" becomes a normal sentence, said without defensiveness.</span></li>
+      <li data-key="m4"><strong>You distinguish Operator, Consumer, and Accountable roles in your own work explicitly.</strong><span class="sub">You name the role at the top of a workstream rather than discovering it in hindsight.</span></li>
+      <li data-key="m5"><strong>You insist on auditability from others.</strong><span class="sub">When a colleague hands you narrative-only AI output for a material decision, you send it back with specifics.</span></li>
+      <li data-key="m6"><strong>You teach it.</strong><span class="sub">You have passed this framework or its substance to at least one other person, who now classifies their own work.</span></li>
+    </ul>
+  </div>
+
+  <div class="callout key">
+    <div class="callout-label">A closing thought for aspiring senior leaders</div>
+    <p>The skill described in this document is not technical. It is a form of <em>professional skepticism</em> — the same habit that has distinguished strong auditors and strong executives for a century, now applied to a new evidentiary medium. The AI will change. The models will improve. The obligation to know what you are acting on, and why, will not.</p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>The C-Suite AI Output Trust Framework</strong> — v1.0 · Working draft · Companion to the AI Analysis Audit Guidebook</p>
+  <p style="margin-top:8px;">Sources cited (1) SAP / Wakefield Research, <em>AI Has a Seat in the C-Suite</em>, 2025. (2) Teradata / NewtonX, <em>Trust in AI Survey</em>, 2024. Landscape review included NIST AI RMF, ISO 42001, AICPA/CAQ guidance, PwC Responsible AI, Deloitte Trustworthy AI, WEF AI C-Suite Toolkit, IIA AI Auditing Framework — none of which address the executive pre-action audit of AI output as a distinct discipline.</p>
+  <p style="margin-top:16px; padding-top:16px; border-top:1px solid var(--rule); font-size:11px; letter-spacing:0.05em; color:var(--muted);"><strong style="color:var(--ink);">Draft v0.1</strong> &nbsp;·&nbsp; © 2026 DeWayne Searcy &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; <em style="font-style:italic;">Confidential — not for distribution</em></p>
+</footer>
+
+</div>
+
+<script>
+// ======== ASSESSOR LOGIC ========
+const answers = {};
+
+document.querySelectorAll('.assessor-question').forEach(qEl => {
+  const qKey = qEl.dataset.q;
+  qEl.querySelectorAll('.option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      qEl.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      answers[qKey] = opt.dataset.value;
+      maybeShowResult();
+    });
+  });
+});
+
+function classify(r, s, a) {
+  // NO-GO: low auditability at medium+ stakes or low reversibility
+  if (a === 'low' && (s === 'high' || r === 'low')) return 't4';
+
+  // BOARD-GRADE: low reversibility + high stakes
+  if (r === 'low' && s === 'high') return 't3';
+  if (r === 'low' && s === 'med' && a !== 'high') return 't3';
+
+  // DECISION-SUPPORT: medium tier combinations
+  if (r === 'low' || s === 'high') return 't3';
+  if (r === 'med' || s === 'med') return 't2';
+  if (a === 'low') return 't2';
+
+  // DIRECTIONAL: low risk across the board
+  return 't1';
+}
+
+const tierData = {
+  't1': {
+    label: 'TIER 01 — DIRECTIONAL',
+    name: 'Use as input. Proceed with spot-check.',
+    body: 'This output can inform your thinking. The cost of being wrong is recoverable, the stakes are contained, and you can afford to act on reasonable verification rather than full audit. Do not skip the verification entirely — spot-check at least one number, and note the AI\'s key assumption in your own words.',
+    actions: [
+      'Spot-check one or two numbers against an obvious sanity reference.',
+      'Write down, in one sentence, what the AI assumed that you did not specify.',
+      'Act. Keep the output for reference in case the decision needs to be revisited.'
+    ]
+  },
+  't2': {
+    label: 'TIER 02 — DECISION-SUPPORT',
+    name: 'Require aggregate reconciliation. Name a reviewer.',
+    body: 'The decision has real cost if wrong. You need a Tier-1 audit before action — aggregate-level reconciliation of the headline number to source data, via formulas a second person can follow. This is not optional at this tier, even if the AI sounds confident and the meeting is in an hour.',
+    actions: [
+      'Run a Tier-1 audit per the AI Analysis Audit Guidebook: decompose the top-line number into source formulas.',
+      'Name a specific reviewer (not "someone on the team") and have them sign off in writing.',
+      'Act, with the audit sheet filed alongside the decision record.'
+    ]
+  },
+  't3': {
+    label: 'TIER 03 — BOARD-GRADE',
+    name: 'Tier-2 audit mandatory. Second opinion required. Named accountable executive.',
+    body: 'The decision is effectively irreversible, the stakes are high, or both. Proceed only with a full audit protocol: Tier-2 audit (one representative segment, every metric validated), a Second-Opinion Protocol run (cross-model or fresh-session), and a named executive who will defend the call if challenged. If any of the three is missing, the protocol is not complete — do not rely on partial adherence.',
+    actions: [
+      'Commission a Tier-2 audit: one segment, every metric, traced to source.',
+      'Run the Second-Opinion Protocol (Form A if decision is external-facing; Form B minimum).',
+      'Document the named accountable executive, their review, and the decision rationale — in writing, filed before action.'
+    ]
+  },
+  't4': {
+    label: 'TIER 04 — NO-GO',
+    name: 'AI output is reference only. Do not act on it.',
+    body: 'Either the output is unauditable at a stake level where auditability is required, or the decision is in a class (irreversible capital allocation, disclosure, termination, safety-critical) where AI output cannot be the evidentiary basis regardless of audit quality. Treat the AI output as background reading. The decision needs a human analytical foundation, not an AI-generated one, before it can proceed.',
+    actions: [
+      'Separate the decision from the AI output. Restart the analysis with a human-led methodology.',
+      'Use the AI output as one of several reference inputs, not as the central evidence.',
+      'Before proceeding, ask: is this decision in the "Never Delegate" class (§11)? If yes, AI is assistance only, not authorship.'
+    ]
+  }
+};
+
+function maybeShowResult() {
+  if (answers.reversibility && answers.stakes && answers.audit) {
+    const tier = classify(answers.reversibility, answers.stakes, answers.audit);
+    const data = tierData[tier];
+    const panel = document.getElementById('result-panel');
+    document.getElementById('result-tier').textContent = data.label;
+    document.getElementById('result-name').textContent = data.name;
+    document.getElementById('result-body').textContent = data.body;
+    const list = document.getElementById('result-actions-list');
+    list.innerHTML = '';
+    data.actions.forEach(a => {
+      const li = document.createElement('li');
+      li.textContent = a;
+      list.appendChild(li);
+    });
+    panel.classList.add('visible');
+    setTimeout(() => panel.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+  }
+}
+
+function resetAssessor() {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  document.querySelectorAll('.assessor .option').forEach(o => o.classList.remove('selected'));
+  document.getElementById('result-panel').classList.remove('visible');
+  document.getElementById('assessor-widget').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ======== CHECKLIST TOGGLE ========
+document.querySelectorAll('.checklist-items li').forEach(li => {
+  li.addEventListener('click', (e) => {
+    // Don't toggle when clicking on sub-text links/selects etc., but it's fine here
+    li.classList.toggle('checked');
+  });
+});
+</script>
+
+</body>
+</html>
