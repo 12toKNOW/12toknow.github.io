@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Genealogy Methodology — Ten Field Guides · 12toKNOW</title>
+<meta name="description" content="Ten field-tested guides for rigorous, AI-assisted family-history research — evidence grading, source standards, DNA workflow, pedigree numbering, lineage-society applications, narrative discipline, and FAN-cluster reconstruction. By DeWayne Searcy.">
+<!--
+  Genealogy Methodology hub · v1 (Claude, 2026-07-27). Self-contained; system fonts; conference-wifi safe.
+  Family-history sub-brand: green #14532b / gold #A87F26 / parchment #F7F2E6 (matches genealogy_guides.html).
+  Source: Searcy_Genealogy_Guides_Consolidated_v4.md — generalized to method; Searcy research kept only as worked examples.
+  PRIVACY: all living-person data scrubbed by design (no DNA kit numbers, no named living relatives/applicants).
+  To publish: upload genealogy-methodology.html to the repo root. Sibling to genealogy_guides.html (the Kits).
+-->
+<style>
+:root{--ink:#2b2620;--parch:#F7F2E6;--card:#FFFDF8;--green:#14532b;--green-dk:#0f3f21;--gold:#A87F26;--gold-lt:#C8A44D;--muted:#6d6455;--line:#e7ddc8;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--parch);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:var(--green)}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+.topbar{background:var(--green);color:#f3ede0}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:52px;font-size:13.5px;max-width:1000px}
+.topbar .brand{font-family:Georgia,serif;color:#fff}
+.topbar a{color:#cfe0d5;text-decoration:none}
+.topbar .links a{margin-left:16px}
+.topbar .links a:hover{color:#fff}
+
+.hero{background:linear-gradient(180deg,var(--green),var(--green-dk));color:#f5efe2;text-align:center;padding:52px 0 44px;border-bottom:3px solid var(--gold)}
+.hero .kick{color:var(--gold-lt);letter-spacing:.2em;text-transform:uppercase;font-size:12px;margin:0 0 12px}
+.hero h1{font-family:Georgia,serif;font-size:40px;margin:0 0 14px;line-height:1.13}
+.hero p{color:#dce7de;margin:0 auto;max-width:64ch;font-size:17px}
+@media(max-width:640px){.hero h1{font-size:30px}.hero{padding:40px 0 34px}}
+
+.intro{font-size:16.5px;color:#3a352c;margin:34px 0 12px;max-width:78ch}
+.lawline{background:#f1ece0;border-left:4px solid var(--gold-lt);border-radius:8px;padding:15px 18px;font-size:15px;color:#4a4335;margin:18px 0 10px;max-width:80ch}
+.onramp{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:18px 22px;margin:22px 0 6px}
+.onramp p{margin:0;font-size:15px;color:#3a352c}
+.onramp a{font-weight:700}
+
+/* TOC */
+.toc{margin:36px 0 8px}
+.toc h2{font-family:Georgia,serif;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.toc-group{margin:20px 0}
+.toc-group .gl{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+.toc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:640px){.toc-grid{grid-template-columns:1fr}}
+.toc-item{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-decoration:none;transition:transform .12s,box-shadow .12s,border-color .12s}
+.toc-item:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(20,83,43,.10);border-color:var(--gold-lt)}
+.toc-item .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;font-weight:700;font-family:Georgia,serif;display:flex;align-items:center;justify-content:center;font-size:14px}
+.toc-item .l{font-weight:600;font-size:14.5px;color:var(--ink);line-height:1.25}
+
+/* guide sections */
+.guide{padding:30px 0 26px;border-top:1px solid var(--line)}
+.ghead{display:flex;gap:16px;align-items:flex-start;margin-bottom:12px}
+.ghead .gnum{flex:0 0 auto;font-family:Georgia,serif;font-weight:700;font-size:32px;color:var(--gold);line-height:1;min-width:48px}
+.ghead .gtag{display:block;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.ghead h3{font-family:Georgia,serif;font-size:25px;color:var(--green-dk);margin:0;line-height:1.18}
+@media(max-width:640px){.ghead .gnum{font-size:25px;min-width:34px}.ghead h3{font-size:20px}}
+.gbody{padding-left:64px}
+@media(max-width:640px){.gbody{padding-left:0}}
+.gbody>p{font-size:16px;color:#33302a;margin:0 0 12px}
+.gbody>p .lead{color:var(--green-dk);font-weight:700}
+.method h4,.framework .k,.example .k{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.method h4{margin:18px 0 6px}
+.method ul{margin:0;padding-left:20px}
+.method li{font-size:15.5px;color:#33302a;margin:8px 0;line-height:1.5}
+.method li b{color:var(--green-dk)}
+.framework{background:#f5efe1;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+.framework .k{display:block}
+.framework p{margin:0;font-size:15px;color:#3a352c}
+.framework p+p{margin-top:8px}
+.framework b{color:var(--green-dk)}
+.example{background:#eef3ec;border-left:4px solid var(--green);border-radius:0 10px 10px 0;padding:16px 18px;margin:18px 0}
+.example .k{display:block;color:var(--green)}
+.example p{margin:0;font-size:15px;color:#2f3a30}
+.maxim{font-family:Georgia,serif;font-style:italic;font-size:18px;color:var(--green-dk);border-left:3px solid var(--gold);padding-left:16px;margin:18px 0 0;line-height:1.4}
+
+/* evidence tier ladder */
+.tiers{margin:6px 0 4px;list-style:none;padding:0}
+.tiers li{padding:11px 14px;border-radius:8px;margin:7px 0;font-size:14.5px;color:#33302a;border-left:5px solid var(--gold)}
+.tiers li b{display:inline-block;min-width:118px;color:var(--green-dk);font-family:Georgia,serif}
+.tiers li.t1{background:#e9f1e7;border-left-color:#14532b}
+.tiers li.t2{background:#eef2e2;border-left-color:#4e7c2f}
+.tiers li.t3{background:#f5efdd;border-left-color:#A87F26}
+.tiers li.t4{background:#f6ecdb;border-left-color:#C8A44D}
+.tiers li.t5{background:#f0e6e0;border-left-color:#9a5a3a;color:#5a4a42}
+
+.totop{display:inline-block;margin-top:16px;font-size:13px;color:var(--muted);text-decoration:none}
+.totop:hover{color:var(--green)}
+
+/* closing */
+.close-band{background:var(--green);color:#eaf1ea;margin-top:14px}
+.close-band .wrap{padding:40px 22px}
+.close-band h2{font-family:Georgia,serif;color:#fff;font-size:24px;margin:0 0 12px}
+.close-band p{color:#cfe0d5;font-size:16px;margin:0 0 14px;max-width:74ch}
+.close-band a{color:#f0e0b8;font-weight:700}
+
+footer{background:var(--green-dk);color:#cfe0d5;font-size:12.5px;padding:22px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;max-width:1000px}
+footer a{color:#e8dcbf;font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="brand">The Searcy Family</span>
+  <span class="links"><a href="searcy_family_history.html">← Family history home</a><a href="genealogy_guides.html">The Kits</a><a href="https://12toknow.ai">12toKNOW</a></span>
+</div></div>
+
+<div class="hero"><div class="wrap">
+  <p class="kick">A 12toKNOW Methodology</p>
+  <h1>The Genealogy Methodology</h1>
+  <p>Ten field guides for doing family history the disciplined way — the conventions, scales, and workflows worked out over a real multi-year project, each generalized so you can adopt it on your own.</p>
+</div></div>
+
+<div class="wrap">
+
+  <p class="intro">This is rigor-first genealogy for the AI-assisted era. Every claim carries an explicit confidence tier; every finding traces to a source a stranger could check; and the discipline that produces distribution-quality work is treated as a deliverable in its own right — versioned, audited, and reusable — rather than left as tacit craft. The machine can reach further and faster than any researcher working alone. What it cannot do is decide whether a claim is <em>true.</em> These guides are built to keep that line bright.</p>
+
+  <div class="lawline"><strong>The through-line:</strong> AI reaches further and faster, but a fact isn't a fact until a human has tied it to a source a stranger could verify. Reach and rigor are not in tension — the method is how you get both.</div>
+
+  <div class="onramp">
+    <p><strong>New here? Start with the Kits.</strong> The two free <a href="genealogy_guides.html">Complete Kits — Researching &amp; Writing a Family History with Claude</a> are the on-ramp: the condensed guide, the templates, and a worked sample. The ten field guides below are the full methodology underneath them — go deeper when you're ready.</p>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc" id="top">
+    <h2>The ten guides</h2>
+
+    <div class="toc-group">
+      <p class="gl">Foundations — building a record that holds</p>
+      <div class="toc-grid">
+        <a class="toc-item" href="#g1"><span class="n">1</span><span class="l">Project Versioning &amp; the "Cut" Convention</span></a>
+        <a class="toc-item" href="#g2"><span class="n">2</span><span class="l">Five-Tier Evidence Grading</span></a>
+        <a class="toc-item" href="#g3"><span class="n">3</span><span class="l">Ahnentafel Numbering — Reading the Pedigree</span></a>
+        <a class="toc-item" href="#g5"><span class="n">5</span><span class="l">Source Documentation Standards</span></a>
+        <a class="toc-item" href="#g8"><span class="n">8</span><span class="l">File Naming &amp; Organization at Scale</span></a>
+      </div>
+    </div>
+
+    <div class="toc-group">
+      <p class="gl">Specialized methods — extending the record</p>
+      <div class="toc-grid">
+        <a class="toc-item" href="#g4"><span class="n">4</span><span class="l">DNA Workflow, End to End</span></a>
+        <a class="toc-item" href="#g10"><span class="n">10</span><span class="l">Neighborhood / FAN-Cluster Reconstruction</span></a>
+        <a class="toc-item" href="#g7"><span class="n">7</span><span class="l">The Lineage-Society (DAR) Application Path</span></a>
+        <a class="toc-item" href="#g9"><span class="n">9</span><span class="l">Long-Form Narrative Drafting Discipline</span></a>
+      </div>
+    </div>
+
+    <div class="toc-group">
+      <p class="gl">Working with the AI</p>
+      <div class="toc-grid">
+        <a class="toc-item" href="#g6"><span class="n">6</span><span class="l">Project Capacity &amp; Multi-Workspace Management</span></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="wrap">
+
+  <!-- GUIDE 1 -->
+  <section class="guide" id="g1">
+    <div class="ghead"><span class="gnum">01</span><div><span class="gtag">Foundation</span><h3>Project Versioning &amp; the "Cut" Convention</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> A disciplined version-numbering and release ("cut") convention for a long-running research project, so the record stays legible to you, to collaborators, and to future working sessions.</p>
+      <p><span class="lead">When to use it.</span> Any multi-month project where findings accumulate in reviewable batches and you need to know why a given release was issued when it was.</p>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li>Use three numbering tiers: <b>Major.Minor</b> for canonical releases that integrate substantive new evidence; <b>Major.Minor.Patch</b> for interim cuts that can't wait; and separate <b>companion-artifact versions</b> (workbook, chart, data export) that bump on their own faster cadence.</li>
+          <li>Reserve <b>Major</b> bumps for framework shifts only — a new grading scheme, a restructured architecture, changed core arithmetic. This is what stops version inflation, where the number quietly stops meaning anything.</li>
+          <li>Cut a new Minor version only when explicit, pre-named <b>gating conditions</b> close. Naming the gates in advance is what makes a cut decision auditable rather than arbitrary.</li>
+          <li>Let a gate be <b>displaced</b> by parallel work that outgrows its scope — but carry the displaced gate forward and say so.</li>
+          <li>Keep superseded versions until the <b>next-next</b> cut, for diffing and audit; then classify each old file as keep / archive / judgment-call.</li>
+          <li>Maintain a <b>Cut Decision Log</b> that narrates what closed, what displaced, and why "cut now" beat "wait."</li>
+        </ul>
+      </div>
+      <div class="framework"><span class="k">Signature framework — the version decision tree</span>
+        <p>Framework change → <b>Major</b>. Substantive evidence with gates closed → <b>Minor</b>. A mid-cycle breakthrough touching several pedigree entries, with gates unfired and weeks still to run → <b>Patch</b>, filed as a "mid-cycle close." Accumulated work needing a checkpoint → <b>Patch</b>, as a "bridge cut." A typo → just edit in place.</p>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>A May 2026 mid-cycle close (v2.7.1) documented eight generations of pre-immigration ancestry out of the 1572 and 1634 Visitations of Hertfordshire — adding twenty direct-line ancestors up to Generation 20 — without triggering a Minor cut, because that cycle's DNA gate hadn't yet fired. Big finding, correctly filed as a checkpoint rather than a release.</p>
+      </div>
+      <p class="maxim">"Additive within an unchanged framework is a Minor bump, not a Major one."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+  <!-- GUIDE 2 -->
+  <section class="guide" id="g2">
+    <div class="ghead"><span class="gnum">02</span><div><span class="gtag">Foundation</span><h3>Five-Tier Evidence Grading</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> A scale that assigns every claim an explicit confidence tier, so a reader knows exactly which claims to trust and how far.</p>
+      <p><span class="lead">When to use it.</span> On any research record meant to withstand outside scrutiny — and, more broadly, on any analytical work whose claims rest on uneven evidence.</p>
+      <div class="framework"><span class="k">Signature framework — the five tiers</span>
+        <ul class="tiers">
+          <li class="t1"><b>DOCUMENTED</b> Confirmed by a primary source, a secondary source citing primary, or a vetted lineage-society record. <em>The only tier that enters the canonical record.</em></li>
+          <li class="t2"><b>PROBABLE</b> Strong convergent or circumstantial evidence, not yet closed by a primary source.</li>
+          <li class="t3"><b>EXPECTED</b> A reasonable inference — a placeholder for a person the records imply but don't yet name.</li>
+          <li class="t4"><b>SPECULATIVE</b> A working hypothesis or research lead.</li>
+          <li class="t5"><b>FALSIFIED</b> Ruled out by DNA or a primary-source contradiction — and kept on the record, not deleted.</li>
+        </ul>
+        <p>Promotion runs SPECULATIVE → PROBABLE → DOCUMENTED, with EXPECTED feeding in; any tier can drop to FALSIFIED.</p>
+      </div>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li>Grade every claim; let <b>only the top tier</b> enter the canonical record, and never present a hypothesis to outside readers as fact.</li>
+          <li>Default each new claim to the <b>lowest tier its evidence supports</b>, and route every promotion through a formal cut so the when-and-why is preserved.</li>
+          <li><b>Record conflicts; don't resolve them by fiat.</b> Where sources disagree, log the disagreement.</li>
+          <li>When a claim is ruled out, <b>document it as FALSIFIED</b> with the contradicting evidence — never quietly erase it.</li>
+        </ul>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>A long-carried Cherokee-ancestry line was moved to FALSIFIED once DNA and primary-source evidence contradicted it. The pedigree slot was preserved rather than deleted, keeping the falsifying evidence permanently on the record — so the same dead end can't be re-walked by a future researcher.</p>
+      </div>
+      <p class="maxim">"Conflicts get recorded, not resolved by fiat. Falsified claims are documented, not deleted."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+  <!-- GUIDE 3 -->
+  <section class="guide" id="g3">
+    <div class="ghead"><span class="gnum">03</span><div><span class="gtag">Foundation</span><h3>Ahnentafel Numbering — Reading the Pedigree</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> A rigid pedigree-indexing convention (Sosa-Stradonitz numbering) that gives every direct ancestor a permanent number you can derive by arithmetic.</p>
+      <p><span class="lead">When to use it.</span> Any pedigree project that needs a stable index that never collides as the tree grows.</p>
+      <div class="framework"><span class="k">Signature framework — the three rules</span>
+        <p>The subject is <b>#1</b>. The father of any person <b>#X</b> is <b>#2X</b>; the mother is <b>#2X+1</b>. From that: even numbers are men, odd numbers are women, and the number's range tells you the generation. Four "quadrants" (descent through each grandparent, #4–#7) place any ancestor on the correct family line at a glance.</p>
+      </div>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li>Number <b>direct-line ancestors only</b>; track collaterals separately, with no ahnentafel number.</li>
+          <li><b>Never renumber across cuts.</b> New ancestors get new numbers; existing assignments are permanent — even the slot of a person later falsified.</li>
+          <li>Learn to <b>read a number cold</b> — extract generation, parents, spouse, and family side from the number alone.</li>
+          <li>Keep a strict authority order for disputes: the current structured workbook outranks the current master narrative, which outranks working memos, which outrank archived versions.</li>
+        </ul>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>Read "#4581" cold: it falls in the 4096–8191 band, so Generation 13 (a ten-times-great-grandmother); it's odd, so a wife (her husband is #4580); her parents are #9162 and #9163 in Generation 14 — and the chain resolves into the paternal quadrant. Five facts, from the number alone. When twenty new ancestors were later added out to Generation 20, not one existing number had to move.</p>
+      </div>
+      <p class="maxim">"New ancestors get new numbers; no existing number is ever reassigned."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+  <!-- GUIDE 5 -->
+  <section class="guide" id="g5">
+    <div class="ghead"><span class="gnum">05</span><div><span class="gtag">Foundation</span><h3>Source Documentation Standards</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> The citation conventions that let any claim be verified, audited, and defended by an outside reviewer — the layer that turns a casual family tree into a research record.</p>
+      <p><span class="lead">When to use it.</span> Every time a source supports a claim.</p>
+      <div class="framework"><span class="k">Signature framework — the six-element citation</span>
+        <p>Every external citation carries six parts: a <b>citation handle</b>, the <b>specific record locator</b>, the <b>repository / access path</b>, the <b>local archive filename</b>, the <b>date retrieved</b>, and a <b>cross-reference</b> to the claim(s) it supports. Your project's own prior output gets a parallel <b>internal-corpus citation</b> that records inheritance position and scope-of-supersession instead of bibliographic locators.</p>
+      </div>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li><b>State missing elements explicitly</b> ("publication date TBD") rather than leaving a blank — a named gap is something a reader can act on.</li>
+          <li><b>Scale citation depth to evidence tier:</b> full six elements for the top tier, partial-with-gap-stated below it, and both the original and the falsifying source for anything ruled out.</li>
+          <li>Keep citations in three layers — inline in the narrative, consolidated in a source ledger, and structured in a searchable data tab. <b>The triplication is intentional.</b></li>
+          <li>Run incoming material through a four-stage <b>triage workflow</b> — intake → anchor pass → cluster identification → integration — instead of reading every document equally.</li>
+          <li>Recognize quality bands within DOCUMENTED (image-in-hand &gt; primary cited but not retrieved &gt; vetted secondary), and keep pursuing the image even after a claim is documented.</li>
+        </ul>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>A single batch of 41 PDFs was triaged in four days: an anchor pass separated three high-leverage documents from the other thirty-eight, eight clusters were identified, and six were integrated by the next cut — yielding about twenty new facts and four PROBABLE → DOCUMENTED promotions. The canonical citation walk-through is a Revolutionary War pension file (NARA M804, Roll 2144, File R.9342), whose third page is a family register sworn by the widow in 1845.</p>
+      </div>
+      <p class="maxim">"A missing element is data. A reader can act on 'date TBD.' They cannot act on a blank field."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+  <!-- GUIDE 8 -->
+  <section class="guide" id="g8">
+    <div class="ghead"><span class="gnum">08</span><div><span class="gtag">Foundation</span><h3>File Naming &amp; Organization at Scale</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> Naming and folder conventions that keep a large archive — hundreds of files, images, memos, and versioned deliverables — navigable across researchers, sessions, and years.</p>
+      <p><span class="lead">When to use it.</span> Any project accumulating many files over a long time.</p>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li>Keep a <b>flat folder structure</b>: one active working root plus a small set of purpose-named subfolders (secondary archive, regional primary-source archives, analysis output).</li>
+          <li>Use one consistent filename pattern, with version suffixes written <code>v2_7</code>, never <code>v2.7</code>, to avoid operating-system escaping trouble.</li>
+          <li><b>Freeze a filename the moment it's cited.</b> Stability of citation beats tidiness — even a preserved misspelling.</li>
+          <li>Promote and demote files between root and archive on defined triggers (findings captured, version superseded, thread closed, no search-hit in 30+ days) — and never archive a current canonical artifact or an active memo.</li>
+          <li>Produce distribution copies as a <b>reader-segmented binder</b>, organized by audience rather than by subject.</li>
+          <li>Formalize distribution documents through a DRAFT → COMPLETE → FORMALIZED lifecycle, keeping the source markdown authoritative and regenerating the formal version when it changes.</li>
+        </ul>
+      </div>
+      <div class="framework"><span class="k">Signature framework — the three-tier binder</span>
+        <p><b>Tier 1 (Blue)</b> — the casual family reader: overview and story. <b>Tier 2 (Green)</b> — the engaged genealogist: reference and structure. <b>Tier 3 (Red)</b> — the audit-trail reader: full sourcing for a peer reviewer. Same content, three depths, each with its own prefix and renumbering protocol.</p>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>A scanned pension-image series carried the OCR misspelling "Searey" for Searcy. Because those filenames were already cited across the master report, they were deliberately left as-is — renaming a file would silently break every citation that pointed to it. The distribution binder grew to roughly 530 pages across the three reader tiers.</p>
+      </div>
+      <p class="maxim">"Stability of citation beats post-hoc tidiness. At first citation, freeze the name."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+  <!-- GUIDE 4 -->
+  <section class="guide" id="g4">
+    <div class="ghead"><span class="gnum">04</span><div><span class="gtag">Specialized method</span><h3>DNA Workflow, End to End</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> A repeatable pipeline that turns a raw DNA test into integrated, documented genealogical evidence across platforms and inheritance streams.</p>
+      <p><span class="lead">When to use it.</span> Whenever a new result or match cluster enters the project and needs consistent handling.</p>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li>Treat the <b>three inheritance streams</b> independently: autosomal (cousin matching, ~5 generations), Y-DNA (the deep paternal line), mtDNA (the deep maternal line).</li>
+          <li>Run the pipeline the same way every time: test → download the raw file → upload to a hub platform → upload to an analysis suite → optional secondary matching → baseline analyses → advanced tools → integrate into the structured workbook → document in the master at the next cut.</li>
+          <li>Choose tools by the <b>question</b> — cousin enumeration, relationship confirmation, parental-side phasing, segment triangulation, cluster diagramming.</li>
+          <li>Use <b>Research Cluster Analysis</b> to turn match lists into candidates: three or more cousins sharing a segment range, plus a surname cluster, plus a common place and era.</li>
+          <li><b>Cross-check the streams</b> to rule a pathway in or out before committing to it.</li>
+          <li>Hold every cluster-identified candidate at <b>PROBABLE until a primary source closes it.</b> DNA confirms or refines; a paper trail is what crosses to DOCUMENTED.</li>
+          <li>Treat the family-tree data export as a distribution-grade deliverable — embed the evidence tier, pedigree number, and citations in the record's note fields so context travels with the data.</li>
+        </ul>
+      </div>
+      <div class="framework"><span class="k">Signature framework — the three rules of cluster analysis</span>
+        <p>1) <b>A cluster identifies a search space, not an ancestor.</b> 2) <b>Hold candidates at PROBABLE until a primary source closes them.</b> 3) <b>Cross-check inheritance streams before committing.</b></p>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>A 15-match autosomal cluster — surname density converging on Lunenburg, Mecklenburg, and Halifax County, Virginia in the mid-1700s — placed a common ancestor around Generation 8–10. An mtDNA cross-check across four branches ruled out the maternal line; targeted documentary research then identified the DeGraffenreid family, and two of its members were promoted to DOCUMENTED only after a land-warrant adjacency confirmed them. A later deep-paternal test independently corroborated the paternal surname. DNA pointed; the paper closed it.</p>
+      </div>
+      <p class="maxim">"A cluster identifies a search space, not an ancestor."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+  <!-- GUIDE 10 -->
+  <section class="guide" id="g10">
+    <div class="ghead"><span class="gnum">10</span><div><span class="gtag">Specialized method</span><h3>Neighborhood / FAN-Cluster Reconstruction</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> A systematic census-neighbor method (Friends, Associates, Neighbors) that identifies, locates, and corroborates families through the households documented around them, tracked across decades.</p>
+      <p><span class="lead">When to use it.</span> When a name index fails, a surname is mangled or illegible, or a suspected kinship or migration needs corroboration the vital records leave open.</p>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li>Anchor on the target surname in a census index, then <b>sweep nine pages before and nine after</b> each hit, per surname per decade, to capture the whole neighborhood and catch mis-indexed households.</li>
+          <li><b>Read at the image, one dwelling at a time</b> — never mass auto-transcribe nineteenth-century handwriting; OCR only the printed header fields.</li>
+          <li>Record every neighbor with its dwelling and family number, so the ledger sorts two ways: by proximity, and by surname over time.</li>
+          <li>When the index fails, <b>locate a household by walking the dwellings around a known neighbor</b> instead of trying more spelling variants.</li>
+          <li>Establish identity from household composition and the neighbor set when the surname itself is unreadable — flag the as-written form, never silently correct it.</li>
+          <li>Treat proximity as <b>corroborative only</b>: cap any cluster-suggested link at PROBABLE until a primary source closes it.</li>
+        </ul>
+      </div>
+      <div class="framework"><span class="k">Signature framework — the three rules &amp; the Cluster Ledger</span>
+        <p>1) <b>Proximity corroborates but doesn't prove.</b> 2) <b>When the index fails, the neighbors are the index.</b> 3) <b>Neighbor-set continuity carries an identity a mangled surname can't.</b> All of it lives in a Neighbor Cluster Ledger keyed on both dwelling number and surname-by-year.</p>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>One neighbor — Silas Cheek, born in North Carolina — appears beside the same family's household in five consecutive censuses from 1840 to 1880: in 1840 next to the wife's father, in 1880 next to the wife herself. Forty years of unbroken adjacency proved the neighborhood was structural, not coincidental. A household illegible by name in the 1860 census was then confirmed by its composition plus the identical neighbor web that had bracketed the family in 1850 and 1870.</p>
+      </div>
+      <p class="maxim">"When the index fails, the neighbors are the index."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+  <!-- GUIDE 7 -->
+  <section class="guide" id="g7">
+    <div class="ghead"><span class="gnum">07</span><div><span class="gtag">Specialized method</span><h3>The Lineage-Society (DAR) Application Path</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> Converting documented ancestry into successful lineage-society applications, and managing a portfolio of Patriot pathways.</p>
+      <p><span class="lead">When to use it.</span> When a descendant wants formal recognition and the research already supports one or more qualifying lines.</p>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li>Treat the application as a <b>downstream deliverable, not a research tool</b> — the research must stand on its own first.</li>
+          <li>Inventory and rank Patriot pathways by filing-readiness, and run them as a <b>portfolio</b>: one primary application plus supplementals.</li>
+          <li>Buy and mine prior applicants' <b>record copies</b>; a vetted approved application is itself a top-band source, and two independent prior applicants corroborate each other.</li>
+          <li>Sequence filings: file the primary plus a concurrent supplemental first, then queue additional Patriots as post-approval supplementals whose descent chain is inherited from the approved primary.</li>
+          <li>Map every descent link to a source-quality band and require solid sourcing per link — close any weak link before filing.</li>
+          <li>Run a <b>pre-filing audit</b> in the last 72 hours to verify readiness, not extend it.</li>
+        </ul>
+      </div>
+      <div class="framework"><span class="k">Signature framework — the pre-filing audit</span>
+        <p>Six questions in the 0–72 hours before filing: are the corroborating-source insertions actually in place? are the record-copy files present? do current-cycle findings change anything? are the modern-end vital records sufficient? is all placeholder text resolved? and what is the short, actionable checklist for the final stretch? <b>The descent chain is the application.</b></p>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>A single day's roughly $90 record-copy order — nine copies across six Patriots — doubled the portfolio from two pathways to four, promoting two Patriots to fully DOCUMENTED on the strength of a 1781 county will image and a Revolutionary War pay voucher found in the supporting-document packets. The pre-filing audit then caught that none of four planned source insertions were actually in place and six record-copy files were missing — both fixed in the same session, before anything was filed.</p>
+      </div>
+      <p class="maxim">"Don't file before the master supports it. The descent chain is the application."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+  <!-- GUIDE 9 -->
+  <section class="guide" id="g9">
+    <div class="ghead"><span class="gnum">09</span><div><span class="gtag">Specialized method</span><h3>Long-Form Narrative Drafting Discipline</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> The operating discipline for turning verified genealogy into a narrative "a stranger will feel and a genealogist will trust" — rigorous documentary scaffolding carrying warm, interior prose.</p>
+      <p><span class="lead">When to use it.</span> When you write the family up at chapter and volume scale.</p>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li>Write from <b>inside</b> the person's body and senses; let the document — a census, a deed, a certificate — be something they move through, never something narrated from above. The failure mode is standing outside the person and analyzing their paperwork.</li>
+          <li>Keep every fact <b>load-bearing and checkable</b>, but subordinate to lived scene; let each chapter find its own length instead of hitting a word count.</li>
+          <li>Enforce a <b>tic catalog</b> with hard caps — over-used words, mechanical time-connectives, a closing phrase spent too early — audited on every pass.</li>
+          <li>Keep the drafting prompt's registers physically separate (facts, voice anchor, target) so structural vocabulary doesn't bleed into the prose.</li>
+          <li><b>Never invent to fill a silence.</b> A coherent inference is not a document; where the record stops, the prose says so.</li>
+          <li>Verify in a cumulative stack that ends with <b>reading the original image at full zoom</b> and a per-chapter sources audit.</li>
+        </ul>
+      </div>
+      <div class="framework"><span class="k">Signature framework — the governing rule &amp; the verification stack</span>
+        <p>The one rule: <b>plant just enough, and stop — the deliverable is the feeling, not the plant.</b> Then verify in layers: the reader tests, a lexical and numerical audit, an author slow-read, image-verification at zoom, and a retrofit sources audit that tier-grades every finished sentence.</p>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>In one volume, a single mis-transcribed death certificate had propagated a false through-line for a whole chapter — until the image was read at full zoom. The undertaker field actually said "no undertaker / homemade coffin" (an earlier pass had invented a "Conrad Coffin"); the medical field said "No Doctor" (an earlier pass had invented a recurring physician); and the burial place was "Pine Grove," not the name that had been carried. Reading the image corrected all three, and the corrections cascaded back through the chapter.</p>
+      </div>
+      <p class="maxim">"A chapter that passes every audit and does not move the reader has failed."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+  <!-- GUIDE 6 -->
+  <section class="guide" id="g6">
+    <div class="ghead"><span class="gnum">06</span><div><span class="gtag">Working with the AI</span><h3>Project Capacity &amp; Multi-Workspace Management</h3></div></div>
+    <div class="gbody">
+      <p><span class="lead">What it's for.</span> The discipline for working <em>with the AI tool itself</em> — managing a project's knowledge-capacity ceiling and structuring work across multiple AI workspaces.</p>
+      <p><span class="lead">When to use it.</span> When a project nears a capacity limit, when scope outgrows a single workspace, or at any session or project transition.</p>
+      <div class="method"><h4>The method</h4>
+        <ul>
+          <li>Diagnose <b>which</b> capacity limit you've hit — file count, storage bytes, or indexed knowledge — by reading the exact error wording; each needs a different fix.</li>
+          <li>Respond in order of reversibility: <b>prune</b> within the project, spin up a <b>successor project</b>, or <b>archive locally then prune</b>.</li>
+          <li>Transition via a fixed sequence: write a continuity prompt → save it as a file → identify the carry-forward set → create and populate the new project → send the continuity prompt as the first message → verify orientation before new work.</li>
+          <li>Split into parallel workspaces (research + methodology + a short-lived triage "sidecar") when cadence and capacity demand it, and move work between them by <b>file transfer, not cross-project search</b>.</li>
+          <li>Choose parallel vs. sequential by corpus type: open, growing corpora favor parallel; closed, bounded ones favor sequential.</li>
+          <li>Remember AI memory is <b>scoped per project</b> and doesn't transfer — the continuity prompt is what re-establishes context.</li>
+        </ul>
+      </div>
+      <div class="framework"><span class="k">Signature framework — the continuity prompt</span>
+        <p>Treat the continuity prompt as a first-class deliverable: saved as a file, named for what's ahead, carrying six elements — a continuation statement, the current canonical state, the active gating conditions, pending dependencies, the scope (including what's explicitly <em>out</em> of scope), and an "orient yourself first" instruction. Written fresh (recency matters), it lets a brand-new session pick up exactly where the last one stopped.</p>
+      </div>
+      <div class="example"><span class="k">Worked example — the Searcy project</span>
+        <p>A roughly 3,200-word bootstrap prompt, drafted the same day and checked against the actual current workbook and master, let a fresh session produce four coordinated deliverables in a single sitting with no state-mismatch errors. Separately, an outside researcher's contributed secondary sources were absorbed only after they were triangulated against the primary Visitation records — never on trust alone.</p>
+      </div>
+      <p class="maxim">"The continuity prompt is what re-establishes context — it is not optional."</p>
+      <a class="totop" href="#top">↑ Back to the ten guides</a>
+    </div>
+  </section>
+
+</div>
+
+<div class="close-band">
+  <div class="wrap">
+    <h2>How the ten fit together</h2>
+    <p>Five of these are foundations you build once and lean on forever — versioning, evidence grading, pedigree numbering, source standards, and file organization. Four are specialized methods you reach for when the work demands them — DNA, neighbor-cluster reconstruction, lineage-society applications, and long-form narrative. One is the discipline for working alongside the AI itself. Run together, they're a single machine: grade the evidence, document the source, cluster the leads, confirm at the primary record, and never let a coherent-sounding inference stand in for an actual page.</p>
+    <p>Want the condensed, ready-to-use version? Start with <a href="genealogy_guides.html">the two Complete Kits</a>. Want to see what the method produced? Visit <a href="searcy_family_history.html">The Searcy Family History</a>.</p>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <span>The Genealogy Methodology · a <a href="https://12toknow.ai">12toKNOW</a> project</span>
+  <span>© 2026 DeWayne Searcy, PhD</span>
+</div></footer>
+
+</body>
+</html>
