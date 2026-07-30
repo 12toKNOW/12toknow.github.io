@@ -127,7 +127,7 @@
   </url>
   <url>
     <loc>https://12toknow.ai/russian_history.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -249,5 +249,10 @@
     <loc>https://12toknow.ai/russian_law_ideology.html</loc>
     <lastmod>2026-07-30</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://12toknow.ai/russian_trivia.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>
