@@ -44,6 +44,14 @@ h2.sec{font-family:Georgia,serif;color:var(--red);font-size:24px;border-bottom:2
 .det .body .ex{font-size:13.5px;color:var(--muted)}
 .det .body .ex b{color:var(--red);font-weight:700}
 .starnote{font-size:12.5px;color:var(--muted);margin:8px 2px 0}
+.det .glyph{cursor:pointer;position:relative}
+.det .glyph .spk{position:absolute;bottom:-1px;right:2px;width:20px;height:20px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center}
+.det .glyph .spk::before{content:"";border-style:solid;border-width:4px 0 4px 7px;border-color:transparent transparent transparent #fff;margin-left:2px}
+.det .body .hear{margin-top:9px;display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:0;border-radius:8px;padding:8px 15px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit}
+.det .body .hear:hover{background:var(--red-dk)}
+.det .body .hear .tri{border-style:solid;border-width:5px 0 5px 8px;border-color:transparent transparent transparent #fff}
+.audio-note{font-size:12.5px;color:var(--muted);margin:8px 2px 0}
+#lwarn{display:none;background:#fbeaea;border:1px solid #e3b7b7;color:#7a2226;border-radius:8px;padding:9px 13px;font-size:12.5px;margin:9px 0 0}
 
 /* generic content cards */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:8px 0 4px}
@@ -100,7 +108,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}f
   <p class="lead">This is not a language course. It's the minimum needed to know that <span style="font-family:Georgia,serif">Хрущёв</span> is "Khrush-CHÓV," why the same man is Trotsky, Trotskii, and Trockij in three different books, and why every Russian in a novel seems to have three names. Stress is marked here with an acute accent (á) for guidance; real Russian text never marks it.</p>
 
   <h2 class="sec">The Cyrillic alphabet — 33 letters</h2>
-  <p class="lead">Tap any letter. Six of them — the Latin lookalikes that sound nothing like they look (★) — cause most misreadings; learn those first.</p>
+  <p class="lead">Tap any letter to hear it. Six of them — the Latin lookalikes that sound nothing like they look (★) — cause most misreadings; learn those first.</p>
   <div class="legend" id="legend">
     <span class="lg friendly" data-c="friendly"><span class="sw" style="background:var(--c-friendly)"></span>Look familiar</span>
     <span class="lg false" data-c="false"><span class="sw" style="background:var(--c-false)"></span>False friends ★</span>
@@ -110,6 +118,8 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}f
   <div class="det" id="det"></div>
   <div class="alpha" id="alpha"></div>
   <p class="starnote">★ = a false friend worth memorizing first: <b>Р В Н С У Х</b> read as <b>r v n s u kh</b>, not p-b-h-c-y-x.</p>
+  <p class="audio-note">Click a letter to hear an example word spoken. Audio uses your device's built-in Russian voice for now — clear on most phones and Macs; studio recordings can replace it later.</p>
+  <div id="lwarn"></div>
 
   <h2 class="sec">Pronunciation — the five rules that matter</h2>
   <div class="cards">
@@ -152,22 +162,22 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}f
 <script>
 // [upper, lower, rom, category, sound, exampleCyr, exampleRom, star]
 const A=[
-["А","а","a","friendly","“ah” as in father.","Москва","Mask-VÁ (Moscow)",0],
+["А","а","a","friendly","“ah” as in father.","азбука","ÁZ-bu-ka (alphabet)",0],
 ["Б","б","b","new","b as in boy.","большевик","bolshevik",0],
 ["В","в","v","false","v — not b.","Волга","VOL-ga",1],
 ["Г","г","g","new","hard g as in go; but pronounced “v” in the endings -ого/-его.","Гулаг","GU-lag",0],
 ["Д","д","d","new","d.","Дума","Duma (assembly)",0],
-["Е","е","ye","false","“yeh” — not “ee.” Softens the consonant before it.","Ленин","Lenin",0],
+["Е","е","ye","false","“yeh” — not “ee.” Softens the consonant before it.","Ельцин","YÉL-tsin (Yeltsin)",0],
 ["Ё","ё","yo","new","“yo,” always stressed. Usually printed as plain е.","Хрущёв","Khrush-CHÓV",0],
 ["Ж","ж","zh","new","the zh of measure / French je.","Жуков","Zhukov",0],
 ["З","з","z","new","z.","земля","zemlya (land)",0],
 ["И","и","i","new","“ee.”","мир","mir (peace/world)",0],
 ["Й","й","y","new","a short y-glide, as in boy. Ends many names.","Толстой","Tolstoy",0],
 ["К","к","k","friendly","k.","Кремль","Kremlin",0],
-["Л","л","l","new","l.","Ленин","Lenin",0],
+["Л","л","l","new","l.","Ладога","LÁ-do-ga (Lake Ladoga)",0],
 ["М","м","m","friendly","m.","Москва","Moskva",0],
 ["Н","н","n","false","n — not h.","Нева","Ne-VÁ (the Neva)",1],
-["О","о","o","friendly","“oh” when stressed; slides to “ah” when unstressed.","Москва","Mask-VÁ",0],
+["О","о","o","friendly","“oh” when stressed; slides to “ah” when unstressed.","озеро","Ó-ze-ro (lake)",0],
 ["П","п","p","new","p.","Правда","Pravda (truth)",0],
 ["Р","р","r","false","a rolled r — not p.","Россия","Ra-SSÍ-ya (Russia)",1],
 ["С","с","s","false","s — not k.","СССР","Es-Es-Es-Er (USSR)",1],
@@ -184,7 +194,7 @@ const A=[
 ["Ь","ь","′","sign","the soft sign: silent, but softens (palatalizes) the consonant before it. The apostrophe in Rus', oblast'.","Русь","Rus'",0],
 ["Э","э","e","new","“eh” as in end — the plain vowel, without the y-glide of Е.","Эрмитаж","Hermitage",0],
 ["Ю","ю","yu","new","“yoo.”","Юрий","Yuri",0],
-["Я","я","ya","new","“yah.”","Россия","Rossí-ya",0],
+["Я","я","ya","new","“yah.”","Ялта","YÁL-ta (Yalta)",0],
 ];
 const TERMS=[
 ["Правда","Pravda","“truth” — the Communist Party newspaper."],
@@ -222,12 +232,42 @@ function draw(){
 }
 function detail(i){
   const l=A[i];
-  $('det').innerHTML='<div class="glyph">'+l[0]+'&#8201;'+l[1]+'</div><div class="body">'
+  $('det').innerHTML='<div class="glyph" onclick="playLetter('+i+')" title="Hear it">'+l[0]+'&#8201;'+l[1]+'<span class="spk" aria-hidden="true"></span></div><div class="body">'
     +'<h3>Romanized <b style="color:var(--red)">'+esc(l[2])+'</b> · '+CATNAME[l[3]]+(l[7]?' ★':'')+'</h3>'
     +'<p class="snd">'+l[4]+'</p>'
-    +'<p class="ex">Example: <span style="font-family:Georgia,serif;font-size:15px">'+l[5]+'</span> — <b>'+esc(l[6])+'</b></p></div>';
+    +'<p class="ex">Example: <span style="font-family:Georgia,serif;font-size:15px">'+l[5]+'</span> — <b>'+esc(l[6])+'</b></p>'
+    +'<button class="hear" type="button" onclick="playLetter('+i+')"><span class="tri"></span> Hear it</button></div>';
 }
-alpha.addEventListener('click',e=>{const t=e.target.closest('.ltr');if(!t)return;sel=+t.dataset.i;draw();detail(sel);});
+alpha.addEventListener('click',e=>{const t=e.target.closest('.ltr');if(!t)return;sel=+t.dataset.i;draw();detail(sel);playLetter(sel);});
+
+/* ---- audio: recorded clip (audio/ru-NN.mp3) first, browser Russian voice fallback ---- */
+const synth=window.speechSynthesis||null;
+let ruVoice=null, clipMode=null; // clipMode: null unknown, true have clips, false use voice
+function pickVoice(){ if(!synth)return; const vs=synth.getVoices();
+  ruVoice=vs.find(v=>/^ru\b|ru[-_]/i.test(v.lang))||vs.find(v=>/russian/i.test(v.name))||null; }
+if(synth){ pickVoice(); if(synth.addEventListener)synth.addEventListener('voiceschanged',pickVoice); }
+function lwarn(m){ const w=$('lwarn'); if(w){w.textContent=m;w.style.display='block';} }
+function speak(t){
+  if(!synth){ lwarn("This browser can't play speech — recorded clips will fix that once added."); return; }
+  synth.cancel(); const u=new SpeechSynthesisUtterance(t); u.lang='ru-RU'; u.rate=.85;
+  if(ruVoice){u.voice=ruVoice;} else {lwarn("No Russian voice is installed on this device, so the sound may be off. Recorded studio clips will fix that once added.");}
+  synth.speak(u);
+}
+function clip(n){ return new Promise(res=>{
+  const a=new Audio('audio/ru-'+String(n).padStart(2,'0')+'.mp3');
+  a.addEventListener('canplaythrough',()=>{ a.play().then(()=>res(true)).catch(()=>res(false)); },{once:true});
+  a.addEventListener('error',()=>res(false),{once:true});
+  try{a.load();}catch(e){res(false);}
+});}
+let audioBusy=false;
+async function playLetter(i){
+  if(audioBusy)return; audioBusy=true;
+  const word=A[i][5];
+  if(clipMode===false){ speak(word); }
+  else { const ok=await clip(i+1); if(ok){clipMode=true;} else {clipMode=false; speak(word);} }
+  audioBusy=false;
+}
+window.playLetter=playLetter;
 $('legend').addEventListener('click',e=>{const g=e.target.closest('.lg');if(!g)return;const c=g.dataset.c;off[c]=!off[c];g.classList.toggle('off',!!off[c]);draw();});
 draw();detail(sel);
 
