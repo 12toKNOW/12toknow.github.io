@@ -3,8 +3,8 @@
 1 0 obj
 <<
 /Type /Pages
-/Count 70
-/Kids [ 4 0 R 10 0 R 15 0 R 44 0 R 49 0 R 54 0 R 58 0 R 63 0 R 67 0 R 71 0 R 75 0 R 79 0 R 83 0 R 87 0 R 92 0 R 96 0 R 100 0 R 104 0 R 108 0 R 112 0 R 117 0 R 122 0 R 128 0 R 131 0 R 134 0 R 137 0 R 140 0 R 143 0 R 146 0 R 149 0 R 152 0 R 155 0 R 161 0 R 166 0 R 171 0 R 177 0 R 183 0 R 188 0 R 193 0 R 198 0 R 204 0 R 213 0 R 218 0 R 224 0 R 230 0 R 236 0 R 242 0 R 249 0 R 255 0 R 261 0 R 264 0 R 270 0 R 276 0 R 282 0 R 288 0 R 298 0 R 303 0 R 308 0 R 313 0 R 318 0 R 323 0 R 329 0 R 335 0 R 338 0 R 341 0 R 344 0 R 347 0 R 351 0 R 354 0 R 357 0 R ]
+/Count 71
+/Kids [ 4 0 R 10 0 R 15 0 R 44 0 R 49 0 R 54 0 R 58 0 R 63 0 R 67 0 R 71 0 R 75 0 R 79 0 R 83 0 R 87 0 R 92 0 R 96 0 R 100 0 R 104 0 R 108 0 R 112 0 R 117 0 R 122 0 R 128 0 R 131 0 R 134 0 R 137 0 R 140 0 R 143 0 R 146 0 R 149 0 R 152 0 R 156 0 R 162 0 R 167 0 R 173 0 R 179 0 R 185 0 R 191 0 R 196 0 R 201 0 R 207 0 R 213 0 R 222 0 R 228 0 R 234 0 R 240 0 R 246 0 R 252 0 R 259 0 R 265 0 R 271 0 R 274 0 R 280 0 R 286 0 R 292 0 R 298 0 R 308 0 R 313 0 R 319 0 R 324 0 R 329 0 R 335 0 R 341 0 R 347 0 R 350 0 R 353 0 R 356 0 R 359 0 R 363 0 R 366 0 R 369 0 R ]
 >>
 endobj
 2 0 obj
@@ -161,7 +161,7 @@ endobj
 endobj
 11 0 obj
 <<
-/Length 6951
+/Length 6881
 >>
 stream
 q
@@ -246,7 +246,7 @@ BT /F2 9.8 Tf 11.76 TL ET
 BT 1 0 0 1 40 209 Tm (Part III \227 The Gulag & the Exile System) Tj T* ET
 .168627 .160784 .14902 rg
 BT /F1 9.6 Tf 11.52 TL ET
-BT 1 0 0 1 229.5442 209 Tm (\267  the camps, the deportations & the transport machine \(companion to Plate 18\).) Tj T* ET
+BT 1 0 0 1 229.5442 209 Tm (\267  the camps, the deportations, the transport machine & the ration \(companion to Plate 18\).) Tj T* ET
 .078431 .156863 .278431 rg
 BT /F2 9.8 Tf 11.76 TL ET
 BT 1 0 0 1 40 196 Tm (Part IV \227 Perpetrators & Comparative Confinement) Tj T* ET
@@ -276,7 +276,7 @@ BT /F2 9.8 Tf 11.76 TL ET
 BT 1 0 0 1 40 144 Tm (Part VIII \227 Essays & Open Questions) Tj T* ET
 .168627 .160784 .14902 rg
 BT /F1 9.6 Tf 11.52 TL ET
-BT 1 0 0 1 219.7442 144 Tm (\267  From Marx to Stalin; and the faith of the condemned.) Tj T* ET
+BT 1 0 0 1 219.7442 144 Tm (\267  From Marx to Stalin, the faith of the condemned & the ledger of terror.) Tj T* ET
 .078431 .156863 .278431 rg
 BT /F2 9.8 Tf 11.76 TL ET
 BT 1 0 0 1 40 131 Tm (Part IX \227 Landmarks & Monuments) Tj T* ET
@@ -316,7 +316,6 @@ BT 1 0 0 1 93.383 66 Tm (\267  Sources & Methods \267 Glossary \267 Name Index \
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
  
 Q
 
@@ -6622,6 +6621,7 @@ endobj
 /Font <<
 /F1 17 0 R
 /F1-0 154 0 R
+/F1-1 155 0 R
 /F10 19 0 R
 /F2 20 0 R
 /F3 21 0 R
@@ -6645,9 +6645,10 @@ endobj
 endobj
 153 0 obj
 <<
-/Length 6917
+/Length 6991
 >>
 stream
+q
 q
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -6800,11 +6801,28 @@ BT
 ET
 1 1 1 rg
 n
+404 497 348 29 re
+f*
+Q
+
+Q
+
+q
+0.0 0.0 792 612 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-1 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
 384 17 24 10 re
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-0 7 Tf
+/F1-1 7 Tf
 8.4 TL
 ET
 BT
@@ -6818,7 +6836,7 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-0 7 Tf
+/F1-1 7 Tf
 8.4 TL
 ET
 BT
@@ -6826,10 +6844,6 @@ BT
 (\251\0402026\040DeWayne\040Searcy\040\267\040Share\040freely\040\267\040Not\040for\040resale) Tj
 T*
 ET
-1 1 1 rg
-n
-404 497 348 29 re
-f*
 Q
 
 
@@ -6846,14 +6860,23 @@ endobj
 endobj
 155 0 obj
 <<
-/Contents 156 0 R
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+156 0 obj
+<<
+/Contents 157 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 157 0 R
-/F1-0 158 0 R
-/F2 159 0 R
-/F3 160 0 R
+/F1 158 0 R
+/F1-0 159 0 R
+/F2 160 0 R
+/F3 161 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -6865,9 +6888,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-156 0 obj
+157 0 obj
 <<
-/Length 1618
+/Length 1517
 >>
 stream
 q
@@ -6891,7 +6914,6 @@ Q
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
  
 Q
 
@@ -6937,15 +6959,6 @@ Q
 
 endstream
 endobj
-157 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
-endobj
 158 0 obj
 <<
 /BaseFont /Helvetica
@@ -6957,6 +6970,15 @@ endobj
 endobj
 159 0 obj
 <<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+160 0 obj
+<<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
 /Name /F2
@@ -6964,7 +6986,7 @@ endobj
 /Type /Font
 >>
 endobj
-160 0 obj
+161 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -6973,19 +6995,19 @@ endobj
 /Type /Font
 >>
 endobj
-161 0 obj
+162 0 obj
 <<
 /Type /Page
-/Contents 162 0 R
+/Contents 163 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 163 0 R
-/F1-1 164 0 R
+/F1-0 164 0 R
+/F1-1 165 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 165 0 R
+/F2-0 166 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -7005,7 +7027,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-162 0 obj
+163 0 obj
 <<
 /Length 11688
 >>
@@ -7333,15 +7355,6 @@ Q
 
 endstream
 endobj
-163 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
-endobj
 164 0 obj
 <<
 /BaseFont /Helvetica
@@ -7353,6 +7366,15 @@ endobj
 endobj
 165 0 obj
 <<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+166 0 obj
+<<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
 /Name /F2
@@ -7360,19 +7382,20 @@ endobj
 /Type /Font
 >>
 endobj
-166 0 obj
+167 0 obj
 <<
 /Type /Page
-/Contents 167 0 R
+/Contents 168 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 168 0 R
-/F1-1 169 0 R
+/F1-0 169 0 R
+/F1-1 170 0 R
+/F1-2 171 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 170 0 R
+/F2-0 172 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -7392,11 +7415,12 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-167 0 obj
+168 0 obj
 <<
-/Length 4565
+/Length 4639
 >>
 stream
+q
 q
 q
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -7479,6 +7503,23 @@ BT
 ET
 1 1 1 rg
 n
+40 231 352 29 re
+f*
+Q
+
+Q
+
+q
+0.0 0.0 792 612 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-1 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
 38 580 324 10 re
 f*
 0.078431 0.156863 0.278431 rg
@@ -7501,7 +7542,7 @@ W
 n
 1 0 0 1 0 0 cm
 BT
-/F1-1 12 Tf
+/F1-2 12 Tf
 14.4 TL
 ET
 1 1 1 rg
@@ -7510,7 +7551,7 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
@@ -7524,7 +7565,7 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
@@ -7532,23 +7573,10 @@ BT
 (\251\0402026\040DeWayne\040Searcy\040\267\040Share\040freely\040\267\040Not\040for\040resale) Tj
 T*
 ET
-1 1 1 rg
-n
-40 231 352 29 re
-f*
 Q
 
 
 endstream
-endobj
-168 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
 endobj
 169 0 obj
 <<
@@ -7561,6 +7589,24 @@ endobj
 endobj
 170 0 obj
 <<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+171 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+172 0 obj
+<<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
 /Name /F2
@@ -7568,16 +7614,16 @@ endobj
 /Type /Font
 >>
 endobj
-171 0 obj
+173 0 obj
 <<
-/Contents 172 0 R
+/Contents 174 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 173 0 R
-/F1-0 174 0 R
-/F2 175 0 R
-/F3 176 0 R
+/F1 175 0 R
+/F1-0 176 0 R
+/F2 177 0 R
+/F3 178 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -7589,9 +7635,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-172 0 obj
+174 0 obj
 <<
-/Length 6295
+/Length 6194
 >>
 stream
 q
@@ -7605,7 +7651,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 546 cm
 q
@@ -7725,25 +7770,25 @@ Q
 
 endstream
 endobj
-173 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
-endobj
-174 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
-endobj
 175 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+176 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+177 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -7752,7 +7797,7 @@ endobj
 /Type /Font
 >>
 endobj
-176 0 obj
+178 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -7761,16 +7806,16 @@ endobj
 /Type /Font
 >>
 endobj
-177 0 obj
+179 0 obj
 <<
-/Contents 178 0 R
+/Contents 180 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 179 0 R
-/F1-0 180 0 R
-/F2 181 0 R
-/F3 182 0 R
+/F1 181 0 R
+/F1-0 182 0 R
+/F2 183 0 R
+/F3 184 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -7782,33 +7827,76 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-178 0 obj
+180 0 obj
 <<
-/Length 1775
+/Length 4826
 >>
 stream
 q
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
-.94902 .639216 .235294 rg
-BT /F2 13 Tf 15.6 TL ET
-BT 1 0 0 1 370.3575 396.3 Tm (PART IV) Tj T* ET
 .078431 .156863 .278431 rg
-BT /F2 30 Tf 36 TL ET
-BT 1 0 0 1 100.95 366.3 Tm (Perpetrators & Comparative Confinement) Tj T* ET
-.07451 .32549 .223529 rg
-BT /F3 12 Tf 14.4 TL ET
-BT 1 0 0 1 79.542 340.9 Tm (Why ordinary people staff atrocity \227 and how the Gulag compares with American incarceration of Japanese Americans) Tj T* ET
-q
-1 0 0 1 43 273 cm
-q
-.415686 .396078 .368627 rg
-BT 1 0 0 1 0 50 Tm /F3 10 Tf 15 TL .86125 Tw (A companion to Part III. This section addresses the question that Applebaum, Figes, and Solzhenitsyn all raise but none fully answers: who actually ran the) Tj T* 0 Tw .344783 Tw (camps, and why did they? It gathers the perpetrator-behavior literature, the Gulag-specific archival work, and \227 as a comparative test case \227 the scholarship) Tj T* 0 Tw .005652 Tw (on the wartime incarceration of Japanese Americans. The comparison is offered to sharpen distinctions, not to flatten them; the section closes with the numbers) Tj T* 0 Tw (side by side.) Tj T* ET
-Q
-Q
+BT /F2 8 Tf 9.6 TL ET
+BT 1 0 0 1 40 580.3 Tm (PART III \227 THE GULAG & THE EXILE SYSTEM) Tj T* ET
+.909804 .639216 .239216 RG
+1 w
+n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
+q
+1 0 0 1 40 546 cm
+q
+.078431 .156863 .278431 rg
+BT 1 0 0 1 0 2 Tm /F2 12 Tf 14 TL (The Ration \227 Food as the Engine) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 543.2 cm
+q
+.8 w
+1 J
+.909804 .639216 .239216 RG
+n 0 0 m 328 0 l S
+Q
+Q
+q
+1 0 0 1 40 459.1 cm
+q
+BT 1 0 0 1 0 70.5 Tm .890859 Tw 11.3 TL /F1 8.6 Tf .168627 .160784 .14902 rg (Food was not a detail of camp life; it was the machinery of the system. The daily bread) Tj T* 0 Tw .214494 Tw (ration \() Tj /F3 8.6 Tf (paika) Tj /F1 8.6 Tf (\) and the ladle of hot food were tied to the work-norm: fulfil the quota and you) Tj T* 0 Tw -0.046686 Tw (earned a fuller ration, fall short and you dropped to the punishment ration \() Tj /F3 8.6 Tf (shtrafnoy paek) Tj /F1 8.6 Tf (\).) Tj T* 0 Tw 1.661123 Tw (Solzhenitsyn and Applebaum both put this at the center, because it drove the camps') Tj T* 0 Tw .140287 Tw (defining cruelty \227 a death spiral. The underfed prisoner did less work, so was fed less, so) Tj T* 0 Tw 3.244545 Tw (weakened further, until he became a ) Tj /F3 8.6 Tf (dokhodyaga) Tj /F1 8.6 Tf ( \(a \223goner\224\), dying of alimentary) Tj T* 0 Tw (dystrophy, scurvy, or pellagra. The ration metered out how fast a body was spent.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 375 cm
+q
+BT 1 0 0 1 0 70.5 Tm .148493 Tw 11.3 TL /F1 8.6 Tf .168627 .160784 .14902 rg (What reached the tray rarely deserved the word food: coarse black rye bread doled by the) Tj T* 0 Tw 1.294587 Tw (gram \227 the truest currency in the zone, guarded and stolen \227 beside ) Tj /F3 8.6 Tf (balanda) Tj /F1 8.6 Tf (, a thin) Tj T* 0 Tw -0.065765 Tw (near-empty soup with a few groats or a fish head, and a scoop of watery gruel. Rations ran) Tj T* 0 Tw -0.117056 Tw (to a few hundred grams of bread a day, as little as about 300 on the punishment scale, and) Tj T* 0 Tw .582776 Tw (in every case fell far below what felling timber or mining gold for twelve hours in the cold) Tj T* 0 Tw .774 Tw (actually burned. Around the scarcity grew an economy of parcels and the camp shop \227) Tj T* 0 Tw (which is why the cook and the bread-cutter were camp aristocracy.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 324.8 cm
+q
+.168627 .160784 .14902 rg
+BT 1 0 0 1 0 36.6 Tm /F1 8.6 Tf 11.3 TL .637182 Tw (How deliberate the starvation was remains debated: Golfo Alexopoulos argues the ration) Tj T* 0 Tw 1.0578 Tw (scales were set knowingly below survival \227 food as slow extermination \227 while others) Tj T* 0 Tw -0.011467 Tw (read the same figures as murderous negligence rather than written policy. The mechanism) Tj T* 0 Tw (is not in dispute; the intent is.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 308.8 cm
+q
+.078431 .156863 .278431 rg
+BT 1 0 0 1 0 2.3 Tm /F2 8.7 Tf 11 TL (The tsarist contrast) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 239 cm
+q
+BT 1 0 0 1 0 59.2 Tm .560985 Tw 11.3 TL /F1 8.6 Tf .168627 .160784 .14902 rg (The point sharpens against the earlier era \(Part VII\). Dostoevsky's own katorga, in ) Tj /F3 8.6 Tf (Notes) Tj T* 0 Tw .294243 Tw (from a Dead House) Tj /F1 8.6 Tf (, describes a coarse but roughly adequate table \227 cabbage soup that) Tj T* 0 Tw 1.442343 Tw (sometimes held meat, a real bread ration, the freedom to buy a little extra; Chekhov's) Tj T* 0 Tw .466243 Tw /F3 8.6 Tf (Sakhalin Island) Tj /F1 8.6 Tf ( found the far colony grimmer, with hunger and scurvy, but even there the) Tj T* 0 Tw .047047 Tw (ration was not a lever wired to output. The tsarist system was cruel and fed you; the Gulag) Tj T* 0 Tw (rationed you toward the grave \227 the same road east, a far crueler table.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 203.6 cm
+q
+BT 1 0 0 1 0 21.8 Tm 9.8 TL /F1 7.6 Tf .415686 .396078 .368627 rg (Sources \227 Anne Applebaum, ) Tj /F3 7.6 Tf (Gulag: A History) Tj /F1 7.6 Tf ( \(ration scales\); Aleksandr Solzhenitsyn, ) Tj /F3 7.6 Tf (The Gulag) Tj T* (Archipelago) Tj /F1 7.6 Tf (; Golfo Alexopoulos, ) Tj /F3 7.6 Tf (Illness and Inhumanity in Stalin's Gulag) Tj /F1 7.6 Tf (; Fyodor Dostoevsky, ) Tj /F3 7.6 Tf (Notes) Tj T* (from a Dead House) Tj /F1 7.6 Tf (; Anton Chekhov, ) Tj /F3 7.6 Tf (Sakhalin Island) Tj /F1 7.6 Tf (. Companion to Part VII.) Tj T* ET
+Q
+Q
  
 Q
 
@@ -7854,25 +7942,25 @@ Q
 
 endstream
 endobj
-179 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
-endobj
-180 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
-endobj
 181 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+182 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+183 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -7881,7 +7969,7 @@ endobj
 /Type /Font
 >>
 endobj
-182 0 obj
+184 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -7890,19 +7978,147 @@ endobj
 /Type /Font
 >>
 endobj
-183 0 obj
+185 0 obj
+<<
+/Contents 186 0 R
+/MediaBox [ 0 0 792 612 ]
+/Resources <<
+/Font <<
+/F1 187 0 R
+/F1-0 188 0 R
+/F2 189 0 R
+/F3 190 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 1 0 R
+>>
+endobj
+186 0 obj
+<<
+/Length 1674
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+.94902 .639216 .235294 rg
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 370.3575 396.3 Tm (PART IV) Tj T* ET
+.078431 .156863 .278431 rg
+BT /F2 30 Tf 36 TL ET
+BT 1 0 0 1 100.95 366.3 Tm (Perpetrators & Comparative Confinement) Tj T* ET
+.07451 .32549 .223529 rg
+BT /F3 12 Tf 14.4 TL ET
+BT 1 0 0 1 79.542 340.9 Tm (Why ordinary people staff atrocity \227 and how the Gulag compares with American incarceration of Japanese Americans) Tj T* ET
+q
+1 0 0 1 43 273 cm
+q
+.415686 .396078 .368627 rg
+BT 1 0 0 1 0 50 Tm /F3 10 Tf 15 TL .86125 Tw (A companion to Part III. This section addresses the question that Applebaum, Figes, and Solzhenitsyn all raise but none fully answers: who actually ran the) Tj T* 0 Tw .344783 Tw (camps, and why did they? It gathers the perpetrator-behavior literature, the Gulag-specific archival work, and \227 as a comparative test case \227 the scholarship) Tj T* 0 Tw .005652 Tw (on the wartime incarceration of Japanese Americans. The comparison is offered to sharpen distinctions, not to flatten them; the section closes with the numbers) Tj T* 0 Tw (side by side.) Tj T* ET
+Q
+Q
+.415686 .396078 .368627 rg
+BT /F1 7.5 Tf 9 TL ET
+BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
+ 
+Q
+
+q
+0.0 0.0 792 612 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+384 17 24 10 re
+f*
+0.415686 0.396078 0.368627 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 392.108 18.6 Tm
+(36) Tj
+T*
+ET
+1 1 1 rg
+n
+623 13 139 13 re
+f*
+0.415686 0.396078 0.368627 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 581.494 18.6 Tm
+(\251\0402026\040DeWayne\040Searcy\040\267\040Share\040freely\040\267\040Not\040for\040resale) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+187 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+188 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+189 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+190 0 obj
+<<
+/BaseFont /Helvetica-Oblique
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+191 0 obj
 <<
 /Type /Page
-/Contents 184 0 R
+/Contents 192 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 185 0 R
-/F1-1 186 0 R
+/F1-0 193 0 R
+/F1-1 194 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 187 0 R
+/F2-0 195 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -7922,7 +8138,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-184 0 obj
+192 0 obj
 <<
 /Length 12035
 >>
@@ -8185,7 +8401,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(36) Tj
+(37) Tj
 T*
 ET
 1 1 1 rg
@@ -8207,7 +8423,7 @@ Q
 
 endstream
 endobj
-185 0 obj
+193 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -8216,7 +8432,7 @@ endobj
 /Type /Font
 >>
 endobj
-186 0 obj
+194 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -8225,7 +8441,7 @@ endobj
 /Type /Font
 >>
 endobj
-187 0 obj
+195 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -8234,19 +8450,19 @@ endobj
 /Type /Font
 >>
 endobj
-188 0 obj
+196 0 obj
 <<
 /Type /Page
-/Contents 189 0 R
+/Contents 197 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 190 0 R
-/F1-1 191 0 R
+/F1-0 198 0 R
+/F1-1 199 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 192 0 R
+/F2-0 200 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -8266,7 +8482,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-189 0 obj
+197 0 obj
 <<
 /Length 12026
 >>
@@ -8512,7 +8728,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(37) Tj
+(38) Tj
 T*
 ET
 1 1 1 rg
@@ -8534,7 +8750,7 @@ Q
 
 endstream
 endobj
-190 0 obj
+198 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -8543,7 +8759,7 @@ endobj
 /Type /Font
 >>
 endobj
-191 0 obj
+199 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -8552,7 +8768,7 @@ endobj
 /Type /Font
 >>
 endobj
-192 0 obj
+200 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -8561,19 +8777,20 @@ endobj
 /Type /Font
 >>
 endobj
-193 0 obj
+201 0 obj
 <<
 /Type /Page
-/Contents 194 0 R
+/Contents 202 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 195 0 R
-/F1-1 196 0 R
+/F1-0 203 0 R
+/F1-1 204 0 R
+/F1-2 205 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 197 0 R
+/F2-0 206 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -8593,11 +8810,12 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-194 0 obj
+202 0 obj
 <<
-/Length 1750
+/Length 1824
 >>
 stream
+q
 q
 q
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -8646,6 +8864,23 @@ BT
 ET
 1 1 1 rg
 n
+40 501 352 29 re
+f*
+Q
+
+Q
+
+q
+0.0 0.0 792 612 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-1 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
 38 580 324 10 re
 f*
 0.078431 0.156863 0.278431 rg
@@ -8668,7 +8903,7 @@ W
 n
 1 0 0 1 0 0 cm
 BT
-/F1-1 12 Tf
+/F1-2 12 Tf
 14.4 TL
 ET
 1 1 1 rg
@@ -8677,12 +8912,12 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(38) Tj
+(39) Tj
 T*
 ET
 1 1 1 rg
@@ -8691,7 +8926,7 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
@@ -8699,16 +8934,12 @@ BT
 (\251\0402026\040DeWayne\040Searcy\040\267\040Share\040freely\040\267\040Not\040for\040resale) Tj
 T*
 ET
-1 1 1 rg
-n
-40 501 352 29 re
-f*
 Q
 
 
 endstream
 endobj
-195 0 obj
+203 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -8717,7 +8948,7 @@ endobj
 /Type /Font
 >>
 endobj
-196 0 obj
+204 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -8726,7 +8957,16 @@ endobj
 /Type /Font
 >>
 endobj
-197 0 obj
+205 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+206 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -8735,16 +8975,16 @@ endobj
 /Type /Font
 >>
 endobj
-198 0 obj
+207 0 obj
 <<
-/Contents 199 0 R
+/Contents 208 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 200 0 R
-/F1-0 201 0 R
-/F2 202 0 R
-/F3 203 0 R
+/F1 209 0 R
+/F1-0 210 0 R
+/F2 211 0 R
+/F3 212 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -8756,9 +8996,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-199 0 obj
+208 0 obj
 <<
-/Length 1855
+/Length 1754
 >>
 stream
 q
@@ -8782,7 +9022,6 @@ Q
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
  
 Q
 
@@ -8806,7 +9045,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(39) Tj
+(40) Tj
 T*
 ET
 1 1 1 rg
@@ -8828,7 +9067,7 @@ Q
 
 endstream
 endobj
-200 0 obj
+209 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -8837,7 +9076,7 @@ endobj
 /Type /Font
 >>
 endobj
-201 0 obj
+210 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -8846,7 +9085,7 @@ endobj
 /Type /Font
 >>
 endobj
-202 0 obj
+211 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -8855,7 +9094,7 @@ endobj
 /Type /Font
 >>
 endobj
-203 0 obj
+212 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -8864,19 +9103,19 @@ endobj
 /Type /Font
 >>
 endobj
-204 0 obj
+213 0 obj
 <<
-/Contents 205 0 R
+/Contents 214 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 206 0 R
-/F1-0 207 0 R
-/F1-1 208 0 R
-/F2 209 0 R
-/F2-0 210 0 R
-/F3 211 0 R
-/F4 212 0 R
+/F1 215 0 R
+/F1-0 216 0 R
+/F1-1 217 0 R
+/F2 218 0 R
+/F2-0 219 0 R
+/F3 220 0 R
+/F4 221 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -8888,7 +9127,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-205 0 obj
+214 0 obj
 <<
 /Length 12124
 >>
@@ -9119,7 +9358,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(40) Tj
+(41) Tj
 T*
 ET
 1 1 1 rg
@@ -9141,7 +9380,7 @@ Q
 
 endstream
 endobj
-206 0 obj
+215 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -9150,7 +9389,7 @@ endobj
 /Type /Font
 >>
 endobj
-207 0 obj
+216 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -9159,7 +9398,7 @@ endobj
 /Type /Font
 >>
 endobj
-208 0 obj
+217 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -9168,7 +9407,7 @@ endobj
 /Type /Font
 >>
 endobj
-209 0 obj
+218 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -9177,7 +9416,7 @@ endobj
 /Type /Font
 >>
 endobj
-210 0 obj
+219 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -9186,7 +9425,7 @@ endobj
 /Type /Font
 >>
 endobj
-211 0 obj
+220 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -9195,7 +9434,7 @@ endobj
 /Type /Font
 >>
 endobj
-212 0 obj
+221 0 obj
 <<
 /BaseFont /Helvetica-BoldOblique
 /Encoding /WinAnsiEncoding
@@ -9204,19 +9443,20 @@ endobj
 /Type /Font
 >>
 endobj
-213 0 obj
+222 0 obj
 <<
-/Contents 214 0 R
+/Contents 223 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 206 0 R
-/F1-0 215 0 R
-/F1-1 216 0 R
-/F2 209 0 R
-/F2-0 217 0 R
-/F3 211 0 R
-/F4 212 0 R
+/F1 215 0 R
+/F1-0 224 0 R
+/F1-1 225 0 R
+/F1-2 226 0 R
+/F2 218 0 R
+/F2-0 227 0 R
+/F3 220 0 R
+/F4 221 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -9228,11 +9468,12 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-214 0 obj
+223 0 obj
 <<
-/Length 11117
+/Length 11191
 >>
 stream
+q
 q
 q
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -9435,6 +9676,23 @@ BT
 ET
 1 1 1 rg
 n
+404 132 348 29 re
+f*
+Q
+
+Q
+
+q
+0.0 0.0 792 612 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-1 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
 38 580 324 10 re
 f*
 0.078431 0.156863 0.278431 rg
@@ -9457,7 +9715,7 @@ W
 n
 1 0 0 1 0 0 cm
 BT
-/F1-1 12 Tf
+/F1-2 12 Tf
 14.4 TL
 ET
 1 1 1 rg
@@ -9466,12 +9724,12 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(41) Tj
+(42) Tj
 T*
 ET
 1 1 1 rg
@@ -9480,7 +9738,7 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
@@ -9488,16 +9746,12 @@ BT
 (\251\0402026\040DeWayne\040Searcy\040\267\040Share\040freely\040\267\040Not\040for\040resale) Tj
 T*
 ET
-1 1 1 rg
-n
-404 132 348 29 re
-f*
 Q
 
 
 endstream
 endobj
-215 0 obj
+224 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -9506,7 +9760,7 @@ endobj
 /Type /Font
 >>
 endobj
-216 0 obj
+225 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -9515,7 +9769,16 @@ endobj
 /Type /Font
 >>
 endobj
-217 0 obj
+226 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+227 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -9524,16 +9787,16 @@ endobj
 /Type /Font
 >>
 endobj
-218 0 obj
+228 0 obj
 <<
-/Contents 219 0 R
+/Contents 229 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 220 0 R
-/F1-0 221 0 R
-/F2 222 0 R
-/F3 223 0 R
+/F1 230 0 R
+/F1-0 231 0 R
+/F2 232 0 R
+/F3 233 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -9545,9 +9808,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-219 0 obj
+229 0 obj
 <<
-/Length 6481
+/Length 6380
 >>
 stream
 q
@@ -9561,7 +9824,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 546 cm
 q
@@ -9673,7 +9935,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(42) Tj
+(43) Tj
 T*
 ET
 1 1 1 rg
@@ -9695,7 +9957,7 @@ Q
 
 endstream
 endobj
-220 0 obj
+230 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -9704,7 +9966,7 @@ endobj
 /Type /Font
 >>
 endobj
-221 0 obj
+231 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -9713,7 +9975,7 @@ endobj
 /Type /Font
 >>
 endobj
-222 0 obj
+232 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -9722,7 +9984,7 @@ endobj
 /Type /Font
 >>
 endobj
-223 0 obj
+233 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -9731,16 +9993,16 @@ endobj
 /Type /Font
 >>
 endobj
-224 0 obj
+234 0 obj
 <<
-/Contents 225 0 R
+/Contents 235 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 226 0 R
-/F1-0 227 0 R
-/F2 228 0 R
-/F3 229 0 R
+/F1 236 0 R
+/F1-0 237 0 R
+/F2 238 0 R
+/F3 239 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -9752,9 +10014,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-225 0 obj
+235 0 obj
 <<
-/Length 1560
+/Length 1459
 >>
 stream
 q
@@ -9778,7 +10040,6 @@ Q
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
  
 Q
 
@@ -9802,7 +10063,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(43) Tj
+(44) Tj
 T*
 ET
 1 1 1 rg
@@ -9824,7 +10085,7 @@ Q
 
 endstream
 endobj
-226 0 obj
+236 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -9833,7 +10094,7 @@ endobj
 /Type /Font
 >>
 endobj
-227 0 obj
+237 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -9842,7 +10103,7 @@ endobj
 /Type /Font
 >>
 endobj
-228 0 obj
+238 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -9851,7 +10112,7 @@ endobj
 /Type /Font
 >>
 endobj
-229 0 obj
+239 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -9860,16 +10121,16 @@ endobj
 /Type /Font
 >>
 endobj
-230 0 obj
+240 0 obj
 <<
-/Contents 231 0 R
+/Contents 241 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 232 0 R
-/F1-0 233 0 R
-/F2 234 0 R
-/F3 235 0 R
+/F1 242 0 R
+/F1-0 243 0 R
+/F2 244 0 R
+/F3 245 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -9881,9 +10142,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-231 0 obj
+241 0 obj
 <<
-/Length 11229
+/Length 11128
 >>
 stream
 q
@@ -9897,7 +10158,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 546 cm
 q
@@ -10136,7 +10396,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(44) Tj
+(45) Tj
 T*
 ET
 1 1 1 rg
@@ -10158,7 +10418,7 @@ Q
 
 endstream
 endobj
-232 0 obj
+242 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10167,7 +10427,7 @@ endobj
 /Type /Font
 >>
 endobj
-233 0 obj
+243 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10176,7 +10436,7 @@ endobj
 /Type /Font
 >>
 endobj
-234 0 obj
+244 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -10185,7 +10445,7 @@ endobj
 /Type /Font
 >>
 endobj
-235 0 obj
+245 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -10194,16 +10454,16 @@ endobj
 /Type /Font
 >>
 endobj
-236 0 obj
+246 0 obj
 <<
-/Contents 237 0 R
+/Contents 247 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 238 0 R
-/F1-0 239 0 R
-/F2 240 0 R
-/F3 241 0 R
+/F1 248 0 R
+/F1-0 249 0 R
+/F2 250 0 R
+/F3 251 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -10215,9 +10475,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-237 0 obj
+247 0 obj
 <<
-/Length 1761
+/Length 1660
 >>
 stream
 q
@@ -10241,7 +10501,6 @@ Q
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
  
 Q
 
@@ -10265,7 +10524,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(45) Tj
+(46) Tj
 T*
 ET
 1 1 1 rg
@@ -10287,7 +10546,7 @@ Q
 
 endstream
 endobj
-238 0 obj
+248 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10296,7 +10555,7 @@ endobj
 /Type /Font
 >>
 endobj
-239 0 obj
+249 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10305,7 +10564,7 @@ endobj
 /Type /Font
 >>
 endobj
-240 0 obj
+250 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -10314,7 +10573,7 @@ endobj
 /Type /Font
 >>
 endobj
-241 0 obj
+251 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -10323,17 +10582,17 @@ endobj
 /Type /Font
 >>
 endobj
-242 0 obj
+252 0 obj
 <<
-/Contents 243 0 R
+/Contents 253 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 244 0 R
-/F1-0 245 0 R
-/F2 246 0 R
-/F3 247 0 R
-/F4 248 0 R
+/F1 254 0 R
+/F1-0 255 0 R
+/F2 256 0 R
+/F3 257 0 R
+/F4 258 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -10345,9 +10604,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-243 0 obj
+253 0 obj
 <<
-/Length 8732
+/Length 8631
 >>
 stream
 q
@@ -10361,7 +10620,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 546 cm
 q
@@ -10506,7 +10764,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(46) Tj
+(47) Tj
 T*
 ET
 1 1 1 rg
@@ -10528,7 +10786,7 @@ Q
 
 endstream
 endobj
-244 0 obj
+254 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10537,7 +10795,7 @@ endobj
 /Type /Font
 >>
 endobj
-245 0 obj
+255 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10546,7 +10804,7 @@ endobj
 /Type /Font
 >>
 endobj
-246 0 obj
+256 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -10555,7 +10813,7 @@ endobj
 /Type /Font
 >>
 endobj
-247 0 obj
+257 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -10564,7 +10822,7 @@ endobj
 /Type /Font
 >>
 endobj
-248 0 obj
+258 0 obj
 <<
 /BaseFont /Helvetica-BoldOblique
 /Encoding /WinAnsiEncoding
@@ -10573,16 +10831,16 @@ endobj
 /Type /Font
 >>
 endobj
-249 0 obj
+259 0 obj
 <<
-/Contents 250 0 R
+/Contents 260 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 251 0 R
-/F1-0 252 0 R
-/F2 253 0 R
-/F3 254 0 R
+/F1 261 0 R
+/F1-0 262 0 R
+/F2 263 0 R
+/F3 264 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -10594,9 +10852,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-250 0 obj
+260 0 obj
 <<
-/Length 1648
+/Length 1547
 >>
 stream
 q
@@ -10620,7 +10878,6 @@ Q
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
  
 Q
 
@@ -10644,7 +10901,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(47) Tj
+(48) Tj
 T*
 ET
 1 1 1 rg
@@ -10666,7 +10923,7 @@ Q
 
 endstream
 endobj
-251 0 obj
+261 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10675,7 +10932,7 @@ endobj
 /Type /Font
 >>
 endobj
-252 0 obj
+262 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10684,7 +10941,7 @@ endobj
 /Type /Font
 >>
 endobj
-253 0 obj
+263 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -10693,7 +10950,7 @@ endobj
 /Type /Font
 >>
 endobj
-254 0 obj
+264 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -10702,16 +10959,16 @@ endobj
 /Type /Font
 >>
 endobj
-255 0 obj
+265 0 obj
 <<
-/Contents 256 0 R
+/Contents 266 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 257 0 R
-/F1-0 258 0 R
-/F2 259 0 R
-/F3 260 0 R
+/F1 267 0 R
+/F1-0 268 0 R
+/F2 269 0 R
+/F3 270 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -10723,9 +10980,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-256 0 obj
+266 0 obj
 <<
-/Length 12769
+/Length 12668
 >>
 stream
 q
@@ -10739,7 +10996,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 532 cm
 q
@@ -10926,7 +11182,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(48) Tj
+(49) Tj
 T*
 ET
 1 1 1 rg
@@ -10948,7 +11204,7 @@ Q
 
 endstream
 endobj
-257 0 obj
+267 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10957,7 +11213,7 @@ endobj
 /Type /Font
 >>
 endobj
-258 0 obj
+268 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -10966,7 +11222,7 @@ endobj
 /Type /Font
 >>
 endobj
-259 0 obj
+269 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -10975,7 +11231,7 @@ endobj
 /Type /Font
 >>
 endobj
-260 0 obj
+270 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -10984,16 +11240,16 @@ endobj
 /Type /Font
 >>
 endobj
-261 0 obj
+271 0 obj
 <<
-/Contents 262 0 R
+/Contents 272 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 257 0 R
-/F1-0 263 0 R
-/F2 259 0 R
-/F3 260 0 R
+/F1 267 0 R
+/F1-0 273 0 R
+/F2 269 0 R
+/F3 270 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -11005,9 +11261,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-262 0 obj
+272 0 obj
 <<
-/Length 3297
+/Length 8516
 >>
 stream
 q
@@ -11021,7 +11277,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 537.4 cm
 q
@@ -11047,108 +11302,76 @@ q
 BT 1 0 0 1 0 31.6 Tm 9.8 TL /F1 7.6 Tf .415686 .396078 .368627 rg (Further reading \227 Koestler, ) Tj /F3 7.6 Tf (Darkness at Noon) Tj /F1 7.6 Tf (; ) Tj /F3 7.6 Tf (The God That Failed) Tj /F1 7.6 Tf ( \(1949\); Figes, ) Tj /F3 7.6 Tf (The Whisperers) Tj /F1 7.6 Tf (;) Tj T* (Ginzburg, ) Tj /F3 7.6 Tf (Journey into the Whirlwind) Tj /F1 7.6 Tf (; Solzhenitsyn, ) Tj /F3 7.6 Tf (The Gulag Archipelago) Tj /F1 7.6 Tf (; N. Mandelstam, ) Tj /F3 7.6 Tf (Hope) Tj T* (Against Hope) Tj /F1 7.6 Tf (; Hellbeck, ) Tj /F3 7.6 Tf (Revolution on My Mind) Tj /F1 7.6 Tf (; Conquest, ) Tj /F3 7.6 Tf (The Great Terror) Tj /F1 7.6 Tf (. Inner motive is) Tj T* (genuinely contested; this piece holds the debate open rather than picking a winner.) Tj T* ET
 Q
 Q
- 
-Q
-
 q
-0.0 0.0 792 612 re
-W
-n
-1 0 0 1 0 0 cm
-BT
-/F1-0 12 Tf
-14.4 TL
-ET
-1 1 1 rg
-n
-384 17 24 10 re
-f*
-0.415686 0.396078 0.368627 rg
-BT
-/F1-0 7 Tf
-8.4 TL
-ET
-BT
-1 0 0 1 392.108 18.6 Tm
-(49) Tj
-T*
-ET
-1 1 1 rg
-n
-623 13 139 13 re
-f*
-0.415686 0.396078 0.368627 rg
-BT
-/F1-0 7 Tf
-8.4 TL
-ET
-BT
-1 0 0 1 581.494 18.6 Tm
-(\251\0402026\040DeWayne\040Searcy\040\267\040Share\040freely\040\267\040Not\040for\040resale) Tj
-T*
-ET
+1 0 0 1 40 365.5 cm
 Q
-
-
-endstream
-endobj
-263 0 obj
-<<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
-endobj
-264 0 obj
-<<
-/Contents 265 0 R
-/MediaBox [ 0 0 792 612 ]
-/Resources <<
-/Font <<
-/F1 266 0 R
-/F1-0 267 0 R
-/F2 268 0 R
-/F3 269 0 R
->>
-/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
->>
-/Rotate 0
-/Trans <<
->>
-/Type /Page
-/Annots [ ]
-/Parent 1 0 R
->>
-endobj
-265 0 obj
-<<
-/Length 1570
->>
-stream
 q
-1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
-.94902 .639216 .235294 rg
-BT /F2 13 Tf 15.6 TL ET
-BT 1 0 0 1 370.3575 396.3 Tm (PART IX) Tj T* ET
+1 0 0 1 40 335.5 cm
+q
 .078431 .156863 .278431 rg
-BT /F2 30 Tf 36 TL ET
-BT 1 0 0 1 212.64 366.3 Tm (Landmarks & Monuments) Tj T* ET
-.07451 .32549 .223529 rg
-BT /F3 12 Tf 14.4 TL ET
-BT 1 0 0 1 204.918 340.9 Tm (The empire read through its stone \227 faith, empire, revolution, and terror) Tj T* ET
-q
-1 0 0 1 43 288 cm
-q
-.415686 .396078 .368627 rg
-BT 1 0 0 1 0 35 Tm /F3 10 Tf 15 TL .223214 Tw (Architecture is the most honest record a state keeps of itself. This is a companion to the Atlas: the same arc of Russian history \227 faith, empire, revolution, and) Tj T* 0 Tw -0.073929 Tw (terror \227 read this time through its buildings and monuments, each entry chosen for what it means as much as how it looks. The photographs will follow; for now,) Tj T* 0 Tw (the stories and what they stand for.) Tj T* ET
+BT 1 0 0 1 0 16 Tm /F2 12 Tf 14 TL (The Ledger of Terror \227 how a police state kept its own) Tj T* (books) Tj T* ET
 Q
 Q
-.415686 .396078 .368627 rg
-BT /F1 7.5 Tf 9 TL ET
-BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
+q
+1 0 0 1 40 332.7 cm
+q
+.8 w
+1 J
+.909804 .639216 .239216 RG
+n 0 0 m 328 0 l S
+Q
+Q
+q
+1 0 0 1 40 248.6 cm
+q
+BT 1 0 0 1 0 70.5 Tm .04945 Tw 11.3 TL /F1 8.6 Tf .168627 .160784 .14902 rg (A paradox sits at the center of the Terror: the machine that shot and deported millions was) Tj T* 0 Tw 1.441933 Tw (also one of the century's most diligent bookkeeping operations. Every arrest opened a) Tj T* 0 Tw .504533 Tw (personal file \() Tj /F3 8.6 Tf (lichnoye delo) Tj /F1 8.6 Tf (\), every execution required a sentence, every death became a) Tj T* 0 Tw .29025 Tw (line in a report. The Gulag was run as an economic ministry of the NKVD, with production) Tj T* 0 Tw .226057 Tw (plans and annual statistics \227 prisoners counted like stock, because the state had to feed,) Tj T* 0 Tw .091529 Tw (guard, and extract labor from them. Mass murder was processed through the center of the) Tj T* 0 Tw (state, in triplicate.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 232.6 cm
+q
+.078431 .156863 .278431 rg
+BT 1 0 0 1 0 2.3 Tm /F2 8.7 Tf 11 TL (Killing by quota) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 162.8 cm
+q
+BT 1 0 0 1 0 59.2 Tm 2.047462 Tw 11.3 TL /F1 8.6 Tf .168627 .160784 .14902 rg (Order No. 00447 \(July 1937\) launched the Great Terror by assigning every region a) Tj T* 0 Tw 1.696657 Tw (numerical quota, split into a \223first category\224 \(to be shot\) and a \223second category\224 \(the) Tj T* 0 Tw .603229 Tw (camps\). Local chiefs often wrote back to Moscow asking that their quotas be ) Tj /F3 8.6 Tf (raised) Tj /F1 8.6 Tf (, and) Tj T* 0 Tw .125314 Tw (the center obliged; at the top, Stalin and his circle personally signed shooting lists carrying) Tj T* 0 Tw 1.419662 Tw (tens of thousands of names. The killing was planned, budgeted, and reported like any) Tj T* 0 Tw (campaign of the command economy.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 146.8 cm
+q
+.078431 .156863 .278431 rg
+BT 1 0 0 1 0 2.3 Tm /F2 8.7 Tf 11 TL (How accurate \227 and what the ledger hides) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 54.4 cm
+q
+BT 1 0 0 1 0 81.8 Tm 1.56606 Tw 11.3 TL /F1 8.6 Tf .168627 .160784 .14902 rg (Surprisingly good, within limits. The post-1991 archives let historians \(Zemskov, Getty,) Tj T* 0 Tw .231538 Tw (Wheatcroft\) replace guesswork with the regime's own counts \227 for the camps, ) Tj /F3 8.6 Tf (lower) Tj /F1 8.6 Tf ( than) Tj T* 0 Tw -0.057073 Tw (the wildest Cold-War estimates yet still staggering: roughly 680,000 executions in 1937\22638) Tj T* 0 Tw 1.125277 Tw (alone. The books are honest about what the state treated as assets \(camp populations) Tj T* 0 Tw 1.161662 Tw (and deaths\) and evasive about the rest: transit deaths went uncounted, the dying were) Tj T* 0 Tw .291618 Tw (sometimes released to flatter camp mortality, the deportations were recorded loosely, and) Tj T* 0 Tw .499414 Tw (the 1932\22633 famine sits in a separate, contested tally. The files are precise about bodies) Tj T* 0 Tw (while lying about guilt \227 the confessions were manufactured, the output padded \() Tj /F3 8.6 Tf (tukhta) Tj /F1 8.6 Tf (\).) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40 38.4 cm
+q
+.078431 .156863 .278431 rg
+BT 1 0 0 1 0 2.3 Tm /F2 8.7 Tf 11 TL (The German mirror) Tj T* ET
+Q
+Q
+q
+1 0 0 1 392 469.6 cm
+q
+BT 1 0 0 1 0 81.8 Tm 3.63906 Tw 11.3 TL /F1 8.6 Tf .168627 .160784 .14902 rg (Both totalitarian states industrialized persecution with card indexes, census data, and) Tj T* 0 Tw 1.02424 Tw (statistical reports \227 the SS even had a chief statistician \(the 1943 Korherr Report\). But the) Tj T* 0 Tw .042057 Tw (Nazi death camps largely murdered their victims on arrival ) Tj /F3 8.6 Tf (without registering them) Tj /F1 8.6 Tf (, and late in) Tj T* 0 Tw .073386 Tw (the war destroyed the evidence; the Soviet system registered its prisoners because it meant to) Tj T* 0 Tw .006573 Tw (work them, so individual files survive in the millions. One machine counted the living as assets;) Tj T* 0 Tw .779087 Tw (the other counted the killed in aggregate and tried to erase the ledger. The shared lesson is) Tj T* 0 Tw 1.1842 Tw (that atrocity at this scale is an administrative achievement \227 and the same paper trail that) Tj T* 0 Tw (served the terror is now the evidence that convicts it.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 392 404.8 cm
+q
+BT 1 0 0 1 0 51.2 Tm 9.8 TL /F1 7.6 Tf .415686 .396078 .368627 rg (Sources \227 J. Arch Getty & Oleg Naumov, ) Tj /F3 7.6 Tf (The Road to Terror) Tj /F1 7.6 Tf (; Oleg Khlevniuk, ) Tj /F3 7.6 Tf (The History of the Gulag) Tj /F1 7.6 Tf (;) Tj T* (Getty, Rittersporn & Zemskov, \223Victims of the Soviet Penal System\224 \() Tj /F3 7.6 Tf (American Historical Review) Tj /F1 7.6 Tf (, 1993\);) Tj T* (Anne Applebaum, ) Tj /F3 7.6 Tf (Gulag) Tj /F1 7.6 Tf (; Timothy Snyder, ) Tj /F3 7.6 Tf (Bloodlands) Tj /F1 7.6 Tf (; the ) Tj /F3 7.6 Tf (Annals of Communism) Tj /F1 7.6 Tf ( series; and, on the) Tj T* (German mirror, Raul Hilberg, ) Tj /F3 7.6 Tf (The Destruction of the European Jews) Tj /F1 7.6 Tf (. The documents and quotas are firmly) Tj T* (established; exact totals \227 transit, the settlements, the 1932\22633 famine \227 remain contested, as does) Tj T* (whether the lethal neglect was deliberate policy.) Tj T* ET
+Q
+Q
  
 Q
 
@@ -11194,7 +11417,7 @@ Q
 
 endstream
 endobj
-266 0 obj
+273 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -11203,43 +11426,16 @@ endobj
 /Type /Font
 >>
 endobj
-267 0 obj
+274 0 obj
 <<
-/BaseFont /Helvetica
-/Encoding /WinAnsiEncoding
-/Name /F1
-/Subtype /Type1
-/Type /Font
->>
-endobj
-268 0 obj
-<<
-/BaseFont /Helvetica-Bold
-/Encoding /WinAnsiEncoding
-/Name /F2
-/Subtype /Type1
-/Type /Font
->>
-endobj
-269 0 obj
-<<
-/BaseFont /Helvetica-Oblique
-/Encoding /WinAnsiEncoding
-/Name /F3
-/Subtype /Type1
-/Type /Font
->>
-endobj
-270 0 obj
-<<
-/Contents 271 0 R
+/Contents 275 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 272 0 R
-/F1-0 273 0 R
-/F2 274 0 R
-/F3 275 0 R
+/F1 276 0 R
+/F1-0 277 0 R
+/F2 278 0 R
+/F3 279 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -11251,9 +11447,137 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-271 0 obj
+275 0 obj
 <<
-/Length 8419
+/Length 1469
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+.94902 .639216 .235294 rg
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 370.3575 396.3 Tm (PART IX) Tj T* ET
+.078431 .156863 .278431 rg
+BT /F2 30 Tf 36 TL ET
+BT 1 0 0 1 212.64 366.3 Tm (Landmarks & Monuments) Tj T* ET
+.07451 .32549 .223529 rg
+BT /F3 12 Tf 14.4 TL ET
+BT 1 0 0 1 204.918 340.9 Tm (The empire read through its stone \227 faith, empire, revolution, and terror) Tj T* ET
+q
+1 0 0 1 43 288 cm
+q
+.415686 .396078 .368627 rg
+BT 1 0 0 1 0 35 Tm /F3 10 Tf 15 TL .223214 Tw (Architecture is the most honest record a state keeps of itself. This is a companion to the Atlas: the same arc of Russian history \227 faith, empire, revolution, and) Tj T* 0 Tw -0.073929 Tw (terror \227 read this time through its buildings and monuments, each entry chosen for what it means as much as how it looks. The photographs will follow; for now,) Tj T* 0 Tw (the stories and what they stand for.) Tj T* ET
+Q
+Q
+.415686 .396078 .368627 rg
+BT /F1 7.5 Tf 9 TL ET
+BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
+ 
+Q
+
+q
+0.0 0.0 792 612 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
+384 17 24 10 re
+f*
+0.415686 0.396078 0.368627 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 392.108 18.6 Tm
+(51) Tj
+T*
+ET
+1 1 1 rg
+n
+623 13 139 13 re
+f*
+0.415686 0.396078 0.368627 rg
+BT
+/F1-0 7 Tf
+8.4 TL
+ET
+BT
+1 0 0 1 581.494 18.6 Tm
+(\251\0402026\040DeWayne\040Searcy\040\267\040Share\040freely\040\267\040Not\040for\040resale) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+276 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+277 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+278 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+279 0 obj
+<<
+/BaseFont /Helvetica-Oblique
+/Encoding /WinAnsiEncoding
+/Name /F3
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+280 0 obj
+<<
+/Contents 281 0 R
+/MediaBox [ 0 0 792 612 ]
+/Resources <<
+/Font <<
+/F1 282 0 R
+/F1-0 283 0 R
+/F2 284 0 R
+/F3 285 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 1 0 R
+>>
+endobj
+281 0 obj
+<<
+/Length 8318
 >>
 stream
 q
@@ -11267,7 +11591,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 546 cm
 q
@@ -11430,7 +11753,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(51) Tj
+(52) Tj
 T*
 ET
 1 1 1 rg
@@ -11452,7 +11775,7 @@ Q
 
 endstream
 endobj
-272 0 obj
+282 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -11461,7 +11784,7 @@ endobj
 /Type /Font
 >>
 endobj
-273 0 obj
+283 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -11470,7 +11793,7 @@ endobj
 /Type /Font
 >>
 endobj
-274 0 obj
+284 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -11479,7 +11802,7 @@ endobj
 /Type /Font
 >>
 endobj
-275 0 obj
+285 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -11488,16 +11811,16 @@ endobj
 /Type /Font
 >>
 endobj
-276 0 obj
+286 0 obj
 <<
-/Contents 277 0 R
+/Contents 287 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 278 0 R
-/F1-0 279 0 R
-/F2 280 0 R
-/F3 281 0 R
+/F1 288 0 R
+/F1-0 289 0 R
+/F2 290 0 R
+/F3 291 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -11509,9 +11832,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-277 0 obj
+287 0 obj
 <<
-/Length 1727
+/Length 1626
 >>
 stream
 q
@@ -11535,7 +11858,6 @@ Q
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
  
 Q
 
@@ -11559,7 +11881,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(52) Tj
+(53) Tj
 T*
 ET
 1 1 1 rg
@@ -11581,7 +11903,7 @@ Q
 
 endstream
 endobj
-278 0 obj
+288 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -11590,7 +11912,7 @@ endobj
 /Type /Font
 >>
 endobj
-279 0 obj
+289 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -11599,7 +11921,7 @@ endobj
 /Type /Font
 >>
 endobj
-280 0 obj
+290 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -11608,7 +11930,7 @@ endobj
 /Type /Font
 >>
 endobj
-281 0 obj
+291 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -11617,16 +11939,16 @@ endobj
 /Type /Font
 >>
 endobj
-282 0 obj
+292 0 obj
 <<
-/Contents 283 0 R
+/Contents 293 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 284 0 R
-/F1-0 285 0 R
-/F2 286 0 R
-/F3 287 0 R
+/F1 294 0 R
+/F1-0 295 0 R
+/F2 296 0 R
+/F3 297 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -11638,9 +11960,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-283 0 obj
+293 0 obj
 <<
-/Length 12435
+/Length 12334
 >>
 stream
 q
@@ -11654,7 +11976,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 546 cm
 q
@@ -11868,7 +12189,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(53) Tj
+(54) Tj
 T*
 ET
 1 1 1 rg
@@ -11890,7 +12211,7 @@ Q
 
 endstream
 endobj
-284 0 obj
+294 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -11899,7 +12220,7 @@ endobj
 /Type /Font
 >>
 endobj
-285 0 obj
+295 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -11908,7 +12229,7 @@ endobj
 /Type /Font
 >>
 endobj
-286 0 obj
+296 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -11917,7 +12238,7 @@ endobj
 /Type /Font
 >>
 endobj
-287 0 obj
+297 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -11926,17 +12247,17 @@ endobj
 /Type /Font
 >>
 endobj
-288 0 obj
+298 0 obj
 <<
-/Contents 289 0 R
+/Contents 299 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 290 0 R
-/F1-0 291 0 R
-/F2 292 0 R
-/F3 293 0 R
-/F4+0 294 0 R
+/F1 300 0 R
+/F1-0 301 0 R
+/F2 302 0 R
+/F3 303 0 R
+/F4+0 304 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -11948,9 +12269,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-289 0 obj
+299 0 obj
 <<
-/Length 1790
+/Length 1689
 >>
 stream
 q
@@ -11973,7 +12294,6 @@ Q
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
  
 Q
 
@@ -11997,7 +12317,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(54) Tj
+(55) Tj
 T*
 ET
 1 1 1 rg
@@ -12019,7 +12339,7 @@ Q
 
 endstream
 endobj
-290 0 obj
+300 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -12028,7 +12348,7 @@ endobj
 /Type /Font
 >>
 endobj
-291 0 obj
+301 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -12037,7 +12357,7 @@ endobj
 /Type /Font
 >>
 endobj
-292 0 obj
+302 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -12046,7 +12366,7 @@ endobj
 /Type /Font
 >>
 endobj
-293 0 obj
+303 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -12055,27 +12375,27 @@ endobj
 /Type /Font
 >>
 endobj
-294 0 obj
+304 0 obj
 <<
 /BaseFont /AAAAAA+DejaVuSans-Oblique
 /FirstChar 0
-/FontDescriptor 295 0 R
+/FontDescriptor 305 0 R
 /LastChar 127
 /Name /F4+0
 /Subtype /TrueType
-/ToUnicode 297 0 R
+/ToUnicode 307 0 R
 /Type /Font
 /Widths [ 600.0977 685.0586 634.7656 591.7969 941.8945 615.2344 589.3555 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 600.0977 317.8711 400.8789 459.9609 837.8906 636.2305 950.1953 779.7852 274.9023 390.1367 390.1367 500 837.8906 317.8711 360.8398 317.8711 336.9141 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 636.2305 336.9141 336.9141 837.8906 837.8906 837.8906 530.7617 1000 684.082 686.0352 698.2422 770.0195 631.8359 575.1953 774.9023 751.9531 294.9219 294.9219 655.7617 557.1289 862.793 748.0469 787.1094 603.0273 787.1094 694.8242 634.7656 610.8398 731.9336 684.082 988.7695 685.0586 610.8398 685.0586 390.1367 336.9141 390.1367 837.8906 500 500 612.793 634.7656 549.8047 634.7656 615.2344 352.0508 634.7656 633.7891 277.832 277.832 579.1016 277.832 974.1211 633.7891 611.8164 634.7656 634.7656 411.1328 520.9961 392.0898 633.7891 591.7969 817.8711 591.7969 591.7969 524.9023 636.2305 336.9141 636.2305 837.8906 600.0977 ]
 >>
 endobj
-295 0 obj
+305 0 obj
 <<
 /Ascent 759.7656
 /CapHeight 759.7656
 /Descent -240.2344
 /Flags 68
 /FontBBox [ -1015.625 -350.0977 1659.18 1067.871 ]
-/FontFile2 296 0 R
+/FontFile2 306 0 R
 /FontName /AAAAAA+DejaVuSans-Oblique
 /ItalicAngle -11
 /MissingWidth 600.0977
@@ -12083,7 +12403,7 @@ endobj
 /Type /FontDescriptor
 >>
 endobj
-296 0 obj
+306 0 obj
 <<
 /Filter [ /FlateDecode ]
 /Length1 39424
@@ -12166,7 +12486,7 @@ Zß4úe<o`R«ÑÇ‰∏FI„	çkH∏ó≈äÁ0úcúaúfå÷‚T,@ßtƒ‰5båÏ∑—à√C
 ˚1§`Pá.O”0Nû∞”I∆	;é˜{Ë∏é˛cÍ˜‡òQÅ£G™È(„H5˙‰}RË.R\Ω=YÍeÙD¢‘ìEœ¥5÷(E$hkxñqÄó2x—-—]É˝6t…RuÖ∞OÓˆ1:;ú‘©°√âgÌmNjg¥9Ò4„)∆ìåΩ≠⁄ÀhÕ ƒÊDèÁ∞ß•ïˆ0˚˘*∆£L‡ëñ—k3µ¥‚!∆ÉåÁpü>F3„^Fì<‹t?Óq`7¥ªª∞sáB;uÏP†Yi~l∑ªi{ç†F∆6€ñ≈Vô~k‘-6R7@ùù˚-x›∫≈ÜÜ;—¥nv†^&Ø7Pg`ìG£M:<ny4∏]ÿX´—∆j5‹Õ®a‹ïÉÀÈ!√)suz‡`l`(2≈@µº`uvõùÏnÿÏåıÚ–zÎdÚuíµ† ¨2fm0ˇ-‹ãÄ%h≠™áe÷¢øq—“¥∂°jçÛ_mÿ¸à`Jµ
 endstream
 endobj
-297 0 obj
+307 0 obj
 <<
 /Filter [ /FlateDecode ]
 /Length 703
@@ -12177,19 +12497,19 @@ xú}’MkQ∆ÒΩübñ-•Ë‹ÛñÄi“@mJ-›OÙöZ‚hG]‰€˜>ÛÑÙRhÖ‰¸ç3Ê«8r¶◊w7w˝ˆ‘Lø˚’2üöÕ∂_˘∏?
 ø“Ø+˝„wGÈW¯ï~Ö_ÈW¯ï~Ö_ÈW¯ï~ÖﬂË7¯ç˛Ò˚hÙ¸Fø¡oÙ¸Fø¡oÙ¸Fø¡oÙ¸Fø¡oÙ¸Fø¡oÙ¸Fø¡oÙ¸Fø¡ÔÙ;¸Nø√ÔÙ;¸Nø√ÔÙ;¸Nø√ÔÙ;¸Nø√ÔÙ;¸Nø√ÔÙ;¸Nø√ÔÙ;¸Nø√ÔÙ;¸Nø√Ù¸A¿Ù¸A¿Ù¸A¿Ù¸A¿Ù¸A¿Ù¸A¿Ù¸A¿Ù¸AˇÀÜxŸÿÿØªhuÜ≤¶∆%9.¨úmü_˜Ëa¿Y¯˘b¡ß€
 endstream
 endobj
-298 0 obj
+308 0 obj
 <<
 /Type /Page
-/Contents 299 0 R
+/Contents 309 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 300 0 R
-/F1-1 301 0 R
+/F1-0 310 0 R
+/F1-1 311 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 302 0 R
+/F2-0 312 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -12209,7 +12529,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-299 0 obj
+309 0 obj
 <<
 /Length 18015
 >>
@@ -12591,7 +12911,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(55) Tj
+(56) Tj
 T*
 ET
 1 1 1 rg
@@ -12613,7 +12933,7 @@ Q
 
 endstream
 endobj
-300 0 obj
+310 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -12622,7 +12942,7 @@ endobj
 /Type /Font
 >>
 endobj
-301 0 obj
+311 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -12631,7 +12951,7 @@ endobj
 /Type /Font
 >>
 endobj
-302 0 obj
+312 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -12640,19 +12960,20 @@ endobj
 /Type /Font
 >>
 endobj
-303 0 obj
+313 0 obj
 <<
 /Type /Page
-/Contents 304 0 R
+/Contents 314 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 305 0 R
-/F1-1 306 0 R
+/F1-0 315 0 R
+/F1-1 316 0 R
+/F1-2 317 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 307 0 R
+/F2-0 318 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -12672,11 +12993,12 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-304 0 obj
+314 0 obj
 <<
-/Length 15512
+/Length 15586
 >>
 stream
+q
 q
 q
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -12932,6 +13254,23 @@ BT
 ET
 1 1 1 rg
 n
+404 180 348 29 re
+f*
+Q
+
+Q
+
+q
+0.0 0.0 792 612 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-1 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
 38 580 324 10 re
 f*
 0.078431 0.156863 0.278431 rg
@@ -12954,7 +13293,7 @@ W
 n
 1 0 0 1 0 0 cm
 BT
-/F1-1 12 Tf
+/F1-2 12 Tf
 14.4 TL
 ET
 1 1 1 rg
@@ -12963,12 +13302,12 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(56) Tj
+(57) Tj
 T*
 ET
 1 1 1 rg
@@ -12977,7 +13316,7 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
@@ -12985,16 +13324,12 @@ BT
 (\251\0402026\040DeWayne\040Searcy\040\267\040Share\040freely\040\267\040Not\040for\040resale) Tj
 T*
 ET
-1 1 1 rg
-n
-404 180 348 29 re
-f*
 Q
 
 
 endstream
 endobj
-305 0 obj
+315 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13003,7 +13338,7 @@ endobj
 /Type /Font
 >>
 endobj
-306 0 obj
+316 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13012,7 +13347,16 @@ endobj
 /Type /Font
 >>
 endobj
-307 0 obj
+317 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+318 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -13021,19 +13365,19 @@ endobj
 /Type /Font
 >>
 endobj
-308 0 obj
+319 0 obj
 <<
 /Type /Page
-/Contents 309 0 R
+/Contents 320 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 310 0 R
-/F1-1 311 0 R
+/F1-0 321 0 R
+/F1-1 322 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 312 0 R
+/F2-0 323 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -13053,7 +13397,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-309 0 obj
+320 0 obj
 <<
 /Length 2103
 >>
@@ -13155,7 +13499,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(57) Tj
+(58) Tj
 T*
 ET
 1 1 1 rg
@@ -13177,7 +13521,7 @@ Q
 
 endstream
 endobj
-310 0 obj
+321 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13186,7 +13530,7 @@ endobj
 /Type /Font
 >>
 endobj
-311 0 obj
+322 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13195,7 +13539,7 @@ endobj
 /Type /Font
 >>
 endobj
-312 0 obj
+323 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -13204,19 +13548,19 @@ endobj
 /Type /Font
 >>
 endobj
-313 0 obj
+324 0 obj
 <<
 /Type /Page
-/Contents 314 0 R
+/Contents 325 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 315 0 R
-/F1-1 316 0 R
+/F1-0 326 0 R
+/F1-1 327 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 317 0 R
+/F2-0 328 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -13236,7 +13580,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-314 0 obj
+325 0 obj
 <<
 /Length 11101
 >>
@@ -13489,7 +13833,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(58) Tj
+(59) Tj
 T*
 ET
 1 1 1 rg
@@ -13511,7 +13855,7 @@ Q
 
 endstream
 endobj
-315 0 obj
+326 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13520,7 +13864,7 @@ endobj
 /Type /Font
 >>
 endobj
-316 0 obj
+327 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13529,7 +13873,7 @@ endobj
 /Type /Font
 >>
 endobj
-317 0 obj
+328 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -13538,19 +13882,20 @@ endobj
 /Type /Font
 >>
 endobj
-318 0 obj
+329 0 obj
 <<
 /Type /Page
-/Contents 319 0 R
+/Contents 330 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 320 0 R
-/F1-1 321 0 R
+/F1-0 331 0 R
+/F1-1 332 0 R
+/F1-2 333 0 R
 /F10 19 0 R
 /F2 20 0 R
-/F2-0 322 0 R
+/F2-0 334 0 R
 /F3 21 0 R
 /F4 22 0 R
 /F5 23 0 R
@@ -13570,11 +13915,12 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-319 0 obj
+330 0 obj
 <<
-/Length 10329
+/Length 10403
 >>
 stream
+q
 q
 q
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -13769,6 +14115,23 @@ BT
 ET
 1 1 1 rg
 n
+404 146 348 29 re
+f*
+Q
+
+Q
+
+q
+0.0 0.0 792 612 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-1 12 Tf
+14.4 TL
+ET
+1 1 1 rg
+n
 38 580 324 10 re
 f*
 0.078431 0.156863 0.278431 rg
@@ -13791,7 +14154,7 @@ W
 n
 1 0 0 1 0 0 cm
 BT
-/F1-1 12 Tf
+/F1-2 12 Tf
 14.4 TL
 ET
 1 1 1 rg
@@ -13800,12 +14163,12 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(59) Tj
+(60) Tj
 T*
 ET
 1 1 1 rg
@@ -13814,7 +14177,7 @@ n
 f*
 0.415686 0.396078 0.368627 rg
 BT
-/F1-1 7 Tf
+/F1-2 7 Tf
 8.4 TL
 ET
 BT
@@ -13822,16 +14185,12 @@ BT
 (\251\0402026\040DeWayne\040Searcy\040\267\040Share\040freely\040\267\040Not\040for\040resale) Tj
 T*
 ET
-1 1 1 rg
-n
-404 146 348 29 re
-f*
 Q
 
 
 endstream
 endobj
-320 0 obj
+331 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13840,7 +14199,7 @@ endobj
 /Type /Font
 >>
 endobj
-321 0 obj
+332 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13849,7 +14208,16 @@ endobj
 /Type /Font
 >>
 endobj
-322 0 obj
+333 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+334 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -13858,16 +14226,16 @@ endobj
 /Type /Font
 >>
 endobj
-323 0 obj
+335 0 obj
 <<
-/Contents 324 0 R
+/Contents 336 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 325 0 R
-/F1-0 326 0 R
-/F2 327 0 R
-/F3 328 0 R
+/F1 337 0 R
+/F1-0 338 0 R
+/F2 339 0 R
+/F3 340 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -13879,9 +14247,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-324 0 obj
+336 0 obj
 <<
-/Length 1976
+/Length 1875
 >>
 stream
 q
@@ -13905,7 +14273,6 @@ Q
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
  
 Q
 
@@ -13929,7 +14296,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(60) Tj
+(61) Tj
 T*
 ET
 1 1 1 rg
@@ -13951,7 +14318,7 @@ Q
 
 endstream
 endobj
-325 0 obj
+337 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13960,7 +14327,7 @@ endobj
 /Type /Font
 >>
 endobj
-326 0 obj
+338 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -13969,7 +14336,7 @@ endobj
 /Type /Font
 >>
 endobj
-327 0 obj
+339 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -13978,7 +14345,7 @@ endobj
 /Type /Font
 >>
 endobj
-328 0 obj
+340 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -13987,16 +14354,16 @@ endobj
 /Type /Font
 >>
 endobj
-329 0 obj
+341 0 obj
 <<
-/Contents 330 0 R
+/Contents 342 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 331 0 R
-/F1-0 332 0 R
-/F2 333 0 R
-/F3 334 0 R
+/F1 343 0 R
+/F1-0 344 0 R
+/F2 345 0 R
+/F3 346 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -14008,9 +14375,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-330 0 obj
+342 0 obj
 <<
-/Length 13156
+/Length 13055
 >>
 stream
 q
@@ -14024,7 +14391,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 546 cm
 q
@@ -14402,7 +14768,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(61) Tj
+(62) Tj
 T*
 ET
 1 1 1 rg
@@ -14424,7 +14790,7 @@ Q
 
 endstream
 endobj
-331 0 obj
+343 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -14433,7 +14799,7 @@ endobj
 /Type /Font
 >>
 endobj
-332 0 obj
+344 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -14442,7 +14808,7 @@ endobj
 /Type /Font
 >>
 endobj
-333 0 obj
+345 0 obj
 <<
 /BaseFont /Helvetica-Bold
 /Encoding /WinAnsiEncoding
@@ -14451,7 +14817,7 @@ endobj
 /Type /Font
 >>
 endobj
-334 0 obj
+346 0 obj
 <<
 /BaseFont /Helvetica-Oblique
 /Encoding /WinAnsiEncoding
@@ -14460,16 +14826,16 @@ endobj
 /Type /Font
 >>
 endobj
-335 0 obj
+347 0 obj
 <<
-/Contents 336 0 R
+/Contents 348 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 331 0 R
-/F1-0 337 0 R
-/F2 333 0 R
-/F3 334 0 R
+/F1 343 0 R
+/F1-0 349 0 R
+/F2 345 0 R
+/F3 346 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -14481,9 +14847,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-336 0 obj
+348 0 obj
 <<
-/Length 12615
+/Length 12514
 >>
 stream
 q
@@ -14497,7 +14863,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 538.8 cm
 q
@@ -14843,7 +15208,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(62) Tj
+(63) Tj
 T*
 ET
 1 1 1 rg
@@ -14865,7 +15230,7 @@ Q
 
 endstream
 endobj
-337 0 obj
+349 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -14874,16 +15239,16 @@ endobj
 /Type /Font
 >>
 endobj
-338 0 obj
+350 0 obj
 <<
-/Contents 339 0 R
+/Contents 351 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 331 0 R
-/F1-0 340 0 R
-/F2 333 0 R
-/F3 334 0 R
+/F1 343 0 R
+/F1-0 352 0 R
+/F2 345 0 R
+/F3 346 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -14895,9 +15260,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-339 0 obj
+351 0 obj
 <<
-/Length 13049
+/Length 12948
 >>
 stream
 q
@@ -14911,7 +15276,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 549.4 cm
 q
@@ -15259,7 +15623,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(63) Tj
+(64) Tj
 T*
 ET
 1 1 1 rg
@@ -15281,7 +15645,7 @@ Q
 
 endstream
 endobj
-340 0 obj
+352 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -15290,16 +15654,16 @@ endobj
 /Type /Font
 >>
 endobj
-341 0 obj
+353 0 obj
 <<
-/Contents 342 0 R
+/Contents 354 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 331 0 R
-/F1-0 343 0 R
-/F2 333 0 R
-/F3 334 0 R
+/F1 343 0 R
+/F1-0 355 0 R
+/F2 345 0 R
+/F3 346 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -15311,9 +15675,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-342 0 obj
+354 0 obj
 <<
-/Length 13094
+/Length 12993
 >>
 stream
 q
@@ -15327,7 +15691,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 546 cm
 q
@@ -15706,7 +16069,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(64) Tj
+(65) Tj
 T*
 ET
 1 1 1 rg
@@ -15728,7 +16091,7 @@ Q
 
 endstream
 endobj
-343 0 obj
+355 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -15737,16 +16100,16 @@ endobj
 /Type /Font
 >>
 endobj
-344 0 obj
+356 0 obj
 <<
-/Contents 345 0 R
+/Contents 357 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
-/F1 331 0 R
-/F1-0 346 0 R
-/F2 333 0 R
-/F3 334 0 R
+/F1 343 0 R
+/F1-0 358 0 R
+/F2 345 0 R
+/F3 346 0 R
 >>
 /ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
 >>
@@ -15758,9 +16121,9 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-345 0 obj
+357 0 obj
 <<
-/Length 9377
+/Length 9276
 >>
 stream
 q
@@ -15774,7 +16137,6 @@ n 40 578 m 752 578 l S
 .415686 .396078 .368627 rg
 BT /F1 7.5 Tf 9 TL ET
 BT 1 0 0 1 40 18.6 Tm (Russia & Siberia \227 A Reader's Companion) Tj T* ET
-BT 1 0 0 1 569.315 18.6 Tm (\251 2026 DeWayne Searcy \267 Share freely \267 Not for resale) Tj T* ET
 q
 1 0 0 1 40 549.4 cm
 q
@@ -16033,7 +16395,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(65) Tj
+(66) Tj
 T*
 ET
 1 1 1 rg
@@ -16055,7 +16417,7 @@ Q
 
 endstream
 endobj
-346 0 obj
+358 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -16064,16 +16426,16 @@ endobj
 /Type /Font
 >>
 endobj
-347 0 obj
+359 0 obj
 <<
 /Type /Page
-/Contents 348 0 R
+/Contents 360 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 349 0 R
-/F1-1 350 0 R
+/F1-0 361 0 R
+/F1-1 362 0 R
 /F10 19 0 R
 /F2 20 0 R
 /F3 21 0 R
@@ -16095,7 +16457,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-348 0 obj
+360 0 obj
 <<
 /Length 11022
 >>
@@ -16425,7 +16787,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(66) Tj
+(67) Tj
 T*
 ET
 1 1 1 rg
@@ -16447,7 +16809,7 @@ Q
 
 endstream
 endobj
-349 0 obj
+361 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -16456,7 +16818,7 @@ endobj
 /Type /Font
 >>
 endobj
-350 0 obj
+362 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -16465,15 +16827,15 @@ endobj
 /Type /Font
 >>
 endobj
-351 0 obj
+363 0 obj
 <<
 /Type /Page
-/Contents 352 0 R
+/Contents 364 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 353 0 R
+/F1-0 365 0 R
 /F10 19 0 R
 /F2 20 0 R
 /F3 21 0 R
@@ -16495,7 +16857,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-352 0 obj
+364 0 obj
 <<
 /Length 1517
 >>
@@ -16576,7 +16938,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(67) Tj
+(68) Tj
 T*
 ET
 1 1 1 rg
@@ -16598,7 +16960,7 @@ Q
 
 endstream
 endobj
-353 0 obj
+365 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -16607,15 +16969,15 @@ endobj
 /Type /Font
 >>
 endobj
-354 0 obj
+366 0 obj
 <<
 /Type /Page
-/Contents 355 0 R
+/Contents 367 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 356 0 R
+/F1-0 368 0 R
 /F10 19 0 R
 /F2 20 0 R
 /F3 21 0 R
@@ -16637,7 +16999,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-355 0 obj
+367 0 obj
 <<
 /Length 20221
 >>
@@ -17451,7 +17813,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(68) Tj
+(69) Tj
 T*
 ET
 1 1 1 rg
@@ -17473,7 +17835,7 @@ Q
 
 endstream
 endobj
-356 0 obj
+368 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -17482,15 +17844,15 @@ endobj
 /Type /Font
 >>
 endobj
-357 0 obj
+369 0 obj
 <<
 /Type /Page
-/Contents 358 0 R
+/Contents 370 0 R
 /MediaBox [ 0 0 792 612 ]
 /Resources <<
 /Font <<
 /F1 17 0 R
-/F1-0 359 0 R
+/F1-0 371 0 R
 /F10 19 0 R
 /F2 20 0 R
 /F3 21 0 R
@@ -17512,7 +17874,7 @@ endobj
 /Parent 1 0 R
 >>
 endobj
-358 0 obj
+370 0 obj
 <<
 /Length 17463
 >>
@@ -18202,7 +18564,7 @@ BT
 ET
 BT
 1 0 0 1 392.108 18.6 Tm
-(69) Tj
+(70) Tj
 T*
 ET
 1 1 1 rg
@@ -18224,7 +18586,7 @@ Q
 
 endstream
 endobj
-359 0 obj
+371 0 obj
 <<
 /BaseFont /Helvetica
 /Encoding /WinAnsiEncoding
@@ -18234,373 +18596,385 @@ endobj
 >>
 endobj
 xref
-0 360
+0 372
 0000000000 65535 f 
 0000000015 00000 n 
-0000000612 00000 n 
-0000000755 00000 n 
-0000000804 00000 n 
-0000001047 00000 n 
-0000002370 00000 n 
-0000002477 00000 n 
-0000002584 00000 n 
-0000002696 00000 n 
-0000002811 00000 n 
-0000003049 00000 n 
-0000010053 00000 n 
-0000010161 00000 n 
-0000010269 00000 n 
-0000010382 00000 n 
-0000010807 00000 n 
-0000012212 00000 n 
-0000012320 00000 n 
-0000012428 00000 n 
-0000012507 00000 n 
-0000012620 00000 n 
-0000012736 00000 n 
-0000012856 00000 n 
-0000012940 00000 n 
-0000014621 00000 n 
-0000014888 00000 n 
-0000037692 00000 n 
-0000038696 00000 n 
-0000040014 00000 n 
-0000040290 00000 n 
-0000059121 00000 n 
-0000059889 00000 n 
-0000061178 00000 n 
-0000061434 00000 n 
-0000081410 00000 n 
-0000082206 00000 n 
-0000083575 00000 n 
-0000083841 00000 n 
-0000105988 00000 n 
-0000106851 00000 n 
-0000106954 00000 n 
-0000107052 00000 n 
-0000493528 00000 n 
-0000500516 00000 n 
-0000500941 00000 n 
-0000502448 00000 n 
-0000502556 00000 n 
-0001007358 00000 n 
-0001014344 00000 n 
-0001014769 00000 n 
-0001016403 00000 n 
-0001016511 00000 n 
-0001578990 00000 n 
-0001585842 00000 n 
-0001586267 00000 n 
-0001587957 00000 n 
-0001588065 00000 n 
-0002128794 00000 n 
-0002129219 00000 n 
-0002130838 00000 n 
-0002130946 00000 n 
-0002667888 00000 n 
-0002674366 00000 n 
-0002674791 00000 n 
-0002676356 00000 n 
-0002676464 00000 n 
-0003234279 00000 n 
-0003234704 00000 n 
-0003236264 00000 n 
-0003236372 00000 n 
-0003778764 00000 n 
-0003779189 00000 n 
-0003780741 00000 n 
-0003780849 00000 n 
-0004317760 00000 n 
-0004318185 00000 n 
-0004319731 00000 n 
-0004319839 00000 n 
-0004845284 00000 n 
-0004845709 00000 n 
-0004847208 00000 n 
-0004847316 00000 n 
-0005403843 00000 n 
-0005404268 00000 n 
-0005405800 00000 n 
-0005405908 00000 n 
-0005948556 00000 n 
-0005948981 00000 n 
-0005950652 00000 n 
-0005950760 00000 n 
-0006840943 00000 n 
-0006847797 00000 n 
-0006848222 00000 n 
-0006849811 00000 n 
-0006849919 00000 n 
-0007672938 00000 n 
-0007673363 00000 n 
-0007674894 00000 n 
-0007675002 00000 n 
-0008332248 00000 n 
-0008332677 00000 n 
-0008334225 00000 n 
-0008334334 00000 n 
-0009153935 00000 n 
-0009154364 00000 n 
-0009155934 00000 n 
-0009156043 00000 n 
-0009795576 00000 n 
-0009796005 00000 n 
-0009797540 00000 n 
-0009797649 00000 n 
-0010411566 00000 n 
-0010411995 00000 n 
-0010413594 00000 n 
-0010413703 00000 n 
-0010825924 00000 n 
-0010832782 00000 n 
-0010833211 00000 n 
-0010834891 00000 n 
-0010835000 00000 n 
-0011417549 00000 n 
-0011424456 00000 n 
-0011424899 00000 n 
-0011426902 00000 n 
-0011427011 00000 n 
-0011427120 00000 n 
-0012181498 00000 n 
-0012188779 00000 n 
-0012189143 00000 n 
-0012191116 00000 n 
-0012191225 00000 n 
-0012191589 00000 n 
-0012202729 00000 n 
-0012202838 00000 n 
-0012203202 00000 n 
-0012214062 00000 n 
-0012214171 00000 n 
-0012214535 00000 n 
-0012225629 00000 n 
-0012225738 00000 n 
-0012226102 00000 n 
-0012236907 00000 n 
-0012237016 00000 n 
-0012237380 00000 n 
-0012248620 00000 n 
-0012248729 00000 n 
-0012249093 00000 n 
-0012260410 00000 n 
-0012260519 00000 n 
-0012260883 00000 n 
-0012272489 00000 n 
-0012272598 00000 n 
-0012272962 00000 n 
-0012279933 00000 n 
-0012280042 00000 n 
-0012280297 00000 n 
-0012281969 00000 n 
-0012282078 00000 n 
-0012282187 00000 n 
-0012282301 00000 n 
-0012282418 00000 n 
-0012282810 00000 n 
-0012294553 00000 n 
-0012294662 00000 n 
-0012294771 00000 n 
-0012294885 00000 n 
-0012295277 00000 n 
-0012299896 00000 n 
-0012300005 00000 n 
-0012300114 00000 n 
-0012300228 00000 n 
-0012300483 00000 n 
-0012306832 00000 n 
-0012306941 00000 n 
-0012307050 00000 n 
-0012307164 00000 n 
-0012307281 00000 n 
-0012307536 00000 n 
-0012309365 00000 n 
-0012309474 00000 n 
-0012309583 00000 n 
-0012309697 00000 n 
-0012309814 00000 n 
-0012310206 00000 n 
-0012322296 00000 n 
-0012322405 00000 n 
-0012322514 00000 n 
-0012322628 00000 n 
-0012323020 00000 n 
-0012335101 00000 n 
-0012335210 00000 n 
-0012335319 00000 n 
-0012335433 00000 n 
-0012335825 00000 n 
-0012337629 00000 n 
-0012337738 00000 n 
-0012337847 00000 n 
-0012337961 00000 n 
-0012338216 00000 n 
-0012340125 00000 n 
-0012340234 00000 n 
-0012340343 00000 n 
-0012340457 00000 n 
-0012340574 00000 n 
-0012340869 00000 n 
-0012353048 00000 n 
-0012353157 00000 n 
-0012353266 00000 n 
-0012353375 00000 n 
-0012353489 00000 n 
-0012353603 00000 n 
-0012353720 00000 n 
-0012353841 00000 n 
-0012354136 00000 n 
-0012365308 00000 n 
-0012365417 00000 n 
-0012365526 00000 n 
-0012365640 00000 n 
-0012365895 00000 n 
-0012372430 00000 n 
-0012372539 00000 n 
-0012372648 00000 n 
-0012372762 00000 n 
-0012372879 00000 n 
-0012373134 00000 n 
-0012374748 00000 n 
-0012374857 00000 n 
-0012374966 00000 n 
-0012375080 00000 n 
-0012375197 00000 n 
-0012375452 00000 n 
-0012386736 00000 n 
-0012386845 00000 n 
-0012386954 00000 n 
-0012387068 00000 n 
-0012387185 00000 n 
-0012387440 00000 n 
-0012389255 00000 n 
-0012389364 00000 n 
-0012389473 00000 n 
-0012389587 00000 n 
-0012389704 00000 n 
-0012389971 00000 n 
-0012398757 00000 n 
-0012398866 00000 n 
-0012398975 00000 n 
-0012399089 00000 n 
-0012399206 00000 n 
-0012399327 00000 n 
-0012399582 00000 n 
-0012401284 00000 n 
-0012401393 00000 n 
-0012401502 00000 n 
-0012401616 00000 n 
-0012401733 00000 n 
-0012401988 00000 n 
-0012414812 00000 n 
-0012414921 00000 n 
-0012415030 00000 n 
-0012415144 00000 n 
-0012415261 00000 n 
-0012415516 00000 n 
-0012418867 00000 n 
-0012418976 00000 n 
-0012419231 00000 n 
-0012420855 00000 n 
-0012420964 00000 n 
-0012421073 00000 n 
-0012421187 00000 n 
-0012421304 00000 n 
-0012421559 00000 n 
-0012430032 00000 n 
-0012430141 00000 n 
-0012430250 00000 n 
-0012430364 00000 n 
-0012430481 00000 n 
-0012430736 00000 n 
-0012432517 00000 n 
-0012432626 00000 n 
-0012432735 00000 n 
-0012432849 00000 n 
-0012432966 00000 n 
-0012433221 00000 n 
-0012445711 00000 n 
-0012445820 00000 n 
-0012445929 00000 n 
-0012446043 00000 n 
-0012446160 00000 n 
-0012446429 00000 n 
-0012448273 00000 n 
-0012448382 00000 n 
-0012448491 00000 n 
-0012448605 00000 n 
-0012448722 00000 n 
-0012450033 00000 n 
-0012450301 00000 n 
-0012470888 00000 n 
-0012471669 00000 n 
-0012472061 00000 n 
-0012490131 00000 n 
-0012490240 00000 n 
-0012490349 00000 n 
-0012490463 00000 n 
-0012490855 00000 n 
-0012506422 00000 n 
-0012506531 00000 n 
-0012506640 00000 n 
-0012506754 00000 n 
-0012507146 00000 n 
-0012509303 00000 n 
-0012509412 00000 n 
-0012509521 00000 n 
-0012509635 00000 n 
-0012510027 00000 n 
-0012521183 00000 n 
-0012521292 00000 n 
-0012521401 00000 n 
-0012521515 00000 n 
-0012521907 00000 n 
-0012532291 00000 n 
-0012532400 00000 n 
-0012532509 00000 n 
-0012532623 00000 n 
-0012532878 00000 n 
-0012534908 00000 n 
-0012535017 00000 n 
-0012535126 00000 n 
-0012535240 00000 n 
-0012535357 00000 n 
-0012535612 00000 n 
-0012548823 00000 n 
-0012548932 00000 n 
-0012549041 00000 n 
-0012549155 00000 n 
-0012549272 00000 n 
-0012549527 00000 n 
-0012562197 00000 n 
-0012562306 00000 n 
-0012562561 00000 n 
-0012575665 00000 n 
-0012575774 00000 n 
-0012576029 00000 n 
-0012589178 00000 n 
-0012589287 00000 n 
-0012589542 00000 n 
-0012598973 00000 n 
-0012599082 00000 n 
-0012599460 00000 n 
-0012610537 00000 n 
-0012610646 00000 n 
-0012610755 00000 n 
-0012611119 00000 n 
-0012612690 00000 n 
-0012612799 00000 n 
-0012613163 00000 n 
-0012633439 00000 n 
-0012633548 00000 n 
-0012633912 00000 n 
-0012651430 00000 n 
+0000000620 00000 n 
+0000000763 00000 n 
+0000000812 00000 n 
+0000001055 00000 n 
+0000002378 00000 n 
+0000002485 00000 n 
+0000002592 00000 n 
+0000002704 00000 n 
+0000002819 00000 n 
+0000003057 00000 n 
+0000009991 00000 n 
+0000010099 00000 n 
+0000010207 00000 n 
+0000010320 00000 n 
+0000010745 00000 n 
+0000012150 00000 n 
+0000012258 00000 n 
+0000012366 00000 n 
+0000012445 00000 n 
+0000012558 00000 n 
+0000012674 00000 n 
+0000012794 00000 n 
+0000012878 00000 n 
+0000014559 00000 n 
+0000014826 00000 n 
+0000037630 00000 n 
+0000038634 00000 n 
+0000039952 00000 n 
+0000040228 00000 n 
+0000059059 00000 n 
+0000059827 00000 n 
+0000061116 00000 n 
+0000061372 00000 n 
+0000081348 00000 n 
+0000082144 00000 n 
+0000083513 00000 n 
+0000083779 00000 n 
+0000105926 00000 n 
+0000106789 00000 n 
+0000106892 00000 n 
+0000106990 00000 n 
+0000493466 00000 n 
+0000500454 00000 n 
+0000500879 00000 n 
+0000502386 00000 n 
+0000502494 00000 n 
+0001007296 00000 n 
+0001014282 00000 n 
+0001014707 00000 n 
+0001016341 00000 n 
+0001016449 00000 n 
+0001578928 00000 n 
+0001585780 00000 n 
+0001586205 00000 n 
+0001587895 00000 n 
+0001588003 00000 n 
+0002128732 00000 n 
+0002129157 00000 n 
+0002130776 00000 n 
+0002130884 00000 n 
+0002667826 00000 n 
+0002674304 00000 n 
+0002674729 00000 n 
+0002676294 00000 n 
+0002676402 00000 n 
+0003234217 00000 n 
+0003234642 00000 n 
+0003236202 00000 n 
+0003236310 00000 n 
+0003778702 00000 n 
+0003779127 00000 n 
+0003780679 00000 n 
+0003780787 00000 n 
+0004317698 00000 n 
+0004318123 00000 n 
+0004319669 00000 n 
+0004319777 00000 n 
+0004845222 00000 n 
+0004845647 00000 n 
+0004847146 00000 n 
+0004847254 00000 n 
+0005403781 00000 n 
+0005404206 00000 n 
+0005405738 00000 n 
+0005405846 00000 n 
+0005948494 00000 n 
+0005948919 00000 n 
+0005950590 00000 n 
+0005950698 00000 n 
+0006840881 00000 n 
+0006847735 00000 n 
+0006848160 00000 n 
+0006849749 00000 n 
+0006849857 00000 n 
+0007672876 00000 n 
+0007673301 00000 n 
+0007674832 00000 n 
+0007674940 00000 n 
+0008332186 00000 n 
+0008332615 00000 n 
+0008334163 00000 n 
+0008334272 00000 n 
+0009153873 00000 n 
+0009154302 00000 n 
+0009155872 00000 n 
+0009155981 00000 n 
+0009795514 00000 n 
+0009795943 00000 n 
+0009797478 00000 n 
+0009797587 00000 n 
+0010411504 00000 n 
+0010411933 00000 n 
+0010413532 00000 n 
+0010413641 00000 n 
+0010825862 00000 n 
+0010832720 00000 n 
+0010833149 00000 n 
+0010834829 00000 n 
+0010834938 00000 n 
+0011417487 00000 n 
+0011424394 00000 n 
+0011424837 00000 n 
+0011426840 00000 n 
+0011426949 00000 n 
+0011427058 00000 n 
+0012181436 00000 n 
+0012188717 00000 n 
+0012189081 00000 n 
+0012191054 00000 n 
+0012191163 00000 n 
+0012191527 00000 n 
+0012202667 00000 n 
+0012202776 00000 n 
+0012203140 00000 n 
+0012214000 00000 n 
+0012214109 00000 n 
+0012214473 00000 n 
+0012225567 00000 n 
+0012225676 00000 n 
+0012226040 00000 n 
+0012236845 00000 n 
+0012236954 00000 n 
+0012237318 00000 n 
+0012248558 00000 n 
+0012248667 00000 n 
+0012249031 00000 n 
+0012260348 00000 n 
+0012260457 00000 n 
+0012260821 00000 n 
+0012272427 00000 n 
+0012272536 00000 n 
+0012272914 00000 n 
+0012279959 00000 n 
+0012280068 00000 n 
+0012280177 00000 n 
+0012280432 00000 n 
+0012282003 00000 n 
+0012282112 00000 n 
+0012282221 00000 n 
+0012282335 00000 n 
+0012282452 00000 n 
+0012282844 00000 n 
+0012294587 00000 n 
+0012294696 00000 n 
+0012294805 00000 n 
+0012294919 00000 n 
+0012295325 00000 n 
+0012300018 00000 n 
+0012300127 00000 n 
+0012300236 00000 n 
+0012300345 00000 n 
+0012300459 00000 n 
+0012300714 00000 n 
+0012306962 00000 n 
+0012307071 00000 n 
+0012307180 00000 n 
+0012307294 00000 n 
+0012307411 00000 n 
+0012307666 00000 n 
+0012312546 00000 n 
+0012312655 00000 n 
+0012312764 00000 n 
+0012312878 00000 n 
+0012312995 00000 n 
+0012313250 00000 n 
+0012314978 00000 n 
+0012315087 00000 n 
+0012315196 00000 n 
+0012315310 00000 n 
+0012315427 00000 n 
+0012315819 00000 n 
+0012327909 00000 n 
+0012328018 00000 n 
+0012328127 00000 n 
+0012328241 00000 n 
+0012328633 00000 n 
+0012340714 00000 n 
+0012340823 00000 n 
+0012340932 00000 n 
+0012341046 00000 n 
+0012341452 00000 n 
+0012343330 00000 n 
+0012343439 00000 n 
+0012343548 00000 n 
+0012343657 00000 n 
+0012343771 00000 n 
+0012344026 00000 n 
+0012345834 00000 n 
+0012345943 00000 n 
+0012346052 00000 n 
+0012346166 00000 n 
+0012346283 00000 n 
+0012346578 00000 n 
+0012358757 00000 n 
+0012358866 00000 n 
+0012358975 00000 n 
+0012359084 00000 n 
+0012359198 00000 n 
+0012359312 00000 n 
+0012359429 00000 n 
+0012359550 00000 n 
+0012359859 00000 n 
+0012371105 00000 n 
+0012371214 00000 n 
+0012371323 00000 n 
+0012371432 00000 n 
+0012371546 00000 n 
+0012371801 00000 n 
+0012378235 00000 n 
+0012378344 00000 n 
+0012378453 00000 n 
+0012378567 00000 n 
+0012378684 00000 n 
+0012378939 00000 n 
+0012380452 00000 n 
+0012380561 00000 n 
+0012380670 00000 n 
+0012380784 00000 n 
+0012380901 00000 n 
+0012381156 00000 n 
+0012392339 00000 n 
+0012392448 00000 n 
+0012392557 00000 n 
+0012392671 00000 n 
+0012392788 00000 n 
+0012393043 00000 n 
+0012394757 00000 n 
+0012394866 00000 n 
+0012394975 00000 n 
+0012395089 00000 n 
+0012395206 00000 n 
+0012395473 00000 n 
+0012404158 00000 n 
+0012404267 00000 n 
+0012404376 00000 n 
+0012404490 00000 n 
+0012404607 00000 n 
+0012404728 00000 n 
+0012404983 00000 n 
+0012406584 00000 n 
+0012406693 00000 n 
+0012406802 00000 n 
+0012406916 00000 n 
+0012407033 00000 n 
+0012407288 00000 n 
+0012420011 00000 n 
+0012420120 00000 n 
+0012420229 00000 n 
+0012420343 00000 n 
+0012420460 00000 n 
+0012420715 00000 n 
+0012429285 00000 n 
+0012429394 00000 n 
+0012429649 00000 n 
+0012431172 00000 n 
+0012431281 00000 n 
+0012431390 00000 n 
+0012431504 00000 n 
+0012431621 00000 n 
+0012431876 00000 n 
+0012440248 00000 n 
+0012440357 00000 n 
+0012440466 00000 n 
+0012440580 00000 n 
+0012440697 00000 n 
+0012440952 00000 n 
+0012442632 00000 n 
+0012442741 00000 n 
+0012442850 00000 n 
+0012442964 00000 n 
+0012443081 00000 n 
+0012443336 00000 n 
+0012455725 00000 n 
+0012455834 00000 n 
+0012455943 00000 n 
+0012456057 00000 n 
+0012456174 00000 n 
+0012456443 00000 n 
+0012458186 00000 n 
+0012458295 00000 n 
+0012458404 00000 n 
+0012458518 00000 n 
+0012458635 00000 n 
+0012459946 00000 n 
+0012460214 00000 n 
+0012480801 00000 n 
+0012481582 00000 n 
+0012481974 00000 n 
+0012500044 00000 n 
+0012500153 00000 n 
+0012500262 00000 n 
+0012500376 00000 n 
+0012500782 00000 n 
+0012516423 00000 n 
+0012516532 00000 n 
+0012516641 00000 n 
+0012516750 00000 n 
+0012516864 00000 n 
+0012517256 00000 n 
+0012519413 00000 n 
+0012519522 00000 n 
+0012519631 00000 n 
+0012519745 00000 n 
+0012520137 00000 n 
+0012531293 00000 n 
+0012531402 00000 n 
+0012531511 00000 n 
+0012531625 00000 n 
+0012532031 00000 n 
+0012542489 00000 n 
+0012542598 00000 n 
+0012542707 00000 n 
+0012542816 00000 n 
+0012542930 00000 n 
+0012543185 00000 n 
+0012545114 00000 n 
+0012545223 00000 n 
+0012545332 00000 n 
+0012545446 00000 n 
+0012545563 00000 n 
+0012545818 00000 n 
+0012558928 00000 n 
+0012559037 00000 n 
+0012559146 00000 n 
+0012559260 00000 n 
+0012559377 00000 n 
+0012559632 00000 n 
+0012572201 00000 n 
+0012572310 00000 n 
+0012572565 00000 n 
+0012585568 00000 n 
+0012585677 00000 n 
+0012585932 00000 n 
+0012598980 00000 n 
+0012599089 00000 n 
+0012599344 00000 n 
+0012608674 00000 n 
+0012608783 00000 n 
+0012609161 00000 n 
+0012620238 00000 n 
+0012620347 00000 n 
+0012620456 00000 n 
+0012620820 00000 n 
+0012622391 00000 n 
+0012622500 00000 n 
+0012622864 00000 n 
+0012643140 00000 n 
+0012643249 00000 n 
+0012643613 00000 n 
+0012661131 00000 n 
 trailer
 <<
-/Size 360
+/Size 372
 /Root 3 0 R
 /Info 2 0 R
 >>
 startxref
-12651539
+12661240
 %%EOF
