@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Audit &amp; Trust Frameworks — 12toKNOW</title>
+<meta name="description" content="Bringing audit discipline to AI-produced work. A suite of field-tested frameworks for the leaders and analysts who act on AI-generated analysis. By DeWayne Searcy, PhD. Open access, no sign-up.">
+<!--
+  12toKNOW · AI Audit & Trust Frameworks hub (subpage of index.html)
+  Self-contained: system fonts only, no external CDN (conference-wifi safe) — matches index.html.
+  Brand: green #135339 / dark #0D3526 / orange #E87722 / cream #FAF8F2.
+  MODEL (per DeWayne, Jul 2026):
+    - Open access, NO email capture, no paywall — free/brand-building must be truly open.
+    - Suite scoped to AI audit & trust. Four rungs: 01 Case Study (proof), 02 Three Gates
+      (operating manual), 03 Trust Framework (governance), 04 Audit Guidebook (method).
+    - Rungs 03 (Trust Framework, trust-framework.html) and 04 (Audit Guidebook,
+      audit-guidebook.html) are LIVE. Rungs 01-02 remain "Publishing soon" and are NOT linked
+      until reviewed (Three Gates is under review before it goes live).
+    - "Managing Inputs, Not Just Outcomes" (former rung 01) moved out to the IMA26 cluster:
+      its foundation lives on six-cognitive-instruments.html, its activities on ima26.html.
+  TO PUBLISH: upload as ai-audit-trust.html to the 12toknow.github.io repo, then flip the
+    "Coming soon" card on index.html to: <a class="card" href="ai-audit-trust.html"> … </a>.
+  FRAMEWORK LINKS: coming-soon rungs point to #suite; wire each to its page as it goes live.
+  THOUGHT LINKS: quote sources point to the LinkedIn profile; swap in per-post permalinks when handy.
+-->
+<style>
+  :root{
+    --green:#135339; --green-dk:#0D3526; --orange:#E87722; --orange-dk:#C15E12;
+    --cream:#FAF8F2; --card:#ffffff; --ink:#1c211e; --muted:#5f6b64; --line:#e4e6e1;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--green);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* ---- header ---- */
+  header{background:var(--green);color:#fff;position:sticky;top:0;z-index:20}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:22px;color:#fff;letter-spacing:.5px}
+  .logo .k{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:16px;letter-spacing:1px}
+  .logo .w{color:var(--orange)}
+  nav a{color:#dbeae2;font-size:14.5px;margin-left:22px;font-weight:600}
+  nav a:hover{color:#fff}
+  @media(max-width:640px){nav a{margin-left:14px;font-size:13px}.logo{font-size:19px}}
+
+  /* ---- hero ---- */
+  .hero{background:linear-gradient(160deg,var(--green) 0%,var(--green-dk) 100%);color:#fff;padding:64px 0 50px}
+  .hero .eyebrow{color:var(--orange);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;margin:0 0 14px}
+  .hero h1{font-family:Georgia,serif;font-size:44px;line-height:1.13;margin:0 0 18px;max-width:20ch}
+  .hero h1 em{font-style:italic;color:#ffd9b8}
+  .hero p{font-size:18px;color:#d7e4dc;max-width:64ch;margin:0}
+  .hero .note{margin:22px 0 0;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9fc6b4}
+  @media(max-width:640px){.hero h1{font-size:31px}.hero{padding:46px 0 40px}}
+
+  /* ---- stat strip ---- */
+  .stats{background:var(--green-dk);color:#fff}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .stat{padding:20px 22px;border-right:1px solid #24463743}
+  .stat:last-child{border-right:0}
+  .stat b{font-family:Georgia,serif;font-size:30px;color:var(--orange);display:block;line-height:1}
+  .stat span{font-size:12.5px;color:#bcccc3;display:block;margin-top:7px;line-height:1.35}
+  @media(max-width:640px){.stats .wrap{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid #24463743}}
+
+  /* ---- sections ---- */
+  section{padding:52px 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--green);padding-bottom:10px;margin-bottom:22px}
+  .sec-head h2{font-family:Georgia,serif;font-size:25px;color:var(--green-dk);margin:0}
+  .sec-head .tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .sec-intro{color:var(--muted);font-size:15.5px;margin:0 0 26px;max-width:72ch}
+
+  .pull{font-family:Georgia,serif;font-style:italic;font-size:22px;line-height:1.4;color:var(--green-dk);
+    border-left:4px solid var(--orange);padding:6px 0 6px 24px;margin:8px 0 24px;max-width:60ch}
+  .pull cite{display:block;font-family:Arial,Helvetica,sans-serif;font-style:normal;font-size:11.5px;
+    font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .cols h4{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--orange-dk);margin:0 0 8px}
+  .cols p{font-size:14.5px;color:#33403a;margin:0;max-width:52ch}
+  @media(max-width:760px){.cols{grid-template-columns:1fr;gap:20px}}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid.two{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.grid,.grid.two{grid-template-columns:1fr}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 20px;display:flex;flex-direction:column;transition:transform .12s ease,box-shadow .12s ease}
+  a.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(19,83,57,.10)}
+  .card .kicker{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--orange-dk);margin:0 0 8px}
+  .card h3{font-family:Georgia,serif;font-size:19px;color:var(--ink);margin:0 0 8px;line-height:1.25}
+  .card p{font-size:14px;color:var(--muted);margin:0 0 16px;flex:1}
+  .card .go{font-weight:700;font-size:14px;color:var(--green);margin-top:auto}
+  .card .go.soon{color:var(--muted);font-weight:700;display:inline-flex;align-items:center;gap:7px}
+  .card .go.soon::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);display:inline-block}
+  .card .who{font-size:11.5px;color:#93a49b;margin:10px 0 0}
+
+  /* ---- working paper callout ---- */
+  .paper{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:start;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:12px;padding:24px 26px;margin-top:20px}
+  @media(max-width:760px){.paper{grid-template-columns:1fr;gap:18px}}
+  .paper .kicker{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--orange-dk);margin:0 0 8px}
+  .paper h3{font-family:Georgia,serif;font-size:21px;color:var(--green-dk);margin:0 0 6px;line-height:1.25}
+  .paper .paper-meta{font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--muted);margin:0 0 12px}
+  .paper .paper-frame{font-size:14.5px;color:#33403a;margin:0 0 12px;max-width:64ch}
+  .paper .paper-cite{font-size:12px;color:#7a857e;margin:0;max-width:72ch}
+  .paper-cta{display:flex;flex-direction:column;gap:10px;min-width:150px}
+  @media(max-width:760px){.paper-cta{flex-direction:row;flex-wrap:wrap}}
+  .paper-btn{display:inline-block;text-align:center;background:var(--orange);color:#fff;font-weight:700;font-size:14px;padding:11px 18px;border-radius:8px;white-space:nowrap}
+  .paper-btn:hover{background:var(--orange-dk)}
+  .paper-btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--line)}
+  .paper-btn.ghost:hover{background:var(--cream);border-color:var(--orange)}
+  .paper-abstract{margin:0 0 12px}
+  .paper-abstract summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--green);list-style:none;display:inline-block}
+  .paper-abstract summary::-webkit-details-marker{display:none}
+  .paper-abstract summary::before{content:"▸ ";color:var(--orange-dk)}
+  .paper-abstract[open] summary::before{content:"▾ "}
+  .paper-abstract .ab{font-size:13.5px;color:#3a4640;margin:11px 0 9px;line-height:1.55;max-width:74ch}
+  .paper-abstract .kw{font-size:11.5px;color:#7a857e;margin:0}
+  .paper-abstract .kw b{color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
+  /* ---- comments & thoughts ---- */
+  .band{background:#0f2b20;color:#fff}
+  .band .sec-head{border-color:var(--orange)}
+  .band .sec-head h2{color:#fff}
+  .band .sec-head .tag{color:#9fb5a9}
+  .band .sec-intro{color:#b9c9c0}
+  .thoughts{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media(max-width:760px){.thoughts{grid-template-columns:1fr}}
+  .thought{background:#12332595;border:1px solid #25493a;border-radius:12px;padding:22px 22px 18px;display:flex;flex-direction:column}
+  .thought .ttag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#ffcea8;margin:0 0 12px}
+  .thought blockquote{font-family:Georgia,serif;font-style:italic;font-size:18px;line-height:1.42;color:#f2f7f4;margin:0 0 14px;flex:1}
+  .thought .src{font-size:12.5px;color:#9fb5a9;font-weight:700;margin-top:auto}
+  .thought .src a{color:#ffcea8}
+  .thought .src a:hover{color:#fff}
+  .thought .readpost{font-size:12px;font-weight:700;margin:5px 0 0}
+  .thought .readpost a{color:#ffcea8}
+  .thought .readpost a:hover{color:#fff}
+
+  /* ---- follow band ---- */
+  .follow{background:linear-gradient(160deg,var(--green),var(--green-dk));color:#fff}
+  .follow .sec-head{border-color:var(--orange)}
+  .follow .sec-head h2{color:#fff}
+  .follow-in{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center}
+  @media(max-width:820px){.follow-in{grid-template-columns:1fr;gap:22px}}
+  .follow-in h3{font-family:Georgia,serif;font-size:26px;margin:0 0 12px;color:#fff}
+  .follow-in h3 em{font-style:italic;color:#ffd9b8}
+  .follow-in .lead{color:#d7e4dc;font-size:15.5px;margin:0 0 16px;max-width:46ch}
+  .follow-list{list-style:none;padding:0;margin:0}
+  .follow-list li{padding:6px 0 6px 22px;position:relative;color:#cfe0d7;font-size:14.5px}
+  .follow-list li::before{content:"→";position:absolute;left:0;color:var(--orange)}
+  .follow-card{background:#0e281e;border:1px solid #25493a;border-radius:12px;padding:8px 22px}
+  .follow-card a{display:block;padding:16px 0;border-bottom:1px solid #23453682;color:#fff;font-weight:700;font-size:15.5px}
+  .follow-card a:last-child{border-bottom:0}
+  .follow-card a:hover{color:#ffcea8}
+  .follow-card a span{display:block;font-weight:400;font-size:12.5px;color:#9fb5a9;margin-top:3px}
+
+  /* ---- interactive teaser ---- */
+  .tryit{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center;background:linear-gradient(160deg,var(--green),var(--green-dk));color:#fff;border:1px solid #25493a;border-radius:14px;padding:30px 34px}
+  @media(max-width:820px){.tryit{grid-template-columns:1fr;gap:22px;padding:26px 22px}}
+  .tryit-label{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#ffcea8;margin:0 0 10px}
+  .tryit h3{font-family:Georgia,serif;font-size:24px;color:#fff;margin:0 0 10px;line-height:1.18}
+  .tryit-copy p{color:#d7e4dc;font-size:14.5px;margin:0;max-width:46ch}
+  .tryit-demo{background:#0e281e;border:1px solid #25493a;border-radius:10px;padding:22px}
+  .tryit-q{font-family:Georgia,serif;font-style:italic;font-size:16px;color:#fff;margin:0 0 14px;line-height:1.35}
+  .tryit-opts{display:flex;flex-direction:column;gap:8px}
+  .tryit-opt{font-family:inherit;text-align:left;background:#123325;border:1px solid #2f5a48;border-radius:8px;padding:11px 14px;color:#dfeae4;font-size:13.5px;line-height:1.35;cursor:pointer;transition:border-color .12s,background .12s,color .12s}
+  .tryit-opt:hover{border-color:var(--orange);background:#16402f}
+  .tryit-opt.on{background:linear-gradient(135deg,#E87722,#FF8200);border-color:transparent;color:#fff;font-weight:600}
+  .tryit-result{min-height:20px;margin:12px 0 0;font-size:13px;font-weight:700;color:#ffcea8;opacity:0;transition:opacity .2s}
+  .tryit-result.show{opacity:1}
+
+  footer{background:var(--green-dk);color:#b9c9c0;font-size:13px;padding:26px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="index.html"><span class="n">12</span><span class="k">toKNO<span class="w">W</span></span></a>
+    <nav>
+      <a href="index.html">← Home</a>
+      <a href="#suite">The suite</a>
+      <a href="#thoughts">Thoughts</a>
+      <a href="mailto:dewayne.searcy@gmail.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ---- hero ---- -->
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">AI Audit &amp; Trust Frameworks</p>
+    <h1>AI reports what's in the file — <em>not what's true</em> in the business.</h1>
+    <p>Every framework for AI in the enterprise tells you how to govern the <em>system</em>. None tell a finance leader what to do in the thirty minutes between receiving an AI analysis and acting on it. This is that missing discipline — field-tested on a real 400,000-transaction fleet analysis, built for the people who have to sign their name to the number.</p>
+    <p class="note">Open access · no sign-up </p>
+  </div>
+</div>
+
+<!-- ---- stat strip ---- -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>4</b><span>Interlocking frameworks, proof to practice</span></div>
+    <div class="stat"><b>400K+</b><span>Transactions behind the case study</span></div>
+    <div class="stat"><b>142</b><span>Days of hidden data gap the audit caught</span></div>
+    <div class="stat"><b>0</b><span>Published frameworks for the pre-action audit — the gap we're filling</span></div>
+  </div>
+</div>
+
+<!-- ---- why this exists ---- -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head"><h2>Why this exists</h2><span class="tag">The gap</span></div>
+    <p class="sec-intro">Finance leaders now work with AI directly. The junior analyst who used to reconcile the numbers before they reached the CFO is gone — and with them went the layer that quietly caught the errors.</p>
+    <div class="pull">
+      Modern AI produces structured, sourced-sounding output regardless of whether the underlying numbers are correct. Tone is evidence of writing capability — not analytical accuracy.
+      <cite>The C-Suite AI Output Trust Framework</cite>
+    </div>
+    <div class="cols">
+      <div>
+        <h4>The problem no one owns</h4>
+        <p>Governance standards — NIST, ISO 42001, the Big Four playbooks — all audit AI <strong>systems</strong>: how models are built, validated, deployed. Excellent work, wrong problem. None govern the moment that decides outcomes: an executive has the analysis in hand and needs to know how much weight the evidence actually supports before acting.</p>
+      </div>
+      <div>
+        <h4>Why it's built from the field</h4>
+        <p>Traditional audit standards are written by regulators and adopted years later. For AI-output audit, that's too slow. This discipline was built from the user side — on a real capital decision — and codified while the ink was still wet. That's what these frameworks are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---- the suite ---- -->
+<section id="suite" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>The Suite</h2><span class="tag">Open access/span></div>
+    <p class="sec-intro">Four documents that reference and reinforce each other — a ladder from the real-world proof down to the checklist an analyst runs on a Tuesday. They publish here as each is finalized — free to read and share, no email. Read one, or follow the whole chain.</p>
+
+    <div class="grid">
+      <div class="card">
+        <p class="kicker">01 · The proof</p>
+        <h3>The MDL-J4208 Case Study</h3>
+        <p>The real 400,000-transaction fleet dataset the method was forged on. A three-tier audit that traced every number to source — and found a 142-day gap between the file and the ERP that no formula could have caught.</p>
+        <p class="who">For executives weighing the evidence behind the method</p>
+        <span class="go soon">Publishing soon</span>
+      </div>
+      <div class="card">
+        <p class="kicker">02 · The operating manual</p>
+        <h3>The Three Gates Framework</h3>
+        <p>Fleet decisions fail at three specific moments — Purchase, Performance, Governance — each with its own inputs and failure signature. Its governance gate is where AI-output audit and trust discipline live. Includes self-check tools that score your discipline at each gate.</p>
+        <p class="who">For dealer principals, GMs &amp; rental leads</p>
+        <span class="go soon">Publishing soon</span>
+      </div>
+      <a class="card" href="trust-framework.html">
+        <p class="kicker">03 · The governance layer</p>
+        <h3>The C-Suite AI Output Trust Framework</h3>
+        <p>The tactical protocol for the pre-action moment: a Trust Equation, the Five Questions before you act, the four executive roles, and a Trust-Tier Assessor that classifies the output on your desk.</p>
+        <p class="who">For the C-suite &amp; board-facing operators</p>
+        <span class="go">Read the framework →</span>
+      </a>
+      <a class="card" href="audit-guidebook.html">
+        <p class="kicker">04 · The practitioner method</p>
+        <h3>The AI Analysis Audit Guidebook</h3>
+        <p>The hands-on methodology: six core principles, the three-tier audit model, a phase-by-phase checklist, and reusable prompt templates for audit-ready output. The playbook an analyst works from.</p>
+        <p class="who">For financial analysts &amp; internal audit</p>
+        <span class="go">Read the guidebook →</span>
+      </a>
+      <div class="card" style="background:#f4f6f3;border-style:dashed;justify-content:center">
+        <p class="kicker" style="color:var(--muted)">The through-line</p>
+        <h3 style="color:var(--green-dk)">One thread, from <span style="font-style:italic">why</span> to <span style="font-style:italic">how</span>.</h3>
+        <p>Each piece answers the next question: whether the method holds in real data, when and who manages the decision, how much to trust the output, and how to audit it in detail.</p>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-body">
+        <p class="kicker">The Research · Working Paper</p>
+        <h3>The Auditor's Eye: Manufacturing Independence in AI-Assisted Knowledge Work</h3>
+        <p class="paper-meta">DeWayne L. Searcy, PhD · July 2026 · SSRN Working Paper</p>
+        <p class="paper-frame">The academic foundation beneath the suite. When AI both produces an analysis and gathers the evidence under it in a session no one watched, the ordinary basis for trusting the result disappears — and auditing the <em>model</em> never answers the operative question: is <em>this</em> deliverable actually supported? The paper specifies that missing layer — a substantive, per-deliverable assurance discipline drawn from the audit profession's oldest machinery — arguing that AI erodes the two properties any review depends on, competence and independence, and that independence can't be willed into being; it has to be engineered.</p>
+        <details class="paper-abstract">
+          <summary>Read the full abstract</summary>
+          <p class="ab">Generative and agentic artificial intelligence now produces the analyses professionals act on and, increasingly, gathers the evidence beneath them without human observation — removing the ordinary basis for trusting a result. The emerging response audits the model: is it fair, documented, governed? That is necessary but does not answer the operative question about a specific output — is this deliverable actually supported? — because the support depends on evidence the model gathered in a session no one watched. This paper specifies the missing layer: a substantive, per-deliverable assurance discipline for AI-assisted knowledge work, drawn from the audit profession's oldest machinery. Its organizing claim is that AI erodes the two properties on which any review depends — the reviewer's competence to detect an error and the reviewer's independence of the answer — and that of these, independence cannot be acquired by resolve and must therefore be engineered. I set out a competence-by-independence frame that prescribes a different remedy in each cell, three supporting components (a Trust-Tier classification calibrating verification to stakes, a net-of-verification measure I call the audit tax, and provenance controls for unobserved agentic evidence), and a reproducible procedure. I demonstrate the discipline in three unrelated bodies of my own AI-assisted work: quantitative business analysis, archival genealogy, and the synthesis of fifteen years of management notebooks. Because a single practitioner designed, performed, instrumented and audited all three, I frame the recurrence across domains as a structured conjecture, not a validated method. A fourth case reports the procedure run prospectively on a live capital-and-personnel decision, with independence supplied by two colleagues drawing on separate systems of record. A blind reconciliation there caught a parsing defect that had silently discarded 37,682 records and understated the headline measure by nearly nine percentage points — a defect that an adversarial re-performance, written from scratch by an independent implementation, had reproduced exactly and therefore missed. One demonstration is supplied as a workbook whose audit chain a reader can re-perform in full.</p>
+          <p class="kw"><b>Keywords:</b> artificial intelligence · knowledge work · verification · provenance · assurance · auditing · research methods · tool-driven discovery</p>
+        </details>
+        <p class="paper-cite">Searcy, DeWayne L., <em>The Auditor's Eye: Manufacturing Independence in AI-Assisted Knowledge Work</em> (July 29, 2026). Available at SSRN.</p>
+      </div>
+      <div class="paper-cta">
+        <a class="paper-btn" href="https://ssrn.com/abstract=7203199" target="_blank" rel="noopener">Read on SSRN ↗</a>
+        <a class="paper-btn ghost" href="https://doi.org/10.2139/ssrn.7203199" target="_blank" rel="noopener">View DOI ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---- start here / pathways ---- -->
+<section id="start" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2>Start Here</h2><span class="tag">Pick your seat</span></div>
+    <p class="sec-intro">Three ways in, depending on where you sit. Each points to where the suite begins for you.</p>
+    <div class="grid">
+      <a class="card" href="trust-framework.html">
+        <p class="kicker">If you sign the decision</p>
+        <h3>The Executive</h3>
+        <p>You get AI analysis and have to act on it. Start with the Trust Framework — run the Trust-Tier Assessor on the output on your desk, then keep the Five Questions as your pre-meeting checklist.</p>
+        <span class="go">The Trust Framework →</span>
+      </a>
+      <a class="card" href="#suite">
+        <p class="kicker">If you run the fleet</p>
+        <h3>The Operator</h3>
+        <p>You own the assets and the purchase calls. Start with the Three Gates — score your discipline at each gate, then read the case study to see all three gates fail, and how the data exposed it.</p>
+        <span class="go">The Three Gates →</span>
+      </a>
+      <a class="card" href="audit-guidebook.html">
+        <p class="kicker">If you build the analysis</p>
+        <h3>The Analyst</h3>
+        <p>You produce the numbers others act on. Start with the Audit Guidebook — the checklist, the tolerances, and the prompt templates that make your output audit-ready from the first draft.</p>
+        <span class="go">The Audit Guidebook →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ---- interactive teaser ---- -->
+<section id="tryit" style="padding-top:0">
+  <div class="wrap">
+    <div class="tryit">
+      <div class="tryit-copy">
+        <p class="tryit-label">Not a PDF you skim — a tool you use</p>
+        <h3>Classify the output on your desk in three minutes.</h3>
+        <p>The frameworks include working assessors, not static checklists. Answer three quick questions about a real decision and the Trust-Tier Assessor tells you how much scrutiny it needs before you act. Try the first one:</p>
+      </div>
+      <div class="tryit-demo">
+        <p class="tryit-q">If you act on this AI output and it turns out wrong, how hard is it to unwind?</p>
+        <div class="tryit-opts" id="tryOpts">
+          <button type="button" class="tryit-opt" data-r="Easy to reverse → likely Tier 1. Spot-check a number and proceed.">Easy — I can change course next week</button>
+          <button type="button" class="tryit-opt" data-r="Recoverable but costly → Tier 2. Require reconciliation and a named reviewer.">Hard — real cost, recoverable over a quarter</button>
+          <button type="button" class="tryit-opt" data-r="Irreversible → Tier 3 minimum. Full audit and a second opinion before sign-off.">Effectively irreversible — capital, hiring, a filing</button>
+        </div>
+        <p class="tryit-result" id="tryResult"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---- comments & thoughts ---- -->
+<div class="band" id="thoughts">
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>Comments &amp; Thoughts</h2><span class="tag">Field notes</span></div>
+      <p class="sec-intro">These frameworks didn't start as frameworks. They started as notes from the keyboard — worked out in the open, one post at a time. A rotating handful of them, tagged to the piece they grew into.</p>
+      <div class="thoughts">
+        <div class="thought">
+          <p class="ttag">On auditing AI output</p>
+          <blockquote>"Nothing in the output was wrong. That's what made it dangerous."</blockquote>
+          <p class="src">From LinkedIn · <a href="https://www.linkedin.com/in/dewayne-searcy-phd-2270902" target="_blank" rel="noopener">DeWayne Searcy ↗</a></p>
+          <p class="readpost"><a href="https://www.linkedin.com/posts/dewayne-searcy-phd-2270902_using-claude-with-purposefeels-like-fsd-activity-7480280928230019072--0Mb" target="_blank" rel="noopener">Read the full post on LinkedIn ↗</a></p>
+        </div>
+        <div class="thought">
+          <p class="ttag">Why the audit trail matters</p>
+          <blockquote>"How can I put confidence on the results of an analysis if I am unsure said results are actually derived from the raw data?"</blockquote>
+          <p class="src">From LinkedIn · <a href="https://www.linkedin.com/in/dewayne-searcy-phd-2270902" target="_blank" rel="noopener">DeWayne Searcy ↗</a></p>
+        </div>
+        <div class="thought">
+          <p class="ttag">Augmentation vs. outsourcing</p>
+          <blockquote>"Augmentation compounds. Outsourcing erodes. No productivity gain compensates for the judgment you let atrophy."</blockquote>
+          <p class="src">From LinkedIn · <a href="https://www.linkedin.com/in/dewayne-searcy-phd-2270902" target="_blank" rel="noopener">DeWayne Searcy ↗</a></p>
+          <p class="readpost"><a href="https://www.linkedin.com/posts/dewayne-searcy-phd-2270902_ai-leadership-executivejudgment-activity-7465717723940028417-96-7" target="_blank" rel="noopener">Read the full post on LinkedIn ↗</a></p>
+        </div>
+        <div class="thought">
+          <p class="ttag">Knowing when to close the laptop</p>
+          <blockquote>"Knowing when not to use AI is part of using it well."</blockquote>
+          <p class="src">From LinkedIn · <a href="https://www.linkedin.com/in/dewayne-searcy-phd-2270902" target="_blank" rel="noopener">DeWayne Searcy ↗</a></p>
+          <p class="readpost"><a href="https://www.linkedin.com/posts/dewayne-searcy-phd-2270902_ai-leadership-claude-activity-7462150697179062272-Aysl" target="_blank" rel="noopener">Read the full post on LinkedIn ↗</a></p>
+        </div>
+        <div class="thought">
+          <p class="ttag">Manage inputs, not outcomes</p>
+          <blockquote>"You can't manage ROI, net income, or gross profit. They're lagging indicators — the scoreboard at the end of the game, not the plays that won it."</blockquote>
+          <p class="src">From LinkedIn · <a href="https://www.linkedin.com/in/dewayne-searcy-phd-2270902" target="_blank" rel="noopener">DeWayne Searcy ↗</a></p>
+          <p class="readpost"><a href="https://www.linkedin.com/posts/dewayne-searcy-phd-2270902_ima26-accountingandfinance-financeleadership-activity-7473154715070156800-Qj7z" target="_blank" rel="noopener">Read the full post on LinkedIn ↗</a></p>
+        </div>
+        <div class="thought">
+          <p class="ttag">Data-driven, done right</p>
+          <blockquote>"Quantify first, then qualify. Let the data do the talking, first."</blockquote>
+          <p class="src">A working maxim · DeWayne Searcy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ---- follow / open access ---- -->
+<div class="follow" id="follow">
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>Open Access</h2><span class="tag">No sign-up</span></div>
+      <div class="follow-in">
+        <div>
+          <h3>Free to read. Free to share. <em>No sign-up.</em></h3>
+          <p class="lead">This is a public resource, built in the open. Nothing here sits behind an email wall or a paywall — the point is the thinking, and the discipline behind it.</p>
+          <ul class="follow-list">
+            <li>Every framework, free to read and share — no account, no email</li>
+            <li>New editions and case studies published as they're ready</li>
+            <li>Built in the open</li>
+          </ul>
+        </div>
+        <div class="follow-card">
+          <a href="https://open.spotify.com/show/2sO44h7mkiZaMlfOPtqgQT" target="_blank" rel="noopener">12 to KNOW — The Daily →<span>The AI-generated podcast · 100+ editions</span></a>
+          <a href="https://www.linkedin.com/in/dewayne-searcy-phd-2270902" target="_blank" rel="noopener">Connect on LinkedIn →<span>Framework drops and field notes</span></a>
+          <a href="mailto:dewayne.searcy@gmail.com">Reach out directly →<span>dewayne.searcy@gmail.com</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 DeWayne Searcy, PhD · Alabama, USA · All rights reserved</span>
+    <span><a href="index.html" style="color:#ffcea8;font-weight:700">12toKNOW</a> &nbsp;·&nbsp; AI Audit &amp; Trust Frameworks &nbsp;·&nbsp; 12toKNOW™</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var opts=document.querySelectorAll('#tryOpts .tryit-opt');
+  var res=document.getElementById('tryResult');
+  opts.forEach(function(o){
+    o.addEventListener('click',function(){
+      opts.forEach(function(x){x.classList.remove('on');});
+      o.classList.add('on');
+      res.textContent=o.getAttribute('data-r');
+      res.classList.add('show');
+    });
+  });
+})();
+</script>
+</body>
+</html>
