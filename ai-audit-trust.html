@@ -94,6 +94,29 @@
   .card .go.soon::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);display:inline-block}
   .card .who{font-size:11.5px;color:#93a49b;margin:10px 0 0}
 
+  /* ---- working paper callout ---- */
+  .paper{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:start;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:12px;padding:24px 26px;margin-top:20px}
+  @media(max-width:760px){.paper{grid-template-columns:1fr;gap:18px}}
+  .paper .kicker{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--orange-dk);margin:0 0 8px}
+  .paper h3{font-family:Georgia,serif;font-size:21px;color:var(--green-dk);margin:0 0 6px;line-height:1.25}
+  .paper .paper-meta{font-size:12.5px;font-weight:700;letter-spacing:.03em;color:var(--muted);margin:0 0 12px}
+  .paper .paper-frame{font-size:14.5px;color:#33403a;margin:0 0 12px;max-width:64ch}
+  .paper .paper-cite{font-size:12px;color:#7a857e;margin:0;max-width:72ch}
+  .paper-cta{display:flex;flex-direction:column;gap:10px;min-width:150px}
+  @media(max-width:760px){.paper-cta{flex-direction:row;flex-wrap:wrap}}
+  .paper-btn{display:inline-block;text-align:center;background:var(--orange);color:#fff;font-weight:700;font-size:14px;padding:11px 18px;border-radius:8px;white-space:nowrap}
+  .paper-btn:hover{background:var(--orange-dk)}
+  .paper-btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--line)}
+  .paper-btn.ghost:hover{background:var(--cream);border-color:var(--orange)}
+  .paper-abstract{margin:0 0 12px}
+  .paper-abstract summary{cursor:pointer;font-size:13px;font-weight:700;color:var(--green);list-style:none;display:inline-block}
+  .paper-abstract summary::-webkit-details-marker{display:none}
+  .paper-abstract summary::before{content:"▸ ";color:var(--orange-dk)}
+  .paper-abstract[open] summary::before{content:"▾ "}
+  .paper-abstract .ab{font-size:13.5px;color:#3a4640;margin:11px 0 9px;line-height:1.55;max-width:74ch}
+  .paper-abstract .kw{font-size:11.5px;color:#7a857e;margin:0}
+  .paper-abstract .kw b{color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+
   /* ---- comments & thoughts ---- */
   .band{background:#0f2b20;color:#fff}
   .band .sec-head{border-color:var(--orange)}
@@ -244,6 +267,25 @@
         <p class="kicker" style="color:var(--muted)">The through-line</p>
         <h3 style="color:var(--green-dk)">One thread, from <span style="font-style:italic">why</span> to <span style="font-style:italic">how</span>.</h3>
         <p>Each piece answers the next question: whether the method holds in real data, when and who manages the decision, how much to trust the output, and how to audit it in detail.</p>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-body">
+        <p class="kicker">The Research · Working Paper</p>
+        <h3>The Auditor's Eye: Manufacturing Independence in AI-Assisted Knowledge Work</h3>
+        <p class="paper-meta">DeWayne L. Searcy, PhD · July 2026 · SSRN Working Paper</p>
+        <p class="paper-frame">The academic foundation beneath the suite. When AI both produces an analysis and gathers the evidence under it in a session no one watched, the ordinary basis for trusting the result disappears — and auditing the <em>model</em> never answers the operative question: is <em>this</em> deliverable actually supported? The paper specifies that missing layer — a substantive, per-deliverable assurance discipline drawn from the audit profession's oldest machinery — arguing that AI erodes the two properties any review depends on, competence and independence, and that independence can't be willed into being; it has to be engineered.</p>
+        <details class="paper-abstract">
+          <summary>Read the full abstract</summary>
+          <p class="ab">Generative and agentic artificial intelligence now produces the analyses professionals act on and, increasingly, gathers the evidence beneath them without human observation — removing the ordinary basis for trusting a result. The emerging response audits the model: is it fair, documented, governed? That is necessary but does not answer the operative question about a specific output — is this deliverable actually supported? — because the support depends on evidence the model gathered in a session no one watched. This paper specifies the missing layer: a substantive, per-deliverable assurance discipline for AI-assisted knowledge work, drawn from the audit profession's oldest machinery. Its organizing claim is that AI erodes the two properties on which any review depends — the reviewer's competence to detect an error and the reviewer's independence of the answer — and that of these, independence cannot be acquired by resolve and must therefore be engineered. I set out a competence-by-independence frame that prescribes a different remedy in each cell, three supporting components (a Trust-Tier classification calibrating verification to stakes, a net-of-verification measure I call the audit tax, and provenance controls for unobserved agentic evidence), and a reproducible procedure. I demonstrate the discipline in three unrelated bodies of my own AI-assisted work: quantitative business analysis, archival genealogy, and the synthesis of fifteen years of management notebooks. Because a single practitioner designed, performed, instrumented and audited all three, I frame the recurrence across domains as a structured conjecture, not a validated method. A fourth case reports the procedure run prospectively on a live capital-and-personnel decision, with independence supplied by two colleagues drawing on separate systems of record. A blind reconciliation there caught a parsing defect that had silently discarded 37,682 records and understated the headline measure by nearly nine percentage points — a defect that an adversarial re-performance, written from scratch by an independent implementation, had reproduced exactly and therefore missed. One demonstration is supplied as a workbook whose audit chain a reader can re-perform in full.</p>
+          <p class="kw"><b>Keywords:</b> artificial intelligence · knowledge work · verification · provenance · assurance · auditing · research methods · tool-driven discovery</p>
+        </details>
+        <p class="paper-cite">Searcy, DeWayne L., <em>The Auditor's Eye: Manufacturing Independence in AI-Assisted Knowledge Work</em> (July 29, 2026). Available at SSRN.</p>
+      </div>
+      <div class="paper-cta">
+        <a class="paper-btn" href="https://ssrn.com/abstract=7203199" target="_blank" rel="noopener">Read on SSRN ↗</a>
+        <a class="paper-btn ghost" href="https://doi.org/10.2139/ssrn.7203199" target="_blank" rel="noopener">View DOI ↗</a>
       </div>
     </div>
   </div>
