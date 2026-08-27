@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Managing Inputs, Not Just Outcomes — Working Paper — 12toKNOW</title>
+<meta name="description" content="A DuPont-style working paper: why ROI, net income, and gross profit can't be managed — only produced — and how to find, own, and manage the human inputs that create them. By DeWayne L. Searcy, PhD. Adapted from his IMA26 presentation. Open access.">
+<!--
+  12toKNOW · Working Paper: "Managing Inputs, Not Just Outcomes"
+  Self-contained: system/serif fonts only, no external CDN (conference-wifi safe) — matches index.html / ai-audit-trust.html.
+  Brand: green #135339 / dark #0D3526 / orange #E87722 / cream #FAF8F2.
+  Companion to the IMA26 cluster: ima26.html (table activities) + six-cognitive-instruments.html (foundation).
+  TO PUBLISH: upload as managing-inputs-working-paper.html to the 12toknow.github.io repo, then add the tile
+    (see chat) to index.html in the IMA26 cluster.
+-->
+<style>
+  :root{
+    --green:#135339; --green-dk:#0D3526; --orange:#E87722; --orange-dk:#C15E12;
+    --cream:#FAF8F2; --card:#ffffff; --ink:#1c211e; --muted:#5f6b64; --line:#e4e6e1;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--green);text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* header */
+  header{background:var(--green);color:#fff;position:sticky;top:0;z-index:20}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--serif);font-weight:700;font-size:22px;color:#fff;letter-spacing:.5px}
+  .logo .k{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:16px;letter-spacing:1px}
+  .logo .w{color:var(--orange)}
+  nav a{color:#dbeae2;font-size:14.5px;margin-left:22px;font-weight:600}
+  nav a:hover{color:#fff}
+  @media(max-width:640px){nav a{margin-left:14px;font-size:13px}.logo{font-size:19px}}
+
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--green) 0%,var(--green-dk) 100%);color:#fff;padding:56px 0 46px}
+  .hero .eyebrow{color:var(--orange);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;margin:0 0 14px}
+  .hero h1{font-family:var(--serif);font-size:42px;line-height:1.14;margin:0 0 16px;max-width:20ch}
+  .hero h1 em{font-style:italic;color:#ffd9b8}
+  .hero .deck{font-size:18px;color:#d7e4dc;max-width:60ch;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin:26px 0 0;padding-top:20px;border-top:1px solid #ffffff22}
+  .meta div{font-size:12.5px;color:#bcccc3}
+  .meta div b{display:block;color:#fff;font-size:13.5px;font-weight:700;margin-top:2px}
+  @media(max-width:640px){.hero h1{font-size:30px}.hero{padding:42px 0 36px}}
+
+  /* article */
+  .paperwrap{max-width:768px;margin:0 auto;padding:0 24px}
+  .paper{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    margin:-30px 0 44px;padding:40px 46px 46px;box-shadow:0 12px 40px rgba(13,53,38,.07)}
+  @media(max-width:640px){.paper{padding:28px 22px 32px;margin:-24px 0 32px}}
+
+  .abstract{background:#f4f6f3;border-left:4px solid var(--orange);border-radius:0 8px 8px 0;
+    padding:16px 20px;margin:0 0 30px}
+  .abstract .lab{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-dk);margin:0 0 7px}
+  .abstract p{font-family:var(--serif);font-size:15.5px;line-height:1.55;color:#33403a;margin:0}
+
+  .paper p{font-family:var(--serif);font-size:17px;line-height:1.66;color:#26302b;margin:0 0 18px}
+  .paper h2{font-family:var(--serif);font-size:24px;color:var(--green-dk);line-height:1.2;
+    margin:36px 0 6px;padding-bottom:9px;border-bottom:2px solid var(--green)}
+  .paper h2 + p{margin-top:14px}
+  .paper strong{color:var(--green-dk)}
+  .paper em{font-style:italic}
+  .paper .u{border-bottom:2px solid #f0c9a3;padding-bottom:1px}
+
+  /* opening scene / dialogue */
+  .scene{background:#0f2b20;color:#eaf2ee;border-radius:12px;padding:24px 26px;margin:0 0 28px}
+  .scene p{font-family:var(--serif);font-style:italic;font-size:16.5px;line-height:1.55;color:#eaf2ee;margin:0 0 12px}
+  .scene p:last-child{margin-bottom:0}
+  .scene .who{font-family:var(--sans);font-style:normal;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ffcea8;display:block;margin-bottom:4px}
+
+  .aside{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:16px;margin:0 0 18px}
+
+  /* companion cross-links */
+  .companion{max-width:768px;margin:0 auto 52px;padding:0 24px}
+  .companion .sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--green);padding-bottom:10px;margin-bottom:20px}
+  .companion .sec-head h2{font-family:var(--serif);font-size:22px;color:var(--green-dk);margin:0}
+  .companion .sec-head .tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:640px){.cgrid{grid-template-columns:1fr}}
+  a.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;transition:transform .12s ease,box-shadow .12s ease}
+  a.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(19,83,57,.10)}
+  .card .kicker{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--orange-dk);margin:0 0 8px}
+  .card h3{font-family:var(--serif);font-size:18px;color:var(--ink);margin:0 0 8px;line-height:1.25}
+  .card p{font-size:14px;color:var(--muted);margin:0 0 14px;flex:1;font-family:var(--sans)}
+  .card .go{font-weight:700;font-size:14px;color:var(--green);margin-top:auto}
+
+  .bio{max-width:768px;margin:0 auto 46px;padding:22px 24px 0;border-top:1px solid var(--line)}
+  .bio p{font-family:var(--serif);font-size:14.5px;font-style:italic;color:var(--muted);margin:0;max-width:66ch}
+
+  footer{background:var(--green-dk);color:#b9c9c0;font-size:13px;padding:26px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  footer a{color:#ffcea8;font-weight:700}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="index.html"><span class="n">12</span><span class="k">toKNO<span class="w">W</span></span></a>
+    <nav>
+      <a href="index.html">← Home</a>
+      <a href="six-cognitive-instruments.html">Six Instruments</a>
+      <a href="ima26.html">IMA26</a>
+      <a href="mailto:dewayne.searcy@gmail.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Working Paper · Strategic Finance</p>
+    <h1>Managing Inputs, <em>Not Just Outcomes</em></h1>
+    <p class="deck">A DuPont analysis reveals why ROI, net income, and gross profit can't be managed — only produced. The real work of finance is to find, own, and manage the upstream behaviors that create them.</p>
+    <div class="meta">
+      <div>Author<b>DeWayne L. Searcy, PhD</b></div>
+      <div>Version<b>Working paper · Aug 2026</b></div>
+      <div>Status<b>Not peer-reviewed</b></div>
+      <div>Origin<b>Adapted from IMA26, Tampa</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="paperwrap">
+  <article class="paper">
+
+    <div class="abstract">
+      <p class="lab">Abstract</p>
+      <p>Finance teams are held accountable for outputs — ROI, net income, gross profit — that they can only report, not manage, because by the time a number turns red the behaviors that produced it are long past. This paper uses the DuPont framework as a decomposition rather than a ratio: by repeatedly asking "what feeds it?" until each financial result traces to a specific, ownable behavior, finance can manage the upstream inputs that actually drive performance — at the level where coaching and accountability are still possible. The argument is grounded in a heavy-equipment-rental teaching case and generalized across other industries, then extended to the culture, leadership, training, feedback, and incentives that produce the behaviors in the first place.</p>
+    </div>
+
+    <div class="scene">
+      <p><span class="who">The CFO's boss</span>Net income is down 17%. Gross profit is off 10 points. You are the CFO — what is going on, and how are YOU going to fix it? We will not lose money next quarter. Do you understand?</p>
+      <p><span class="who">The CFO</span>Yes ma'am. Well, I guess I need to ensure we make money next quarter. Hmm — tell each department they need to increase their profit by 12%… and they have a quarter to make it happen.</p>
+    </div>
+
+    <p>No, that is not from a dystopian finance novel. But if you have been in accounting and finance long enough, you have most likely heard some version of the above. So we, the accounting and finance team, are responsible for ensuring profits increase next quarter. Why us? That's right — we are the department that produces the reports that show quarterly profit. If we produce it… we are responsible for it? No, wait.</p>
+
+    <p>Take a minute and think about what it takes for your company to "make money." Raise prices? Require your vendors to sell to you cheaper? Lay off someone other than "me"? Close my eyes at the end of the quarter hoping the report shows profit? Should I seek a higher being right now?</p>
+
+    <p>It takes <em>everything</em> to go right to be profitable. We all know that. So if we all know that, why do we spend so much time trying to <strong>manage the output</strong> of something that takes "everything" to go right?</p>
+
+    <p>Let's take a deep breath. Luckily for us, we do have a tool that we can use and extend — one that gets us from the output (i.e., profit) to the drivers of that profit (i.e., human behavior). You all know the tool. So let's bring it back… DuPont analysis. From profits to human behavior.</p>
+
+    <p>A DuPont analysis reveals why ROI, net income, and gross profit can't be managed — only produced. The real work is defining the upstream behaviors that produce them. And, once found, managing those behaviors. If you successfully manage the inputs, the residuals (i.e., the outputs) will flow positively.</p>
+
+    <p>The central problem with how most organizations manage financial performance is that we obsess over outputs — ROI, net income, gross profit, EBITDA, revenue growth — and treat them as if they are levers we can pull. They are not. They are results. They are the scoreboard at the end of the game, not the plays that won it. And no team ever changed the score by staring harder at the scoreboard.</p>
+
+    <h2>Outputs are lagging indicators by definition</h2>
+    <p>Begin with a distinction that sounds obvious but reshapes everything once you take it seriously: the difference between a lagging indicator and a leading one.</p>
+    <p>A lagging indicator tells you what already happened. ROI, net income, gross margin, and cash flow are all lagging. I hate to say it, but financial statements are historical documents. They are accurate, auditable, and essential — and they are also, by definition, <em>so yesterday</em>. You cannot manage them directly because there is no dial labeled "net income" anywhere in your operation. Net income is what falls out the bottom after a thousand smaller things go right or wrong.</p>
+    <p>A leading indicator, by contrast, measures a behavior or condition <em>before</em> the financial result lands. It points forward. It is something a specific person can act on today. And critically, leading indicators are the only things in a business that are manageable, because they are the only things that haven't happened yet.</p>
+    <p>The failure mode in most management reporting is that we build elaborate, beautiful dashboards composed almost entirely of lagging indicators, then convene meetings to "manage" them. We are, in effect, holding people accountable for outputs while leaving the inputs that drive those outputs unmeasured and unowned. The result is predictable: a lot of pressure, a lot of explanation, and very little change — because the things being discussed are already in the past. And even AI cannot help us at this point.</p>
+
+    <h2>DuPont is a decomposition, not a ratio</h2>
+    <p>Most finance professionals know the DuPont identity in its classic form: the tidy three-factor split of net profit margin, asset turnover, and financial leverage. It explains why two companies with identical returns can be running entirely different businesses — one earning through fat margins, another through rapid asset turns, a third through balance-sheet leverage. That much is standard.</p>
+    <p>But the real power of DuPont is not in the three-factor split. It is in what happens when you refuse to stop there. Each of those three factors is itself an output of something more granular. Asset turnover is produced by revenue and the asset base. Revenue is produced by volume, price, and availability. Availability is produced by how quickly assets are made ready and how reliably demand is captured. Keep decomposing, and the tree extends downward — past the financial drivers, into operational inputs, and finally into the human behaviors that produce those operational inputs.</p>
+    <p><strong>That last layer is the one almost no one maps.</strong> We are comfortable decomposing ROI into margin and turnover. We are far less comfortable saying out loud that asset turnover, three or four levels down, traces back to whether a specific technician completed a preventive-maintenance work order on schedule, or whether a counter representative returned a quote within twenty-four hours. Yet that is exactly where the manageable inputs live. The financial output at the top of the tree is the sum of human decisions made at the bottom of it.</p>
+
+    <h2>The question that finds the input: "What feeds it?"</h2>
+    <p>Take any number you care about and ask one thing of it: what feeds it? ROI is fed by margin and turnover. Turnover is fed by revenue and the asset base. Revenue is fed by volume, price, and availability. Availability is fed by how fast units are made rent-ready and how reliably demand is captured. Ask it again and again, refusing to accept another financial abstraction as an answer, and each pass drags you one layer closer to the ground.</p>
+    <p>The discipline is knowing when to stop, and the stopping rule is precise: <strong>keep asking "what feeds it?" until the answer is no longer a number but a behavior</strong> — a specific action taken by a specific, nameable person. That rule draws a line straight through the tree.</p>
+    <p>Above the line, everything is math: ratios, allocations, roll-ups, the accurate and auditable arithmetic of results. Below the line is management: the technician who did or did not close the work order, the counter rep who did or did not return the call. Above the line is what already happened. Below is what someone can still do.</p>
+    <p>That line does double duty, because the behavior line is also the accountability line. A measure that sits above it — a blended margin, an allocated cost, a roll-up rate — is something people can explain, contest, and quietly game, precisely because no one person controls it. A measure that sits below it can only be moved by doing the actual work; you cannot fake a closed order or a phone call that never happened into existence. That is the quiet payoff of decomposing all the way down: the measures you land on are exactly the ones you can fairly hold a named person to, because they are the only ones that person can actually move.</p>
+
+    <h2>A clean teaching case: equipment rental</h2>
+    <p>To make this concrete, it helps to anchor the discussion in an industry where the cascade is unusually visible. Heavy equipment rental is one of the cleanest examples I know.</p>
+    <p>Rental is brutally capital-intensive. A dealer's balance sheet is dominated by a fleet of machines, and the entire business model depends on rotating that capital — getting each unit out on rent, earning, coming back, and going out again. Because the asset base is so large and so concentrated, asset turnover isn't one driver among many; it is <em>the</em> driver. And asset turnover in rental is governed almost entirely by a single operational input: utilization. How much of the time is each machine actually earning? And what rate are we receiving while it is earning?</p>
+    <p>That single fact makes rental an ideal lens. Trace ROI down through the DuPont tree in a rental business and you arrive, with remarkable speed, at utilization. Trace utilization down one more level and you arrive at a short list of operational behaviors — preventive-maintenance compliance, turnaround speed, quote follow-up, delivery reliability — each of which is owned by a specific, nameable person. The chain from a P&amp;L line to an individual's daily habit is short and unbroken. What is true in rental is true everywhere. What is your "utilization" path?</p>
+    <p>Whatever it is… a real person is controlling it.</p>
+
+    <h2>The layer no one maps: human inputs</h2>
+    <p>This is where the framework earns its keep. Below every operational input sits a human behavior, and below every human behavior sits a person.</p>
+    <p>The principle generalizes far beyond rental. In any business, the financial output you are worried about is the downstream sum of behaviors owned by people who have never been told that their daily habit is a financial input. In a clinic, revenue per room runs down to whether the front desk confirms tomorrow's appointments tonight. In a law firm, realization runs down to whether associates enter their time the day they work it, not the week they reconstruct it. On a factory floor, it runs down to whether the line lead logs a changeover correctly. None of these people thinks of the habit as a financial lever — the technician does not picture a maintenance order as ROI, any more than the front-desk clerk pictures a confirmation call as revenue — but each is holding a financial input in their hands. The work of finance, the genuinely strategic work, is to build the map that connects the two, then put the leading indicators in front of the people who own them, every day, in language they can act on.</p>
+    <p>There is an organizational design implication here that deserves emphasis: <strong>if a driver belongs to everyone, it belongs to no one.</strong> Every leading indicator on your dashboard needs a named owner. The moment ownership is diffuse, the metric becomes ambient noise — reported, discussed, and never moved.</p>
+
+    <h2>The inputs behind the inputs</h2>
+    <p class="aside">Come on… really? One more layer?</p>
+    <p>There is a temptation, having finally reached the behavior, to declare victory and start measuring. But a behavior is not a dial you turn directly either. It, too, is produced by something — and if you want it performed reliably rather than occasionally, you have to go down one more layer, into the conditions that determine whether a person actually does the thing, day after day, when no one is watching.</p>
+    <p>Five conditions do most of the work. <strong>Culture:</strong> whether people take ownership, whether standards are clear, whether there is accountability without blame. <strong>Leadership behavior:</strong> how visible the manager is, how often coaching actually happens, whether the standard is modeled rather than merely announced. <strong>Training and competence:</strong> whether the person even knows how to do the thing well. <strong>Information and feedback:</strong> whether the technician can see his own PM-compliance rate and the counter rep her own conversion — because a behavior no one can observe is a behavior no one sustains. <strong>And incentives:</strong> whether the pay plan rewards the input at all, or only the revenue that trails it by a quarter. As we all know, "how it affects your back-pocket is how you behave."</p>
+    <p>This is the layer that separates a framework from a fad. It is easy to put "PM compliance" on a dashboard and assume the technician will now comply; he will not, unless he can see the number, has been shown what good looks like, works in a culture that treats the standard as real, and is recognized when he hits it. The behaviors at the bottom of the DuPont tree do not float free. They grow out of culture, leadership, training, feedback, and incentives — which turn out to be the most upstream inputs of all, and the ones the finance function is least accustomed to claiming as its own.</p>
+
+    <h2>Small inputs, outsized leverage</h2>
+    <p>One of the most counterintuitive features of this approach is that the highest-leverage inputs are usually small. They are not reorganizations or new software platforms or strategy offsites. They are modest behaviors that, performed consistently, swing large numbers — and performed inconsistently, bleed value silently. In other words, "sweat the small stuff."</p>
+    <p>Consider the quote that never gets a follow-up call. A contractor phones in, asks about renting a machine for three weeks, and gets a quote. No callback is scheduled. No follow-up note is made. Forty-eight hours pass; the contractor hasn't heard back, calls a competitor, and rents from them instead. One lost rental — perhaps eight to eighteen thousand dollars in revenue — plus a machine that now sits idle in your yard dragging utilization down. Then multiply that by ten or twenty quotes a week with no systematic follow-up, and the organization is quietly losing a substantial sum every month — <span class="u">none of which ever appears in a report, because lost revenue has no ledger account</span>.</p>
+    <p>Now consider the fix. It is not expensive or complex. It is a rule: every open quote gets a follow-up call within twenty-four hours, and follow-up conversion becomes a metric reviewed in the daily team huddle. That single behavioral input, managed consistently, can add several percentage points to revenue. Small input. Massive leverage. No capital required.</p>
+    <p>This is the pattern worth internalizing: <span class="u">the inputs with the most leverage are frequently the ones too small to feel important and too invisible to show up in conventional reporting.</span> They are exactly the inputs a lagging-indicator dashboard will never surface.</p>
+
+    <h2>Finding the input is the easy part</h2>
+    <p>It would be satisfying to stop there — decompose the tree, find the behavior, name the owner, put the number on a board. But anyone who has tried this in a real organization runs into an uncomfortable truth: building the map is the easy part. The DuPont analysis finds the behavior. It does not tell you how to reward that behavior without deforming it — and that second problem is far harder than the first.</p>
+    <p>The analysis is arithmetic; it terminates in a right answer. Incentive design terminates in judgment, and it fails in ways the math never warns you about. The moment a clean input metric becomes the thing people are paid on, they start optimizing for the metric rather than the outcome it was standing in for — and a faithful signal quietly hardens into a quota to be filled by whatever route is cheapest. Which is exactly why the strategic work of finance does not end when the map is finished. It begins there.</p>
+    <p>Goodhart's Law holds that when a measure becomes a target, it ceases to be a good measure. The moment you begin rewarding people on a specific input, the input is liable to distort. Tie a technician's bonus purely to the "number" of PM work orders closed, and you may get work orders closed fast and shallow. Reward quote "volume" and you may get a flood of low-quality quotes. The behavior you measure is the behavior you change — which is the whole point, but also the whole risk.</p>
+    <p>The discipline, then, is to design incentives around inputs without corrupting the inputs themselves: pair quantity measures with quality checks, balance any single metric against a counter-metric, and keep the human judgment in the loop rather than reducing a behavior to a single gameable number. Managing inputs is powerful precisely because measurement changes behavior. That same power is what makes thoughtless measurement dangerous.</p>
+
+    <h2>What this means for the finance function</h2>
+    <p>Translating all of this into practice is, fundamentally, a shift in what the finance function is <em>for</em>. The scorekeeper reports outputs after the period closes. The architect builds and runs the system of inputs that determines what those outputs will be. Strategic finance is the second role. A few concrete moves get you there.</p>
+    <p><strong>Audit your scorecards.</strong> Look honestly at what your branch, division, or department reviews. If the reviews center on ROI and revenue, you are managing outputs. Shift the conversation to inputs — utilization, PM compliance, conversion, turnaround — at every level of the organization. And start with one number: take the metric your last review circled in red and ask "what feeds it?" until the answer is a person's name. Run that single trace out loud, once, and the whole room sees what managing an input actually looks like.</p>
+    <p><strong>Assign ownership of every driver.</strong> Each leading indicator gets a named owner. Not a department; a person. Diffuse accountability is the same as no accountability.</p>
+    <p><strong>Build a daily rhythm of input data.</strong> A shift manager running a ten-minute morning stand-up built around three to five leading indicators — ready-to-rent rate, open PM work orders, quotes awaiting follow-up — does more to move financial outcomes than a monthly review of lagging results, because it intervenes while there is still time to act.</p>
+    <p><strong>Tie compensation to inputs, thoughtfully.</strong> Reward the behaviors that produce results, not only the results themselves — while respecting the measurement trap above. A PM-compliance component for technicians, a conversion component for sales, an on-time-delivery component for logistics.</p>
+    <p><strong>Coach behaviors, not just results.</strong> When a financial metric moves, ask which behavior moved with it. When utilization drops, the question is not "why is the number down" but "what did we stop doing." When margin improves, identify the human input that drove it and reinforce it deliberately.</p>
+    <p>None of this displaces traditional reporting. We still close the books, still report ROI, still owe leadership an honest accounting of results. The shift is in what we do <em>between</em> the closes — building the map from financial output to human input, putting leading indicators in front of the people who own them, and managing the business at the layer where management is actually possible.</p>
+    <p>The outputs we report are real, but they are downstream. They are the sum of a thousand upstream decisions made by people who, often, have never been shown how their daily work connects to the numbers on the board. Show them. Manage the inputs. The outcomes will follow.</p>
+
+    <div class="bio">
+      <p>DeWayne L. Searcy, PhD, is chief operating officer of Cowin Equipment Company, Inc., and founder of 12toKNOW, an education and analytics practice focused on accounting, finance, and applied AI. This working paper is adapted from his presentation, "Managing Inputs, Not Just Outcomes," delivered at IMA's 2026 Annual Conference &amp; Expo in Tampa. It is shared here as an open-access working paper and has not been peer-reviewed.</p>
+    </div>
+
+  </article>
+</div>
+
+<div class="companion">
+  <div class="sec-head"><h2>From the IMA26 session</h2><span class="tag">Companion pieces</span></div>
+  <div class="cgrid">
+    <a class="card" href="ima26.html">
+      <p class="kicker">Workshop · Tampa</p>
+      <h3>IMA26 Table-Top AI Activities</h3>
+      <p>The two hands-on exercises from the session — "Trace It Upstream" and "The Invisible Cost" — that put this framework in a room's hands.</p>
+      <span class="go">Open the activities →</span>
+    </a>
+    <a class="card" href="six-cognitive-instruments.html">
+      <p class="kicker">Working reference</p>
+      <h3>Six Cognitive Instruments</h3>
+      <p>The foundation beneath the talk: six portable diagnostic tools an operating leader can carry into any decision.</p>
+      <span class="go">Read the reference →</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 DeWayne Searcy, PhD · Alabama, USA · All rights reserved</span>
+    <span><a href="index.html">12toKNOW</a> &nbsp;·&nbsp; Working Paper &nbsp;·&nbsp; 12toKNOW™</span>
+  </div>
+</footer>
+
+</body>
+</html>
