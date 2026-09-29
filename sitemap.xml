@@ -132,7 +132,7 @@
   </url>
   <url>
     <loc>https://12toknow.ai/russian_history.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -267,7 +267,7 @@
   </url>
   <url>
     <loc>https://12toknow.ai/russian_essays.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -628,6 +628,16 @@
   <url>
     <loc>https://12toknow.ai/I_Am_Coming_Complete_Trilogy.epub</loc>
     <lastmod>2026-08-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://12toknow.ai/russian_essay_stolypin.html</loc>
+    <lastmod>2026-09-28</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://12toknow.ai/russian_essay_bogrov.html</loc>
+    <lastmod>2026-09-28</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
